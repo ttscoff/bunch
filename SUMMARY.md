@@ -1,15 +1,13 @@
-# Table of contents
-
-* [Initial page](README.md)
+# Bunch Documentation
 
 * [Intro](index.md)
 * [Download](download.md)
 * [Installation](installation.md)
-* [Using Bunch]([Using Bunch](using-bunch/index.md)
+* [Using Bunch](using-bunch/index.md)
   * [Bunch Menu](using-bunch/menu.md)
   * [Preferences](using-bunch/preferences.md)
   * [Bunch Logging](using-bunch/bunch-log.md)
-* [Bunch Files]([Bunch Files](bunch-files/index.md)
+* [Bunch Files](bunch-files/index.md)
   * [The Bunch Folder](bunch-files/bunch-folder.md)
   * [Syntax Reference](bunch-files/quick-reference.md)
   * [Sample Bunch](bunch-files/samplebunch.md)
@@ -30,7 +28,7 @@
   * [Spotlight Searches](bunch-files/spotlight-searches.md)
   * [Startup Scripts](bunch-files/startup-scripts.md)
   * [Window Management](bunch-files/window-management.md)
-* [Integration]([Integration](integration/index.md)
+* [Integration](integration/index.md)
   * [URL Handler](integration/url-handler.md)
   * [AppleScript Dictionary](integration/applescript.md)
   * [Command Line Tool](integration/cli.md)
