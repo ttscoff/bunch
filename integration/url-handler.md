@@ -208,3 +208,12 @@ open 'x-bunch://open?bunch=Comms&x-success=com.brettterpstra.marked2&x-delay=15'
 # Open iThoughts using its URL handler (default 5-second delay)
 open 'x-bunch://open/Comms&x-success=ithoughts://'
 ```
+
+## x-callback-url
+
+All methods can be called in `x-callback-url` format, for compatibility. Simply prefix `x-callback-url` in the path, and optionally provide an `x-source` query parameter. If an `x-source` is provided and no `x-success` value is present, the x-source (URL, app name, or bundle identifier) will be called upon completion. (It's assumed that you want focus returned after executing a Bunch command, as making Bunch a foreground app is relatively pointless.)
+
+```
+x-bunch://x-callback-url/open?bunch=Comms?x-source=com.googlecode.iterm2
+```
+
