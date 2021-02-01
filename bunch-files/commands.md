@@ -39,7 +39,7 @@ Hide and show desktop icons: `(hide desktop)`, `(show desktop)`.
 
 Set the Desktop Image for one or more displays. Provide a full path to the image, e.g. `(wallpaper ~/Pictures/my desktop.jpg)`. If a single path is given, all available displays will be set to that image. If multiple paths separated by a pipe (`|`) are provided, images will be applied to the available displays in order (first image path to first display, second path to second display, etc.). If you declare more paths than you have displays, additional paths will be ignored. The desktop image(s) that are in place when Bunch first launches will be restored when quitting any Bunch. 
 
-> If you manually change the Desktop image while Bunch is running, use __Preferences->*Save Current Wallpaper as Default*__ to update the fallback image(s).
+> If you manually change the Desktop wallpaper while Bunch is running, use __Preferences->*Save Current Wallpaper as Default*__ to update the fallback image(s).
 {:.tip}
 
 ### __Audio__ Commands {#audio}
@@ -56,7 +56,7 @@ See [Bunch gets audio control](https://brettterpstra.com/2020/09/10/bunch-gets-a
 
 This simply takes a string of text and creates a Notification Center alert or banner (depending on your settings). Banners are assigned an identifier with the calling Bunch's name, so subsequent alerts overwrite the first, avoiding a pileup of notifications.
 
-> I highly recommend setting your alert style for Bunch to "Alerts" in System Preferences->Notifications. This makes the information from Bunches more useful, and allows some actions (like scheduled Bunches) to provide a cancel method that would otherwise be immediately hidden.
+> I highly recommend setting your alert style for Bunch to "Alerts" in System Preferences->Notifications. This makes the information from Bunches more useful, and allows some actions (like scheduled Bunches) to provide a cancel method that would otherwise be quickly hidden.
 {:.tip}
  
 ### __Sleep__ Commands {#sleep}

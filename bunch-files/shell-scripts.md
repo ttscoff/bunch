@@ -49,11 +49,11 @@ As I mentioned, Bunch doesn't do anything with the output of a command, other th
 
 > You can fork a script using the `$BUNCH` variable. If you have a script with common tasks but you need it to differ between Bunches in some way, do something along the lines of (in Bash):
 >
-> `if [[ $BUNCH == Default ]]; then...`
+> `if [[ $BUNCH == Podcast ]]; then...`
 >
 > Or Ruby:
 >
-> `if ENV['BUNCH'] == "Default"`
+> `if ENV['BUNCH'] == "Podcast"`
 >
 > Et cetera.
 {:.tip}

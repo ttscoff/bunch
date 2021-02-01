@@ -66,7 +66,7 @@ If you include a file line containing only "XX", then all windows for the app wi
 
 If you use "@@" alone on a line, Bunch will hide all visible apps. (Menu bar apps like Dash or TextExpander may not hide properly.) This is ideal for use at the very beginning of a Bunch, giving you a clean slate for a new set of apps.
 
-> You can also append an underscore after any single app name and Bunch will attempt to hide it after launching. (This can be flaky depending on how long the app takes to launch.)
+> You can also append an underscore to any single app name and Bunch will attempt to hide it after launching. (This can be flaky depending on how long the app takes to launch.)
 {:.tip}
 
 
