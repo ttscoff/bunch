@@ -11,7 +11,7 @@ Lines starting with a dollar sign (\$) are run as shell commands. Anything after
 
 ## Scripts
 
-If the first element of a `$` line is a full path to a file, or a path relative to your Bunch folder, and the file exists, it will be executed directly. This assumes a proper hashbang in the file. Arguments can be passed on the same line.
+If the first element of a `$` line is a full path to a file, or a path relative to your Bunch folder, and the file exists, it will be executed directly. This assumes either a binary or an executable file with a proper hashbang in the script. Arguments can be passed on the same line.
 
 Any spaces in filenames or within arguments should be escaped just like they would on the command line, using either double quotes or escaping individual spaces with backslashes.
 
@@ -41,7 +41,9 @@ If you need to provide additional environment variables to your script, set it u
 
 These will be the equivalent of an `export FOO=bar` command prior to running your script. If you set `HOME`, it will override what Bunch sets. If you set `PATH`, it will be inserted before (higher priority than) Bunch's default path in the environment.
 
-As I mentioned, Bunch doesn't do anything with the output of a command. If you want to react to shell command output, use Automator with a Run Shell Script action. If you want feedback while running, you can always use AppleScript in your shell script:
+The contents of the Bunch's [frontmatter](/bunch/docs/bunch-files/frontmatter/) are also made available as environment variables. For example, if your frontmatter includes `Last Name: Meyer`, it would be available as `$lastname` in a shell script. All built-in frontmatter keys and any arbitrary keys defined are accessible.
+
+As I mentioned, Bunch doesn't do anything with the output of a command, other than report it [in the log](/bunch/docs/using-bunch/bunch-log/). If you want to react to shell command output, use Automator with a Run Shell Script action. If you want feedback while running, you can always use AppleScript in your shell script:
 
     osascript -e "display notification \"$INFO\""
 

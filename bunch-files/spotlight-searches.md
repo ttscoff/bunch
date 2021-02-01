@@ -5,7 +5,7 @@ parent: Bunch Files
 ---
 In the dashed lines the follow an app, you usually list files you want to open in that app. But you can also run some searches and open the results instead.
 
-## Tag Search
+## Tag Search {#tagsearch}
 
 You can use hashtags on a line to search for one or more tags. Multiple tags are joined as a boolean AND, meaning files must contain all of the tags to match.
 
@@ -30,7 +30,7 @@ Default
 
 Scopes and limits can be combined.
 
-## Spotlight Search
+## Spotlight Search {#spotlightsearch}
 
 You can also harness the full power of Spotlight using the syntax you're used to in the floating Spotlight window. Just surround your search in single quotes. A scope can be defined as above, but with this query you can only specify one folder. It defaults to your Home folder and all of its subfolders. The same query limit and modifier as above apply.
 

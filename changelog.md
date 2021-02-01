@@ -4,24 +4,32 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+
 1.3.7
 : Introduced [frontmatter](/bunch/docs/bunch-files/frontmatter)
 : Change menu display title with frontmatter
+: Set [arbitrary snippet variables](/bunch/docs/bunch-files/frontmatter/#arbitrarykeys) with frontmatter
+: "from script" and "from file" allow [dynamic frontmatter](/bunch/docs/bunch-files/frontmatter/#dynamicfrontmatter)
 : Mark a Bunch as a startup bunch with frontmatter
 : [Schedule bunches](/bunch/docs/bunch-files/scheduling-bunches) to open and close at specified days and times using frontmatter
-: "open every" frontmatter for triggering at intervals
-: Tag search for files to open
-: [Full Spotlight search for files to open](/bunch/docs/bunch-files/spotlight-searches)
-: [Launch files in their default app](/bunch/docs/bunch-files/apps#defaultapp) by using "Default" as app name
-: (notify) command to trigger notification center
-: (sleep) commands (sleep, sleep display, sleep screensaver)
-: Indent snippets 4 spaces/1 tab to have them wait for all apps in the Bunch to launch or quit
-: Debug Log
+: [Tag search](/bunch/docs/bunch-files/spotlight-searches#tagsearch) for files to open
+: [Full Spotlight search](/bunch/docs/bunch-files/spotlight-searches#spotlightsearch) for files to open
+: [Launch files in their default app](/bunch/docs/bunch-files/apps/#defaultapp) by using "Default" as app name
+: (notify) command to [trigger notification center](/bunch/docs/bunch-files/commands/#notify)
+: (sleep) commands ([sleep, sleep display, sleep screensaver](/bunch/docs/bunch-files/commands/#sleep))
+: Indent snippets 4 spaces/1 tab to have them [wait for all apps in the Bunch to launch or quit](/bunch/docs/bunch-files/snippets/#waitingsnippet)
+: < snippets can have a delay ~5
 : !< snippets will run on close
+: !< snippets can have a delay ~5
+: << [Embedded snippets](/bunch/docs/bunch-files/snippets#embeddedsnippets)
+: [Bunch Log](/bunch/docs/using-bunch/bunch-log) with customizable log levels
 : Detect shebang and execute appropriate binary for non-executable shell scripts
 : Attempt at smarter app hiding
 : Update example Bunch
 : New features for the [Bunch CLI](/bunch/docs/integration/cli), including "load as snippet" and interactive Bunch URL
+: Smarter shell script loading, better script shebang handling, binary detection
+: Documentation updates
+
 ---
 
 1.3.6

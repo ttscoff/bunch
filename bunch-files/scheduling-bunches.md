@@ -7,11 +7,12 @@ parent: Bunch Files
 
 You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys](/bunch/docs/bunch-files/frontmatter) in your Bunch files.
 
-| `open at:`    | Set a time to open this bunch daily    |
-| `close at:`   | Set a time to close this bunch daily   |
-| `open on:`    | Set a weekday and time to open weekly  |
-| `close on:`   | Set a weekday and time to close weekly |
-| `open every:` | Repeat open at intervals               |
+| `open at:`     | Set a time to open this bunch daily    |
+| `close at:`    | Set a time to close this bunch daily   |
+| `open on:`     | Set a weekday and time to open weekly  |
+| `close on:`    | Set a weekday and time to close weekly |
+| `open every:`  | Repeat open at intervals               |
+| `close after:` | Set an interval after which to close   |
 
 Bunch will always read in these keys and set the alarms and timers when it launches, so it doesn't matter if you quit the app in between scheduled launches.
 
@@ -30,6 +31,15 @@ open every: 1h30m
 ```
 
 This can be useful for always-open Bunches, though it can be disruptive if launching apps and opening files takes window focus from what you're working on. This is most useful for small Bunches that use things like [Spotlight searches](/bunch/docs/bunch-files/spotlight-searches) to open files, allowing them to be continually updated.
+
+## Close After an Interval
+
+The `close after` key defines an interval to wait after opening the Bunch before automatically closing it. It uses the same formatting as `open at`, e.g. a time string like `1h30m` or `1d`. This will just start a background timer that will automatically close the Bunch after it's been open for that period of time.
+
+Closing the bunch manually will cancel the timer. If Bunch is quit, the timer will be lost and reset when the Bunch is opened again (even if it's restored at launch).
+
+> Tip: Keep in mind that you can use `%` before app names to ignore them when closing. That means your Bunch can do things like turn on Do Not Disturb or toggle Dark Mode and then restore settings after a set period of time. Combine with  an `open` option to toggle things on and off at set intervals. Apps that are already open will be unaffected by Bunch opens.
+{:.tip}
 
 ## Daily Schedules
 

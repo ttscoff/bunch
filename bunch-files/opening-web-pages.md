@@ -33,6 +33,6 @@ The recognized browser prefixes are:
 In most cases, you can also send a URL as a file to a browser and it will open it properly, as in:
 
     Safari
-    - https://brettterpstra.com
+    - https://brettterpstra.com/bunch
 
 

@@ -4,12 +4,14 @@ title: URL Handler
 parent: Integration
 nav_order: 5
 ---
-Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts. 
+Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
-> Tip: You can use simple shell scripts with apps like [BetterTouchTool](https://folivora.ai/) and [Keyboard Maestro](http://www.keyboardmaestro.com/) to assign bunches to hotkeys. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow), just imagine the possibilities...
+> Tip: You can use urls with apps like [BetterTouchTool](/bunch/docs/integration/bettertouchtool) and [Keyboard Maestro](/bunch/docs/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck](/bunch/docs/stream-deck), just imagine the possibilities...
 >
-> Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole control panel on a [Stream Deck](https://www.elgato.com/en/gaming/stream-deck) with these, for example.
+> Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
+
+> Tip: The Bunch CLI can generate URLs that run various commands for use in other applications. Run `bunch -i` to interactively build a URL.
 
 Methods:
 
@@ -109,7 +111,7 @@ Only one of `file` or `txt` should be specified
 open 'x-bunch://raw?file=~/MiscBunch.bunch'
 
 # Pass Bunch contents directly with `txt` param:
-open 'x-bunch://raw?txt=%21MeisterTask'
+open 'x-bunch://raw?txt=(dnd on)'
 ```
 ## `refresh` {#urlhandlerrefresh}
 
@@ -152,6 +154,8 @@ open 'x-bunch://setPref?toggleBunches=1'
 open 'x-bunch://setPref?configDir=~/Dropbox/Sync/Bunches'
 ```
 
+> Tip: You can use this URL handler to easily switch between sets of Bunches using external tools. For example, you could add a button to your Touch Bar [using BetterTouchTool](/bunch/docs/integration/bettertouchtool/) to trigger a URL like `x-bunch://setPref?configDir=~/Dropbox/Sync/WorkBunches`, or create a [Keyboard Maestro](/bunch/docs/integration/keyboard-maestro/) macro that toggled between two folders.
+
 ## `snippet` {#urlhandlersnippet}
 
 You can directly load a [snippet](/bunch/docs/bunch-files/snippets.html) and define variables with the `snippet` method. This allows you to load files containing [variables](/bunch/docs/bunch-files/snippets.html#snippetvariables) and to use the [snippet fragment feature](/bunch/docs/bunch-files/snippets.html#fragments) to load just a portion of a snippet.
@@ -189,8 +193,7 @@ open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
 All url methods accept an `x-success` parameter which can define a bundle ID or url to open after executing the method. By default this happens after a 5-second delay, but you can modify that with an `x-delay` parameter (number of seconds as integer).
 
 `x-success`
-: (_String_) If this is a valid bundle identifier, e.g. `com.brettterpstra.marked2`, that application will be launched
-: It can also be any valid app name. The name must exactly match the display name of the application you want to launch
+: (_String_) If this is a valid bundle identifier, e.g. `com.brettterpstra.marked2`, that application will be launched. It can also be any valid app name, but using the bundle ID prevents most issues with multiple versions of apps or apps having a different display name than what the system recognizes
 : If this is a valid URL, that URL will be opened. This can be used with url handlers of other applications, e.g. `x-marked://open/documentation.md`
 
 `x-delay`
@@ -205,4 +208,3 @@ open 'x-bunch://open?bunch=Comms&x-success=com.brettterpstra.marked2&x-delay=15'
 # Open iThoughts using its URL handler (default 5-second delay)
 open 'x-bunch://open/Comms&x-success=ithoughts://'
 ```
-

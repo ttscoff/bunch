@@ -72,7 +72,7 @@ If you use "@@" alone on a line, Bunch will hide all visible apps. (Menu bar app
 
 ## "Focusing" an App {#focus}
 
-If you start an app line with an `@` symbol, it will attempt to focus that app. This should be run as the last line of the file, after all other lines have run. Make sure the app you want to focus has already been launched.
+If you start an app line with an `@` symbol, it will attempt to focus that app. This should be run as the last line of the file, after all other lines have run. Make sure the app you want to focus has already been launched (_this line will not launch the app, only focus a running app_).
 
     OmniFocus
     MultiMarkdown Composer

@@ -27,6 +27,8 @@ Now you can use `${proj_path}` anywhere in your snippet file, allowing you to us
     %iTerm
     - ${proj_path}
 
+You can also define values for snippet variables [using frontmatter](/bunch/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
+
 ### Default Variable Values {#defaultvalues}
 
 If a snippet has variable placeholders but no values are provided when it's called, the placeholders will be removed. You can instead provide default values that will be used if no matching key/value pair is provided. To do this, just use a colon followed by the default within the placeholder:
@@ -80,11 +82,28 @@ You can include multiple optional snippets, but --- due to the asynchronous way 
 
 Also, options only apply to regular snippets, not snippets specified for "on close" with `!`. If you apply a query to an "on close snippet," the question will still be asked on launch.
 
+## Run After Delay
+
+Add a tilde and an integer at the end of the line to have the contents of the snippet run after a delay.
+
+    <General.snippets#Spotify ~10
+    - url=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
+    - autoplay=true
+
+A delay can be combined with a query for an optional snippet. The delay should always be the last item on the line.
+
 ## Run When Closing
 
 Like most script types in Bunch, you can precede a snippet line with an exclamation point (`!`) to run it when the Bunch closes instead of when it opens.
 
-## Wait Until Apps Have Launched
+    !<General.snippets#Close Commands
+
+These can also have a delay:
+    
+    # Run 5 seconds after closing the snippet
+    !<General.snippets#Close Commands ~5
+
+## Wait Until Apps Have Launched {#waitingsnippet}
 
 If you indent a snippet line by 4 spaces or one tab, it will automatically try to wait until all of the apps in the bunch have launched (or quit, if they're `!apps`). There's a dropdead timeout in case not all apps properly report their launch/termination to the OS.
 
@@ -98,4 +117,43 @@ This is especially handy for running window management scripts ([ala Moom](/bunc
 
 You can have multiple indented snippets in a Bunch. Indented snippets also work with [additional time delays](/bunch/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
 
+Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is waiting for are already launched, it won't receieve any notifications of their launch to trigger the snippet, so if it hasn't heard back it will check to see if all of the required apps are running (or have been terminated). If its requirements are satisfied, it will launch the Waiting Snippet.
 
+## Embedded Snippet {#embeddedsnippets}
+
+You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed snippets right in the Bunch. Add a divider of three or more underscores at the end of the document, and anything after it will be read as a snippet file.
+
+These work like any snippet file, and you can divide them into sections to reference with fragments.
+
+To reference an embedded snippet, just use an additional `<` instead of a filename:
+
+    <<
+
+That would run everything after the `___` as a snippet. You could also divide your embedded snippet into sections and reference it with a fragment identifier:
+
+    <<#Section 1
+
+Embedded snippets also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables and all frontmatter variables are available to them.
+
+__Embedded snippet example:__
+
+```
+<<#First Section
+
+!<<#On Close
+
+<<#After Pause ~5
+
+    <<#After Launch
+___
+---[First Section]
+* say "first"
+
+---[After Pause]
+* say "I've been waiting"
+
+---[On Close]
+* say "Closing"
+
+---[After Launch]
+* say "Done launching"

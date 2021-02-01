@@ -19,30 +19,30 @@ Lines surrounded in parenthesis are Bunch commands. These offer shortcuts to som
     (notify text)
     (sleep [display])
 
-### __Dark Mode__ Commands
+### __Dark Mode__ Commands {#darkmode}
 
 Turn macOS Dark Mode on and off: `(dark mode on)`, `(dark mode off)`. An "on" command can be shortened to just `(dark mode)`, and `(dark mode off)` can be shortened to `(light mode)`.
 
-### __Do Not Disturb__ Commands
+### __Do Not Disturb__ Commands {#dnd}
 
 Toggle notifications. The commands can be abbreviated as `(dnd on)` and `(dnd off)`. Actually, `(dnd on)` can just be `(dnd)`, too. I like to make things intuitive by overcomplicating them sometimes.
 
-### __Dock__ Commands 
+### __Dock__ Commands {#dock}
 
 (`(hide dock)`, `(show dock)`) show and hide the Dock (Turn Hiding On), or reposition the dock (`(dock left)`, `(dock bottom)`, `(dock right)`).
 
-### __Desktop__ Commands
+### __Desktop__ Commands {#desktop}
 
 Hide and show desktop icons: `(hide desktop)`, `(show desktop)`.
 
-### __Wallpaper__ Commands 
+### __Wallpaper__ Commands {#wallpaper}
 
 Set the Desktop Image for one or more displays. Provide a full path to the image, e.g. `(wallpaper ~/Pictures/my desktop.jpg)`. If a single path is given, all available displays will be set to that image. If multiple paths separated by a pipe (`|`) are provided, images will be applied to the available displays in order (first image path to first display, second path to second display, etc.). If you declare more paths than you have displays, additional paths will be ignored. The desktop image(s) that are in place when Bunch first launches will be restored when quitting any Bunch. 
 
 > If you manually change the Desktop image while Bunch is running, use __Preferences->*Save Current Wallpaper as Default*__ to update the fallback image(s).
 {:.tip}
 
-### __Audio__ Commands
+### __Audio__ Commands {#audio}
 
 Change your system input and output devices, as well as control the volume of either. 
 
@@ -52,14 +52,14 @@ The volume command defaults to output volume if `input` or `output` is not speci
 
 See [Bunch gets audio control](https://brettterpstra.com/2020/09/10/bunch-gets-audio-control/) for more info.
 
-### __Notify__ Command
+### __Notify__ Command {#notify}
 
 This simply takes a string of text and creates a Notification Center alert or banner (depending on your settings). Banners are assigned an identifier with the calling Bunch's name, so subsequent alerts overwrite the first, avoiding a pileup of notifications.
 
 > I highly recommend setting your alert style for Bunch to "Alerts" in System Preferences->Notifications. This makes the information from Bunches more useful, and allows some actions (like scheduled Bunches) to provide a cancel method that would otherwise be immediately hidden.
 {:.tip}
-
-### __Sleep__ Commands
+ 
+### __Sleep__ Commands {#sleep}
 
 `(sleep)` will immediately sleep your Mac. 
 
@@ -67,7 +67,7 @@ This simply takes a string of text and creates a Notification Center alert or ba
 
 `(sleep screensaver)` will start the screen saver, also locking your machine if you have that set up in System Preferences.
 
-## Reversing Commands
+## Reversing Commands {#reversingcommands}
 
 All commands are automatically reversed when closing a Bunch (hidden Desktop icons are shown, hidden dock is revealed, wallpapers switch back, etc.), with the exception of the Dock positioning, notification, and audio commands. 
 

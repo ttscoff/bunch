@@ -10,3 +10,15 @@ You can have an app, script, or command execute after a delay by adding a tilde 
     * say "I've been waiting for you" ~5
 
 The delay only applies to the line it's on, it doesn't delay the processing of lines after it. Anything without a delay specified will launch immediately.
+
+## Delaying Groups
+
+You can use snippets to delay groups of items. Just put the items into a snippet file and add the tilde+number.
+
+    < example.snippets ~5
+
+You can also put a delay on snippets that run when the Bunch closes, triggered X seconds after closing the Bunch:
+
+    !< example.snippets ~5
+
+See the [Snippets](/bunch/docs/bunch-files/snippets) documentation to learn how to have snippets [wait until apps have finished launching](/bunch/docs/bunch-files/snippets/#waitingsnippet).
