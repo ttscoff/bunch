@@ -33,4 +33,4 @@ Arguments can be passed to the script on the same line (same escaping rules appl
 
 ## Running with Automator
 
-You can also wrap the AppleScript in an Automator Workflow and [run it using `&` commands](/bunch/docs/bunch-files/automator-workflows). This also makes it easy to use variables and control where output goes.
+You can also wrap the AppleScript in an Automator Workflow and [run it using `&` commands]({{ site.baseurl }}/docs/bunch-files/automator-workflows). This also makes it easy to use variables and control where output goes.

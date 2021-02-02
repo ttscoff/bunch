@@ -6,7 +6,7 @@ nav_order: 5
 ---
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
-> Tip: You can use urls with apps like [BetterTouchTool](/bunch/docs/integration/bettertouchtool) and [Keyboard Maestro](/bunch/docs/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck](/bunch/docs/stream-deck), just imagine the possibilities...
+> Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/stream-deck), just imagine the possibilities...
 >
 > Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
@@ -142,7 +142,7 @@ You can set and toggle certain preferences with the `setPref` method. All boolea
 : (_Boolean: 0 or 1_) Set __Restore Open Bunches on Launch__
 
 `debugLevel`
-: (_Integer: 0-4_) Set the logging level for the [Bunch Log](/bunch/docs/using-bunch/bunch-log/)
+: (_Integer: 0-4_) Set the logging level for the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log/)
 
 ### Examples
 
@@ -154,11 +154,11 @@ open 'x-bunch://setPref?toggleBunches=1'
 open 'x-bunch://setPref?configDir=~/Dropbox/Sync/Bunches'
 ```
 
-> Tip: You can use this URL handler to easily switch between sets of Bunches using external tools. For example, you could add a button to your Touch Bar [using BetterTouchTool](/bunch/docs/integration/bettertouchtool/) to trigger a URL like `x-bunch://setPref?configDir=~/Dropbox/Sync/WorkBunches`, or create a [Keyboard Maestro](/bunch/docs/integration/keyboard-maestro/) macro that toggled between two folders.
+> Tip: You can use this URL handler to easily switch between sets of Bunches using external tools. For example, you could add a button to your Touch Bar [using BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool/) to trigger a URL like `x-bunch://setPref?configDir=~/Dropbox/Sync/WorkBunches`, or create a [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro/) macro that toggled between two folders.
 
 ## `snippet` {#urlhandlersnippet}
 
-You can directly load a [snippet](/bunch/docs/bunch-files/snippets.html) and define variables with the `snippet` method. This allows you to load files containing [variables](/bunch/docs/bunch-files/snippets.html#snippetvariables) and to use the [snippet fragment feature](/bunch/docs/bunch-files/snippets.html#fragments) to load just a portion of a snippet.
+You can directly load a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html) and define variables with the `snippet` method. This allows you to load files containing [variables]({{ site.baseurl }}/docs/bunch-files/snippets.html#snippetvariables) and to use the [snippet fragment feature]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments) to load just a portion of a snippet.
 
 This URL method can be shortened to `snippet/SNIPPET_FILE/FRAGMENT?variables=foobar`.
 
@@ -168,10 +168,10 @@ This URL method can be shortened to `snippet/SNIPPET_FILE/FRAGMENT?variables=foo
 : (_String_) The path to the snippet file. Assumes this is a relative path from your Bunch folder unless an absolute path is provided. If the snippet file is in the root of your Bunch folder, you can provide just the filename
 
 `fragment` (_Optional_)
-: (_String_) To load just a section of the snippet ([as defined by `#[section title]` lines](/bunch/docs/bunch-files/snippets.html#fragments)), pass the name of the fragment here.
+: (_String_) To load just a section of the snippet ([as defined by `#[section title]` lines]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments)), pass the name of the fragment here.
 
 Additional variables (_Optional_)
-: Any additional query parameters added to the url string will be passed as [key=value replacements to the snippet](/bunch/docs/bunch-files/snippets.html#snippetvariables)
+: Any additional query parameters added to the url string will be passed as [key=value replacements to the snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html#snippetvariables)
 
 ### Examples
 

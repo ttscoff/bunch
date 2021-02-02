@@ -11,7 +11,7 @@ Single Bunch Mode
 : Turning this on will cause the active Bunch to quit when opening a new Bunch. Any apps in the last Bunch that are not included in the new Bunch will be terminated, and any Bunch commands will be reversed unless the new Bunch contains a Bunch command of the same type (if the command affects the Dock and the new bunch command also affects the Dock, no action is taken).
 
 Restore Open Bunches on Launch
-: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script](/bunch/docs/bunch-files/startup-scripts.html), it will be ignored during launch.
+: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts.html), it will be ignored during launch.
 
 Refresh Bunches
 : You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. As of version 1.0.10 this shouldn't be necessary, changes will automatically be detected. You can still use this to force a refresh if something seems out of date.

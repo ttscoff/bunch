@@ -29,4 +29,4 @@ You can also control BetterTouchTool with its [extensive AppleScript library][bt
 
 You can also use BetterTouchTool to add system tools that trigger Bunches outside of the Bunch menu. Whether it's assigning a Bunch trigger to a gesture, or adding Touch Bar icons for Bunches to your MacBook Pro, BetterTouchTool makes it easy.
 
-Just add the type of trigger you want, then assign an Open URL action to it with a [Bunch URL](/bunch/docs/integration/url-handler).
+Just add the type of trigger you want, then assign an Open URL action to it with a [Bunch URL]({{ site.baseurl }}/docs/integration/url-handler).

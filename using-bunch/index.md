@@ -4,7 +4,7 @@ title: Using Bunch
 nav_order: 50
 has_children: true
 ---
-First, you need some Bunch files located in [your Bunch folder](/bunch/docs/bunch-files/bunch-folder). There's an example one in there, so go ahead and get started by editing that. See the [Bunch Files](/bunch/docs/bunch-files) section to learn all about the syntax and features.
+First, you need some Bunch files located in [your Bunch folder]({{ site.baseurl }}/docs/bunch-files/bunch-folder). There's an example one in there, so go ahead and get started by editing that. See the [Bunch Files]({{ site.baseurl }}/docs/bunch-files) section to learn all about the syntax and features.
 
 Once you have one or more `.bunch` files in your Bunches folder, launch Bunch (or right click it and choose "Refresh Bunches"). Now when you right-click the Dock icon, you'll see all available Bunches listed at the top of the popup menu. Select one to launch, quit, or focus the apps as defined in that Bunch file.
 

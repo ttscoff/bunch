@@ -40,9 +40,9 @@ The "title" key changes the display title of the Bunch, as seen in the menu. Whe
 
 You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. Note that Bunch doesn't currently sort by display title, so if you change the alphanumeric value of the title, your menu items may look out of order.
 
-See [Scheduling Bunches](/bunch/docs/bunch-files/scheduling-bunches) for details on the `open ...` and `close ...` keys.
+See [Scheduling Bunches]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) for details on the `open ...` and `close ...` keys.
 
-The `startup` key is simply set to true/false (or yes/no) and has the same effect as adding a bunch name to a [`*.startup` script](/bunch/docs/bunch-files/startup-scripts).
+The `startup` key is simply set to true/false (or yes/no) and has the same effect as adding a bunch name to a [`*.startup` script]({{ site.baseurl }}/docs/bunch-files/startup-scripts).
 
 ## YAML-ish
 
@@ -64,7 +64,7 @@ You can add arbitrary key/value pairs in the frontmatter. These will be stored a
     <speech.snippet
     - say=something
 
-The order of precedence for snippet variables is variable defined after the snippet line, then value found for matching key in the frontmatter, then any [default value](/bunch/docs/bunch-files/snippets#defaultvalues) defined in the snippet.
+The order of precedence for snippet variables is variable defined after the snippet line, then value found for matching key in the frontmatter, then any [default value]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues) defined in the snippet.
 
 These variables are available in Snippets and as environment variables in shell scripts. They are not passed to Automator Workflows because those will error out if given unexpected variables.
 

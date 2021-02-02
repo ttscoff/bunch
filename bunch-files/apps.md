@@ -13,7 +13,7 @@ Within a Bunch file you simply list the apps you want it to launch, one per line
     Mail
     Twitter
 
-You can add additional lines to perform actions like [opening files](/bunch/docs/bunch-files/opening-files.html).
+You can add additional lines to perform actions like [opening files]({{ site.baseurl }}/docs/bunch-files/opening-files.html).
 
 ## Opening Files
 
@@ -26,7 +26,7 @@ You can additionally have an app open specific documents, if the app supports th
 > Paths to documents can use a tilde `~` to represent the home directory. Spaces are fine, no quotes or escaping needed.
 {:.tip}
 
-You may want to close all open windows before opening new files. To do that, [use XX](/bunch/docs/bunch-files/closing-windows.html)
+You may want to close all open windows before opening new files. To do that, [use XX]({{ site.baseurl }}/docs/bunch-files/closing-windows.html)
 
     Numbers
     - XX
@@ -49,7 +49,7 @@ Default
 - File 3.md
 ```
 
-This is especially handy when using [Spotlight searches](/bunch/docs/bunch-files/spotlight-searches) instead of files.
+This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches) instead of files.
 
 ## Closing Windows {#closingwindows}
 
@@ -88,6 +88,6 @@ Put an exclamation point before the app name to quit that app if it's open. This
     !Mail
     MailMate
 
-You can also have apps [launch when closing the Bunch](/bunch/docs/bunch-files/run-on-close.html#doublenegative).
+You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/bunch-files/run-on-close.html#doublenegative).
 
 

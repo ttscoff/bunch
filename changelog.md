@@ -5,28 +5,28 @@ nav_order: 99
 page_id: changelog
 ---
 
-1.3.7
-: Introduced [frontmatter](/bunch/docs/bunch-files/frontmatter)
+1.4.0
+: Introduced [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter)
 : Change menu display title with frontmatter
-: Set [arbitrary snippet variables](/bunch/docs/bunch-files/frontmatter/#arbitrarykeys) with frontmatter
-: "from script" and "from file" allow [dynamic frontmatter](/bunch/docs/bunch-files/frontmatter/#dynamicfrontmatter)
+: Set [arbitrary snippet variables]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys) with frontmatter
+: "from script" and "from file" allow [dynamic frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dynamicfrontmatter)
 : Mark a Bunch as a startup bunch with frontmatter
-: [Schedule bunches](/bunch/docs/bunch-files/scheduling-bunches) to open and close at specified days and times using frontmatter
-: [Tag search](/bunch/docs/bunch-files/spotlight-searches#tagsearch) for files to open
-: [Full Spotlight search](/bunch/docs/bunch-files/spotlight-searches#spotlightsearch) for files to open
-: [Launch files in their default app](/bunch/docs/bunch-files/apps/#defaultapp) by using "Default" as app name
-: (notify) command to [trigger notification center](/bunch/docs/bunch-files/commands/#notify)
-: (sleep) commands ([sleep, sleep display, sleep screensaver](/bunch/docs/bunch-files/commands/#sleep))
-: Indent snippets 4 spaces/1 tab to have them [wait for all apps in the Bunch to launch or quit](/bunch/docs/bunch-files/snippets/#waitingsnippet)
+: [Schedule bunches]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) to open and close at specified days and times using frontmatter
+: [Tag search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#tagsearch) for files to open
+: [Full Spotlight search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#spotlightsearch) for files to open
+: [Launch files in their default app]({{ site.baseurl }}/docs/bunch-files/apps/#defaultapp) by using "Default" as app name
+: (notify) command to [trigger notification center]({{ site.baseurl }}/docs/bunch-files/commands/#notify)
+: (sleep) commands ([sleep, sleep display, sleep screensaver]({{ site.baseurl }}/docs/bunch-files/commands/#sleep))
+: Indent snippets 4 spaces/1 tab to have them [wait for all apps in the Bunch to launch or quit]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet)
 : < snippets can have a delay ~5
 : !< snippets will run on close
 : !< snippets can have a delay ~5
-: << [Embedded snippets](/bunch/docs/bunch-files/snippets#embeddedsnippets)
-: [Bunch Log](/bunch/docs/using-bunch/bunch-log) with customizable log levels
+: << [Embedded snippets]({{ site.baseurl }}/docs/bunch-files/snippets#embeddedsnippets)
+: [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log) with customizable log levels
 : Detect shebang and execute appropriate binary for non-executable shell scripts
 : Attempt at smarter app hiding
 : Update example Bunch
-: New features for the [Bunch CLI](/bunch/docs/integration/cli), including "load as snippet" and interactive Bunch URL
+: New features for the [Bunch CLI]({{ site.baseurl }}/docs/integration/cli), including "load as snippet" and interactive Bunch URL
 : Smarter shell script loading, better script shebang handling, binary detection
 : Documentation updates
 
@@ -41,10 +41,10 @@ page_id: changelog
 ---
 
 1.3.5
-: New `snippet` url method ([see docs](/bunch/docs/integration/url-handler.html#urlhandlersnippet))
+: New `snippet` url method ([see docs]({{ site.baseurl }}/docs/integration/url-handler.html#urlhandlersnippet))
 : New `x-success` and `x-delay` parameters for all URL methods
 : New AppleScript method `run snippet` to mirror url handler
-: Allow [default values](/bunch/docs/bunch-files/snippets.html#defaultvalues) for variables (`${var:default}`)
+: Allow [default values]({{ site.baseurl }}/docs/bunch-files/snippets.html#defaultvalues) for variables (`${var:default}`)
 : Don't freak out if variable placeholders are included in snippets but values are not provided when importing
 
 ---

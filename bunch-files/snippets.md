@@ -27,7 +27,7 @@ Now you can use `${proj_path}` anywhere in your snippet file, allowing you to us
     %iTerm
     - ${proj_path}
 
-You can also define values for snippet variables [using frontmatter](/bunch/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
+You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
 
 ### Default Variable Values {#defaultvalues}
 
@@ -113,9 +113,9 @@ Audio Hijack
     <useful.snippets#Position Podcast
 ```
 
-This is especially handy for running window management scripts ([ala Moom](/bunch/docs/integration/moom/)) that need all of the apps to have windows present. It's more flexible than just putting a hard delay on the script, as it will take into account unusually long (or short) launch times. Just put the script line into a snippet or fragment and call it with an indented line.
+This is especially handy for running window management scripts ([ala Moom]({{ site.baseurl }}/docs/integration/moom/)) that need all of the apps to have windows present. It's more flexible than just putting a hard delay on the script, as it will take into account unusually long (or short) launch times. Just put the script line into a snippet or fragment and call it with an indented line.
 
-You can have multiple indented snippets in a Bunch. Indented snippets also work with [additional time delays](/bunch/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
+You can have multiple indented snippets in a Bunch. Indented snippets also work with [additional time delays]({{ site.baseurl }}/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
 
 Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is waiting for are already launched, it won't receieve any notifications of their launch to trigger the snippet, so if it hasn't heard back it will check to see if all of the required apps are running (or have been terminated). If its requirements are satisfied, it will launch the Waiting Snippet.
 

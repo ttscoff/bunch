@@ -5,7 +5,7 @@ parent: Bunch Files
 ---
 # Scheduling Bunches
 
-You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys](/bunch/docs/bunch-files/frontmatter) in your Bunch files.
+You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter) in your Bunch files.
 
 | `open at:`     | Set a time to open this bunch daily    |
 | `close at:`    | Set a time to close this bunch daily   |
@@ -30,7 +30,7 @@ open every: 1h30m
 ---
 ```
 
-This can be useful for always-open Bunches, though it can be disruptive if launching apps and opening files takes window focus from what you're working on. This is most useful for small Bunches that use things like [Spotlight searches](/bunch/docs/bunch-files/spotlight-searches) to open files, allowing them to be continually updated.
+This can be useful for always-open Bunches, though it can be disruptive if launching apps and opening files takes window focus from what you're working on. This is most useful for small Bunches that use things like [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches) to open files, allowing them to be continually updated.
 
 ## Close After an Interval
 

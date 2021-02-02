@@ -5,13 +5,13 @@ nav_order: 3
 ---
 # Download And Install
 
-Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. You can then launch Bunch from your Applications folder. (Or with Spotlight. Or [Launchbar](/bunch/docs/integration/launchbar). Or [Alfred](/bunch/docs/integration/alfred). Or [the command line](/bunch/docs/integration/cli). Or [AppleScript](/bunch/docs/integration/applescript)...)
+Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. You can then launch Bunch from your Applications folder. (Or with Spotlight. Or [Launchbar]({{ site.baseurl }}/docs/integration/launchbar). Or [Alfred]({{ site.baseurl }}/docs/integration/alfred). Or [the command line]({{ site.baseurl }}/docs/integration/cli). Or [AppleScript]({{ site.baseurl }}/docs/integration/applescript)...)
 
 You'll probably want Bunch to stay in your Dock or your menu bar for easy access, so go ahead and launch it once, then use __Preferences->Launch at Login__ to add it to your Login Items. 
 
 You can choose between running in the Dock and running in the menu bar by opening the Preferences submenu and selecting _Run In Dock_ or _Run In Menu Bar_ (only the opposite of the current state is shown).
 
-See the [configuration section](/bunch/docs/bunch-files/) for instructions on personalizing the setup. Use "Reveal Bunches in Finder" to go directly to that folder and start editing/adding Bunches.
+See the [configuration section]({{ site.baseurl }}/docs/bunch-files/) for instructions on personalizing the setup. Use "Reveal Bunches in Finder" to go directly to that folder and start editing/adding Bunches.
 
 ## Accessibility Permissions
 

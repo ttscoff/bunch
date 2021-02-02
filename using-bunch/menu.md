@@ -6,7 +6,7 @@ nav_order: 1
 ---
 When running in the Dock the menu is accessed by right clicking the Dock icon. When in the menu bar, just click on the Bunch status item. The menu items are the same for either.
 
-At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close](/bunch/docs/bunch-files/run-on-close.html)" lines.
+At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close.html)" lines.
 
 ## Main Menu
 
@@ -18,7 +18,7 @@ Quit Apps in...
 
 ## Preferences
 
-[See Preferences.](/bunch/docs/using-bunch/preferences.html)
+[See Preferences.]{{ site.baseurl }}/docs/using-bunch/preferences.html)
 
 ## Help
 
@@ -35,7 +35,7 @@ Changelog
 : Opens the full version history in your browser.
 
 Make a donation
-: Because it's the [right thing to do](/bunch/donate), in my opinion.
+: Because it's the [right thing to do]({{ site.baseurl }}/donate), in my opinion.
 
 > You can also refresh and reveal Bunches in Finder from the __File__ menu, and check for updates and control preferences (Bunch location, Single Bunch Mode) from the __Bunch__ menu.
 {:.tip}

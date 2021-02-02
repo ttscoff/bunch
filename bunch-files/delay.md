@@ -21,4 +21,4 @@ You can also put a delay on snippets that run when the Bunch closes, triggered X
 
     !< example.snippets ~5
 
-See the [Snippets](/bunch/docs/bunch-files/snippets) documentation to learn how to have snippets [wait until apps have finished launching](/bunch/docs/bunch-files/snippets/#waitingsnippet).
+See the [Snippets]({{ site.baseurl }}/docs/bunch-files/snippets) documentation to learn how to have snippets [wait until apps have finished launching]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet).

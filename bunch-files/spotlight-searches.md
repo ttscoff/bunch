@@ -39,7 +39,7 @@ Default
 - 'kind:"affinity photo" tag:brettterpstra.com name:template' [~/Dropbox] !5
 ```
 
-You could use this to review files at the end of the day. [Schedule a Bunch](/bunch/docs/bunch-files/frontmatter) to launch at 4:30pm, and have it open recent files on your Desktop or in your Downloads folder for review:
+You could use this to review files at the end of the day. [Schedule a Bunch]({{ site.baseurl }}/docs/bunch-files/frontmatter) to launch at 4:30pm, and have it open recent files on your Desktop or in your Downloads folder for review:
 
 ```
 ---
@@ -50,6 +50,6 @@ Default
 - '(kind:pdf OR kind:Word) AND date:today' [~/Downloads] !10
 ```
 
-> Tip: Along the same lines, you can also use the [URL handler](/bunch/docs/integration/url-handler) to create links you can put into OmniFocus or Things to load up a daily review.
+> Tip: Along the same lines, you can also use the [URL handler]({{ site.baseurl }}/docs/integration/url-handler) to create links you can put into OmniFocus or Things to load up a daily review.
 {:.tip}
 
