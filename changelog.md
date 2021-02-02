@@ -4,8 +4,18 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (Beta 65)
+: Sort menu by display title (ignoring emoji)
+: "menu order" frontmatter to force menu display order
 
-1.4.0
+---
+
+1.4.0 (Beta 62)
+: Don't lowercase notify command text
+
+---
+
+1.4.0 (Beta 61)
 : Introduced [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter)
 : Change menu display title with frontmatter
 : Set [arbitrary snippet variables]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys) with frontmatter

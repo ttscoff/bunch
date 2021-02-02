@@ -19,38 +19,55 @@ startup: true
 ---
 ```
 
-Bunch treats keys the way MultiMarkdown does: it allows spaces and is case insensitive, but they're compressed and lowercased when read in, so `Open at` becomes `openat`. Feel free to make your keys as readable or as efficient as you like. Unrecognized keys are ignored.
-
-Here are the available keys:
-
-| `title:`       | Override the display title. Emojis OK.     |
-| `open at:`     | Set a time to open this bunch daily        |
-| `close at:`    | Set a time to close this bunch daily       |
-| `close after:` | Automatically close after an interval      |
-| `open on:`     | Set a weekday and time to repeat weekly    |
-| `open every:`  | Repeat open at intervals                   |
-| `startup:`     | true or false to open this Bunch on launch |
-| `from file:`   | A file path to load additional YAML        |
-| `from script:` | A shell script path that returns YAML      |
-
-
-{% img float-right pl-4 pt-4 /bunch/images/emojititles.jpg 490 212 %}
-
-The "title" key changes the display title of the Bunch, as seen in the menu. When calling the Bunch from any other Bunch, you'll still use the filename.
-
-You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. Note that Bunch doesn't currently sort by display title, so if you change the alphanumeric value of the title, your menu items may look out of order.
-
-See [Scheduling Bunches]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) for details on the `open ...` and `close ...` keys.
-
-The `startup` key is simply set to true/false (or yes/no) and has the same effect as adding a bunch name to a [`*.startup` script]({{ site.baseurl }}/docs/bunch-files/startup-scripts).
+Bunch treats keys the way MultiMarkdown does: it allows spaces and is case insensitive, but they're compressed and lowercased when read in, so `Open at` becomes `openat`. Feel free to make your keys as readable or as efficient as you like. Unrecognized keys have no effect and are saved as arbitrary variables available to snippets.
 
 ## YAML-ish
 
 Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allowed in key names, but any spaces or underscores are removed when the variable is read in. All keys are lowercased. If your line is `First Name: Brett`, the variable would be accessed using `${firstname}`.
 
-Bunch frontmatter also doesn't support the more complex structures of YAML. It's simply single-line keys and values.
+Bunch frontmatter doesn't support the more complex structures of YAML, such as arrays and blocks. It's simply single-line keys and string values.
 
-## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
+## Available Keys
+
+Here are the available keys:
+
+| `title:`       | Override the [display title](#displaytitle). Emojis OK.    |
+| `menu order:`  | Force menu [sort order](#sortorder)                        |
+| `open at:`     | Set a time to open this bunch daily                        |
+| `close at:`    | Set a time to close this bunch daily                       |
+| `close after:` | Automatically close after an interval                      |
+| `open on:`     | Set a weekday and time to repeat weekly                    |
+| `open every:`  | Repeat open at intervals                                   |
+| `startup:`     | true or false to open this Bunch on launch                 |
+| `from file:`   | A file path to [load additional YAML](#dynamicfrontmatter) |
+| `from script:` | A shell script path that returns YAML                      |
+
+{% img float-right pl-4 pt-4 /bunch/images/emojititles.jpg 490 212 %}
+
+See [Scheduling Bunches]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) for details on the `open ...` and `close ...` keys.
+
+The `startup` key is simply set to true/false (or yes/no) and has the same effect as adding a bunch name to a [`*.startup` script]({{ site.baseurl }}/docs/bunch-files/startup-scripts).
+
+### Customizing Menu Display Title {#displaytitle}
+
+The "title" key changes the display title of the Bunch, as seen in the menu. When calling the Bunch from any other Bunch, you'll still use the filename.
+
+You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. The menus are sorted alphabetically by display title, so changing the `title:` key will change the sort order of the list. Sort order ignores emoji, so `😊Bunch A` still comes before `♥️Bunch B`.
+
+### Customizing Menu Order {#sortorder}
+
+The "menu order" key defines the sort order of Bunches in the menu that Bunch displays, either in the menu bar or from the Dock icon. 
+
+Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
+
+Bunches without a menu order value will be sorted alphabetically after the numbered bunches.
+
+Bunches with a menu order greater than 99 will be sorted by number and appended to the end of the list. Adding `menu order: 100` to a Bunch will force it the the end of the list. Duplicate numbers are sorted alphanumerically.
+
+> If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
+{:.tip}
+
+### Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 
 You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to snippets and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.
 
@@ -68,7 +85,7 @@ The order of precedence for snippet variables is variable defined after the snip
 
 These variables are available in Snippets and as environment variables in shell scripts. They are not passed to Automator Workflows because those will error out if given unexpected variables.
 
-## Dynamic Frontmatter {#dynamicfrontmatter}
+### Dynamic Frontmatter {#dynamicfrontmatter}
 
 You can use `from file` and `from script` to load in variables from external sources.
 
@@ -80,7 +97,7 @@ When one of these keys is detected, the file or script results will be merged wi
 
 Frontmatter is only updated when a Bunch is opened or when a change is made to the Bunch file itself. Changing a referenced file or script will not trigger an update, but the new data will be parsed before any additional snippets or scripts are opened.
 
-### A Ridiculous Example
+#### A Ridiculous Example
 
 Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that read additional data in from a script called `frontmatter.rb`:
 
