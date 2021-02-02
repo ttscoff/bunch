@@ -15,6 +15,8 @@ Within a Bunch file you simply list the apps you want it to launch, one per line
 
 You can add additional lines to perform actions like [opening files]({{ site.baseurl }}/docs/bunch-files/opening-files.html).
 
+If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).
+
 ## Opening Files
 
 You can additionally have an app open specific documents, if the app supports that. After the app name, simply add one or more documents on lines that begin with a dash. For example, to have Numbers open two specific spreadsheets:
@@ -83,11 +85,11 @@ Everything is launched in the order listed in the Bunch file. Some apps take lon
 
 ## Quitting Apps {#quitting}
 
-Put an exclamation point before the app name to quit that app if it's open. This works on apps that respond to the AppleScript "quit" command, which is most apps. For example, to quit Mail and launch MailMate instead:
+Put an exclamation point before the app name to quit that app if it's open.  For example, to quit Mail and launch MailMate instead:
 
     !Mail
     MailMate
 
 You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/bunch-files/run-on-close.html#doublenegative).
 
-
+If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).

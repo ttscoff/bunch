@@ -29,7 +29,7 @@ If your script has a space in the name, you need to either quote the name or esc
 
 Arguments can be passed to the script on the same line (same escaping rules apply):
 
-    * MyScript.scpt "argument 1" argument 2
+    * MyScript.scpt "argument 1" argument\ 2
 
 ## Running with Automator
 

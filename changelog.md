@@ -220,7 +220,7 @@ page_id: changelog
 : Url method `raw` for directly loading any Bunch-formatted file or directly passing bunch commands as a string
 : (dnd on) and (dnd off) commands for Do Not Disturb
 : Watch bunch folder for changes and refresh automatically
-: Launching or quitting a Bunch via url command now toggles launched state in Dock menu when Toggle Bunches is active
+: Opening or closing a Bunch via url command now toggles launched state in Dock menu when Toggle Bunches is active
 
 ---
 
@@ -234,14 +234,14 @@ page_id: changelog
 ---
 
 1.0.8
-: Add percent (`%`) before app name to ignore it when quitting Bunch
+: Add percent (`%`) before app name to ignore it when closing a Bunch
 : Add `XX` as a filename to close all windows for the app\
 : Desktop icons commands: `(hide desktop)` and `(show desktop)`
 
 ---
 
 1.0.7
-: Toggle Bunches mode, checkmark opened Bunches, click checkmarked Bunch to quit
+: Toggle Bunches mode, checkmark opened Bunches, click checkmarked Bunch to close
 : Single Bunch Mode
 : Quit Apps in Bunch... submenu
 : Bunch commands `(hide dock)` `(show dock)`

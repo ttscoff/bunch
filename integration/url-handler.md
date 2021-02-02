@@ -6,6 +6,8 @@ nav_order: 5
 ---
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
+__Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.
+
 > Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/stream-deck), just imagine the possibilities...
 >
 > Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
