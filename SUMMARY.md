@@ -15,7 +15,6 @@
   * [Commands](bunch-files/commands.md)
   * [Delayed Launch](bunch-files/delay.md)
   * [Frontmatter](bunch-files/frontmatter.md)
-  * [Ignore When Closing](bunch-files/ignore-on-close.md)
   * [Opening Other Bunches](bunch-files/other-bunches.md)
   * [Opening Websites/URL schemes](bunch-files/opening-web-pages.md)
   * [Run On Close](bunch-files/run-on-close.md)

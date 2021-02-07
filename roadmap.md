@@ -3,17 +3,17 @@ layout: default
 title: Roadmap
 nav_order: 100
 ---
-- Use a separator to allow snippets to be defined inside of Bunches
-- Watch files sourced by `from file/script` frontmatter for changes
-- Option to sort menu by display title
-- Probably going to need a preference pane eventually
-- Ability to double click bunch files
-- Better backgrounding of tasks while still maintaining sequence of execution
-    + Related, allow parallel execution?
-- Better means of opening Finder windows in tabs
+- [x] Better backgrounding of tasks while still maintaining sequence of execution
+    - [x] Related, allow parallel execution?
+- [x] Save as Bunch (save currently open apps as a Bunch)
+- [ ] Probably going to need a preference pane eventually
+- [ ] Better means of opening Finder windows in tabs
+- [ ] Webhooks: ability to send HTTP POST requests with body in background
+- [ ] Allow multiple Waiting snippets (in sequence) for groupings of items within a Bunch
 
-### Someday
+### Someday/Maybe
 
-- Save as Bunch (save currently open apps as a Bunch)
-- Feedback display for app launches/terminates/Bunch progress
-- Internal tokenized Bunch editor
+- [ ] Feedback display for app launches/terminates/Bunch progress
+- [ ] Watch files sourced by `from file/script` frontmatter for changes
+- [ ] Internal tokenized Bunch editor
+

@@ -41,12 +41,16 @@ Here are the available keys:
 | `startup:`     | true or false to open this Bunch on launch                 |
 | `from file:`   | A file path to [load additional YAML](#dynamicfrontmatter) |
 | `from script:` | A shell script path that returns YAML                      |
+| `sequence:`    | parallel or sequential, determines execution order         |
+
 
 {% img float-right pl-4 pt-4 /bunch/images/emojititles.jpg 490 212 %}
 
 See [Scheduling Bunches]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) for details on the `open ...` and `close ...` keys.
 
-The `startup` key is simply set to true/false (or yes/no) and has the same effect as adding a bunch name to a [`*.startup` script]({{ site.baseurl }}/docs/bunch-files/startup-scripts).
+To learn more about sequential and parallel execution with the `sequence` key, see [Execution Sequence]({{ site.baseurl }}/docs/bunch-files/sequence)
+
+The `startup` key can be set to true, false, or ask. (or yes/no/?) and has the same effect as adding a bunch name to a [`*.startup` script]({{ site.baseurl }}/docs/bunch-files/startup-scripts). If set to `ask`, a confirmation dialog will pop up before opening that Bunch.
 
 ### Customizing Menu Display Title {#displaytitle}
 
@@ -97,9 +101,11 @@ When one of these keys is detected, the file or script results will be merged wi
 
 Frontmatter is only updated when a Bunch is opened or when a change is made to the Bunch file itself. Changing a referenced file or script will not trigger an update, but the new data will be parsed before any additional snippets or scripts are opened.
 
+You can also incorporate dialogs in a frontmatter script. See [advanced scripting]({{ site.baseurl }}/docs/integration/advanced-scripting#password) for an example.
+
 #### A Ridiculous Example
 
-Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that read additional data in from a script called `frontmatter.rb`:
+Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that reads additional data in from a script called `frontmatter.rb`:
 
     ---
     from script: frontmatter.rb
@@ -137,3 +143,5 @@ Reference that snippet in the Bunch but don't define either of the variables:
     <test.snippets#Welcome
 
 When it runs, the name variable will be replaced with a random name, and the current date will be passed. It will update prior to every time it opens. This is obviously stupid, as you could have just written a script that said this without populating variables and importing snippets, but it illustrates how dynamic frontmatter can work.
+
+See [Advanced Scripting]({{ site.baseurl }}/docs/integration/advanced-scripting) for more crazy ideas.

@@ -4,6 +4,33 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (Beta 67)
+#### NEW
+
+: "New Bunch With Open Apps" command
+: Option to [execute Bunch items in parallel]({{ site.baseurl }}/docs/bunch-files/sequence) (all at once)
+: "Recent Bunch Folders" in Preferences submenu
+: Better log messages for shell script errors
+: Move initial Bunch Folder location to ~/Documents/Bunches
+: Change wording of menu item from "Quit Apps In..." to "Close Items in..."
+: Changed "No" button in Optional Snippets dialog to "Cancel" so Escape key works
+: Offer relaunch dialog if log detail level is changed
+: Sort preferences in Bunch menu in Dock mode
+: %{} variable placeholder url encodes replacement
+: $BUNCH_PHASE [environment variable]({{ site.baseurl }}/docs/bunch-files/shell-scripts#argsandenv) for shell scripts to determine whether the Bunch is opening or closing
+: Improved: shell script parsing and execution
+: Fixed: Users couldn't set log level to Debug
+: Offer "relaunch" dialog if log level is changed
+: `?"Optional Snippet"` queries now work with on-close `!<Snippets` too
+
+1.4.0 (Beta 66)
+: Allow frontmatter `from script` to wait for input, allowing [scripts with dialogs]({{ site.baseurl }}/docs/integration/advanced-scripting#password)
+: Only run frontmatter `from script` when opening, not when pre-loading tasks
+: Allow `startup` frontmatter to accept value of `ask`, offer yes/no dialog before loading
+: Better error handling for recursive nesting (Bunchception)
+
+---
+
 1.4.0 (Beta 65)
 : Sort menu by display title (ignoring emoji)
 : "menu order" frontmatter to force menu display order

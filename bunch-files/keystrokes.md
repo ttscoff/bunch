@@ -11,12 +11,13 @@ Bunch can send keyboard commands and strings directly to applications, triggerin
 
 If a file parameter (a dashed line after app name) is surrounded by curly brackets (`{}`), it is read as a sequence of keyboard shortcuts which are sent to the app. These allow special symbols for modifier keys:
 
-| symbol  | key |
-| :------:  | :--- |
-| $ | Shift |
-| ~ | Option |
-| @ | Command |
-| ^ | Contrbo
+| symbol   | key     |
+| :------: | :---    |
+| $        | Shift   |
+| ~        | Option  |
+| @        | Command |
+| ^        | Control |
+
 
 Example: The Git app Tower doesn't respond to the AppleScript "close every window" command, so using `- XX` doesn't work. Instead, you can send the "Close All Windows" shortcut, Command-Option-W, to the app like this:
 

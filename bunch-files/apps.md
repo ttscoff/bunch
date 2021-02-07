@@ -4,6 +4,9 @@ title: Apps
 parent: Bunch Files
 nav_order: 4
 ---
+* Table of Contents
+{:toc}
+
 ## Launching Apps {#launchingapps}
 
 Within a Bunch file you simply list the apps you want it to launch, one per line. For example, in "Comms.bunch":
@@ -13,7 +16,7 @@ Within a Bunch file you simply list the apps you want it to launch, one per line
     Mail
     Twitter
 
-You can add additional lines to perform actions like [opening files]({{ site.baseurl }}/docs/bunch-files/opening-files.html).
+You can add additional lines to perform actions like [opening files](#opening-files).
 
 If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).
 
@@ -28,7 +31,7 @@ You can additionally have an app open specific documents, if the app supports th
 > Paths to documents can use a tilde `~` to represent the home directory. Spaces are fine, no quotes or escaping needed.
 {:.tip}
 
-You may want to close all open windows before opening new files. To do that, [use XX]({{ site.baseurl }}/docs/bunch-files/closing-windows.html)
+You may want to close all open windows before opening new files. To do that, [use XX](#closingwindows)
 
     Numbers
     - XX
@@ -68,6 +71,8 @@ If you include a file line containing only "XX", then all windows for the app wi
 
 If you use "@@" alone on a line, Bunch will hide all visible apps. (Menu bar apps like Dash or TextExpander may not hide properly.) This is ideal for use at the very beginning of a Bunch, giving you a clean slate for a new set of apps.
 
+Note that a windowed app in the foreground when you run the Bunch will likely fail to hide. The better option is [focus](#focus) one of the apps that the Bunch launches.
+
 > You can also append an underscore to any single app name and Bunch will attempt to hide it after launching. (This can be flaky depending on how long the app takes to launch.)
 {:.tip}
 
@@ -93,3 +98,18 @@ Put an exclamation point before the app name to quit that app if it's open.  For
 You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/bunch-files/run-on-close.html#doublenegative).
 
 If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).
+
+## Ignoring apps/commands on close
+
+When you close a Bunch (or "Toggle Bunches" or "Single Bunch Mode" are enabled), any apps launched by the Bunch will be quit. To avoid quitting an app when the Bunch is closed or toggled off, place a percent symbol before it in the Bunch (e.g. `%Finder`). This will launch the app as normal, but ignore it when closing the Bunch.
+
+    %iTerm
+    CodeRunner
+
+In this example, CodeRunner will launch and quit with the Bunch, but iTerm will only launch if it's not already running, and will remain running if the Bunch is closed.
+
+This works for commands as well:
+
+    %(dark mode)
+
+This will enable Dark Mode when opening the Bunch, and leave it in Dark Mode when closing.

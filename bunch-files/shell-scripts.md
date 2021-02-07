@@ -21,7 +21,7 @@ Any spaces in filenames or within arguments should be escaped just like they wou
 
 If the content of the `$` line is not a recognizable file, it will be executed with `/bin/sh -c`.
 
-## Arguments and environment variables
+## Arguments and environment variables {#argsandenv}
 
 You can specify direct arguments after the command or shell script path. Like the Automator actions above, you can also use `- ...` lines below the script line to set environment variables. Because the `/bin/sh` is running outside your user, even the `$HOME` variable isn't set by default (but Bunch figures it out and includes it for you). The following environment variables are available:
 
@@ -32,6 +32,7 @@ You can specify direct arguments after the command or shell script path. Like th
 - `$BUNCH_DND` => current state of Do Not Disturb (1 if on, 0 if off)
 - `$BUNCH_DOCK` => current visibility of Dock (1 if visible, 0 if autohide)
 - `$BUNCH_DESKTOP_ICONS` => current visibility of Desktop icons (1 if visible, 0 if hidden)
+- `$BUNCH_PHASE` => Whether the Bunch is opening or closing ("OPEN" or "CLOSE")
 
 If you need to provide additional environment variables to your script, set it up like:
 
@@ -39,11 +40,13 @@ If you need to provide additional environment variables to your script, set it u
     - HOME=/Users/ttscoff
     - FOO=bar
 
-These will be the equivalent of an `export FOO=bar` command prior to running your script. If you set `HOME`, it will override what Bunch sets. If you set `PATH`, it will be inserted before (higher priority than) Bunch's default path in the environment.
+These will be the equivalent of an `export FOO=bar` command prior to running your script. If you set `HOME`, it will override what Bunch sets. If you set `PATH`, it will be inserted before (higher priority than) Bunch's default path in the environment. 
 
 The contents of the Bunch's [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/) are also made available as environment variables. For example, if your frontmatter includes `Last Name: Meyer`, it would be available as `$lastname` in a shell script. All built-in frontmatter keys and any arbitrary keys defined are accessible.
 
-As I mentioned, Bunch doesn't do anything with the output of a command, other than report it [in the log]({{ site.baseurl }}/docs/using-bunch/bunch-log/). If you want to react to shell command output, use Automator with a Run Shell Script action. If you want feedback while running, you can always use AppleScript in your shell script:
+Remember that you can always manually source your startup or configuration files from your default shell within any shell scripts.
+
+As I mentioned, Bunch doesn't do anything with the output of a command other than report it [in the log]({{ site.baseurl }}/docs/using-bunch/bunch-log/) (except in the case of [`from script` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter#dynamicfrontmatter)). If you want to react to shell command output, use Automator with a Run Shell Script action. If you want feedback while running, you can always use AppleScript in your shell script:
 
     osascript -e "display notification \"$INFO\""
 

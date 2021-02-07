@@ -5,13 +5,20 @@ parent: Bunch Files
 ---
 # Avoid Repitition With Reusable Snippets
 
-If you have a series of tasks that are often repeated between Bunches, you can separate them into their own "snippet" file and include them in any Bunch. 
+* Table of Contents
+{:toc}
 
-A snippet file can be named with any extension other than `.bunch`, and can be stored in the same folder as your Bunches or in a subfolder.
+If you have a series of tasks that are often repeated between Bunches, you can separate them into their own "snippet" files and include them in any Bunch. You can also [embed snippets](#embeddedsnippets) right in a Bunch.
+
+## What is a snippet
+
+A snippet file can be named with any extension other than `.bunch`, and can be stored in the same folder as your Bunches, or in a subfolder.
 
 To include a snippet in a bunch, use `< snippet.name` on a line in the Bunch.
 
-Snippet contents are treated like part of their calling Bunch, so any apps that are launched by the snippet will be closed when the Bunch closes.
+Snippet contents are treated like part of the Bunch that imports them, so any apps that are launched by the snippet will also be closed when the Bunch closes.
+
+You can even call other Bunch files as snippets. If you use "fragment" dividers in your Bunch file, you can call just a portion of one Bunch from another, e.g. `< Comms.bunch#Social`.
 
 ## Snippet Variables {#snippetvariables}
 
@@ -27,7 +34,22 @@ Now you can use `${proj_path}` anywhere in your snippet file, allowing you to us
     %iTerm
     - ${proj_path}
 
+You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content.
+
+    ---
+    search string: this is a search
+    ---
+    ___
+    Spotify
+    - spotify:search:%{searchstring}
+
+    # sends "spotify:search:this%20is%20a%20search"
+
 You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
+
+### URL Encoding
+
+If you use a percent (`%`) instead of a dollar sign (`$`) in your snippet placeholder, the value will be URL encoded when the variables are inserted. For example, if you have a variable called "foo" and the value passed to it is "This? This needs % encoding" then `%{foo}` will be replaced with `This%3F%20This%20needs%20%25%20encoding`, which is safe for use in URLs.
 
 ### Default Variable Values {#defaultvalues}
 
@@ -35,15 +57,17 @@ If a snippet has variable placeholders but no values are provided when it's call
 
     ${proj_path:~/projects}
 
+Only the first colon is used to split the value, so the default value can contain colons.
+
 ## Referencing Partial Snippets (fragments) {#fragments}
 
-You can define multiple snippets together in one file and label the sections with a hash and square brackets:
+You can define multiple snippets together in one file and label the sections with a hash (`#`) or hyphen (`-`) and the name in square brackets:
 
-    #[Section Label]#####
+    #[Section Label]
     %nvUltra
     &myWorkflow
 
-    #[Another Section]#####
+    #[Another Section]
     MoreStuff
 
 Then you can reference the snippet with a fragment identifier, like this:
@@ -80,7 +104,9 @@ When the Bunch is launched, a dialog will ask "Load My Snippet?" and request use
 
 You can include multiple optional snippets, but --- due to the asynchronous way Bunches are launched --- the questions may not be asked in file order. Be sure to make the queries descriptive! 
 
-Also, options only apply to regular snippets, not snippets specified for "on close" with `!`. If you apply a query to an "on close snippet," the question will still be asked on launch.
+You can also ask to run snippets when the Bunch is closing:
+
+    !<General.snippets#Goodbye ?"Turn off the lights on your way out?"
 
 ## Run After Delay
 

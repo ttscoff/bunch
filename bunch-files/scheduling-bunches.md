@@ -16,6 +16,8 @@ You can use Bunch like an alarm clock or timer by making use of some [frontmatte
 
 Bunch will always read in these keys and set the alarms and timers when it launches, so it doesn't matter if you quit the app in between scheduled launches.
 
+Bunches with active schedules will have a timer icon after their title in the menu.
+
 ## Open at intervals
 
 The `open every` key runs the Bunch at timed intervals. The value should be shorthand for hours and minutes to create an interval: `1h30m` would run it every hour and a half. You can also just use `1h` or `30m`. 

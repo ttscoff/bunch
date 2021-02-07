@@ -8,7 +8,7 @@ Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and 
 
 __Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.
 
-> Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/stream-deck), just imagine the possibilities...
+> Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/integration/stream-deck), just imagine the possibilities...
 >
 > Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
@@ -161,6 +161,8 @@ open 'x-bunch://setPref?configDir=~/Dropbox/Sync/Bunches'
 ## `snippet` {#urlhandlersnippet}
 
 You can directly load a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html) and define variables with the `snippet` method. This allows you to load files containing [variables]({{ site.baseurl }}/docs/bunch-files/snippets.html#snippetvariables) and to use the [snippet fragment feature]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments) to load just a portion of a snippet.
+
+A Bunch can also be called as a snippet, and if it contains fragment identifiers, a smaller section of the Bunch can be loaded using the snippet method.
 
 This URL method can be shortened to `snippet/SNIPPET_FILE/FRAGMENT?variables=foobar`.
 

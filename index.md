@@ -11,7 +11,6 @@ Bunch is a little macOS utility that sits in your Dock (or your Menu Bar). It do
 
 - [Download Bunch]({{ site.baseurl }}/download/)
 - Learn [how to install]({{ site.baseurl }}/docs/installation.html)
-- Get a feel for [the basics]({{ site.baseurl }}/docs/bunch-files/basics.html)
 - Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference.html)
 
 {% donate "A Bunch of thanks for your consideration" %}

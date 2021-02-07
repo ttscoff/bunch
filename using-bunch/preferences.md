@@ -2,7 +2,7 @@
 layout: default
 title: Preferences
 parent: Using Bunch
-nav_order: 2
+nav_order: 30
 ---
 Toggle Bunches
 : When this is enabled, running bunches are shown with a checkmark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.
@@ -10,7 +10,7 @@ Toggle Bunches
 Single Bunch Mode
 : Turning this on will cause the active Bunch to quit when opening a new Bunch. Any apps in the last Bunch that are not included in the new Bunch will be terminated, and any Bunch commands will be reversed unless the new Bunch contains a Bunch command of the same type (if the command affects the Dock and the new bunch command also affects the Dock, no action is taken).
 
-Restore Open Bunches on Launch
+Remember Open Bunches
 : If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts.html), it will be ignored during launch.
 
 Refresh Bunches

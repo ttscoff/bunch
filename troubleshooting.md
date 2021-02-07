@@ -22,7 +22,7 @@ The first thing to try when tracking down the name an app responds to is to open
 
 If that fails, you can locate the app in Finder (easy to do by <kbd>⌘</kbd>-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find Info.plist. Open Info.plist in your text editor and locate the CFBundleName. If it's different than the display name, try that in your Bunch.
 
-If all of these fail, please do leave a note on the [discussion forums]({{ site.baseurl }}/support).
+If all of these fail, please do leave a note on the [discussion forums]({{ site.forum }}).
 
 ## Empty Menu {#emptymenu}
 

@@ -10,15 +10,15 @@ nav_order: 2
 |:----|:----|
 | __Apps__ |
 |`App Name`|_[Launch app]({{ site.baseurl }}/docs/bunch-files/apps#launchingapps)_|
-|`%AppName`|_Launch when opening the Bunch, but [ignore when closing]({{ site.baseurl }}/docs/bunch-files/ignore-on-close.html)_|
-|`AppName ~5`|_[Launch app after 5 second delay]({{ site.baseurl }}/docs/bunch-files/delay)_|
+|`%App Name`|_Launch when opening the Bunch, but [ignore when closing]({{ site.baseurl }}/docs/bunch-files/apps#ignoring-appscommands-on-close)_|
+|`App Name ~5`|_[Launch app after 5 second delay]({{ site.baseurl }}/docs/bunch-files/delay)_|
 |`- XX`|_[close all windows]({{ site.baseurl }}/docs/bunch-files/apps.html#closingwindows) of preceding app_|
 |`- File`|_[open a file]({{ site.baseurl }}/docs/bunch-files/apps.html#openingfiles) in preceding app (can be repeated)_|
 |`- 'spotlight search'` | _Run a spotlight search and open the results in preceding app_ |
 | `- #tag1 #tag2` | _Search for macOS tags_ |
 |`- {@~w}`|_send a [key command]({{ site.baseurl }}/docs/bunch-files/keystrokes#keycombo) to the preceding app_|
 |`- [string]`|_[type a string]({{ site.baseurl }}/docs/bunch-files/keystrokes#typingstrings) in the preceding app_|
-|`!AppName`|_[Quit app]({{ site.baseurl }}/docs/bunch-files/basics#quitting)_|
+|`!AppName`|_[Quit app]({{ site.baseurl }}/docs/bunch-files/apps#quitting)_|
 |`!!AppName`|_Launch app when closing bunch ([double negative]({{ site.baseurl }}/docs/bunch-files/run-on-close#doublenegative))_|
 |`@AppName`|_[Focus app]({{ site.baseurl }}/docs/bunch-files/apps.html#focus) (run at end of bunch to hide all other apps)_|
 |`AppName_`|_[Hide an app]({{ site.baseurl }}/docs/bunch-files/apps.html#hidingapps)_|
