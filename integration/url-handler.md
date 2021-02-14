@@ -10,10 +10,15 @@ __Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have bo
 
 > Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/integration/stream-deck), just imagine the possibilities...
 >
-> Just create an action that opens a URL and use something like `x-bunch://toggle/BunchName` to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
+> Just create an action that opens a URL and use something like:
+>
+> `x-bunch://toggle/BunchName`
+>   
+> to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
 
 > Tip: The Bunch CLI can generate URLs that run various commands for use in other applications. Run `bunch -i` to interactively build a URL.
+{:.tip}
 
 Methods:
 
@@ -94,14 +99,14 @@ open 'x-bunch://toggle/Comms'
 
 ## `raw` {#urlhandlerraw}
 
-You can pass Bunch commands and directives directly through the URL handler. With this you can specify a path to a Bunch file outside of your Bunches folder, or even pass a url-encoded string containing Bunch directives.
+You can pass Bunch commands and directives directly through the URL handler. With this you can specify a path to a Bunch file outside of your Bunch folder, or even pass a url-encoded string containing Bunch directives.
 
 ### Parameters
 
 Only one of `file` or `txt` should be specified
 
 `file`
-: (_String_) Either an absolute path or a path relative to the configured Bunches folder. If this is provided, any `txt` parameter will be ignored
+: (_String_) Either an absolute path or a path relative to the configured Bunch folder. If this is provided, any `txt` parameter will be ignored
 
 `txt`
 : (_String_) URL encoded text text contents to process as if read from a file
@@ -117,7 +122,7 @@ open 'x-bunch://raw?txt=(dnd on)'
 ```
 ## `refresh` {#urlhandlerrefresh}
 
-Force Bunch to reload Bunch files. This should happen automatically if you make changes to the Bunches folder while Bunch is running, but use this if you want to ensure an update.
+Force Bunch to reload Bunch files. This should happen automatically if you make changes to the Bunch folder while Bunch is running, but use this if you want to ensure an update.
 
 ### Examples
 
@@ -132,7 +137,7 @@ You can set and toggle certain preferences with the `setPref` method. All boolea
 ### Parameters
 
 `configDir`
-: (_String_) Absolute path to Bunches folder
+: (_String_) Absolute path to Bunch folder
 
 `toggleBunches`
 : (_Boolean: 0 or 1_) Set __Toggle Bunches__ mode
@@ -152,15 +157,16 @@ You can set and toggle certain preferences with the `setPref` method. All boolea
 # Enable Toggle Bunches mode
 open 'x-bunch://setPref?toggleBunches=1'
 
-# Change the Bunches folder
+# Change the Bunch folder
 open 'x-bunch://setPref?configDir=~/Dropbox/Sync/Bunches'
 ```
 
 > Tip: You can use this URL handler to easily switch between sets of Bunches using external tools. For example, you could add a button to your Touch Bar [using BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool/) to trigger a URL like `x-bunch://setPref?configDir=~/Dropbox/Sync/WorkBunches`, or create a [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro/) macro that toggled between two folders.
+{:.tip}
 
 ## `snippet` {#urlhandlersnippet}
 
-You can directly load a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html) and define variables with the `snippet` method. This allows you to load files containing [variables]({{ site.baseurl }}/docs/bunch-files/snippets.html#snippetvariables) and to use the [snippet fragment feature]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments) to load just a portion of a snippet.
+You can directly load a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/) and define variables with the `snippet` method. This allows you to load files containing [variables]({{ site.baseurl }}/docs/bunch-files/snippets/#snippetvariables) and to use the [snippet fragment feature]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments) to load just a portion of a snippet.
 
 A Bunch can also be called as a snippet, and if it contains fragment identifiers, a smaller section of the Bunch can be loaded using the snippet method.
 
@@ -172,10 +178,10 @@ This URL method can be shortened to `snippet/SNIPPET_FILE/FRAGMENT?variables=foo
 : (_String_) The path to the snippet file. Assumes this is a relative path from your Bunch folder unless an absolute path is provided. If the snippet file is in the root of your Bunch folder, you can provide just the filename
 
 `fragment` (_Optional_)
-: (_String_) To load just a section of the snippet ([as defined by `#[section title]` lines]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments)), pass the name of the fragment here.
+: (_String_) To load just a section of the snippet ([as defined by `#[section title]` lines]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments)), pass the name of the fragment here.
 
 Additional variables (_Optional_)
-: Any additional query parameters added to the url string will be passed as [key=value replacements to the snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html#snippetvariables)
+: Any additional query parameters added to the url string will be passed as [key=value replacements to the snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#snippetvariables)
 
 ### Examples
 
@@ -203,7 +209,7 @@ All url methods accept an `x-success` parameter which can define a bundle ID or 
 `x-delay`
 : (_Integer_) If specified, the number of seconds Bunch will wait before calling the `x-success` value. If `x-success` is a bundle ID, that app will be launched immediately but not activated until after the delay
 
-#### Examples
+### Examples
 
 ```bash
 # Open a bunch and then open Marked 2 after a 15-second delay

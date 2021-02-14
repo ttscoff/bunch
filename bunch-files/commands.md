@@ -18,6 +18,7 @@ Lines surrounded in parenthesis are Bunch commands. These offer shortcuts to som
     (audio [input|output] [mute|unmute])
     (notify text)
     (sleep [display])
+    (awake [interval])
 
 ### __Dark Mode__ Commands {#darkmode}
 
@@ -66,6 +67,12 @@ This simply takes a string of text and creates a Notification Center alert or ba
 `(sleep display)` will sleep the display.
 
 `(sleep screensaver)` will start the screen saver, also locking your machine if you have that set up in System Preferences.
+
+### __Awake__ Commands {#awake}
+
+`(awake)` will keep your Screensaver from activating and your display from sleeping. If you specify an interval in the format `XhXmXs` (e.g. `2h` or `1h30m`) then Bunch will stop keeping your machine awake after that period of time. Any running `awake` command will be terminated when the Bunch is closed or the application is quit.
+
+If the application should happen terminate unexpectedly, the `awake` command may continue running in the background. In this case, just launch Bunch again and run `Close Items In...` for the Bunch containing the `awake` command.
 
 ## Reversing Commands {#reversingcommands}
 

@@ -3,6 +3,8 @@ layout: default
 title: Moom
 parent: Integration
 ---
+# Integrating with Moom
+
 [bt]: https://brettterpstra.com/2020/09/14/using-moom-with-bunch-for-window-management/
 
 You can integrate with the fantastic window manager, [Moom](https://manytricks.com/moom/), for detailed control over how windows are organized after a Bunch launches.

@@ -10,7 +10,7 @@ You can launch other Bunches just by adding the full name of the Bunch, includin
 	# Open the Comms Bunch as if we had clicked it in the menu.
 	Comms.bunch
 
-You can use this in [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets.html#optionalsnippets) to make entire Bunches optional. Create a snippet that calls a Bunch, then reference it with optional syntax.
+You can use this in [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#optionalsnippets) to make entire Bunches optional. Create a snippet that calls a Bunch, then reference it with optional syntax.
 
 _Example:_
 
@@ -28,9 +28,9 @@ You can nest these calls, having one Bunch open another which opens another, but
 
 ## Launching Bunches as snippets
 
-You can also use any Bunch file as a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets.html). This will incorporate the contents of the Bunch (or any [fragment]({{ site.baseurl }}/docs/bunch-files/snippets.html#fragments) within it) directly into the calling Bunch, starting and quitting items when the calling Bunch opens and closes. In this case the Bunch in the menu does not get a checkmark, it's contents are now part of the Bunch you called it from.
+You can also use any Bunch file as a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/). This will incorporate the contents of the Bunch (or any [fragment]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments) within it) directly into the calling Bunch, starting and quitting items when the calling Bunch opens and closes. In this case the Bunch in the menu does not get a checkmark, it's contents are now part of the Bunch you called it from.
 
-It does have the benefit of directly using things like [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets.html#optionalsnippets) and delays.
+It does have the benefit of directly using things like [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#optionalsnippets) and delays.
 
 _Example:_
 

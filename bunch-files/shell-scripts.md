@@ -4,6 +4,10 @@ title: Running Shell Scripts
 parent: Bunch Files
 ---
 # Running shell scripts and commands
+{:.no_toc}
+    
+* Table of Contents
+{:toc}
 
 Lines starting with a dollar sign (\$) are run as shell commands. Anything after the `$` will be executed by `/bin/sh`. This can be a shell script file or a direct command. No output is sent or received by this action, other than the arguments you provide on the "command line." If the script returns an error, a notification with a shortcut to the log will be shown when you run the Bunch. Both STDERR and STDOUT are reported to [the log]({{ site.baseurl }}/docs/using-bunch/bunch-log) for debugging purposes.
 
@@ -20,6 +24,14 @@ Any spaces in filenames or within arguments should be escaped just like they wou
 ## Raw commands
 
 If the content of the `$` line is not a recognizable file, it will be executed with `/bin/sh -c`.
+
+## Ignoring Errors
+
+By default Bunch will check for non-zero exits and output to STDERR. If both exist, a notification of script error will be shown. It's assumed that in most cases, you'd want to know that kind of thing. But if you want to ignore errors, just add `2> /dev/null` to any shell commands or potential error lines within scripts. As long as STDERR is empty, the notification won't be triggered. You can still see the error code in the log.
+
+    $ my\ script.sh "argument 1" arg2 2> /dev/null
+
+Within scripts you can also exit with a zero error code regardless of errors that happen within the script, thereby suppressing any response from Bunch.
 
 ## Arguments and environment variables {#argsandenv}
 
@@ -60,3 +72,14 @@ As I mentioned, Bunch doesn't do anything with the output of a command other tha
 >
 > Et cetera.
 {:.tip}
+
+## Running in a Terminal
+
+If you want to run commands in a terminal where they can be observed, you can [send keystrokes]({{ site.baseurl }}/docs/bunch-files/keystrokes/) to your terminal application. The following example works with both Terminal and iTerm.
+
+    iTerm
+    - {@t}
+    - [cd ~/Sites/dev/bunch\\n]
+    - [jekyll serve\\n]
+
+The curly brackets send a ⌘T to open a new tab, then the square brackets type out commands. The `\\n` sends "Return" to execute the command.

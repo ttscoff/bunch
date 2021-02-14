@@ -4,11 +4,49 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
-1.4.0 (Beta 67)
-#### NEW
+1.4.0 (β72)
+: Complete rewrite of keystroke functionality for macOS 10.15+
 
+---
+
+1.4.0 (β71)
+: Fixed @Focused apps failing to quit
+
+---
+
+1.4.0 (β70)
+: You can now type strings within key combo syntax by surrounding with double quotes, e.g. `{@n (tab)3 "typing an email\\n\\n-Brett" @$d}`
+: More [interactivity]({{ site.baseurl }}/docs/bunch-files/interactivity/) with multiple-choice dialogs and snippet branching
+: Restored missing "Launch Items in Parallel" preference
+
+---
+
+1.4.0 (β69)
+: Better handling of Accessibility permissions requests
+: (stay awake) command to keep Mac awake while a Bunch is open (or for a set period of time , e.g. `(stay awake 60)`) [[documentation]({{ site.baseurl }}/docs/bunch-files/commands/#awake)]
+: Fixed menu ordering for real
+: `toggles: false` frontmatter key to only allow a Bunch to open, never close, not affecting the state of apps it contains or the menu. [[documentation]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior)]
+: `quits apps: always` frontmatter key to allow a Bunch to quit apps even if they're open in other Bunches [[documentation]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior)]
+: "Quit Apps Open in Other Bunches" preference, global version of `quits apps: always` frontmatter [[documentation]({{ site.baseurl }}/docs/using-bunch/preferences/)]
+: If app can't be activated, send a launch signal
+: Better "close all windows" handling for [XX lines]({{ site.baseurl }}/docs/bunch-files/apps/#closingwindows)
+: If natural language interval has no s, m, h, or d, assume seconds (e.g. `(sleep 120)` assumes `(sleep 120s)`)
+: For real fixed [menu ordering]({{ site.baseurl }}/docs/bunch-files/frontmatter/#sortorder)
+
+---
+
+1.4.0 (β68)
+: Syntax for [opening Finder windows in tabs]({{ site.baseurl }}/docs/bunch-files/apps/#findertabs)
+: `single bunch mode: ignore` frontmatter key to exclude a Bunch from be affected by Single Bunch Mode
+: Menu ordering fixed
+: Force dialogs to remain above other app's windows
+: Fix hang when hiding all apps
+
+---
+
+1.4.0 (β67)
 : "New Bunch With Open Apps" command
-: Option to [execute Bunch items in parallel]({{ site.baseurl }}/docs/bunch-files/sequence) (all at once)
+: Option to [execute Bunch items in parallel]({{ site.baseurl }}/docs/bunch-files/sequence/) (all at once)
 : "Recent Bunch Folders" in Preferences submenu
 : Better log messages for shell script errors
 : Move initial Bunch Folder location to ~/Documents/Bunches
@@ -17,13 +55,17 @@ page_id: changelog
 : Offer relaunch dialog if log detail level is changed
 : Sort preferences in Bunch menu in Dock mode
 : %{} variable placeholder url encodes replacement
-: $BUNCH_PHASE [environment variable]({{ site.baseurl }}/docs/bunch-files/shell-scripts#argsandenv) for shell scripts to determine whether the Bunch is opening or closing
+: $BUNCH_PHASE [environment variable]({{ site.baseurl }}/docs/bunch-files/shell-scripts/#argsandenv) for shell scripts to determine whether the Bunch is opening or closing
 : Improved: shell script parsing and execution
 : Fixed: Users couldn't set log level to Debug
 : Offer "relaunch" dialog if log level is changed
 : `?"Optional Snippet"` queries now work with on-close `!<Snippets` too
+: Repeating syntax for key commands `{@n (right)10}`
+: Ask the user if they want to close open Bunches when switching to a new Bunch folder
 
-1.4.0 (Beta 66)
+---
+
+1.4.0 (β66)
 : Allow frontmatter `from script` to wait for input, allowing [scripts with dialogs]({{ site.baseurl }}/docs/integration/advanced-scripting#password)
 : Only run frontmatter `from script` when opening, not when pre-loading tasks
 : Allow `startup` frontmatter to accept value of `ask`, offer yes/no dialog before loading
@@ -31,18 +73,18 @@ page_id: changelog
 
 ---
 
-1.4.0 (Beta 65)
+1.4.0 (β65)
 : Sort menu by display title (ignoring emoji)
 : "menu order" frontmatter to force menu display order
 
 ---
 
-1.4.0 (Beta 62)
+1.4.0 (β62)
 : Don't lowercase notify command text
 
 ---
 
-1.4.0 (Beta 61)
+1.4.0 (β61)
 : Introduced [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter)
 : Change menu display title with frontmatter
 : Set [arbitrary snippet variables]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys) with frontmatter
@@ -78,10 +120,10 @@ page_id: changelog
 ---
 
 1.3.5
-: New `snippet` url method ([see docs]({{ site.baseurl }}/docs/integration/url-handler.html#urlhandlersnippet))
+: New `snippet` url method ([see docs]({{ site.baseurl }}/docs/integration/url-handler/#urlhandlersnippet))
 : New `x-success` and `x-delay` parameters for all URL methods
 : New AppleScript method `run snippet` to mirror url handler
-: Allow [default values]({{ site.baseurl }}/docs/bunch-files/snippets.html#defaultvalues) for variables (`${var:default}`)
+: Allow [default values]({{ site.baseurl }}/docs/bunch-files/snippets/#defaultvalues) for variables (`${var:default}`)
 : Don't freak out if variable placeholders are included in snippets but values are not provided when importing
 
 ---

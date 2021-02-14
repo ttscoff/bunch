@@ -3,11 +3,13 @@ layout: default
 title: BetterTouchTool
 parent: Integration
 ---
+# Integrating with BetterTouchTool
+
 [btturl]: https://docs.folivora.ai/docs/1103_custom_url_scheme.html
 [bttas]: https://docs.folivora.ai/docs/1102_apple_script.html
 [btt]: https://folivora.ai/
 
-[BetterTouchTool][btt] is an amazing automation utility for building actions for your trackpad, keyboard, touch bar, and more. It also happens to have a fully-fledged url scheme that can be used to trigger actions, save and set variables, and even things like updating text in your touch bar or displaying webviews and HUDs.
+[BetterTouchTool][btt] is an amazing automation utility for building actions for your trackpad, keyboard, touch bar, and more. It's available [via Setapp](https://go.setapp.com/stp44) and as a [standalone purchase](https://folivora.ai/buy). It also happens to have a fully-fledged url scheme that can be used to trigger actions, save and set variables, and even things like updating text in your touch bar or displaying webviews and HUDs.
 
 ## Triggering BetterTouchTool from Bunch
 

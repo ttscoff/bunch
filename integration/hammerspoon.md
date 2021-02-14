@@ -3,6 +3,8 @@ layout: default
 title: Hammerspoon
 parent: Integration
 ---
+# Integrating with Hammerspoon
+
 [Hammerspoon](https://www.hammerspoon.org/) is a powerful automation utility that includes menu interaction and window management capabilities.
 
 You can bind Hamerspoon actions to its URL handler:

@@ -4,6 +4,9 @@ title: Apps
 parent: Bunch Files
 nav_order: 4
 ---
+# Application Actions
+{:.no_toc}
+
 * Table of Contents
 {:toc}
 
@@ -43,6 +46,25 @@ You can also specify a file as a URL to have Bunch open it in whatever app is de
 
 _\* This assumes TaskPaper is installed._
 
+### Opening Finder Tabs {#findertabs}
+
+There's a special syntax that currently only applies to Finder. If you want multiple folders to open in tabs, list the first folder on a normal file line, then the other folders that should open in the same window with `->` preceding them:
+
+    Finder
+    - ~/Desktop
+    -> ~/Documents
+    -> ~/Pictures
+
+You can open multiple windows by starting a new line without the `>`. This will open two windows with two tabs each:
+
+    Finder
+    - ~/Desktop
+    -> ~/Documents
+    - /Volumes/SSDDrive
+    -> /Volumes/OtherDrive
+
+For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's ok to click other windows while waiting for the Finder tabs to finish opening.
+
 ## Opening Files in Their Default Application {#defaultapp}
 
 You can just put the word "Default" on a line before some file lines, and it will open all of those files in whatever app is assigned as the default on your system. PDFs might open in Preview or PDFpen, Pages files would open in Pages, etc.
@@ -55,6 +77,17 @@ Default
 ```
 
 This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches) instead of files.
+
+### Inserting a Pause
+
+You can pause between files by inserting a file line between key commands containing `(pause 5)` (for a 5 second pause). The delay must be a positive integer representing a number of seconds, with no letters or decimals. This is mostly useful if you want to send keystrokes or wait for a URL to load between actions.
+
+```
+TextEdit
+- ~/Documents/file1.txt
+- (pause 5)
+- ~/Documents/file2.txt
+```
 
 ## Closing Windows {#closingwindows}
 
@@ -95,7 +128,7 @@ Put an exclamation point before the app name to quit that app if it's open.  For
     !Mail
     MailMate
 
-You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/bunch-files/run-on-close.html#doublenegative).
+You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/bunch-files/run-on-close/#doublenegative).
 
 If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).
 

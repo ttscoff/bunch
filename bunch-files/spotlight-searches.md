@@ -3,7 +3,13 @@ layout: default
 title: Spotlight Searches
 parent: Bunch Files
 ---
-In the dashed lines the follow an app, you usually list files you want to open in that app. But you can also run some searches and open the results instead.
+# Using Spotlight Queries
+{:.no_toc}
+    
+* Table of Contents
+{:toc}
+
+In the dashed lines that follow an app, you usually list files you want to open in that app. But you can also run some searches and open the results instead.
 
 ## Tag Search {#tagsearch}
 

@@ -28,6 +28,6 @@ If all of these fail, please do leave a note on the [discussion forums]({{ site.
 
 If you make a change to a Bunch and suddenly your menu is empty, it means that something in the file caused Bunch to crash while reading in your Bunches. If possible, undo that change and use __Preferences->Refresh Bunches__ to attempt to reload.
 
-On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunches Folder using __Preferences->Change Bunches Folder__, then change it right back.
+On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Preferences->Change Bunches Folder__, then change it right back.
 
-If these steps don't fix the issue, or the issue you're having is not mentioned here, [see the support page]({{ site.baseurl }}/docs/support) to get in touch.
+If these steps don't fix the issue, or the issue you're having is not mentioned heere, [see the support page]({{ site.baseurl }}/support) to get in touch.

@@ -4,6 +4,12 @@ title: Scheduling Bunches
 parent: Bunch Files
 ---
 # Scheduling Bunches
+{:.no_toc}
+    
+* Table of Contents
+{:toc}
+
+## Available Keys
 
 You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter) in your Bunch files.
 
@@ -17,6 +23,12 @@ You can use Bunch like an alarm clock or timer by making use of some [frontmatte
 Bunch will always read in these keys and set the alarms and timers when it launches, so it doesn't matter if you quit the app in between scheduled launches.
 
 Bunches with active schedules will have a timer icon after their title in the menu.
+
+## Schedules, Screensavers, and Sleep
+
+Bunches scheduled to open or close automatically will work while the screensaver is running or the display is asleep, but will not wake the display or stop the screensaver.
+
+If your Mac is asleep at the scheduled time, it will run when the machine wakes. Bunch will not wake your machine automatically.
 
 ## Open at intervals
 

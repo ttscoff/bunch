@@ -88,25 +88,9 @@ If you feel like being creative, Bunch allows the use of either dashes or hashes
 
 You get the idea. When you amass a lot of snippets in one file because you're  making great use of sections and fragments, it's just nice to make them look pretty...
 
-## Optional Snippets With Dialog {#optionalsnippets}
+## Adding Interactivity {#optionalsnippets}
 
-You can have Bunch ask whether a snippet should be loaded when opening a Bunch by adding a query at the end of it. The format for the query is a question mark (?) immediately followed by a double-quoted string. The string within the quotes will be used as the text of the dialog, with buttons "Yes" and "No".
-
-    < MySnippet.snippet ?"Load My Snippet?"
-
-When the Bunch is launched, a dialog will ask "Load My Snippet?" and request user interaction. Clicking "Yes" will load the referenced snippet, clicking "No" will skip loading it. This can be used with variables and fragments, as well:
-
-    <General.snippets#Spotify ?"Play some music while you work?"
-    - url=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
-    - autoplay=true
-
-{% img mx-auto /bunch/images/optionalsnippet.gif 806 454 %}
-
-You can include multiple optional snippets, but --- due to the asynchronous way Bunches are launched --- the questions may not be asked in file order. Be sure to make the queries descriptive! 
-
-You can also ask to run snippets when the Bunch is closing:
-
-    !<General.snippets#Goodbye ?"Turn off the lights on your way out?"
+See the [Optional Snippets section]({{ site.baseurl }}/docs/bunch-files/interactivity/#optionalsnippets) for details on adding interactive choices to snippet loading.
 
 ## Run After Delay
 
@@ -131,7 +115,9 @@ These can also have a delay:
 
 ## Wait Until Apps Have Launched {#waitingsnippet}
 
-If you indent a snippet line by 4 spaces or one tab, it will automatically try to wait until all of the apps in the bunch have launched (or quit, if they're `!apps`). There's a dropdead timeout in case not all apps properly report their launch/termination to the OS.
+A "Waiting Snippet" is a snippet line indented by 4 spaces or 1 tab.
+
+A Waiting Snippet will try to wait until all of the apps in the bunch have launched (or quit, if they're `!apps`). There's a timeout in case not all apps properly report their launch/termination to the OS.
 
 ```
 Skype
@@ -141,13 +127,22 @@ Audio Hijack
 
 This is especially handy for running window management scripts ([ala Moom]({{ site.baseurl }}/docs/integration/moom/)) that need all of the apps to have windows present. It's more flexible than just putting a hard delay on the script, as it will take into account unusually long (or short) launch times. Just put the script line into a snippet or fragment and call it with an indented line.
 
-You can have multiple indented snippets in a Bunch. Indented snippets also work with [additional time delays]({{ site.baseurl }}/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
+Waiting Snippets rely on the apps to report that they've launched to the operating system. Just because an app has reported that it's launched doesn't necessarily mean it's _finished_ launching. Adding an additional delay is wise if some of the apps you're waiting on take a long time to display their windows.
+
+You can have multiple Waiting Snippets in a Bunch, but they all wait for all apps and execute at once, not just waiting on the apps that come before them in the list. 
+
+> You can, however, use waiting snippets to chain multiple Bunches together in a sequence, having the next one launch after the first one finishes loading. Just include e.g. `Next Name.bunch` as a line in the Waiting Snippet.
+{:.tip}
+
+Waiting Snippets also work with [additional time delays]({{ site.baseurl }}/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
 
 Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is waiting for are already launched, it won't receieve any notifications of their launch to trigger the snippet, so if it hasn't heard back it will check to see if all of the required apps are running (or have been terminated). If its requirements are satisfied, it will launch the Waiting Snippet.
 
 ## Embedded Snippet {#embeddedsnippets}
 
 You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed snippets right in the Bunch. Add a divider of three or more underscores at the end of the document, and anything after it will be read as a snippet file.
+
+Only a Bunch can contain an embedded snippet. The syntax won't have any effect on files loaded as snippets.
 
 These work like any snippet file, and you can divide them into sections to reference with fragments.
 

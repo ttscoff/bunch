@@ -4,6 +4,8 @@ title: AppleScript Dictionary
 parent: Integration
 nav_order: 10
 ---
+# The Bunch AppleScript Dictionary
+
 Bunch provides an AppleScript dictionary that you can use to open, close, and toggle Bunches, process raw text, or access snippets.
 
 ## Open, close, and toggle Bunches

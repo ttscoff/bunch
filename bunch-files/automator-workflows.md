@@ -17,7 +17,7 @@ In your Bunch, you can specify a full path to a Workflow like this:
 
     & Do Something
 
-If you want to keep a subfolder of Workflows in your Bunches folder, just reference them with a relative path, e.g.
+If you want to keep a subfolder of Workflows in your Bunch folder, just reference them with a relative path, e.g.
 
     & workflows/Do Something
 

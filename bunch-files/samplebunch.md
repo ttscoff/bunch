@@ -10,6 +10,8 @@ nav_order: 3
 * Table of Contents
 {:toc}
 
+These are mostly Bunches that I (Brett, the developer) actually use. Several of them incoporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include all of my snippet files to let you see what's going on. Anything in an Embedded Snippet can also be moved to an external file.
+
 ## Example.bunch
 
 This example demonstrates the basic syntax for a Bunch file.
@@ -181,44 +183,109 @@ ___
 
 ## Coding
 
-Here's the Bunch I use when I'm ready to work on Bunch.
+Here's the Bunch I use when I'm ready to code. It offers a choice of my main projects using [Query Dictionary syntax]({{ site.baseurl }}/docs/bunch-files/interactivity/#dictionary). It launches all of the common apps between the projects and tells Bunch not to quit them when the Bunch closes with a `%`. It uses [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) to load the appropriate projects, and [Moom]({{ site.baseurl }}/docs/integration/moom/) in a [Waiting Snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet) to position the windows according to a snapshot after everything loads.
+
+I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/forklift/), with keystrokes assigned that this Bunch sends.
 
 ```
 ---
-Title: 🍇Code: Bunch
+title: 🖥Code
+sequence: parallel
 ---
-# Stop any current Timing task and start new task
+# Launch all of the necessary apps and tell Bunch to ignore 
+# them when closing.
+%iTerm
+%Sublime Text
+%Xcode
+%Tower
+%Forklift
+
+# Ask me which project I want to work on. If I cancel, no 
+# project files will be loaded.
+?{
+    Marked => <<#Marked
+    nvUltra => <<#nvUltra
+    Bunch => <<#Bunch
+} "Whatcha workin' on?"
+
+# Ask if I want to play my Coding Music playlist in Spotify.
+<<#Coding Spotify ?"Play Coding Music?"
+
+# Run a Moom snapshot after everything has loaded
+    <<#Moom
+___
+
+------------------------------------------------------------[Marked]-
+& workflows/Timing
+- task = Marked
+- project = Development
+!& workflows/Timing
+
+Xcode
+- ~/Desktop/Code/marked/Marked.xcodeproj
+@Xcode
+
+Forklift
+- {^$~m}
+
+Tower
+- ~/Desktop/Code/marked
+
+$ subl -p ~/Desktop/Code/marked/markedsimple.sublime-project
+$ subl -p ~/Desktop/Code/marked/HelpDocs/HelpDocs.sublime-project
+
+Xcode
+
+-----------------------------------------------------------[nvUltra]-
+& workflows/Timing
+- task = nvUltra
+- project = Development
+!& workflows/Timing
+
+MeisterTask
+Slack
+
+%Xcode
+- ~/Desktop/Code/notnvalt/notnvAlt.xcodeproj
+@Xcode
+
+Forklift
+- {^$~n}
+
+Tower
+- ~/Desktop/Code/notnvalt
+
+$ /usr/local/bin/subl -p $HOME/Desktop/Code/notnvalt\ themes.sublime-project
+$ /usr/local/bin/subl -p $HOME/Desktop/Code/notnvalt\ docs.sublime-project
+
+Xcode
+
+-------------------------------------------------------------[Bunch]-
 & workflows/Timing
 - task = Bunch
 - project = Development
-
-# When quitting bunch, stop current task
 !& workflows/Timing
 
-# Use `%` before an app to keep it open when closing the Bunch
 %Xcode
 - /Users/ttscoff/Desktop/Code/Bunch/Bunch.xcodeproj
-# Focus Xcode, hiding everything else
 @Xcode
 
-# Then load Tower and Sublime Text, or unhide them if they're running
-%Sublime Text
-- /Users/ttscoff/sites/dev/bunch/BunchDocs.sublime-project
-- /Users/ttscoff/Dropbox/Sync/Bunches/Bunches.sublime-project
+Forklift
+- {~^$b}
 
 Tower
 - ~/Desktop/Code/Bunch
 
+$ /usr/local/bin/subl -p ~/sites/dev/bunch/BunchDocs.sublime-project
+$ /usr/local/bin/subl -p ~/Dropbox/Sync/Bunches/Bunches.sublime-project
 
-# Ask if I want coding music, and if so, open Spotify to my coding playlist
-<useful.snippets#Coding Spotify ?"Play Coding Music?"
-```
+Xcode
 
-The snippet fragment this Bunch calls calls an Automator Workflow with a variable for the playlist:
+--------------------------------------------------------------[Moom]-
 
-```
-# in the file `useful.snippets`
----------------------------------------------[Coding Spotify]-
+* tell application "Moom" to arrange windows according to snapshot "Code"
+
+----------------------------------------------------[Coding Spotify]-
 Spotify
 & workflows/Play Spotify URL
 - URL=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x

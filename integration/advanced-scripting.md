@@ -3,8 +3,7 @@ layout: default
 title: Advanced Scripting
 parent: Integration
 ---
-
-## Topics
+# Advanced Scripting Topics
 {:.no_toc}
 
 * Table of Contents
@@ -40,7 +39,7 @@ BUNCH_DND=0
 
 ## Getting the Bunch Folder in a Script {#bunchfolder}
 
-You can access various preferences from the command line using `defaults`. The following will return the currently configured location of your Bunch files:
+You can access various preferences from the command line using `defaults`. The following will return the current location of your Bunch files:
 
     defaults read com.brettterpstra.bunch configDir
 
@@ -67,7 +66,7 @@ true
 
 Here's an example using `from script` frontmatter to let you pick from your favorite Spotify playlists or perform a Spotify search.
 
-The script is in JavaScript (for Automation) and saved in a `scripts` folder inside my Bunches folder. I can reference it with the relative path `scripts/ChoosePlaylist.applescript`. 
+The script is in JavaScript (for Automation) and saved in a `scripts` folder inside my Bunch folder. I can reference it with the relative path `scripts/ChoosePlaylist.applescript`. 
 
 The script would take some modification with your own playlists and titles, but would be easy to change:
 
@@ -106,7 +105,7 @@ if (list === undefined) {
 }
 ```
 
-This script just offers a list with the keys from the `playlists` object. If you cancel, it outputs Spotify's base url handler, 'spotify:'. If you select "Search," it pops up a second dialog asking for a search string, then formats that into a URL encoded Spotify URL for searching. If you pick a playlist, it returns the value for that key, which is already a full Spotify URI.
+The above script offers a list with the keys from the `playlists` object. If you cancel, it outputs Spotify's base url handler, 'spotify:'. If you select "Search," it pops up a second dialog asking for a search string, then formats that into a URL encoded Spotify URL for searching. If you pick a playlist, it returns the value for that key, which is already a full Spotify URI.
 
 Now I have a Bunch that just contains:
 

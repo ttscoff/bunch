@@ -3,6 +3,8 @@ layout: default
 title: Keyboard Maestro
 parent: Integration
 ---
+# Integrating with Keyboard Maestro
+
 [Keyboard Maestro](https://www.keyboardmaestro.com/) is a powerful Mac automation tool. You can integrate it with Bunch in two directions.
 
 You can call any Bunch from Keyboard Maestro using [AppleScript]({{ site.baseurl }}/docs/integration/applescript) in a Run AppleScript action, or the [Bunch URL handler]({{ site.baseurl }}/docs/integration/url-handler) in an Open URL action. This allows full control of Bunch, including the ability to run raw text as snippets after Keyboard Maestro has performed any alterations on it.
