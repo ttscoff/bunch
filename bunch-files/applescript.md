@@ -17,7 +17,7 @@ Put a `*` at the beginning of a line to have the line interpreted as raw AppleSc
 
 ## Running an AppleScript Script
 
-If the content of a `*` line references an existing filename, that file will be executed as an applescript using the `osascript` command. If the script is in your Bunch directory, you can run it with just the filename. Otherwise, specify a full path.
+If the content of a `*` line references an existing filename, that file will be executed as an applescript using the `osascript` command. If the script is in your Bunch directory, you can run it with just the filename (or a relative path to a subfolder). Otherwise, specify an absolute path to the script.
 
     * MyScript.applescript
     * OtherScript.scpt

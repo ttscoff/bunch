@@ -12,43 +12,52 @@ nav_order: 3
 
 These are mostly Bunches that I (Brett, the developer) actually use. Several of them incoporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include all of my snippet files to let you see what's going on. Anything in an Embedded Snippet can also be moved to an external file.
 
+These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening.
+
 ## Example.bunch
 
 This example demonstrates the basic syntax for a Bunch file.
 
 ```
-# Comments start with a hash symbol, blank lines are ignored
+# Comments start with `#` or `//` and a space
+# blank lines are ignored
 
-# Use @@ to hide all visible apps. Usually used at the top of the file
-# before launching the rest of the bunch
+/* 
+Comments can also use a block syntax 
+for multi-line comments 
+*/
+
+/* 
+Use @@ to hide all visible apps. Usually used at the top of the 
+file before launching the rest of the bunch */
 @@
 
-# Apps to launch start at the beginning of a line, no
-# need to quote or escape.
+/* Apps to launch start at the beginning of a line, no
+need to quote or escape. */
 Messages
 
 # Apps launched by a Bunch can be quit when the Bunch is closed
-# Add a percent symbol to ignore it when quitting (keep it running)
-%Terminal
+%Terminal // Add a percent symbol to ignore it when quitting (keep it running)
 
-# Include a line starting with a dash to open specific
-# files in the app
-# If the first file listed is "XX", all open windows
-# for the app will be closed first
+/* Include a line starting with a dash to open specific
+   files in the app.
+   If the first file listed is "XX", all open windows
+   for the app will be closed first */
 Finder
 - XX
 - ~/Desktop
 - ~/Documents
 
-# Commands are surrounded by parenthesis. Only commands Bunch
-# recognizes will be executed
-# ([hide|show] dock) -> Turn Dock autohiding on or off
-# ([hide|show] desktop) -> Show or hide desktop icons
-# (dnd [on|off]) -> Turn Do Not Disturb on or off
+/* 
+Commands are surrounded by parenthesis. Only commands Bunch
+recognizes will be executed
+([hide|show] dock) -> Turn Dock autohiding on or off
+([hide|show] desktop) -> Show or hide desktop icons
+(dnd [on|off]) -> Turn Do Not Disturb on or off
+*/
 (show dock)
 
-# Use a URL instead of an app to open it in your
-# default browser
+# Use a URL instead of an app to open it in your default browser
 https://brettterpstra.com/projects
 
 # You can also use URL schemes from other apps
@@ -60,18 +69,18 @@ x-marked://open?file=Work Stuff.md
 # Start a line with an asterisk (*) to execute as applescript
 * say "Bunch launched"
 
-## Or run a shell script with a dollar sign ($)
-## and set environment variables with "file" markers
+/* Or run a shell script with a dollar sign ($)
+   and set environment variables with "file" markers */
 # $ /usr/local/scripts/myscript.sh arg1 arg2
 # - KEY=value
 
-## Or an Automator Workflow with an ampersand (&)
-## File markers will set variables for the workflow
+/* Or an Automator Workflow with an ampersand (&)
+   File markers will set variables for the workflow */
 # & ~/Documents/My Workflow.workflow
 # - key=val
 
-# Start a line with @ to "focus" that app (hide others)
-# Focus commands should be the last item in the Bunch
+/* Start a line with @ to "focus" that app (hide others)
+   Focus commands should be the last item in the Bunch */
 @Marked 2
 
 # See the documentation for more info: https://brettterpstra.com/bunch/docs
@@ -158,8 +167,10 @@ I have this Bunch load on launch. It makes it easy to quit all of these apps at 
 title: 📞Comms
 startup: true
 ---
-## Fragment identifiers allow me to load this Bunch as a snippet and execute
-## just parts of it as needed. They're ignored when loading as a Bunch.
+/* 
+Fragment identifiers allow me to load this Bunch as a snippet and execute
+just parts of it as needed. They're ignored when loading as a Bunch.
+*/
 #[Social]
 Tweetbot
 ## (Facebook runs in a Unite Single Site Browser)
@@ -173,8 +184,10 @@ Facebook
 #[Podcast]
 Discord
 
-# Use an embedded Waiting Snippet to position windows after everything has 
-# launched (with additional 2s delay)
+/* 
+Use an embedded Waiting Snippet to position windows after everything has 
+launched (with additional 2s delay)
+*/
     <<#Position Comms ~2
 ___
 --[Position Comms]--
@@ -192,26 +205,26 @@ I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/fork
 title: 🖥Code
 sequence: parallel
 ---
-# Launch all of the necessary apps and tell Bunch to ignore 
-# them when closing.
+/* Launch all of the necessary apps and tell Bunch to ignore 
+   them when closing. */
 %iTerm
 %Sublime Text
 %Xcode
 %Tower
 %Forklift
 
-# Ask me which project I want to work on. If I cancel, no 
-# project files will be loaded.
+/* Ask me which project I want to work on. If I cancel, no 
+   project files will be loaded. */
 ?{
     Marked => <<#Marked
     nvUltra => <<#nvUltra
     Bunch => <<#Bunch
 } "Whatcha workin' on?"
 
-# Ask if I want to play my Coding Music playlist in Spotify.
+// Ask if I want to play my Coding Music playlist in Spotify.
 <<#Coding Spotify ?"Play Coding Music?"
 
-# Run a Moom snapshot after everything has loaded
+// Run a Moom snapshot after everything has loaded
     <<#Moom
 ___
 

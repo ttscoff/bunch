@@ -63,7 +63,8 @@ You can open multiple windows by starting a new line without the `>`. This will 
     - /Volumes/SSDDrive
     -> /Volumes/OtherDrive
 
-For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's ok to click other windows while waiting for the Finder tabs to finish opening.
+> For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's ok to click other windows while waiting for the Finder tabs to finish opening.
+{:.warning}
 
 ## Opening Files in Their Default Application {#defaultapp}
 
@@ -80,7 +81,7 @@ This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs
 
 ### Inserting a Pause
 
-You can pause between files by inserting a file line between key commands containing `(pause 5)` (for a 5 second pause). The delay must be a positive integer representing a number of seconds, with no letters or decimals. This is mostly useful if you want to send keystrokes or wait for a URL to load between actions.
+You can pause between files by inserting a file line containing `(pause 5)` (for a 5 second pause). The number must be a positive integer representing a number of seconds, with no letters or decimals. This is mostly useful if you want to send keystrokes or wait for a URL to load between actions.
 
 ```
 TextEdit
@@ -132,7 +133,7 @@ You can also have apps [launch when closing the Bunch]({{ site.baseurl }}/docs/b
 
 If the app in question is not responding, see the troubleshooting section on [App Names]({{ site.baseurl }}/docs/troubleshooting#appnames).
 
-## Ignoring apps/commands on close
+## Ignoring apps/commands on close {#ignoring}
 
 When you close a Bunch (or "Toggle Bunches" or "Single Bunch Mode" are enabled), any apps launched by the Bunch will be quit. To avoid quitting an app when the Bunch is closed or toggled off, place a percent symbol before it in the Bunch (e.g. `%Finder`). This will launch the app as normal, but ignore it when closing the Bunch.
 

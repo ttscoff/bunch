@@ -4,8 +4,23 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (β73)
+: Added welcome splash sequence
+: Added a [Preference pane]({{ site.baseurl }}/docs/using-bunch/preferences/)
+: Added [new formats for comments]({{ site.baseurl }}/docs/bunch-files/comments/), `//` and block comments `/* ... */`
+: Allow comments on same line as Bunch items
+: Fixed infinite loop if referenced snippet file is not found
+: Fixed a crash when sending keystrokes
+: Accept more unicode characters in key combo strings (`↩`, `␣`, `⎋`, etc.)
+: Slow down automated typing by a couple milliseconds/key stroke
+: "Bunch Editor" preference
+: Allow Command-Clicking an app in the menu to open it in an editor
+: Add `%` for Hyper key as a modifier key in [key combo strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/)
+
+---
+
 1.4.0 (β72)
-: Complete rewrite of keystroke functionality for macOS 10.15+
+: Complete rewrite of [keystroke functionality]({{ site.baseurl }}/docs/bunch-files/keystrokes/) for macOS 10.15+
 
 ---
 

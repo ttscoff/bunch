@@ -10,7 +10,7 @@ The menu items are the same for both Dock and menu bar, with the exception of th
 
 At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close/)" lines.
 
-Bunches that have an active [schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches) (e.g. scheduled to launch or waiting to close) will have a timer emoji after their title.
+Bunches that have an active [schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) (e.g. scheduled to launch or waiting to close) will have a timer emoji after their title.
 
 ## Bunch
 
@@ -26,9 +26,9 @@ Changelog
 : Quick access to the latest changes.
 
 Make a Donation
-: If you love Bunch, [pay what you can]({{ site.baseurl }}/donate) for it.
+: If you love Bunch, [pay what you can]({{ site.baseurl }}/donate/) for it.
 
-There are also shortcuts to the [Preference items]({{ site.baseurl }}/docs/using-bunch/preferences) in the Bunch menu when running in Dock mode.
+There are also shortcuts to the [Preference items]({{ site.baseurl }}/docs/using-bunch/preferences/) in the Bunch menu when running in Dock mode.
 
 ## Main Menu
 
@@ -43,14 +43,20 @@ New Bunch With Open Apps
 
 : {% gif images/newbunchwithopenapps.gif "New Bunch With Open Apps" %}
 
+Save Current Wallpaper as Default
+: When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/#wallpaper), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
+
+Refresh Bunches
+: You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. As of version 1.0.10 this shouldn't be necessary, changes will automatically be detected. You can still use this to force a refresh if something seems out of date.
+
 ## Preferences
 
-[See Preferences.]({{ site.baseurl }}/docs/using-bunch/preferences)
+[See Preferences.]({{ site.baseurl }}/docs/using-bunch/preferences/)
 
 ## Help
 
 Open Log
-: Open the [Bunch log]({{ site.baseurl }}/docs/using-bunch/bunch-log) in Console for debugging.
+: Open the [Bunch log]({{ site.baseurl }}/docs/using-bunch/bunch-log/) in Console for debugging.
 
 Set Log Level
 : Set the verbosity of the log messages.
@@ -62,7 +68,7 @@ Changelog
 : Opens the full version history in your browser.
 
 Make a donation
-: Because it's the [right thing to do]({{ site.baseurl }}/donate), in my opinion.
+: Because it's the [right thing to do]({{ site.baseurl }}/donate/), in my opinion.
 
 > You can also refresh and reveal Bunches in Finder from the __File__ menu, and check for updates and control preferences (Bunch location, Single Bunch Mode) from the __Bunch__ menu.
 {:.tip}

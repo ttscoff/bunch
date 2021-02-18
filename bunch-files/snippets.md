@@ -10,7 +10,7 @@ parent: Bunch Files
 
 If you have a series of tasks that are often repeated between Bunches, you can separate them into their own "snippet" files and include them in any Bunch. You can also [embed snippets](#embeddedsnippets) right in a Bunch.
 
-## What is a snippet
+## What Is a Snippet
 
 A snippet file can be named with any extension other than `.bunch`, and can be stored in the same folder as your Bunches, or in a subfolder.
 
@@ -34,6 +34,9 @@ Now you can use `${proj_path}` anywhere in your snippet file, allowing you to us
     %iTerm
     - ${proj_path}
 
+
+You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
+
 You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content.
 
     ---
@@ -44,8 +47,6 @@ You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeho
     - spotify:search:%{searchstring}
 
     # sends "spotify:search:this%20is%20a%20search"
-
-You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
 
 ### URL Encoding
 

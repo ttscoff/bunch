@@ -6,6 +6,23 @@ nav_order: 30
 ---
 # Preferences Menu
 
+If you're running in Dock mode, Bunch preferences can be accessed from the menu item __Bunch->Preferences__ (or <kbd>⌘-comma</kbd>). In menu bar mode, click the Bunch icon in the menu bar and select __Preferences...__.
+
+{% img mx-auto /bunch/images/BunchPreferences.png 528 392 "Bunch Preference Pane" "Preference Pane Screenshot" %}
+
+## Application Settings
+
+Run In Menu Bar
+: Switch between running Bunch with an icon in the Dock and running as a Menu Bar item. In Menu Bar state Bunch won't show up in the Application Switcher (Cmd-Tab).
+
+Launch at Login
+: Add and remove Bunch from your User Login Items.
+
+Remember Open Bunches
+: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts/), it will be ignored during launch.
+
+## Bunch Behavior
+
 Toggle Bunches
 : When this is enabled, running bunches are shown with a checkmark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.
 
@@ -17,34 +34,19 @@ Launch Items in Parallel
 : Determines whether your Bunch items launch in order or all at once. See [Execution Sequence]({{ site.baseurl }}/docs/bunch-files/sequence/) for more information.
 
 Quit Apps Open in Other Bunches
-: When this is off and you toggle a Bunch closed, it will avoid quitting apps that are currently open in another Bunch. Turn it on to quit all apps in the Bunch, regardless of other Bunches. This can be enabled on individual Bunches using the [`quits apps: always` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior).
+: When this is off and you toggle a Bunch closed, it will avoid quitting apps that are currently open in another Bunch. Turn it on to quit all apps in the Bunch, regardless of their state in other Bunches. This can be enabled on individual Bunches using the [`quits apps: always` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior).
 
-Remember Open Bunches
-: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts/), it will be ignored during launch.
+## Bunch Folder
 
-Save Current Wallpaper as Default
-: When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/#wallpaper), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
+The field next to "Bunch Folder" will show your current Bunch Folder location. If you've changed the Bunch Folder location, clicking the popup button will allow you to quickly change between recent locations.
 
----
+Set
+: Select a new folder where Bunch will look for `.bunch` files.
 
-Run In Menu Bar/Run In Dock
-: Switch between running Bunch with an icon in the Dock and running as a Menu Bar item. In Menu Bar state Bunch won't show up in the Application Switcher (Cmd-Tab).
-
-Launch at Login
-: Add and remove Bunch from your User Login Items.
-
----
-
-Change Bunch Folder
-: Select a new folder where Bunch will look for `.bunch` files. At the bottom of the menu you'll find quick links to previous Bunch folders, which is handy if you switch Bunch sets frequently.
-
-Reveal Bunches in Finder
+Reveal
 : Opens the folder containing your `.bunch` configuration files (Bunches) in Finder for editing.
 
-Refresh Bunches
-: You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. As of version 1.0.10 this shouldn't be necessary, changes will automatically be detected. You can still use this to force a refresh if something seems out of date.
+## Bunch Editor
 
----
+Click the button to select an external editor for your Bunch files. You can hold down command while clicking any Bunch in the menu to open its file in your editor.
 
-Recent Bunch Folders
-: If you've changed your Bunch folder, you'll find previous folders listed here for quick switching.
