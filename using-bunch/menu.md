@@ -33,7 +33,7 @@ There are also shortcuts to the [Preference items]({{ site.baseurl }}/docs/using
 ## Main Menu
 
 Clear Checkmarks
-: When in Toggle Bunches or Single Bunch modes, this options will clear the checkmarks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single checkmark by Option-clicking a checked Bunch in the menu.
+: When in Toggle Bunches or Single Bunch modes, this options will clear the checkmarks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single checkmark by Shift-clicking a checked Bunch in the menu.
 
 Close Items in...
 : You can quit the apps opened in any Bunch from this submenu. Files, scripts, and urls (as well as `!` lines that already quit an app) are ignored, unless they're preceded with a `!` to indicate they run on close. Some commands are reversed (Dock, Wallpaper, DND, Desktop icons...).
@@ -44,7 +44,7 @@ New Bunch With Open Apps
 : {% gif images/newbunchwithopenapps.gif "New Bunch With Open Apps" %}
 
 Save Current Wallpaper as Default
-: When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/#wallpaper), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
+: When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/wallpaper/), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
 
 Refresh Bunches
 : You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. As of version 1.0.10 this shouldn't be necessary, changes will automatically be detected. You can still use this to force a refresh if something seems out of date.

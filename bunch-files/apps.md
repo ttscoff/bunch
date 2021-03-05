@@ -142,8 +142,12 @@ When you close a Bunch (or "Toggle Bunches" or "Single Bunch Mode" are enabled),
 
 In this example, CodeRunner will launch and quit with the Bunch, but iTerm will only launch if it's not already running, and will remain running if the Bunch is closed.
 
+> If an app is called multiple times in a Bunch (perhaps to focus it or send keystrokes to it after another app has launched), only one instance needs to be marked with `%` to avoid closing the app. Once an app is marked as "ignore on close" at any point in the Bunch, it won't be quit when the Bunch closes.
+{:.tip}
+
 This works for commands as well:
 
     %(dark mode)
 
 This will enable Dark Mode when opening the Bunch, and leave it in Dark Mode when closing.
+

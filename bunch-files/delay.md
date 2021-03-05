@@ -13,7 +13,7 @@ The delay only applies to the line it's on, it doesn't delay the processing of l
 
 ## Delaying Groups
 
-You can use snippets to delay groups of items. Just put the items into a snippet file and add the tilde+number.
+You can use snippets to delay groups of items. Just put the items into a [snippet file]({{ site.baseurl }}/docs/bunch-files/snippets/) (or an [embedded snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets)) and add the tilde+number.
 
     < example.snippets ~5
 

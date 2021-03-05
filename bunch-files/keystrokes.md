@@ -85,6 +85,15 @@ The following names are recognized:
 | <kbd>ctrl</kbd>, <kbd>control</kbd>   | Control Modifier (⌃) (CTRL) |
 | <kbd>cmd</kbd>, <kbd>command</kbd>    | Command Modifier (⌘) (CMD)  |
 
+### Sending Global Key Combinations
+
+The standard way to use key combos is to send them to a specific application, as shown above. It is possible, though, to send a global key command that will trigger any actions, services, or apps with global listeners. To do so, just put the key command on its own line with no preceding dash:
+
+    {@$F1}
+
+That sends Command-Shift-F1 as a general keystroke. You can trigger global key combos when closing a Bunch by using the "double negative" syntax:
+
+    !!{@$F1}
 
 ## Typing Strings {#typingstrings}
 

@@ -20,13 +20,23 @@ __Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have bo
 > Tip: The Bunch CLI can generate URLs that run various commands for use in other applications. Run `bunch -i` to interactively build a URL.
 {:.tip}
 
+## x-callback-url
+
+All methods can be called in `x-callback-url` format, for compatibility. Simply prefix `x-callback-url` in the path, and optionally provide an `x-source` query parameter. If an `x-source` is provided and no `x-success` value is present, the x-source (URL, app name, or bundle identifier) will be called upon completion. (It's assumed that you want focus returned after executing a Bunch command, as making Bunch a foreground app is relatively pointless.)
+
+```
+x-bunch://x-callback-url/open?bunch=Comms?x-source=com.googlecode.iterm2
+```
+
 Methods:
 
 - [`open`](#urlhandleropen)
 - [`close`](#urlhandlerclose)
 - [`toggle`](#urlhandlertoggle)
+- [`edit`](#urlhandleredit)
 - [`raw`](#urlhandlerraw)
 - [`refresh`](#urlhandlerrefresh)
+- [`reveal`](#urlhandlerreveal)
 - [`setPref`](#urlhandlersetpref)
 - [`snippet`](#urlhandlersnippet)
 
@@ -36,10 +46,14 @@ See the [`x-success` parameter](#urlhandlerxsuccess) to control what happens aft
 
 The full version of the open method is `x-bunch://open?bunch=[BUNCH NAME]`. The url can be shortened, though, to just the Bunch name: `x-bunch://[BUNCH NAME]`.
 
+> Specify multiple Bunches to open by separating the names with commas, e.g. `x-bunch://open?bunch=Bunch%201,Bunch%202`. This works with any of the actions that act on Bunches (open, toggle, close). It also works when using "path" syntax, e.g. `x-bunch://toggle/Bunch%201,Bunch%202`.
+{:.tip}
+
 ### Parameters
 
 `bunch`
 : (_String_) The name of the bunch to open, without the `.bunch` extension
+: Specify multiple Bunches to open by separating the names with commas
 
 ### Examples
 
@@ -65,6 +79,7 @@ You can also close a Bunch with `x-bunch://close?bunch=[BUNCH NAME]`, or just `x
 
 `bunch`
 : (_String_) The name of the bunch to close, without the `.bunch` extension
+: Specify multiple Bunches to open by separating the names with commas
 
 ### Examples
 
@@ -80,12 +95,13 @@ open 'x-bunch://close/Comms'
 
 You can also toggle the Bunch --- opening if it's closed, closing if it's open --- using `x-bunch://toggle?bunch=[BUNCH NAME]`. Like the other methods, this also works as `x-bunch://toggle/[BUNCH NAME]`. This works even if "Toggle Bunches" isn't enabled.
 
-If using the "Toggle Bunches" option, Bunches opened/closed via the URL handler will automatically set the launched state of the Bunch in the Dock menu. The `open` and `close` commands will not toggle Bunches; the commands will execute regardless of current Bunch state.
+If using the "Toggle Bunches" option, Bunches opened/closed via the URL handler will automatically set the launched state of the Bunch in the Dock menu. The `open` and `close` commands will not toggle Bunches; those commands will execute regardless of current Bunch state.
 
 ### Parameters
 
 `bunch`
 : (_String_) The name of the bunch to toggle, without the `.bunch` extension
+: Specify multiple Bunches to open by separating the names with commas
 
 ### Examples
 
@@ -97,9 +113,35 @@ open 'x-bunch://toggle?bunch=Comms'
 open 'x-bunch://toggle/Comms'
 ```
 
+## `edit` {#urlhandleredit}
+
+The full version of the edit method is `x-bunch://edit?bunch=[BUNCH NAME]`. The url can be shortened to path format: `x-bunch://edit/[BUNCH NAME]`.
+
+### Parameters
+
+`bunch`
+: (_String_) The name of the bunch to open in the defined Bunch Editor, without the `.bunch` extension
+: Specify multiple Bunches to open by separating the names with commas
+
+> The Bunch Editor must be set in Preferences for this command to execute. If it's not, an alert will be displayed.
+{.warning}
+
+### Examples
+
+```bash
+# Full URL
+open 'x-bunch://edit?bunch=Example'
+
+# Shortcut URL
+open 'x-bunch://edit/Example'
+```
+
 ## `raw` {#urlhandlerraw}
 
 You can pass Bunch commands and directives directly through the URL handler. With this you can specify a path to a Bunch file outside of your Bunch folder, or even pass a url-encoded string containing Bunch directives.
+
+> If you pass a Bunch file using this method, the Bunch isn't technically "opened," i.e. it won't appear as toggled "on" in the menu when Toggle Bunches is enabled. This provides one way to open a Bunch without affecting its state.
+{:.tip}
 
 ### Parameters
 
@@ -107,6 +149,7 @@ Only one of `file` or `txt` should be specified
 
 `file`
 : (_String_) Either an absolute path or a path relative to the configured Bunch folder. If this is provided, any `txt` parameter will be ignored
+: Only one file may be specified per call
 
 `txt`
 : (_String_) URL encoded text text contents to process as if read from a file
@@ -128,6 +171,16 @@ Force Bunch to reload Bunch files. This should happen automatically if you make 
 
 ```bash
 open 'x-bunch://refresh'
+```
+
+## `reveal` {#urlhandlerreveal}
+
+Reveal the Bunch Folder in Finder.
+
+### Examples
+
+```bash
+open 'x-bunch://reveal'
 ```
 
 ## `setPref` {#urlhandlersetpref}
@@ -172,10 +225,13 @@ A Bunch can also be called as a snippet, and if it contains fragment identifiers
 
 This URL method can be shortened to `snippet/SNIPPET_FILE/FRAGMENT?variables=foobar`.
 
+Fragment ID can also be added to the filename with a hash (`#FRAGMENT`) but it should be percent-encoded in the URL as `%23`, e.g. `snippet/SNIPPET_FILE%23FRAGMENT`.
+
 ### Parameters
 
 `file`
 : (_String_) The path to the snippet file. Assumes this is a relative path from your Bunch folder unless an absolute path is provided. If the snippet file is in the root of your Bunch folder, you can provide just the filename
+: Multiple files can be called by separating them with a comma, and each file can include a `#fragment` in its path. Hashes should be percent-encoded as `%23`, e.g. `?file=SNIPPET%23FRAGMENT`
 
 `fragment` (_Optional_)
 : (_String_) To load just a section of the snippet ([as defined by `#[section title]` lines]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments)), pass the name of the fragment here.
@@ -200,7 +256,7 @@ open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
 
 ### Calling an app or URL after running a method {#urlhandlerxsuccess}
 
-All url methods accept an `x-success` parameter which can define a bundle ID or url to open after executing the method. By default this happens after a 5-second delay, but you can modify that with an `x-delay` parameter (number of seconds as integer).
+All url methods accept an `x-success` parameter which can define a bundle ID or url to open after executing the method. By default this happens after a 1-second delay, but you can modify that with an `x-delay` parameter (number of seconds as integer).
 
 `x-success`
 : (_String_) If this is a valid bundle identifier, e.g. `com.brettterpstra.marked2`, that application will be launched. It can also be any valid app name, but using the bundle ID prevents most issues with multiple versions of apps or apps having a different display name than what the system recognizes
@@ -208,6 +264,7 @@ All url methods accept an `x-success` parameter which can define a bundle ID or 
 
 `x-delay`
 : (_Integer_) If specified, the number of seconds Bunch will wait before calling the `x-success` value. If `x-success` is a bundle ID, that app will be launched immediately but not activated until after the delay
+: Defaults to 1 (1 second)
 
 ### Examples
 
@@ -215,15 +272,24 @@ All url methods accept an `x-success` parameter which can define a bundle ID or 
 # Open a bunch and then open Marked 2 after a 15-second delay
 open 'x-bunch://open?bunch=Comms&x-success=com.brettterpstra.marked2&x-delay=15'
 
-# Open iThoughts using its URL handler (default 5-second delay)
+# Open iThoughts using its URL handler (default 1-second delay)
 open 'x-bunch://open/Comms&x-success=ithoughts://'
 ```
 
-## x-callback-url
+## Setting Frontmatter Values {#variables}
 
-All methods can be called in `x-callback-url` format, for compatibility. Simply prefix `x-callback-url` in the path, and optionally provide an `x-source` query parameter. If an `x-source` is provided and no `x-success` value is present, the x-source (URL, app name, or bundle identifier) will be called upon completion. (It's assumed that you want focus returned after executing a Bunch command, as making Bunch a foreground app is relatively pointless.)
+With the `open` and `toggle` commands you can pass additional, arbitrary query parameters to set [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter) keys. Simply append key/value pairs when calling:
 
-```
-x-bunch://x-callback-url/open?bunch=Comms?x-source=com.googlecode.iterm2
-```
+    x-bunch://open?bunch=Default&mykey=value
 
+This can be used to populate variables in the Bunch and its snippets at the time you call the url handler. For example, if you have a Bunch that contains an embedded snippet with a variable `launch`:
+
+    <<
+    ___
+    ${launch:Safari}
+
+Then normally that Bunch would launch Safari when it opens, as that's the [default value]({{ site.baseurl }}/docs/bunch-files/snippets/#defaultvalues) set in the snippet when `launch` is undefined. If you call it with a value specified in the url handler, though, you can replace the default value:
+
+    x-bunch://open?bunch=Default&launch=TextEdit
+
+Opening this URL will launch TextEdit instead of Safari. Variables defined in the query string override keys hardcoded in the Bunch frontmatter. Variables defined on-the-fly by `from script` or `from file` frontmatter will still override query parameters.

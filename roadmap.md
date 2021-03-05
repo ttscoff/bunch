@@ -4,12 +4,13 @@ title: Roadmap
 nav_order: 100
 ---
 - [x] Better backgrounding of tasks while still maintaining sequence of execution
-    - [x] Related, allow parallel execution?
+- [x] Allow parallel execution?
 - [x] Save as Bunch (save currently open apps as a Bunch)
-- [ ] Probably going to need a preference pane eventually
+- [x] Probably going to need a preference pane eventually
 - [ ] Better means of opening Finder windows in tabs
 - [ ] Webhooks: ability to send HTTP POST requests with body in background
 - [ ] Allow multiple Waiting snippets (in sequence) for groupings of items within a Bunch
+- [ ] If/Then/Else logic
 
 ### Someday/Maybe
 

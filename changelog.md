@@ -4,18 +4,65 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
-1.4.0 (β73)
+1.4.0 (β76)
+: [(display) command]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other filetypes as Quick Look previews
+: Use ${variables} inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)
+: URL handler [`reveal` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandlerreveal)
+: URL handler [`edit` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandleredit)
+: URL handler can now match display titles as defined in frontmatter (case insensitive, emoji insensitive) when specifying Bunches
+: Add Accessibility Permission screen to startup splash
+: Add Accessibility Permission button to preferences with observer for current state
+: Fix: Don't make preference window float above all other windows if running in Dock mode
+: Fix: allow Bunch main menu to appear when run in Dock Mode
+: `menu divider:` frontmatter key that adds a menu separator `before` or `after` the Bunch in the menu
+: Rename "Set" to "Add" in Bunch Folder preferences
+: Gentler watching of Bunch folder for changes, more thorough refresh
+: Notifications Preferences shortcuts in preferences
+: Remove notification and stop timer when countdown clicked
+: Fixed file watchers not deallocating
+: Default to menu bar application, show Dock if preferred
+: Fixed F1-F12 not working as {keyboard combos}
+: Specify multiple days/times in scheduling frontmater, e.g. `open on: M W F 8am, T Th 10am`
+
+---
+
+1.4.0 (β75)
+: Fix for preferences not being dismissed
+
+---
+
+1.4.0 (β74)
 : Added welcome splash sequence
 : Added a [Preference pane]({{ site.baseurl }}/docs/using-bunch/preferences/)
 : Added [new formats for comments]({{ site.baseurl }}/docs/bunch-files/comments/), `//` and block comments `/* ... */`
 : Allow comments on same line as Bunch items
 : Fixed infinite loop if referenced snippet file is not found
-: Fixed a crash when sending keystrokes
 : Accept more unicode characters in key combo strings (`↩`, `␣`, `⎋`, etc.)
 : Slow down automated typing by a couple milliseconds/key stroke
 : "Bunch Editor" preference
 : Allow Command-Clicking an app in the menu to open it in an editor
+: You can now [assign variables on the fly using dialogs]({{ site.baseurl }}/docs/bunch-files/#variables) (text, popup button)
 : Add `%` for Hyper key as a modifier key in [key combo strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/)
+: Activate all windows of target app before sending keystrokes
+: Bear with me... if a Bunch opens another Bunch when it closes, don't quit apps that the other Bunch opens anyway
+: Run all keystroke sequences on main thread, improved reliability and no crashes
+: Multiple issues affecting marking Bunches open/closed in the controller
+: Do a full close of open Bunches (including re-opening !closed Bunches) when switching in Single Bunch Mode
+: Handling of !!Bunch.bunch launch-on-close
+: Default url handler x-success delay to 1 instead of 5
+: Allow multiple files (comma separated) when calling snippet url handler
+: Allow fragments to be called per file in url snippet handler using hashes (encoded as `%23`)
+: Descriptive titles for URL Handler calls in log
+: Watch `from file:` frontmatter files and automatically refresh the Bunch when changed
+: URL handler for open, close, and toggle allows multiple target Bunches separated by comma
+: Allow url handler to set arbitrary frontmatter keys using query string
+: Bunches with schedules now have tooltips on hover showing next open/close time
+: Fixed Raw URL handler not processing raw text
+: Ignore frontmatter lines with empty key or value
+: Fixed scheduled dates in logs off by 15 seconds
+: Various glitches with Bunch scheduling
+: Close Items In... menu not working
+: Fix for delayed launches in parallel Bunches (`~5`)
 
 ---
 
@@ -38,7 +85,7 @@ page_id: changelog
 
 1.4.0 (β69)
 : Better handling of Accessibility permissions requests
-: (stay awake) command to keep Mac awake while a Bunch is open (or for a set period of time , e.g. `(stay awake 60)`) [[documentation]({{ site.baseurl }}/docs/bunch-files/commands/#awake)]
+: (stay awake) command to keep Mac awake while a Bunch is open (or for a set period of time , e.g. `(stay awake 60)`) [[documentation]({{ site.baseurl }}/docs/bunch-files/commands/awake/)]
 : Fixed menu ordering for real
 : `toggles: false` frontmatter key to only allow a Bunch to open, never close, not affecting the state of apps it contains or the menu. [[documentation]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior)]
 : `quits apps: always` frontmatter key to allow a Bunch to quit apps even if they're open in other Bunches [[documentation]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior)]
@@ -109,8 +156,8 @@ page_id: changelog
 : [Tag search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#tagsearch) for files to open
 : [Full Spotlight search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#spotlightsearch) for files to open
 : [Launch files in their default app]({{ site.baseurl }}/docs/bunch-files/apps/#defaultapp) by using "Default" as app name
-: (notify) command to [trigger notification center]({{ site.baseurl }}/docs/bunch-files/commands/#notify)
-: (sleep) commands ([sleep, sleep display, sleep screensaver]({{ site.baseurl }}/docs/bunch-files/commands/#sleep))
+: (notify) command to [trigger notification center]({{ site.baseurl }}/docs/bunch-files/commands/notify/)
+: (sleep) commands ([sleep, sleep display, sleep screensaver]({{ site.baseurl }}/docs/bunch-files/commands/sleep/))
 : Indent snippets 4 spaces/1 tab to have them [wait for all apps in the Bunch to launch or quit]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet)
 : < snippets can have a delay ~5
 : !< snippets will run on close

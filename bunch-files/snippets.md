@@ -22,7 +22,7 @@ You can even call other Bunch files as snippets. If you use "fragment" dividers 
 
 ## Snippet Variables {#snippetvariables}
 
-To make snippets flexible, Bunch handles variables defined in the containing Bunch and replaced within the snippet. These are defined like files on the lines following the `<` line.
+To make snippets flexible, Bunch [handles variables]({{ site.baseurl }}/docs/bunch-files/variables/) defined in the containing Bunch and replaced within the snippet. These are defined like files on the lines following the `<` line.
 
     < generic.snippet
     - proj_path=~/Code/MyProject
@@ -47,6 +47,8 @@ You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeho
     - spotify:search:%{searchstring}
 
     # sends "spotify:search:this%20is%20a%20search"
+
+For more details see the [Variables]({{ site.baseurl }}/docs/bunch-files/variables/) documentation.
 
 ### URL Encoding
 
@@ -141,7 +143,7 @@ Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is 
 
 ## Embedded Snippet {#embeddedsnippets}
 
-You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed snippets right in the Bunch. Add a divider of three or more underscores at the end of the document, and anything after it will be read as a snippet file.
+You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed snippets right in the Bunch. Add a divider of three or more underscores (`___`) at the end of the document, and anything after it will be read as a snippet file.
 
 Only a Bunch can contain an embedded snippet. The syntax won't have any effect on files loaded as snippets.
 

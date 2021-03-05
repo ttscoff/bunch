@@ -3,7 +3,7 @@ layout: default
 title: Opening Other Bunches
 parent: Bunch Files
 ---
-## Launching Other Bunches
+## Opening Other Bunches {#opening}
 
 You can launch other Bunches just by adding the full name of the Bunch, including the ".bunch" extension, on a line, just like you would an app. Bunches launched in this manner behave as if you clicked them in the menu: it gets an "open" checkbox in the menu, and can be quit separately from the Bunch that launched it.
 
@@ -18,13 +18,34 @@ _Example:_
 
 When closing the parent Bunch, any Bunches launched will also be closed. Use `%Name.bunch` to ignore the Bunch when closing.
 
-### Quitting Bunches and Launch on Quit
+### Setting Frontmatter Variables {#variables}
+
+When calling a Bunch from another Bunch, you can override and add to frontmatter keys, which can then be used in variables. To do so, add dashed lines underneath the Bunch call with `key=value` pairs:
+
+    MyOther.bunch
+    - myvar = my value
+
+Now when `MyOther.bunch` launches, it will have the variable `myvar` populated with `my value` and it can be used as `${myvar}` in `MyOther.bunch`. This means that a Bunch can do different things when launched from other Bunches, with each parent Bunch setting its own variables.
+
+Frontmatter variables can be used in app lines, file lines, or within arguments for scripts and workflows.
+
+Variables set when the Bunch is opened will persist when the Bunch is closed. So if your variable value caused the Bunch to open an app, for example, that app will be closed when the Bunch is closed.
+
+## Closing Other Bunches and Launch on Close
 
 Bunch lines behave just like app lines, so using `!Name.bunch` will quit that Bunch, and using `!!Name.bunch` will launch that Bunch when the containing Bunch closes.
 
-### Nesting
+If a Bunch quits another Bunch when it launches (`!Name.bunch`), the Bunch that was closed will be re-opened when the containing Bunch closes.
+
+If a Bunch is closed that contains apps launched by the parent Bunch, those apps won't be quit when closing the Bunch. Same goes in the other direction: if opening a Bunch would launch apps that the containing Bunch would quit, those apps are ignored and left running. 
+
+## Nesting
 
 You can nest these calls, having one Bunch open another which opens another, but you can't open or close a Bunch that appears earlier in the chain. This is to avoid infinite loops.
+
+> Beware of having a Bunch close or launch other Bunches that also close or launch Bunches. Bunch has safeguards against loops, but if you get crazy enough, it's turtles all the way down.
+{:.warning}
+
 
 ## Launching Bunches as snippets
 

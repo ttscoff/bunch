@@ -13,10 +13,10 @@ parent: Bunch Files
 
 You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter) in your Bunch files.
 
-| `open at:`     | Set a time to open this bunch daily    |
-| `close at:`    | Set a time to close this bunch daily   |
-| `open on:`     | Set a weekday and time to open weekly  |
-| `close on:`    | Set a weekday and time to close weekly |
+| `open at:`     | Set times to open this bunch daily    |
+| `close at:`    | Set times to close this bunch daily   |
+| `open on:`     | Set weekdays and time to open weekly  |
+| `close on:`    | Set weekdays and time to close weekly |
 | `open every:`  | Repeat open at intervals               |
 | `close after:` | Set an interval after which to close   |
 
@@ -71,13 +71,21 @@ open at: 5pm
 
 Time can be specified with a meridian (am/pm) or as 24 hour time. Whatever time it initially goes off, it will then start repeating at 24 hour intervals. If Bunch isn't running when the time comes, it will not launch automatically again until the next day.
 
+Multiple times can be listed, separated by commas. To have a Bunch launch at 8am, Noon, and 5pm, use:
+
+```
+---
+open at: 8am, 12pm, 5pm
+---
+```
+
 ### Closing Daily
 
-You can also use `close at` to close a Bunch at a set time each day. `open at` and `close at` can be used simultaneously.
+You can also use `close at` to close a Bunch at a set time each day. `open at` and `close at` can be used simultaneously. `Close at` uses the same syntax as `open at`.
 
 ## Weekly Schedules
 
-The "on" commands trigger weekly.
+The "on" commands trigger weekly, multiple days are allowed.
 
 ### Opening Weekly
 
@@ -90,9 +98,29 @@ open on: friday 5pm
 !Slack
 ```
 
+Multiple days can be listed with a time, separated by commas. Only one time can be used per group of days, but you can repeat the list. To open at different times on Tuesday and Thursday than on Monday, Wednesday, and Friday, use:
+
+```
+---
+open on: MWF 8am, TTh 9am
+---
+```
+
+Days can be just initial letters or spelled out or abbreviated day names. Single letters can be compressed, longer day names should be separated by spaces. In single-letter form, Thursday must have an "h" and Sunday must have a "u", e.g. 'Th' and 'Su'. "T" alone triggers Tuesday, and "S" alone triggers Saturday.
+
+To open at two different times on the same day, repeat the day block with a second time:
+
+```
+---
+open on: MWF 8am, MWF 12pm
+---
+```
+
 ### Closing Weekly
 
 You can also use `close on` to close a Bunch weekly at a set day and time. `open on` and `close on` can be used simultaneously.
+
+`Close on` uses the same syntax as `open on`.
 
 ## Natural Language Dates
 

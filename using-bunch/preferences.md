@@ -21,6 +21,12 @@ Launch at Login
 Remember Open Bunches
 : If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts/), it will be ignored during launch.
 
+Accessibility
+: Bunch requires Accessibility permission to be granted to perform some of its functions. If permission isn't granted, you can click this button to open the appropriate Security pane in System Preferences.
+
+Hotkey
+: You can assign a global hotkey by clicking in the hotkey field and then pressing your desired key combination. The hotkey only works when running in the menu bar. When pressed while using any application, it will display the Bunch menu, allowing you to use [keyboard shortcuts]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shorcuts) to launch your Bunches.
+
 ## Bunch Behavior
 
 Toggle Bunches
@@ -48,5 +54,5 @@ Reveal
 
 ## Bunch Editor
 
-Click the button to select an external editor for your Bunch files. You can hold down command while clicking any Bunch in the menu to open its file in your editor.
+Click the button to select an external editor for your Bunch files. You can hold down Command while clicking any Bunch in the menu to open its file in your editor.
 

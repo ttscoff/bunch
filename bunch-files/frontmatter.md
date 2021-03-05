@@ -31,12 +31,13 @@ Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allow
 
 Bunch frontmatter doesn't support the more complex structures of YAML, such as arrays and blocks. It's simply single-line keys and string values.
 
-## Available Keys
+## Available Keys {#keys}
 
 Here are the available keys:
 
 | `title:`       | Override the [display title](#displaytitle). Emojis OK. |
 | `menu order:`  | Force menu [sort order](#sortorder)                     |
+| `shortcut:`    | Define a keyboard shortcut for opening the Bunch        |
 | `open at:`     | Set a time to open this bunch daily                     |
 | `close at:`    | Set a time to close this bunch daily                    |
 | `close after:` | Automatically close after an interval                   |
@@ -87,9 +88,49 @@ Bunches with a menu order greater than 99 will be sorted by number and appended 
 > If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
 {:.tip}
 
+### Setting a Shortcut Key {#shortcuts}
+
+When running in the menu bar Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from 1-9 and then 0, assigned in menu display order. Subsequent items are assigned Command-Number, from "⌘1" to "⌘0". You can customize these using the `shortcut:` frontmatter key.
+
+A shortcut can be anything other than a number, and can include modifiers (control, option, shift, command). A capital letter automatically implies the Shift modifier.
+
+> Modifiers are not required and single keystrokes work great for launching Bunches. Just assign `shortcut: a`, then hit the hotkey to open the menu and type "a" to open the Bunch.;
+{:.tip}
+
+Modifiers can be specified using symbols:
+
+| symbol |   modifier  |
+|--------|-------------|
+| @      | Command (⌘) |
+| $      | Shift (⇧)   |
+| ~      | Option (⌥)  |
+| ^      | Control (⌃) |
+
+To use any of these symbols as the actual modifier key, use the Shift-equivalent, i.e. `$` would be `$6` (Shift-6), and `@` would be `$2`.
+
+To set a menu shortcut of Command-T for your Bunch, you would include this in the frontmatter:
+
+```
+---
+shortcut: @t
+---
+```
+
+Shortcuts can also use words in the format `option-command-t`.
+
+### Adding Menu Dividers
+
+You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
+
+    ---
+    title: Just A Bunch
+    menu order: 10
+    menu divider: after
+    ---
+
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 
-You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to snippets and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.
+You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to Bunches, snippets, and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.
 
     ---
     say: anything
@@ -101,25 +142,39 @@ You can add arbitrary key/value pairs in the frontmatter. These will be stored a
     <speech.snippet
     - say=something
 
-The order of precedence for snippet variables is variable defined after the snippet line, then value found for matching key in the frontmatter, then any [default value]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues) defined in the snippet.
+The order of precedence for snippet variables is: variable defined after the snippet line, then value found for matching key in the frontmatter, then any[default value]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues)  defined in the snippet.
 
 These variables are available in Snippets and as environment variables in shell scripts. They are not passed to Automator Workflows because those will error out if given unexpected variables.
 
-## Dynamic Frontmatter {#dynamicfrontmatter}
+## Flexible Frontmatter
+
+In addition to hardcoding frontmatter keys and values, you can set them on the fly using several flexible options.
+
+### Interactively Setting Variable Values
+
+You can use dialogs to set values for frontmatter keys interactively when the Bunch opens. See [Interactivity->Variables]({{ site.baseurl }}/docs/bunch-files/interactivity/#variables) for details.
+
+### Setting Variables On Open
+
+When calling a Bunch [from another Bunch]({{ site.baseurl }}/docs/bunch-files/other-bunches/#variables) or via the [URL handler]({{ site.baseurl }}/docs/integration/url-handler/), you can pass key/value pairs to override hardcoded (or missing) frontmatter keys for use in `${variables}`.
+
+If using `${variables}` in a Bunch, be sure to include [default values]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues) (`${variable:default value}`) or hardcoded frontmatter values for the keys for when the Bunch is called directly from the menu and can't have values passed to it.
+
+### Dynamic Frontmatter {#dynamicfrontmatter}
 
 You can use `from file` and `from script` to load in variables from external sources.
 
-A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. The contents of `filename.txt` should be only colon-separated key-value pairs. This allows external automation to write data to files that affect your Bunch without having to modify the Bunch itself.
+A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. The contents of `filename.txt` should be only colon-separated key-value pairs. This allows external automation to write data to files that affect your Bunch without having to modify the Bunch itself. A file called in this manner will be watched for updates, and the Bunch will be automatically updated if the file changes.
 
 You can also run a shell script, which should also return just key value pairs. Most scripting languages have a YAML library that makes it pretty easy to easily output data in a suitable format. Lines with YAML separators (`---`) will be ignored.
 
 When one of these keys is detected, the file or script results will be merged with the other keys, if any, overwriting values for existing keys.
 
-Frontmatter is only updated when a Bunch is opened or when a change is made to the Bunch file itself. Changing a referenced file or script will not trigger an update, but the new data will be parsed before any additional snippets or scripts are opened.
+Frontmatter is only updated when a Bunch is opened, when a change is made to the Bunch file itself, or when an imported file is changed. Changing a referenced script will not trigger an update, but the new data will be parsed before any additional snippets or scripts are opened.
 
 You can also incorporate dialogs in a frontmatter script. See [advanced scripting]({{ site.baseurl }}/docs/integration/advanced-scripting#password) for an example.
 
-### A Ridiculous Example
+#### A Ridiculous Example
 {:.no_toc}
     
 Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that reads additional data in from a script called `frontmatter.rb`:
