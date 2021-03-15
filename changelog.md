@@ -4,23 +4,28 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (β78)
+: Quick fix to clean up some debug logging
+
+---
+
 1.4.0 (β77)
 : Major overhaul of shell command runner
-: __Task monitors__ for shell scripts launched by a Bunch
+: [__Task monitors__]({{ site.basurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) for shell scripts launched by a Bunch
 : [__(display) command__]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other filetypes as Quick Look previews
-: Specify __multiple days/times in scheduling frontmater__, e.g. `open on: M W F 8am, T Th 10am`
+: Specify [__multiple days/times in scheduling frontmater__]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/), e.g. `open on: M W F 8am, T Th 10am`
 : Assign a [__global keyboard shortcut__]({{ site.baseurl }}/docs/using-bunch/keyboard-control/) for opening Bunch menu in menu bar mode
 : Assign __keyboard shortcuts for each Bunch__ using [`shortcut:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shortcuts)
 : More keyboard shortcuts for internal commands
 : Make default keyboard shortcuts for opening Bunches single numbers without modifiers (like ⌘)
-: Use ${variables} inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)
-: `ignores state:` frontmatter to allow open bunches to reopen, closed bunches to reclose
+: Use `${variables}` inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)
+: [`ignores state:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior) to allow open bunches to reopen, closed bunches to reclose
 : Command-Option click to force close (menu bar mode)
 : Command-Shift click to force open (menu bar mode)
 : Header on Bunch menu shows what action modifier key clicks will perform (menu bar mode)
 : Remove "Close Items In" menu in menu bar mode in favor of Command-Option click
 : [`menu divider` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dividers) key that adds a menu separator `before` or `after` the Bunch in the menu` the Bunch in the menu
-: Allow sending global keyboard shortcuts (not tied to specific app)
+: Allow [sending global keyboard shortcuts]({{ site.baseurl }}/docs/bunch-files/keystrokes/#sending-global-key-combinations) (not tied to specific app)
 : URL handler [`reveal` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandlerreveal)
 : URL handler [`edit` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandleredit)
 : URL handler can now match display titles as defined in frontmatter (case insensitive, emoji insensitive) when specifying Bunches

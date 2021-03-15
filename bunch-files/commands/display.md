@@ -39,6 +39,8 @@ ANSI escape codes are recognized and rendered. If the file you're watching conta
 
 As an example, if your Bunch triggers a shell script that has logging, you can use the `display` command to tail the log in a floating or desktop-level window.
 
+Use the Pause button to pause watching for file changes (and thus pause the window updates). When you click Resume, all changes that accumulated while paused will be shown.
+
 > Note that if you want to preview Markdown or other text markup as HTML files, you should render it to HTML using your processor of choice. Point the `display` command to the resulting HTML file. That file will be watched for updates, so if you have a script running that refreshes the file, the preview will also refresh.
 {:.tip}
 

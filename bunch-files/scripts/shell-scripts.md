@@ -101,14 +101,24 @@ Bunch doesn't do anything with the output of a command other than report it [in 
 
 ## Monitoring Scripts
 
-Scripts launched by a Bunch show up under "🔴 Shell Scripts" in the Bunch menu. Clicking any script in the list will open a task monitor for that script. The monitor shows STDOUT at the top, STDERR at the bottom, and the status bar shows whether the task is running, paused, completed, or terminated along with any non-zero exit codes.
+Scripts launched by a Bunch show up under "🔴 Shell Scripts" in the 
+Bunch menu. Clicking any script in the list will open a task monitor 
+for that script. The monitor shows STDOUT at the top, STDERR at the 
+bottom, and the status bar shows whether the task is running, paused, 
+completed, or terminated along with any non-zero exit codes.
 
-> Closing the window does not terminate the task. Windows can be reopened at any time from the Shell Scripts menu.
+> Closing the window does not terminate the task. Windows can be 
+reopened at any time from the Shell Scripts menu.
 {:.tip}
 
-The display window understands ANSI colors and emoji in the script or command output.
+The display window understands ANSI colors and emoji in the script or 
+command output.
 
-There's a Pause button that will suspend the primary task for the monitor. If the primary task is a script that has launched subprocesses (as most scripts do), those subprocesses will not be paused by this button. When a script is paused the button will read "Resume" and will resume the paused task when clicked.
+There's a Pause button that will suspend the primary task for the 
+monitor. If the primary task is a script that has launched 
+subprocesses (as most scripts do), those subprocesses will not be 
+paused by this button. When a script is paused the button will read 
+"Resume" and will resume the paused task when clicked.
 
 The Kill button will send a SIGSTOP command to the process. This should kill any child processes as well, assuming they haven't been run in the background by the script. Once a script is terminated or completed, the button changes to read "Restart" and clicking it will re-run the script or command.
 
