@@ -49,6 +49,7 @@ Here are the available keys:
 | `sequence:`    | parallel or sequential, determines execution order      |
 | `single bunch mode:`  | `ignore` prevents closing                        |
 | `toggles:`     | `false` prevents toggling this Bunch open/closed        |
+| `ignores state:`| Allow open/close even when already open/closed         |
 | `quits apps:`  | `always` close apps open in other Bunches               |
 
 {% img float-right pl-4 pt-4 /bunch/images/emojititles.jpg 490 212 %}
@@ -66,6 +67,8 @@ The `startup` key can be set to `true`, `false`, or `ask`. (or `yes`/`no`/`?`) a
 Setting `single bunch mode: ignore` will prevent the Bunch from affecting or being affected by the launch of other Bunches in Single Bunch Mode. This allows you to use Single Bunch Mode to quit one Bunch when opening the next, but have Bunches that can be always-on.
 
 Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a checkmark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other apps, and won't prevent other apps from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
+
+Setting `ignores state: true` will allow Bunches to re-open or re-close when scheduled. Normally if a schedule is set for a Bunch to open or close and it already is, that schedule is ignored. With this option set you can have the Bunch re-launch or re-close, restoring the launched or quit apps and running scripts on a schedule. This setting functions independently of `toggles/only opens`.
 
 Setting `quit apps: always` will force the Bunch to quit apps it opened regardless of whether the app is open in another Bunch. This correlates with the "Quit Apps Open in Other Bunches" global preference, but allows enabling this on a per-Bunch basis.
 
@@ -87,6 +90,17 @@ Bunches with a menu order greater than 99 will be sorted by number and appended 
 
 > If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
 {:.tip}
+
+### Adding Menu Dividers {#dividers}
+
+You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
+
+    ---
+    title: Just A Bunch
+    menu order: 10
+    menu divider: after
+    ---
+
 
 ### Setting a Shortcut Key {#shortcuts}
 
@@ -118,15 +132,7 @@ shortcut: @t
 
 Shortcuts can also use words in the format `option-command-t`.
 
-### Adding Menu Dividers
-
-You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
-
-    ---
-    title: Just A Bunch
-    menu order: 10
-    menu divider: after
-    ---
+If you duplicate a shortcut between two Bunches, only the first one (in menu order) will get the shortcut. The conflicting Bunch will fall back to the auto-assigned numeric shortcuts.
 
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 

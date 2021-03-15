@@ -24,6 +24,9 @@ Bunch will always read in these keys and set the alarms and timers when it launc
 
 Bunches with active schedules will have a timer icon after their title in the menu.
 
+> Tip: By default, Bunches that are already open will ignore a scheduled open, and Bunches that aren't open will ignore a scheduled close. You can override this and have them open or close anyway by using the `ignores state: true` frontmatter setting.
+{:.tip}
+
 ## Schedules, Screensavers, and Sleep
 
 Bunches scheduled to open or close automatically will work while the screensaver is running or the display is asleep, but will not wake the display or stop the screensaver.
@@ -122,6 +125,8 @@ You can also use `close on` to close a Bunch weekly at a set day and time. `open
 
 `Close on` uses the same syntax as `open on`.
 
+> Tip: You can always see what the next scheduled event for a Bunch is by hovering over it in the menu. A tooltip will show up displaying the time of the next scheduled open or close event.
+
 ## Natural Language Dates
 
 All of the scheduling keys (other than `open every`) allow natural language dates and times. You can just write `1pm` or `tue noon` and it should figure out what you're trying to do. You can view the Console to see the confirmation that scheduling is happening. I don't currently offer a front-end way to see what all is scheduled, but I'd like to eventually.
@@ -131,3 +136,4 @@ All of the scheduling keys (other than `open every`) allow natural language date
 {% gif images/bunchcancel.gif "Cancelling a scheduled launch" %}
 
 When launching and closing Bunches on a schedule, Bunch will attempt to show a notification 15 seconds before the action happens. Clicking the notification will cause it to the action to happen immediately, and there's a cancel button to skip that scheduled launch until the interval comes around again. This notification system is only tested on Big Sur. I highly recommend setting Bunch's notification style to "Alert" in System Preferences, they work much better for what Bunch uses them for.
+

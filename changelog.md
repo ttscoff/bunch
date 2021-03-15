@@ -4,25 +4,51 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
-1.4.0 (β76)
-: [(display) command]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other filetypes as Quick Look previews
+1.4.0 (β77)
+: Major overhaul of shell command runner
+: __Task monitors__ for shell scripts launched by a Bunch
+: [__(display) command__]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other filetypes as Quick Look previews
+: Specify __multiple days/times in scheduling frontmater__, e.g. `open on: M W F 8am, T Th 10am`
+: Assign a [__global keyboard shortcut__]({{ site.baseurl }}/docs/using-bunch/keyboard-control/) for opening Bunch menu in menu bar mode
+: Assign __keyboard shortcuts for each Bunch__ using [`shortcut:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shortcuts)
+: More keyboard shortcuts for internal commands
+: Make default keyboard shortcuts for opening Bunches single numbers without modifiers (like ⌘)
 : Use ${variables} inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)
+: `ignores state:` frontmatter to allow open bunches to reopen, closed bunches to reclose
+: Command-Option click to force close (menu bar mode)
+: Command-Shift click to force open (menu bar mode)
+: Header on Bunch menu shows what action modifier key clicks will perform (menu bar mode)
+: Remove "Close Items In" menu in menu bar mode in favor of Command-Option click
+: [`menu divider` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dividers) key that adds a menu separator `before` or `after` the Bunch in the menu` the Bunch in the menu
+: Allow sending global keyboard shortcuts (not tied to specific app)
 : URL handler [`reveal` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandlerreveal)
 : URL handler [`edit` method]({{ site.baseurl }}/docs/integration/url-handler/#urlhandleredit)
 : URL handler can now match display titles as defined in frontmatter (case insensitive, emoji insensitive) when specifying Bunches
 : Add Accessibility Permission screen to startup splash
 : Add Accessibility Permission button to preferences with observer for current state
-: Fix: Don't make preference window float above all other windows if running in Dock mode
-: Fix: allow Bunch main menu to appear when run in Dock Mode
-: `menu divider:` frontmatter key that adds a menu separator `before` or `after` the Bunch in the menu
+: Persist NSTask for caffeinate command (`awake`) so it can be terminated without `killall`
+: Default Bunch Editor preference to TextEdit so there's _something_ assigned during setup
+: Add Hide/Unhide All Windows option in menu bar mode
+: Set default notification style to Alerts automatically
+: "Working" state for status bar item (yellow), toggled for long-running scripts, when waiting for input or counting down to scheduled open/close
 : Rename "Set" to "Add" in Bunch Folder preferences
 : Gentler watching of Bunch folder for changes, more thorough refresh
+: Light up status item (green) to notify that changes have been detected in the Bunch folder
 : Notifications Preferences shortcuts in preferences
-: Remove notification and stop timer when countdown clicked
-: Fixed file watchers not deallocating
 : Default to menu bar application, show Dock if preferred
-: Fixed F1-F12 not working as {keyboard combos}
-: Specify multiple days/times in scheduling frontmater, e.g. `open on: M W F 8am, T Th 10am`
+: Reduce transparency on preference window to improve legibility
+: Better image/text contrast for Welcome splash and Preferences
+: Fix: file watchers not deallocating
+: Fix: Don't make preference window float above all other windows if running in Dock mode
+: Fix: allow Bunch main menu to appear when run in Dock Mode
+: Fix: Remove notification and stop timer when countdown clicked
+: Fix: F1-F12 not working as {keyboard combos}
+: Fix: Process variables before importing snippets so that placeholders can be used for snippet fragments (`<snippet#${fragmentvar}`)
+: Fix: Keyboard focus for popups buttons and text fields in interactive dialogs
+: Fix: Scheduled open/close being invalidated after opening
+: Fix: Allow keyboard focus for popup buttons and text fields in interactive dialogs
+: Fix: Shell scripts in sequential mode fully wait for previous task to complete
+: Fix: Close Items in wouldn't close if the Bunch wasn't open, now forces
 
 ---
 
@@ -117,7 +143,7 @@ page_id: changelog
 : Offer relaunch dialog if log detail level is changed
 : Sort preferences in Bunch menu in Dock mode
 : %{} variable placeholder url encodes replacement
-: $BUNCH_PHASE [environment variable]({{ site.baseurl }}/docs/bunch-files/shell-scripts/#argsandenv) for shell scripts to determine whether the Bunch is opening or closing
+: $BUNCH_PHASE [environment variable]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#argsandenv) for shell scripts to determine whether the Bunch is opening or closing
 : Improved: shell script parsing and execution
 : Fixed: Users couldn't set log level to Debug
 : Offer "relaunch" dialog if log level is changed

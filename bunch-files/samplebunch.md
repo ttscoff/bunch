@@ -86,6 +86,42 @@ x-marked://open?file=Work Stuff.md
 # See the documentation for more info: https://brettterpstra.com/bunch/docs
 ```
 
+## Simple Web Development
+
+These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `jekyll serve` to create a local server that updates automatically as the Markdown files change. I edit the docs in [nvUltra](https://nvultra.com/) and Sublime Text.
+
+This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
+
+```
+---
+title: ✍🏻Documentation
+shortcut: d
+---
+%Sublime Text
+@Sublime Text // Focus Sublime
+
+nvUltra Beta
+- ~/Sites/dev/bunch/docs/
+
+// Launch the Jekyll server with a task monitor (see script below)
+$ ~/Sites/dev/bunch/servejekyll.sh (display 1 50%x100% right,top #2e3440 #86c0d1 95%)
+
+// Display a web view window of the documentation site 
+// after 20-second delay
+// 1200pt wide, full height, primary display, normal window level
+(display http://127.0.0.1:4000/ 1200x100% right,center n) ~20
+```
+
+Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
+
+```
+#!/bin/bash
+source "$HOME/.rvm/scripts/rvm" &>/dev/null
+cd ~/Sites/dev/bunch
+rvm use ruby-2.6.5
+bundle exec jekyll serve --trace -l
+```
+
 ## Podcasting
 
 Here's my `Podcast Record.bunch`.

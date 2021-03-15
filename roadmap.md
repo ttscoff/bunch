@@ -11,6 +11,8 @@ nav_order: 100
 - [ ] Webhooks: ability to send HTTP POST requests with body in background
 - [ ] Allow multiple Waiting snippets (in sequence) for groupings of items within a Bunch
 - [ ] If/Then/Else logic
+- [ ] Ability to wait for a script, or specific text in the output
+- [ ] Configurable colors for ANSI escapes in task monitor
 
 ### Someday/Maybe
 

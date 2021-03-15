@@ -28,9 +28,11 @@ Items marked with a pipe are taken out of the sequence and executed immediately 
 
 If the script is an on-close script, put the pipe before the exclamation point.
 
-	|$ scripts/parallel1.sh
-	|$ scripts/parallel2.sh
+```
+|$ scripts/parallel1.sh
+|$ scripts/parallel2.sh
 
-	# On close
-	|!$ scripts/close1.sh
-	|!$ scripts/close2.sh
+# On close
+|!$ scripts/close1.sh
+|!$ scripts/close2.sh
+```

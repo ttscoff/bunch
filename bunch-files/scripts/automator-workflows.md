@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Running Automator Workflows
-parent: Bunch Files
+parent: Running Scripts
+grand_parent: Bunch Files
 ---
 # Running an Automator Workflow
 
-If a line starts with an ampersand (&), it will be run as an Automator workflow. These should be created in Automator as a Workflow, and saved with the `.workflow` extension.
+If a line starts with an ampersand (`&`), it will be run as an Automator workflow. These should be created in Automator as a Workflow, and saved with the `.workflow` extension.
 
 Note that all Workflows for Bunch must have a variable named "Bunch" defined. See the end of this section for instructions on adding a variable to a Workflow.
 

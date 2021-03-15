@@ -4,7 +4,7 @@ title: Preferences
 parent: Using Bunch
 nav_order: 30
 ---
-# Preferences Menu
+# Preferences Pane
 
 If you're running in Dock mode, Bunch preferences can be accessed from the menu item __Bunch->Preferences__ (or <kbd>⌘-comma</kbd>). In menu bar mode, click the Bunch icon in the menu bar and select __Preferences...__.
 

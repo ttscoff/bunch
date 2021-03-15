@@ -4,7 +4,10 @@ title: Display
 parent: Commands
 grand_parent: Bunch Files
 ---
-# Display Commands
+<!-- TODO:
+Pause/Resume button
+-->
+# Display Command
 {:.no_toc}
 
 The display command is used to open an HTML file, website, or text/log file in a viewer. The command allows for flexible window sizing and positioning. In it's most basic form it's just `display` and a filename:
@@ -22,15 +25,19 @@ The display command can display HTML files and web URLs. You can provide a full 
 
 If the file is either a local HTML file (which must have the extension `.html`) or a URL, it will be viewed in a popup web view that floats above all other windows and can be dismissed with either Enter or Escape. It's clickable and scrollable.
 
-This is not a "web browser." You can navigate to links, but there's no back button, no history, no ability to download. It's designed for _displaying_, as the command name indicates. (You _can_, however, right click in the window and choose "Back", so it's not completely crippled).
+This is not a "web browser." However, you can navigate to links, there are back, forward, and refresh buttons, and you can interact with sign-ins and forms. It's primarily designed for _displaying_, as the command name indicates, but it can replace opening a browser in a lot of situations. In situations where it's appopriate, this avoids having to open (possibly duplicate) browser tabs for task-related sites.
+
+> If you point to a local server with LiveReload enabled, the preview will update appropriately. That makes it a decent preview for writing, say, documentation built on Jekyll (ahem), without opening a tab in your browser.
+>
+> `(display http://127.0.0.1:4000/bunch-beta/ 1200x100% right,top)`
 
 ## __Text Files__
 
-If a file is specified with the extension `.txt` or `.log`, it will be displayed as a text file with a monospaced font. The file is watched for changes and the preview will automatically update. The preview will "tail" the file, always scrolling to the end when it changes.
+If a file is specified with the extension `.txt` or `.log`, it will be displayed as a text file with a monospaced font. The file is watched for changes and the preview will automatically update. The preview will "tail" the file, always scrolling to the end when it changes. Only the last 10,000 characters of the file are displayed.
 
 ANSI escape codes are recognized and rendered. If the file you're watching contains escape codes, it's wise to set a background color appropriate for the display of the codes. See below for details on adding colors.
 
-As an example, if your Bunch triggers a shell script that has logging, you can use this command to tail the log in a floating or desktop-level window.
+As an example, if your Bunch triggers a shell script that has logging, you can use the `display` command to tail the log in a floating or desktop-level window.
 
 > Note that if you want to preview Markdown or other text markup as HTML files, you should render it to HTML using your processor of choice. Point the `display` command to the resulting HTML file. That file will be watched for updates, so if you have a script running that refreshes the file, the preview will also refresh.
 {:.tip}
@@ -45,13 +52,35 @@ Quick Look previews can not be sized or positioned.
 > This command was primarily created so I could show some welcome documentation, but it grew from there. Now you can use it to display a local log file, the image output of a shell script, or load up a website that you want to have floating while you work (or play). The latter is the most likely use for the average user. Bunch will store logins between launches, so once you've logged into a service like Facebook for messaging or Clockodo for time tracking, you can pop up a window when you open a Bunch to have the tools you need at hand, in a floating window, without opening them in your browser.
 {:.tip}
 
-## __Customizing the Window__
+## __Customizing the Window__ {#window}
 
-You can define which display to open the window on, what size it should be, what position on the screen, foreground and background colors (for text files), and set the window's opacity. The following parameters must be in the order `FILE/URL SCREEN SIZE POSITION BACKGROUND FOREGROUND OPACITY LEVEL`. Any of these may be omitted. Each specified parameter must be preceded by a space.
+You can define which display to open the window on, what size it should be, what position on the screen, foreground and background colors (for text files), and set the window's opacity. All parameters are optional, but the ones you do include must occur in the following order: 
+
+    (display FILE/URL SCREEN SIZE POSITION BACKGROUND FOREGROUND OPACITY LEVEL)
+
+| Parameter  |       Format      |           Additional options          |
+|------------|-------------------|---------------------------------------|
+| FILE/URL   | file path or URL  ||
+| SCREEN     | [0-9]             ||
+| SIZE       | [W]x[H]           | Points (800x600)                      |
+| ^^         | ^^                | ^^ Percentage (50%x50%)               |
+| ^^         | ^^                | ^^ "full" (same as 100%)              |
+| ^^         | ^^                | ^^ Options can be mixed (50%x900)     |
+| POSITION   | [X],[Y]           | Points from lower left (e.g. 600,800) |
+| ^^         | ^^                | ^^ X can be "left", "center", "right" |
+| ^^         | ^^                | ^^ Y can be "top", "center", "bottom" |
+| ^^         | ^^                | ^^ Options can be mixed (left,100)    |
+| BACKGROUND | 6-digit HEX (CSS) | #FFFFFF can be shortened to #FFF      |
+| FOREGROUND | 6-digit HEX (CSS) ||
+| OPACITY    | [0-100]%          ||
+| LEVEL      | [w,d,n,f]         | "wallpaper", "desktop"                |
+| ^^         | ^^                | ^^ "normal", "floating"               |
+
+Any of these may be omitted, as long as the ones used are in the correct order. Each parameter must be preceded by a space.
 
 A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the scrreen) on the second display with a light-on-dark color scheme and slight transparency.
 
-    (display myfile.txt 1 500x100% left,top #111111 #efefef 95% desktop)
+    (display myfile.txt 1 100%x500 left,top #111111 #efefef 97% desktop)
 
 __Screen__
 : By default the display window will open on the screen that has the menu bar when the Bunch is opened.

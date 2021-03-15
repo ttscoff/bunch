@@ -48,12 +48,12 @@ nav_order: 2
 | `(audio [input|output] volume [0-100])` | audio volume | 
 | `(audio [input|output] [mute|unmute])`| mute/unmute  audio |
 |__AppleScripts__||
-|`* AppleScript command`|_[Execute Applescript]({{ site.baseurl }}/docs/bunch-files/applescript/)_|
+|`* AppleScript command`|_[Execute Applescript]({{ site.baseurl }}/docs/bunch-files/scripts/applescript/)_|
 |__Automator Workflows__||
-|`& Automator Workflow`|_Run an [Automator Workflow]({{ site.baseurl }}/docs/bunch-files/automator-workflows/)_|
+|`& Automator Workflow`|_Run an [Automator Workflow]({{ site.baseurl }}/docs/bunch-files/scripts/automator-workflows/)_|
 |`- key=value`|_variable to pass to preceding workflow (can be repeated)_|
 |__Shell Scripts/Commands__||
-|`$ script_or_cmd [args]`|_[Shell script]({{ site.baseurl }}/docs/bunch-files/shell-scripts/) to execute_|
+|`$ script_or_cmd [args]`|_[Shell script]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/) to execute_|
 |`- KEY=value`|_Environment variable to export for preceding shell script (can be repeated)_|
 
 ## Frontmatter

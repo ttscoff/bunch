@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Running AppleScript
-parent: Bunch Files
+parent: Running Scripts
+grand_parent: Bunch Files
 ---
 # Running AppleScript
 
@@ -31,6 +32,8 @@ Arguments can be passed to the script on the same line (same escaping rules appl
 
     * MyScript.scpt "argument 1" argument\ 2
 
+Scripts run using `*` commands are monitored like shell scripts, and show up under the "🔴 Shell Scripts" menu.
+
 ## Running with Automator
 
-You can also wrap the AppleScript in an Automator Workflow and [run it using `&` commands]({{ site.baseurl }}/docs/bunch-files/automator-workflows). This also makes it easy to use variables and control where output goes.
+You can also wrap the AppleScript in an Automator Workflow and [run it using `&` commands]({{ site.baseurl }}/docs/bunch-files/scripts/automator-workflows). This also makes it easy to use variables and control where output goes.

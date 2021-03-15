@@ -17,7 +17,7 @@ If your script is returning an exit code other than 0 and there's content in STD
 
 You can use the log output to see variables and debugging statements by simply printing/echoing them to STDOUT/STDERR from your script. As long as your script returns a 0 exit code, printing to STDERR won't interrupt Bunch's execution of the script.
 
-Several [environment variables]({{ site.baseurl }}/docs/bunch-files/shell-scripts#argsandenv) are sent to any script run by Bunch. You can see this in the log by having your script execute `/usr/bin/env`. The output will go to STDOUT and be visible in the log.
+Several [environment variables]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts#argsandenv) are sent to any script run by Bunch. You can see this in the log by having your script execute `/usr/bin/env`. The output will go to STDOUT and be visible in the log.
 
 ```
 2021-02-04 07:30:28: ⚪[shell scripts] /usr/bin/env STDOUT:

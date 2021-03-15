@@ -48,7 +48,7 @@ Items executed will be treated as part of the Bunch, meaning they will be quit o
 
 ### Query Arrays {#array}
 
-The simpler syntax is an "array," which is just a list of items. Whatever the name of the choice is, that's what will be run, so it's mostly useful for selecting apps by name.
+The simplest syntax for multiple choice is an "array," which is just a list of items. Whatever the name of the choice is, that's what will be run, so it's mostly useful for selecting apps by name.
 
 An array is defined by `?[...]`. Items in an array are separated by either a comma or a newline, whitespace (indentation, blank lines) is ignored. 
 
@@ -65,6 +65,27 @@ You can optionally include a title for the dialog after the closing bracket in d
     ] "Which Task Manager?"
 
 {% gif images/MultiChoiceArray.gif "Multiple-choice array" %}
+
+By combining this with [variable assignment](#variables), you can have the list directly choose a snippet fragment to run. The following example assigns a `snippet` variable, then uses that to call a fragment of an [embedded snippet]({{ site.baseurl }}/docs/snippets/#embeddedsnippets).
+
+```
+snippet = ?[
+    First
+    Second
+    Third
+]
+
+<<#${snippet}
+___
+#[First]
+// do something
+
+#[Second]
+// do something else
+
+#[Third]
+// you get the idea
+```
 
 ### Query Dictionaries {#dictionary}
 
@@ -86,7 +107,7 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 
 You can always write your own scripts with dialogs to return frontmatter keys and values [using the `from script` key]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dynamicfrontmatter). But you can also assign them within a Bunch to get input at the time you open the Bunch and populate variables in snippets with it.
 
-To populate a frontmatter key for use as snippet variables, just start the line with the variable name, followed by `=`, and then the syntax for the type of query you want.
+To populate a frontmatter key for use as snippet variables, just start the line with the variable name, followed by `=`, and then the syntax for the type of query you want. __The variable name should not contain spaces.__
 
 #### Text Input
 
@@ -95,6 +116,14 @@ To display a text field and request user input, use this in your Bunch:
     myvar = ?"Question to ask"
 
 When the field pops up, type your response and hit OK. Then the `myvar` variable will be populated for any snippets that include it with `${myvar}`.
+
+As an example, you could use this to enter a search term when opening a Bunch:
+
+    spotifyurl = ?"Spotify Search"
+    Spotify
+    - spotify:search:%{spotifyurl}
+
+That will take your input and url encode it into a Spotify URL that is directly opened by Spotify.
 
 #### Multiple Choice Input
 
