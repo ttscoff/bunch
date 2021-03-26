@@ -3,6 +3,7 @@ layout: default
 title: Running Automator Workflows
 parent: Running Scripts
 grand_parent: Bunch Files
+tags: [automator, scripts]
 ---
 # Running an Automator Workflow
 

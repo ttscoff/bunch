@@ -2,6 +2,7 @@
 layout: default
 title: Startup Scripts
 parent: Bunch Files
+tags: [apps,frontmatter]
 ---
 # Auto-launch Bunches on startup
 

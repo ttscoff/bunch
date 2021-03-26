@@ -2,19 +2,24 @@
 layout: default
 title: Opening Other Bunches
 parent: Bunch Files
+tags: [snippets]
 ---
 ## Opening Other Bunches {#opening}
 
 You can launch other Bunches just by adding the full name of the Bunch, including the ".bunch" extension, on a line, just like you would an app. Bunches launched in this manner behave as if you clicked them in the menu: it gets an "open" checkbox in the menu, and can be quit separately from the Bunch that launched it.
 
-	# Open the Comms Bunch as if we had clicked it in the menu.
-	Comms.bunch
+```bash
+# Open the Comms Bunch as if we had clicked it in the menu.
+Comms.bunch
+```
 
 You can use this in [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#optionalsnippets) to make entire Bunches optional. Create a snippet that calls a Bunch, then reference it with optional syntax.
 
 _Example:_
 
-	<mysnippet.snippet ?"Launch the Bunch in this snippet?"
+```bash
+<mysnippet.snippet ?"Launch the Bunch in this snippet?"
+```
 
 When closing the parent Bunch, any Bunches launched will also be closed. Use `%Name.bunch` to ignore the Bunch when closing.
 
@@ -22,8 +27,10 @@ When closing the parent Bunch, any Bunches launched will also be closed. Use `%N
 
 When calling a Bunch from another Bunch, you can override and add to frontmatter keys, which can then be used in variables. To do so, add dashed lines underneath the Bunch call with `key=value` pairs:
 
-    MyOther.bunch
-    - myvar = my value
+```bash
+MyOther.bunch
+- myvar = my value
+```
 
 Now when `MyOther.bunch` launches, it will have the variable `myvar` populated with `my value` and it can be used as `${myvar}` in `MyOther.bunch`. This means that a Bunch can do different things when launched from other Bunches, with each parent Bunch setting its own variables.
 
@@ -55,9 +62,11 @@ It does have the benefit of directly using things like [optional snippets]({{ si
 
 _Example:_
 
-	# Launch the Work fragment of Comms.bunch 
-	# after a 30-second delay
-	<Comms.bunch#Work ~30
+```bash
+# Launch the Work fragment of Comms.bunch 
+# after a 30-second delay
+<Comms.bunch#Work ~30
 
-	# Ask if we should load the Social fragment
-	<Comms.bunch#Social ?"Is Social Media a good idea right now?"
+# Ask if we should load the Social fragment
+<Comms.bunch#Social ?"Is Social Media a good idea right now?"
+```

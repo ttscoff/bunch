@@ -2,6 +2,7 @@
 layout: default
 title: Snippets
 parent: Bunch Files
+tags: [snippets,variables]
 ---
 # Avoid Repitition With Reusable Snippets
 
@@ -161,7 +162,7 @@ Embedded snippets also work as Waiting Snippets, on-close snippets, and with del
 
 __Embedded snippet example:__
 
-```
+```bash
 <<#First Section
 
 !<<#On Close

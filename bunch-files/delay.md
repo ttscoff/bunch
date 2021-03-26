@@ -2,6 +2,7 @@
 layout: default
 title: Delayed Launch
 parent: Bunch Files
+tags: [delay]
 ---
 # Launching After A Delay
 

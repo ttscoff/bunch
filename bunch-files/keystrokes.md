@@ -2,6 +2,7 @@
 layout: default
 title: Keystrokes
 parent: Bunch Files
+tags: [keystrokes, apps]
 ---
 # Sending keystrokes and combos
 {:.no_toc}

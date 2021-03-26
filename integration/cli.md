@@ -3,6 +3,7 @@ layout: default
 title: Command Line Tool
 parent: Integration
 nav_order: 20
+tags: [scripting,cli]
 ---
 # The Bunch CLI
 

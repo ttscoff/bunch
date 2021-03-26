@@ -2,6 +2,7 @@
 layout: default
 title: Scheduling Bunches
 parent: Bunch Files
+tags: [frontmatter,scheduling]
 ---
 # Scheduling Bunches
 {:.no_toc}

@@ -2,6 +2,7 @@
 layout: default
 title: Stream Deck
 parent: Integration
+tags: [integration]
 ---
 You can add buttons to your Elgato Stream Deck for opening, closing, and toggling Bunches. I detailed this [on my blog](https://brettterpstra.com/2020/09/16/bunch-and-stream-deck/).
 

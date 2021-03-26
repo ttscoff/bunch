@@ -2,6 +2,7 @@
 layout: default
 title: Spotlight Searches
 parent: Bunch Files
+tags: [apps,spotlight]
 ---
 # Using Spotlight Queries
 {:.no_toc}

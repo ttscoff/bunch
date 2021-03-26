@@ -3,6 +3,7 @@ layout: default
 title: Running Shell Scripts
 parent: Running Scripts
 grand_parent: Bunch Files
+tags: [display, shell, scripts]
 ---
 # Running shell scripts and commands
 {:.no_toc}
@@ -118,7 +119,8 @@ There's a Pause button that will suspend the primary task for the
 monitor. If the primary task is a script that has launched 
 subprocesses (as most scripts do), those subprocesses will not be 
 paused by this button. When a script is paused the button will read 
-"Resume" and will resume the paused task when clicked.
+"Resume" and will resume the paused task whe
+n clicked.
 
 The Kill button will send a SIGSTOP command to the process. This should kill any child processes as well, assuming they haven't been run in the background by the script. Once a script is terminated or completed, the button changes to read "Restart" and clicking it will re-run the script or command.
 

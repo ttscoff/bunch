@@ -2,6 +2,7 @@
 layout: default
 title: Keyboard Maestro
 parent: Integration
+tags: [integration]
 ---
 # Integrating with Keyboard Maestro
 

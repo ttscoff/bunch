@@ -3,6 +3,7 @@ layout: default
 title: Sample Bunches
 parent: Bunch Files
 nav_order: 3
+tags: [interactivity,frontmatter,snippets,variables,example,apps]
 ---
 # Some examples to get you started
 {:.no_toc}
@@ -18,7 +19,7 @@ These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/commen
 
 This example demonstrates the basic syntax for a Bunch file.
 
-```
+```bash
 # Comments start with `#` or `//` and a space
 # blank lines are ignored
 
@@ -92,7 +93,7 @@ These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `
 
 This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
 
-```
+```bash
 ---
 title: ✍🏻Documentation
 shortcut: d
@@ -114,7 +115,7 @@ $ ~/Sites/dev/bunch/servejekyll.sh (display 1 50%x100% right,top #2e3440 #86c0d1
 
 Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
 
-```
+```bash
 #!/bin/bash
 source "$HOME/.rvm/scripts/rvm" &>/dev/null
 cd ~/Sites/dev/bunch
@@ -126,7 +127,7 @@ bundle exec jekyll serve --trace -l
 
 Here's my `Podcast Record.bunch`.
 
-```
+```bash
 ---
 title: 🎤Podcast: Record
 ---
@@ -198,14 +199,14 @@ ___
 
 I have this Bunch load on launch. It makes it easy to quit all of these apps at once, and load them back up at my convenience.
 
-```
+```bash
 ---
 title: 📞Comms
 startup: true
 ---
 /* 
 Fragment identifiers allow me to load this Bunch as a snippet and execute
-just parts of it as needed. They're ignored when loading as a Bunch.
+just parts of it as needed. They are ignored when loading as a Bunch.
 */
 #[Social]
 Tweetbot
@@ -230,13 +231,13 @@ ___
 * tell application "Moom" to arrange windows according to snapshot "Comms"
 ```
 
-## Coding
+## Coding (Multiple Choice) {#multiplechoice}
 
 Here's the Bunch I use when I'm ready to code. It offers a choice of my main projects using [Query Dictionary syntax]({{ site.baseurl }}/docs/bunch-files/interactivity/#dictionary). It launches all of the common apps between the projects and tells Bunch not to quit them when the Bunch closes with a `%`. It uses [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) to load the appropriate projects, and [Moom]({{ site.baseurl }}/docs/integration/moom/) in a [Waiting Snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet) to position the windows according to a snapshot after everything loads.
 
 I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/forklift/), with keystrokes assigned that this Bunch sends.
 
-```
+```bash
 ---
 title: 🖥Code
 sequence: parallel
@@ -340,4 +341,31 @@ Spotify
 - URL=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
 - Autoplay=${autoplay:true}
 ```
+ 
+## CodeKit (Script Variable) {#scriptvariable}
 
+The following Bunch combines a multiple choice dialog with a frontmatter key (`previewurl`) that gets set by running an AppleScript. The multiple choice dialog runs first, which calls snippets that set the current project in CodeKit, then uses an AppleScript call to get the browser preview url. The URL is retrieved prior to running the display command, so it can be inserted into the command as the target URL.
+
+```bash
+---
+title: CodeKit
+---
+?{
+  nvUltra Website => <<#nvultraweb
+  nvUltra Onboard => <<#nvultrasplash
+  Marked 2 Website => <<#marked
+}
+
+previewurl =* tell application "CodeKit" to get preview server url
+
+(display ${previewurl} 1 800x100% left,top)
+___
+#[nvultraweb]
+* tell application "CodeKit" to select project containing path "~/Sites/dev/nvultra/"
+
+#[nvultrasplash]
+* tell application "CodeKit" to select project containing path "~/Desktop/Code/notnvalt/onboard/"
+
+#[marked]
+* tell application "CodeKit" to select project containing path "~/Sites/dev/marked2app/"
+```

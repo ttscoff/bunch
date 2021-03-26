@@ -2,6 +2,7 @@
 layout: default
 title: Variables
 parent: Bunch Files
+tags: [frontmatter,snippets,variables]
 ---
 # Using Variables
 {:.no_toc}
@@ -19,7 +20,7 @@ In order to use a variable within a Bunch, you need to give it a value. Variable
 
 A variable is a key and a value. You can define the variable in frontmatter by using a `key: value` line. As long as the key doesn't conflict with one of [Bunch's built-in keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/#keys), you can use anything you want. Keys should be letters and numbers only. They can contain spaces and underscores, but those will be compressed and stripped when they're used as a replacement, and the entire key will be lowercased, so "My Key" becomes "mykey".
 
-```
+```bash
 ---
 title: My Bunch
 my variable: my value
@@ -34,9 +35,32 @@ Using the [dynamic frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/
 
 Variables set by reading a file or running a script will supercede any values hardcoded in the frontmatter.
 
+### With a Script {#script}
+
+You can set a frontmatter key's value using a script (shell script or AppleScript). To do so, use the format:
+
+```bash
+# With a direct AppleScript command
+keyname = * tell app...
+# With an AppleScript script file
+keyname = * myscript.applescript
+
+# With a shell command
+keyname = $ echo "my value"
+# With a shell script
+keyname = $ myscript.sh
+```
+
+A script line like this is executed in the order of the Bunch. It should appear before any usage of the variable, but can be added after other script items and will allow their execution before running.
+
+See the [CodeKit example Bunch]({{ site.baseurl }}/docs/bunch-files/samplebunch/#scriptvariable) for a demonstration of this in action.
+
+
 ### With a Dialog
 
 You can use interactive dialogs to define values for variables. See [Interactivity->Variables]({{ site.baseurl }}/docs/bunch-files/interactivity/#variables) to learn how. Values assigned in this way will supercede values defined in Frontmatter or Dynamic Frontmatter.
+
+For an example of a Bunch with a multiple choice dialog, see the [Coding example Bunch]({{ site.baseurl }}/docs/bunch-files/samplebunch/#multiplechoice).
 
 ### When Calling a Snippet or Bunch {#filelines}
 
@@ -44,7 +68,7 @@ When you call a Bunch or Snippet from within a Bunch, you can use file lines wit
 
 For a Bunch, you would use:
 
-```
+```bash
 MyBunch.bunch
 - myvariable=my value
 ```
@@ -53,7 +77,7 @@ This value would override any matching key in `MyBunch.bunch`'s frontmatter. The
 
 For a Snippet, you would use:
 
-```
+```bash
 <MySnippet.snippet
 - myvariable=my value
 ```
@@ -87,14 +111,14 @@ Once a variable has a value, you can use it in your Bunch or Snippet by adding a
 
 In a Bunch or Snippet that might look like:
 
-```
+```bash
 Xcode
 - ~/Code/Projects/${project}/${project}.xcworkspace
 ```
 
 You can use a placeholder anywhere, including in an app or command line.
 
-```
+```bash
 ${apptolaunch}
 
 (display ${logtoshow} 800x800)
@@ -106,7 +130,7 @@ Placeholders can not be nested within other placeholders.
 
 You may need your variable to be percent encoded when it's used, for example when using it in a URL. In this case, use a percent symbol (`%`) instead of a dollar sign (`$`).
 
-```
+```bash
 Safari
 - https://imdb.com/search?q=%{searchterm}
 ```
@@ -115,7 +139,7 @@ Safari
 
 You can (and generally should) define a default value for a placeholder. This will be used if the key is empty by the time the placeholder is reached. Add default values after a colon within the placeholder:
 
-```
+```bash
 ${myvariable:Default Value}
 ```
 

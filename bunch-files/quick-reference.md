@@ -3,6 +3,7 @@ layout: default
 title: Syntax Reference
 parent: Bunch Files
 nav_order: 2
+tags: [example]
 ---
 # Quick Reference
 {:.no_toc}

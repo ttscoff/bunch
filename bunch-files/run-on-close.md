@@ -2,6 +2,7 @@
 layout: default
 title: Run On Close
 parent: Bunch Files
+tags: [apps,snippets]
 ---
 # Launching Items Only When Closing a Bunch
 

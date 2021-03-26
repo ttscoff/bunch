@@ -2,6 +2,7 @@
 layout: default
 title: BetterTouchTool
 parent: Integration
+tags: [integration]
 ---
 # Integrating with BetterTouchTool
 

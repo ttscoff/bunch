@@ -3,6 +3,7 @@ layout: default
 title: Do Not Disturb
 parent: Commands
 grand_parent: Bunch Files
+tags: [do not disturb, dnd, command]
 ---
 # Do Not Disturb Commands
 

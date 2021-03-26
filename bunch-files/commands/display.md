@@ -3,10 +3,8 @@ layout: default
 title: Display
 parent: Commands
 grand_parent: Bunch Files
+tags: [display, command, browser, shell]
 ---
-<!-- TODO:
-Pause/Resume button
--->
 # Display Command
 {:.no_toc}
 
@@ -25,11 +23,21 @@ The display command can display HTML files and web URLs. You can provide a full 
 
 If the file is either a local HTML file (which must have the extension `.html`) or a URL, it will be viewed in a popup web view that floats above all other windows and can be dismissed with either Enter or Escape. It's clickable and scrollable.
 
-This is not a "web browser." However, you can navigate to links, there are back, forward, and refresh buttons, and you can interact with sign-ins and forms. It's primarily designed for _displaying_, as the command name indicates, but it can replace opening a browser in a lot of situations. In situations where it's appopriate, this avoids having to open (possibly duplicate) browser tabs for task-related sites.
+This is not a "web browser." However, you can navigate to links, there are back, forward, and refresh buttons, and you can interact with sign-ins and forms. It's primarily designed for _displaying_, as the command name indicates, but it can replace opening a browser in a lot of situations. In situations where it's appopriate, this avoids having to open (possibly duplicate) browser tabs for task-related sites. Think of it as a lightweight Single Site Browser (SSB).
 
 > If you point to a local server with LiveReload enabled, the preview will update appropriately. That makes it a decent preview for writing, say, documentation built on Jekyll (ahem), without opening a tab in your browser.
 >
-> `(display http://127.0.0.1:4000/bunch-beta/ 1200x100% right,top)`
+> `(display http://127.0.0.1:4000/bunch/ 1200x100% right,top)`
+
+A web view allows navigation to any link. If you'd rather open a link in the web view in your default browser, hold down Command (<kbd>⌘</kbd>) when clicking it.
+
+Navigate backwards and forwards with the `<` and `>` buttons, or use <kbd>⌘[</kbd> and <kbd>⌘]</kbd>.
+
+Refresh the view with the "Reload" button, or hit <kbd>⌘R</kbd>.
+
+Press the Home button in the toolbar (or hit <kbd>⇧⌘H</kbd>) at any time to return to the URL originally specified for the display command.
+
+
 
 ## __Text Files__
 
@@ -46,10 +54,9 @@ Use the Pause button to pause watching for file changes (and thus pause the wind
 
 ## __Other File Types__
 
-If the file is any kind other than HTML, it will be viewed using a Quick Look preview. This panel will appear above all open windows, but will not float so it can be hidden by other windows as new apps launch.
+If the file is any kind other than HTML, it will be viewed using a Quick Look preview. The preview will be contained in a window that can be sized and positioned like the other display windows.
 
-Quick Look previews can not be sized or positioned.
-
+This works for any file that has a Quick Look plugin (pressing ⌘Y on it in Finder shows you a preview). It can be used to display images, Pages files for reference, audio files, or just about anything you can throw at it.
 
 > This command was primarily created so I could show some welcome documentation, but it grew from there. Now you can use it to display a local log file, the image output of a shell script, or load up a website that you want to have floating while you work (or play). The latter is the most likely use for the average user. Bunch will store logins between launches, so once you've logged into a service like Facebook for messaging or Clockodo for time tracking, you can pop up a window when you open a Bunch to have the tools you need at hand, in a floating window, without opening them in your browser.
 {:.tip}
@@ -82,7 +89,9 @@ Any of these may be omitted, as long as the ones used are in the correct order. 
 
 A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the scrreen) on the second display with a light-on-dark color scheme and slight transparency.
 
-    (display myfile.txt 1 100%x500 left,top #111111 #efefef 97% desktop)
+```bash
+(display myfile.txt 1 100%x500 left,top #111111 #efefef 97% desktop)
+```
 
 __Screen__
 : By default the display window will open on the screen that has the menu bar when the Bunch is opened.

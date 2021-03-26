@@ -2,10 +2,9 @@
 layout: default
 title: Keyboard Control
 parent: Using Bunch
+tags: [keyboard,shortcuts]
 ---
-For people who love keyboard shortcuts, Bunch can accomodate. You have to run in menu bar mode to use all of the keyboard features, so open Preferences and enable "Run in Menu Bar."
-
-Then, in Preferences, assign a hotkey to use to open Bunch. Once this is assigned, you can use it no matter what application you're in. Pick a combination that won't conflict with other applications' default shortcuts. I recommend including Control in the combination, which avoids many conflicts (90% of shortcuts only use Command, Shift, and Option). Or, if you know what a [Hyper key](https://brettterpstra.com/2017/06/15/a-hyper-key-with-karabiner-elements-full-instructions/) is, Hyper combos make good launchers.
+In Preferences, assign a hotkey to use to open Bunch. Once this is assigned, you can use it no matter what application you're in. Pick a combination that won't conflict with other applications' default shortcuts. I recommend including Control in the combination, which avoids many conflicts (90% of shortcuts only use Command, Shift, and Option). Or, if you know what a [Hyper key](https://brettterpstra.com/2017/06/15/a-hyper-key-with-karabiner-elements-full-instructions/) is, Hyper combos make good launchers.
 
 Once these are set up, hit your hotkey and you'll see that the Bunches listed in the menu have keyboard shortcuts assigned. By default these are numbers. Just type the number of a Bunch to open (or toggle) it.
 
@@ -21,4 +20,6 @@ Additionally, the following keyboard shortcuts are available when the menu is op
 | ⌘,       | Open Preferences         |
 | ⇧⌘N      | New Bunch With Open Apps |
 | ⇧⌘R      | Refresh Bunches          |
+| ⌘H       | Hide All Windows         |
+| ⇧⌘H      | Unhide All Windows       |
 | ⌘Q       | Quit Bunch               |

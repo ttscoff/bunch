@@ -3,10 +3,11 @@ layout: default
 title: Getting Started
 parent: Using Bunch
 nav_order: 10
+tags: [preferences]
 ---
 ### Set Your Preferences
 
-To make the most of Bunch, you'll want to set some [Preferences]({{ site.baseurl }}/docs/using-bunch/preferences). Most importantly, choose to run Bunch in the Dock or the menu bar, and whether Bunches toggle open and closed. My personal recommendation is to run Bunch in the menu bar, and have "Toggle Bunches" turned on.
+To make the most of Bunch, you'll want to set some [Preferences]({{ site.baseurl }}/docs/using-bunch/preferences). Choose whether Bunches toggle open and closed, and whether opening a Bunch closes other Bunches. My personal recommendation is to turn "Toggle Bunches" on, and leave "Single Bunch Mode" off until you've explored a bit.
 
 ### Terminology
 

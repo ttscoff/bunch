@@ -2,16 +2,17 @@
 layout: default
 title: Bunch Logging
 parent: Using Bunch
+tags: [log,scripts]
 ---
 # Bunch Log
 
-Because Bunch is reading plain text files and running everything in the background, it's easy for things to not work the way you expected and have little idea what went wrong. That's where the Bunch Log comes in.
+Because Bunch is reading plain text files and running everything in the background, it's easy for things to not work the way you expected and leave you with little idea what went wrong. That's where the Bunch Log comes in.
 
-Bunch records every action it takes --- and any errors it runs into --- in a log file that you can access using Console.app. There's a handy shortcut under __Help->Open Log__ that will take you right to it. Notification Center alerts of errors can also open the log, just click the Show Log button on the notification.
+Bunch records every action it takes --- and any errors it runs into --- in a log file that you can access using Console.app. There's a handy shortcut under __Help->Open Log__ that will take you right to it. Notification Center error alerts can also open the log, just click the Show Log button on the notification.
 
 ## Log Levels
 
-You can set the verbosity of the log using __Help->Set Log Level__. Choose to see only errors, errors and warnings, or all messages. Debug level settings are typically not needed, but feel free to see the underside.
+You can set the verbosity of the log using __Help->Set Log Level__. Choose to see only errors, errors and warnings, or all messages. Debug level settings are typically not needed and are fairly verbose, but feel free to peek at Bunch's underbelly.
 
 ## Log Entry Structure
 

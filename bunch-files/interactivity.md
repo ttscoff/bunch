@@ -2,6 +2,7 @@
 layout: default
 title: Interactivity
 parent: Bunch Files
+tags: [interactivity,interactive,dialog]
 ---
 # Interactive Bunches
 {:.no_toc}

@@ -3,6 +3,7 @@ layout: default
 title: Running AppleScript
 parent: Running Scripts
 grand_parent: Bunch Files
+tags: [scripts,applescript]
 ---
 # Running AppleScript
 

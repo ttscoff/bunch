@@ -2,6 +2,7 @@
 layout: default
 title: Advanced Scripting
 parent: Integration
+tags: [scripting,scripts]
 ---
 # Advanced Scripting Topics
 {:.no_toc}
@@ -92,7 +93,7 @@ var list = app.chooseFromList(Object.keys(playlists), {
     defaultItems: ["Search"]})[0];
 
 if (list === undefined) {
-	'spotify:'
+	'spotify url: spotify:'
 } else if (playlists[list] === "") {
   var search = app.displayDialog("What to search for?", {
     defaultAnswer: "",
@@ -107,9 +108,9 @@ if (list === undefined) {
 
 The above script offers a list with the keys from the `playlists` object. If you cancel, it outputs Spotify's base url handler, 'spotify:'. If you select "Search," it pops up a second dialog asking for a search string, then formats that into a URL encoded Spotify URL for searching. If you pick a playlist, it returns the value for that key, which is already a full Spotify URI.
 
-Now I have a Bunch that just contains:
+Now create a Bunch that just contains:
 
-```
+```bash
 ---
 title: 🎵Listen
 from script: scripts/ChoosePlaylist.applescript
@@ -117,7 +118,7 @@ from script: scripts/ChoosePlaylist.applescript
 Silicio
 <<#Search Spotify
 ___
--[Search Spotify]
+---[Search Spotify]---
 Spotify
 - ${spotifyurl}
 ```
@@ -196,6 +197,8 @@ You can use the `from script` [frontmatter]({{ site.baseurl }}/docs/bunch-files/
 This is, of course, a fairly silly example, as you could simply add the password request into a script and have it execute something using the password in one line, as opposed to the roundabout method of passing data to the frontmatter through one script and then calling a second script in a snippet. Hopefully it illustrates some possibilities, though.
 
 ## Forking Bunches With User Interaction {#forkingbunches}
+
+Bunch offers several methods for creating [interactive Bunches]({{ site.baseurl }}/docs/interactivity/), but you can also use a little scripting if you need more flexibility.
 
 You can use AppleScript to display a multiple choice dialog, then act accordingly. This can be used to launch multiple bunches with user interaction.
 

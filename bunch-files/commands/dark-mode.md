@@ -3,6 +3,7 @@ layout: default
 title: Dark Mode
 parent: Commands
 grand_parent: Bunch Files
+tags: [dark mode, command]
 ---
 # Dark Mode Commands
 

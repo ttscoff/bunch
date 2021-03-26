@@ -3,6 +3,7 @@ layout: default
 title: Notify
 parent: Commands
 grand_parent: Bunch Files
+tags: [notification, interaction, command]
 ---
 # Notify Commands
 

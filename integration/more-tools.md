@@ -2,6 +2,7 @@
 layout: default
 title: More Tools
 parent: Integration
+tags: [integration]
 ---
 ### HazeOver
 

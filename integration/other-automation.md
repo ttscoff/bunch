@@ -2,6 +2,7 @@
 layout: default
 title: Other Automation
 parent: Integration
+tags: [integration]
 ---
 ### Home Automation with Indigo
 

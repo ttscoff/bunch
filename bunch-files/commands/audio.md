@@ -3,6 +3,7 @@ layout: default
 title: Audio
 parent: Commands
 grand_parent: Bunch Files
+tags: [audio,command]
 ---
 # Audio Commands
 

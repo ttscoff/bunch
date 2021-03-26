@@ -2,6 +2,7 @@
 layout: default
 title: Execution Sequence
 parent: Bunch Files
+tags: [frontmatter,preferences,sequence]
 ---
 # Sequential vs Parallel
 

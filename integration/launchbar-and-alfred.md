@@ -2,6 +2,7 @@
 layout: default
 title: LaunchBar and Alfred
 parent: Integration
+tags: [integration]
 ---
 ## LaunchBar
 

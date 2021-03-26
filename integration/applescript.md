@@ -3,6 +3,7 @@ layout: default
 title: AppleScript Dictionary
 parent: Integration
 nav_order: 10
+tags: [scripting,applescript]
 ---
 # The Bunch AppleScript Dictionary
 

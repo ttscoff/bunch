@@ -2,6 +2,7 @@
 layout: default
 title: Moom
 parent: Integration
+tags: [integration]
 ---
 # Integrating with Moom
 

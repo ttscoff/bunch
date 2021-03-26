@@ -2,6 +2,7 @@
 layout: default
 title: Frontmatter
 parent: Bunch Files
+tags: [frontmatter,variables]
 ---
 # Controlling Bunch With Frontmatter
 {:.no_toc}
@@ -44,11 +45,12 @@ Here are the available keys:
 | `open on:`     | Set a weekday and time to repeat weekly                 |
 | `open every:`  | Repeat open at intervals                                |
 | `startup:`     | `true`, `false`, or `ask` to open this Bunch on launch  |
-| `from file:`   | A file path to load additional                          |
+| `from file:`   | A file path to load additional key/value pairs          |
 | `from script:` | A shell script path that returns YAML                   |
 | `sequence:`    | parallel or sequential, determines execution order      |
 | `single bunch mode:`  | `ignore` prevents closing                        |
 | `toggles:`     | `false` prevents toggling this Bunch open/closed        |
+| `only opens:`  | `true` has the same effect as `toggles: false`          |
 | `ignores state:`| Allow open/close even when already open/closed         |
 | `quits apps:`  | `always` close apps open in other Bunches               |
 
@@ -80,7 +82,7 @@ You can totally use emoji in the frontmatter title and get a sweet looking menu 
 
 ## Customizing Menu Order {#sortorder}
 
-The "menu order" key defines the sort order of Bunches in the menu that Bunch displays, either in the menu bar or from the Dock icon. 
+The "menu order" key defines the sort order of Bunches in the menu that Bunch displays. 
 
 Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
 
@@ -88,7 +90,7 @@ Bunches without a menu order value will be sorted alphabetically after the numbe
 
 Bunches with a menu order greater than 99 will be sorted by number and appended to the end of the list. Adding `menu order: 100` to a Bunch will force it the the end of the list. Duplicate numbers are sorted alphanumerically.
 
-> If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
+> Tip: If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
 {:.tip}
 
 ### Adding Menu Dividers {#dividers}
@@ -104,7 +106,7 @@ You can use the `menu divider` key to add separators to the Bunch menu. The key 
 
 ### Setting a Shortcut Key {#shortcuts}
 
-When running in the menu bar Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from 1-9 and then 0, assigned in menu display order. Subsequent items are assigned Command-Number, from "⌘1" to "⌘0". You can customize these using the `shortcut:` frontmatter key.
+Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from 1-9 and then 0, assigned in menu display order. Subsequent items are assigned Command-Number, from "⌘1" to "⌘0". You can customize these using the `shortcut:` frontmatter key.
 
 A shortcut can be anything other than a number, and can include modifiers (control, option, shift, command). A capital letter automatically implies the Shift modifier.
 
@@ -124,7 +126,7 @@ To use any of these symbols as the actual modifier key, use the Shift-equivalent
 
 To set a menu shortcut of Command-T for your Bunch, you would include this in the frontmatter:
 
-```
+```bash
 ---
 shortcut: @t
 ---
@@ -138,15 +140,17 @@ If you duplicate a shortcut between two Bunches, only the first one (in menu ord
 
 You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to Bunches, snippets, and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.
 
-    ---
-    say: anything
-    ---
-    # Gets say=anything as variable
-    <speech.snippet
+```bash
+---
+say: anything
+---
+# Gets say=anything as variable
+<speech.snippet
 
-    # Gets say=something as variable
-    <speech.snippet
-    - say=something
+# Gets say=something as variable
+<speech.snippet
+- say=something
+```
 
 The order of precedence for snippet variables is: variable defined after the snippet line, then value found for matching key in the frontmatter, then any[default value]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues)  defined in the snippet.
 
@@ -172,7 +176,7 @@ You can use `from file` and `from script` to load in variables from external sou
 
 A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. The contents of `filename.txt` should be only colon-separated key-value pairs. This allows external automation to write data to files that affect your Bunch without having to modify the Bunch itself. A file called in this manner will be watched for updates, and the Bunch will be automatically updated if the file changes.
 
-You can also run a shell script, which should also return just key value pairs. Most scripting languages have a YAML library that makes it pretty easy to easily output data in a suitable format. Lines with YAML separators (`---`) will be ignored.
+You can also run a shell script, which should also return just `key: value`pairs. Most scripting languages have a YAML library that makes it pretty easy to easily output data in a suitable format. Lines with YAML separators (`---`) will be ignored.
 
 When one of these keys is detected, the file or script results will be merged with the other keys, if any, overwriting values for existing keys.
 
@@ -203,7 +207,7 @@ data = {
 puts YAML.dump(data)
 ```
 
-Picking a random name and adding the current date. Now when the Bunch is read in, the frontmatter it actually stores looks like:
+The above script picks a random name and adds the current date. Now when the Bunch is read in, the frontmatter it actually stores looks like:
 
     ---
     fromscript: frontmatter.rb
@@ -220,6 +224,6 @@ Reference that snippet in the Bunch but don't define either of the variables:
 
     <test.snippets#Welcome
 
-When it runs, the name variable will be replaced with a random name, and the current date will be passed. It will update prior to every time it opens. This is obviously stupid, as you could have just written a script that said this without populating variables and importing snippets, but it illustrates how dynamic frontmatter can work.
+When it runs, the name variable will be replaced with a random name, and the current date will be passed. It will update every time the Bunch opens. This is obviously stupid, as you could have just written a script that said this without populating variables and importing snippets, but it illustrates how dynamic frontmatter can work.
 
 See [Advanced Scripting]({{ site.baseurl }}/docs/integration/advanced-scripting) for more crazy ideas.

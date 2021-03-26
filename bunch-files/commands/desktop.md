@@ -3,6 +3,7 @@ layout: default
 title: Desktop and Dock
 parent: Commands
 grand_parent: Bunch Files
+tags: [desktop, command]
 ---
 ## Dock Commands
 {:.text-alpha}

@@ -2,6 +2,7 @@
 layout: default
 title: Forklift
 parent: Integration
+tags: [integration]
 ---
 I prefer [Forklift](https://binarynights.com/) to Finder for file management. It's far more pleasant than trying to open the right folders in Finder tabs, it gives me a 2-pane view, and it has great integration with FTP, S3, and other network protocols.
 

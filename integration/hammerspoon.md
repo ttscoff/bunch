@@ -2,6 +2,7 @@
 layout: default
 title: Hammerspoon
 parent: Integration
+tags: [integration]
 ---
 # Integrating with Hammerspoon
 

@@ -4,6 +4,23 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (β80)
+: Set variables [with script results]({{ site.baseurl }}/docs/bunch-files/variables/#script)
+: Remove option to run in Dock
+
+---
+
+1.4.0 (β79)
+: Extra .01s delay when sending key combos to improve app responsiveness in some cases
+: Complete refactoring to make "Bunch Items" their own custom object
+: Move what can be truly executed in the background from async on main thread to a background thread
+: Give Quick Look previews in display command their own positionable window
+: Window titles for text and html display windows
+: Fix: Attempt to fix Preference layout on 10.13
+: Fix: Open-only Bunches not launching
+
+---
+
 1.4.0 (β78)
 : Quick fix to clean up some debug logging
 

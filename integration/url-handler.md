@@ -3,6 +3,7 @@ layout: default
 title: URL Handler
 parent: Integration
 nav_order: 5
+tags: [scripting]
 ---
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
