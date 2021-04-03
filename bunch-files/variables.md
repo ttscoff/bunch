@@ -94,6 +94,11 @@ When using Bunch's [AppleScript]({{ site.baseurl }}/docs/integration/applescript
 
 Values set in this manner will supercede frontmatter values, but will be overridden by [file lines](#filelines).
 
+> With this capability, you can create Bunches that focus efforts around a particular file (or files), but change that file with each opening of the Bunch. Set up a `${placeholder} in the Bunch for the filename, then specify the file in the url when calling the Bunch.
+> 
+> Scenario: you have Hazel watching for new audio files that need processing in a shared Dropbox folder. A new file shows up, and a Hazel script adds an entry to your task manager that includes a Bunch url with the file specified as a parameter. Clicking it not only switches to your audio editing context, but also loads the file in question in your audio editor.
+{:.tip}
+
 ## Variable Precedence
 
 Because variables can be set in multiple ways, you need to be aware of which value takes precedence. Variables are set in this order, the top available value being used.

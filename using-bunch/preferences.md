@@ -2,14 +2,14 @@
 layout: default
 title: Preferences
 parent: Using Bunch
-nav_order: 30
+nav_order: 10
 tags: [preferences]
 ---
 # Bunch Preferences
 
 Click the Bunch icon in the menu bar and select __Preferences...__.
 
-{% img mx-auto /bunch/images/BunchPreferences.png 528 392 "Bunch Preference Pane" "Preference Pane Screenshot" %}
+{% img aligncenter mx-auto /bunch/images/BunchPreferences.png 527 366 "Bunch Preference Pane" "Preference Pane Screenshot" %}
 
 ## Application Settings
 
@@ -57,4 +57,8 @@ Reveal
 ## Bunch Editor
 
 Click the button to select an external editor for your Bunch files. You can hold down Command while clicking any Bunch in the menu to open its file in your editor.
+
+## Copy UUID
+
+This copies a unique identifier for the current Mac to your clipboard. This can be used in `startup` and `schedule if` frontmatter to only run as startup or add schedules on the current Mac. This is useful if you run Bunch on multiple machines and sync your Bunch folder.
 

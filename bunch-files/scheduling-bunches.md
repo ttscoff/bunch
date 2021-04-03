@@ -14,12 +14,14 @@ tags: [frontmatter,scheduling]
 
 You can use Bunch like an alarm clock or timer by making use of some [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter) in your Bunch files.
 
-| `open at:`     | Set times to open this bunch daily    |
-| `close at:`    | Set times to close this bunch daily   |
-| `open on:`     | Set weekdays and time to open weekly  |
-| `close on:`    | Set weekdays and time to close weekly |
+| `open at:`     | Set times to open this bunch daily     |
+| `close at:`    | Set times to close this bunch daily    |
+| `open on:`     | Set weekdays and time to open weekly   |
+| `close on:`    | Set weekdays and time to close weekly  |
 | `open every:`  | Repeat open at intervals               |
 | `close after:` | Set an interval after which to close   |
+| `schedule if:` | Selectively schedule on different Macs |
+
 
 Bunch will always read in these keys and set the alarms and timers when it launches, so it doesn't matter if you quit the app in between scheduled launches.
 
@@ -138,3 +140,14 @@ All of the scheduling keys (other than `open every`) allow natural language date
 
 When launching and closing Bunches on a schedule, Bunch will attempt to show a notification 15 seconds before the action happens. Clicking the notification will cause it to the action to happen immediately, and there's a cancel button to skip that scheduled launch until the interval comes around again. This notification system is only tested on Big Sur. I highly recommend setting Bunch's notification style to "Alert" in System Preferences, they work much better for what Bunch uses them for.
 
+## Selectively Scheduling on Synced Macs {#selective}
+
+If you sync your Bunches to multiple Macs, you may want to be selective about which ones get scheduled. There are two keys that can help with this.
+
+First, `schedule if:` accepts either a trigger file or a UUID. 
+
+A trigger file is a path to any file outside of your Bunch folder. If that file exists, scheduling is enabled, if it doesn't, any scheduling frontmatter is ignored. The file can be empty.
+
+A UUID is a unique identifier for each Mac. You can get the UUID for the current machine by opening Preferences and pressing "Copy UUID." The value of `startup if:` can be a single UUID, or multiple UUIDs separated by commas.
+
+Second, `schedule unless:` takes the same parameters as `schedule if:` but has the reverse effect. If a trigger file exists or a UUID matches, scheduling is ignored. If neither is true, scheduling is enabled.

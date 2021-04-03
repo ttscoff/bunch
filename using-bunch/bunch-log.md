@@ -2,6 +2,7 @@
 layout: default
 title: Bunch Logging
 parent: Using Bunch
+nav_order: 50
 tags: [log,scripts]
 ---
 # Bunch Log

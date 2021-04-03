@@ -12,7 +12,7 @@ When this is turned on, all items in the Bunch file are added to the queue to be
 
 ## Changing Sequence for a Single Bunch
 
-You can change the sequence of execution for a single Bunch, regardless of the Preference setting, by using the frontmatter key `sequence`. This can be set to either "sequential" or "parallel." You only need the first letter of either value to trigger it, so `sequence: P` is all it takes to enable parallel execution for the Bunch.
+You can change the sequence of execution for a single Bunch, regardless of the Preference setting, by using the [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/) key `sequence`. This can be set to either `sequential` or `parallel`. You only need the first letter of either value to trigger it, so `sequence: p` is all it takes to enable parallel execution for the Bunch.
 
 	---
 	title: All At Once

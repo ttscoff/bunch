@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Bunch Menu
+title: The Bunch Menu
 parent: Using Bunch
-nav_order: 20
+nav_order: 30
 tags: [shortcuts]
 ---
 # The Bunch Menu
@@ -14,6 +14,8 @@ Just click on the Bunch status item to reveal the menu.
 At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close/)" lines.
 
 Bunches that have an active [schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) (e.g. scheduled to launch or waiting to close) will have a timer emoji after their title.
+
+You can control the order Bunches appear in the menu [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#sortorder). You can also organize your [Bunches into submenus]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/), if needed.
 
 ### Mouse-Based Menu Functions
 
@@ -62,7 +64,7 @@ Clear Checkmarks
 New Bunch With Open Apps
 : Use this command to create a new Bunch file containing all of the currently open apps on your Mac. This will only include apps that show up in your Dock, not apps that run in your menu bar only (Finder and Bunch will also be ignored). You will have the option to name the new Bunch, and to either save the Bunch to your Bunch folder, or copy the contents to your clipboard.
 
-: {% gif images/newbunchwithopenapps.gif "New Bunch With Open Apps" %}
+    {% gif images/newbunchwithopenapps.gif "New Bunch With Open Apps" %}
 
 Save Current Wallpaper as Default
 : When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/wallpaper/), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.

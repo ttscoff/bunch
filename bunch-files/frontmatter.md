@@ -174,7 +174,12 @@ If using `${variables}` in a Bunch, be sure to include [default values]({{ site.
 
 You can use `from file` and `from script` to load in variables from external sources.
 
-A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. The contents of `filename.txt` should be only colon-separated key-value pairs. This allows external automation to write data to files that affect your Bunch without having to modify the Bunch itself. A file called in this manner will be watched for updates, and the Bunch will be automatically updated if the file changes.
+A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. 
+
+> Remember that relative paths in Bunches within subfolders are still relative to the Bunch Folder, so if you want to reference `filename.txt` located in a subfolder, you should use `from file: Subfolder/filename.txt`, even if the Bunch itself is already in `Subfolder`.
+{:.warning}
+
+The contents of `filename.txt` should be only colon-separated key-value pairs. This allows external automation to write data to files that affect your Bunch without having to modify the Bunch itself. A file called in this manner will be watched for updates, and the Bunch will be automatically updated if the file changes.
 
 You can also run a shell script, which should also return just `key: value`pairs. Most scripting languages have a YAML library that makes it pretty easy to easily output data in a suitable format. Lines with YAML separators (`---`) will be ignored.
 
@@ -227,3 +232,45 @@ Reference that snippet in the Bunch but don't define either of the variables:
 When it runs, the name variable will be replaced with a random name, and the current date will be passed. It will update every time the Bunch opens. This is obviously stupid, as you could have just written a script that said this without populating variables and importing snippets, but it illustrates how dynamic frontmatter can work.
 
 See [Advanced Scripting]({{ site.baseurl }}/docs/integration/advanced-scripting) for more crazy ideas.
+
+## Applying Frontmatter to Multiple Bunches (folder.frontmatter) {#folderfrontmatter}
+
+A file called `folder.frontmatter` can be included in the Bunch folder [or any subfolder]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/). This file is primarily designed for use in subfolders to control submenu display, but it can also contain keys that affect all Bunches in the folder (including the base Bunch Folder).
+
+A `folder.frontmatter` file is just a text file containing frontmatter keys and values. The keys `title`, `menu divider`, and `ignore` only affect the submenu item, and the key `shortcut` is always ignored. All other keys are applied to every Bunch in the folder.
+
+This means that you can create a subfolder for Bunches you want to launch at a specific time, and then any Bunch you put in that folder will get an [`open at` schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) applied.
+
+If I have a folder called "Morning" and it contains three Bunches that I want launched at 8am, I could add a `folder.frontmatter` file to the folder and have the `open at` it contains applied to all three Bunches.
+
+```bash
+---
+title: Good Morning
+open at: 8am
+single bunch mode: ignore
+---
+```
+
+> Note that it's a good idea to ignore Single Bunch Mode if you're going to be batch opening multiple Bunches on a schedule. If Single Bunch Mode is enabled, each one that opens will immediately close the one before it.
+{:.warning}
+
+This allows for some batch manipulation of Bunches, and means that if you have a key you want applied to multiple Bunches, you don't have to edit them all individually. It does mean that those Bunches have to appear in a submenu, but then modifying which Bunches have the key is as simple as moving a Bunch in or out of that folder, and changing the key for every Bunch is just a matter of editing one file.
+
+This can also be used to apply arbitrary keys to groups of Bunches. An entire folder of Bunches can have a [variable]({{ site.baseurl }}/docs/bunch-files/variables/) assigned, and then modifying that variable for all Bunches can be done just by editing `folder.frontmatter`.
+
+Assign an arbitrary key, in this case a default browser:
+
+```bash
+---
+default browser: Safari
+---
+```
+
+Then any Bunch in the folder (and any Snippets they contain) can reference that variable.
+
+```bash
+${defaultbrowser}
+- https://example.com
+```
+
+Now if I want to change the browser for any of the Bunches in that folder using that variable, I just edit `default browser` in `folder.frontmatter`.
