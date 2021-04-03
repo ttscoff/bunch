@@ -105,12 +105,12 @@ nvUltra Beta
 - ~/Sites/dev/bunch/docs/
 
 // Launch the Jekyll server with a task monitor (see script below)
-$ ~/Sites/dev/bunch/servejekyll.sh (display 1 50%x100% right,top #2e3440 #86c0d1 95%)
+$ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x100% right,top #2e3440 #86c0d1 a:95%)
 
 // Display a web view window of the documentation site 
 // after 20-second delay
 // 1200pt wide, full height, primary display, normal window level
-(display http://127.0.0.1:4000/ 1200x100% right,center n) ~20
+(display http://127.0.0.1:4000/ 1200x100% right,center) ~20
 ```
 
 Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
@@ -358,7 +358,7 @@ title: CodeKit
 
 previewurl =* tell application "CodeKit" to get preview server url
 
-(display ${previewurl} 1 800x100% left,top)
+(display ${previewurl} d:1 800x100% left,top)
 ___
 #[nvultraweb]
 * tell application "CodeKit" to select project containing path "~/Sites/dev/nvultra/"

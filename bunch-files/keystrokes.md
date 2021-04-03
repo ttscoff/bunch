@@ -96,6 +96,17 @@ That sends Command-Shift-F1 as a general keystroke. You can trigger global key c
 
     !!{@$F1}
 
+### Adding Pauses to Key Combos {#combopause}
+
+You can include a pause in a key command sequence using `!` immediately followed by a number, e.g. `!2` for a 2-second pause. So to hit ⌘N to create a new window, then wait a few seconds for the window to load before continuing, you would use:
+
+```
+TextEdit
+- {@n !3 "This is a new window"}
+```
+
+The delay must be a positive integer representing a number of seconds, with no decimals.
+
 ## Typing Strings {#typingstrings}
 
 You can also type strings in a specific app using square brackets (`[]`). To open TextEdit, create a new document, and type out "Testing something," you would use:
@@ -123,12 +134,22 @@ You can use "escape" codes (letters preceded by a double backslash, e.g. `\\n`) 
 | `\\\\\\e` | End             | end                  |
 | `\\\\\\h` | Backspace       | ask unix...          |
 | `\\\\\\x` | Escape          | e was already used   |
-
+| `\\\\\\!X`| Pause for X seconds                   ||
 
 Example: `- [\\\\n\\\\n\\\\tThis has two newlines and an indent before it\\\\n]`
 
 > Tip: If you want to send a lot of special characters while typing, it's often better to use the bracket syntax and quote the typed strings, e.g. `{(tab)3 "my text" return @s}`.
 {:.tip}
+
+### Adding Pauses to Typed Strings {#typedpause}
+
+You can pause typing for any number of seconds using `\\!` followed by a number within a typed string (this works in interpolated strings as well):
+
+```
+- [This is a dramatic \\\\!5pause]
+```
+
+The delay must be a positive integer representing a number of seconds, with no decimals.
 
 ## Combining Key Combos and Typed Strings {#combined}
 
@@ -151,9 +172,9 @@ MailMate
 - {@n "me@dummy.com" tab "An email subject" tab "This is an email\\n\\nSincerely,\\nBrett" @$d`}
 ```
 
-## Inserting a Pause
+## Inserting a Pause {#pause}
 
-You can pause between strings by inserting a file line between key commands containing `(pause 5)` (for a 5 second pause). The delay must be a positive integer representing a number of seconds, with no letters or decimals.
+In addition to the `!` syntaxes above, you can pause between strings by inserting a file line between key commands containing `(pause 5)` (for a 5 second pause). The delay must be a positive integer representing a number of seconds, with no letters or decimals.
 
 ```
 TextEdit

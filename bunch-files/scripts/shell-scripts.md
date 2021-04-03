@@ -24,7 +24,9 @@ If a task monitor isn't visible for a task, output (both STDOUT and STDERR) from
 
 ## Scripts
 
-If the first element of a `$` line is a full path to a file, or a path relative to your Bunch folder, and the file exists, it will be executed directly. This assumes either a binary or an executable file with a proper hashbang in the script. Arguments can be passed on the same line.
+If the first element of a `$` line is a full path to a file, or a path relative to your Bunch folder[^relative], and the file exists, it will be executed directly. This assumes either a binary or an executable file with a proper hashbang in the script. Arguments can be passed on the same line.
+
+[^relative]: Remember that relative paths in Bunches within subfolders are relative to the base Bunch Folder, not the containing subfolder.
 
 Any spaces in filenames or within arguments should be escaped just like they would on the command line, using either double quotes or escaping individual spaces with backslashes.
 
@@ -135,15 +137,15 @@ You can cause a task monitor to display for a task automatically by including `(
 
 The display command in a shell command can take the same arguments as the regular [display command]({{ site.baseurl }}/docs/bunch-files/commands/display/#window), just without the file path that the regular command would require. For example, to run a command with a visor-like window on your second display, you can use:
 
-    $ ~/scripts/myscript.sh (display 1 100%x300 left,top #333 #b0d17d 95% d)
+    $ ~/scripts/myscript.sh (display d:1 100%x300 left,top #333 #b0d17d a:95% l:d)
 
 If a background color is specified without a foreground color, a contrasting color will automatically be assigned. If your background color is more than 50% black, the window will be Dark Aqua (dark mode appearance), lighter backgrounds will get regular Aqua (light mode appearance).
 
-All size, positioning, and color arguments are optional, and any combination of them can be used, as long as they're in the right order. See the [`display` window documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#window) for details.
+All size, positioning, and color arguments are optional, and any combination of them can be used. See the [`display` window documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#window) for details.
 
 The following command sets up a local Jekyll server for developing this documentation, with a task monitor in the upper right quarter of my secondary display:
 
-    $ ~/Sites/dev/bunch/servejekyll.sh (display 1 50%x50% right,top #222 #38c5eb 95% d)
+    $ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x50% right,top #222 #38c5eb a:95% l:d)
 
 {% img aligncenter /images/jekyllmonitor.jpg 800 500 "Jekyll server with display" %}
 

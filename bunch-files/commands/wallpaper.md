@@ -10,7 +10,7 @@ Set the Desktop Image for one or more displays. Provide a full path to the image
 
 The desktop image(s) that are in place when Bunch first launches will be restored when quitting any Bunch. 
 
-> If you manually change the Desktop wallpaper while Bunch is running, use __Save Current Wallpaper as Default__ from the main menu to update the fallback image(s).
+> __Tip:__ If you manually change the Desktop wallpaper while Bunch is running, use __Save Current Wallpaper as Default__ from the main menu to update the fallback image(s).
 {:.tip}
 
 ## Examples
@@ -18,3 +18,6 @@ The desktop image(s) that are in place when Bunch first launches will be restore
 ```
 (wallpaper ~/Pictures/Desktop 1.jpg|~/Pictures/Desktop 2.jpg)
 ```
+
+> __Tip:__ Alternatively, you can simluate a wallpaper change while a Bunch is running using the `(display)` command with a background image. See the tip [in the `(display)` documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#simulatewallpaper) for an example.
+{:.tip}

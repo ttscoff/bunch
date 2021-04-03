@@ -9,7 +9,7 @@ If you're having issues with a Bunch not doing what you expected, consult the [B
 
 If needed, split out sections of a longer Bunch into temporary smaller Bunches and test them one at a time to narrow down any issues. Or just create one new, blank Bunch and copy one line at a time into it from the misbehaving Bunch, launching it for each now line until the behavior you're trying to avoid happens, thus narrowing it down to that line.
 
-> If you're debugging the opening of a Bunch and have your Bunches set to toggle, you can avoid having to repeatedly close the Bunch by holding down the Shift key while clicking the menu item, or by using Clear All Checkmarks, which will tell Bunch that the Bunches are closed without actually executing any on-close behaviors or quitting any apps.
+> If you're debugging the opening of a Bunch and have your Bunches set to toggle, you can avoid having to repeatedly close the Bunch by holding down the Option key while clicking the menu item, or by using Clear All Checkmarks, which will tell Bunch that the Bunches are closed without actually executing any on-close behaviors or quitting any apps.
 {:.tip}
 
 If you know which line is problematic and it doesn't make sense, post about it [in the forum]({{ site.forum }}). If it seems like a bug in Bunch, please [let me know here]({{ site.bugs }}).

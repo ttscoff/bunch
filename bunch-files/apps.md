@@ -3,7 +3,7 @@ layout: default
 title: Apps
 parent: Bunch Files
 nav_order: 4
-tags: [apps]
+tags: [apps,screen]
 ---
 # Application Actions
 {:.no_toc}
@@ -122,6 +122,11 @@ If you start an app line with an `@` symbol, it will attempt to focus that app. 
 
 Everything is launched in the order listed in the Bunch file. Some apps take longer than others to launch or open a file, so execution will continue in the background after the inital launch of the app.
 
+If an app is still launching at the time another app is focused, windows from the slower app may appear after other windows are hidden. To ensure that the app you want focused remains the only app visible, you can add a delay to the focus command. Make it just long enough for other apps to finish launching.
+
+    @Omnifocus ~5
+
+As an alternative to hiding and focusing apps, see the [`screen` command]({{ site.baseurl }}/docs/bunch-files/commands/screen/).
 
 ## Quitting Apps {#quitting}
 

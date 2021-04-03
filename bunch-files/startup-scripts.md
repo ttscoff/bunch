@@ -18,9 +18,19 @@ The file should contain a list of Bunches to launch, one Bunch per line. The ".b
 
 If you have Single Bunch mode enabled, only the last item processed will be launched. Otherwise all lines of all ".startup" files will launch, not that you'd ever need more than one...
 
-## With Frontmatter
+## With Frontmatter {#frontmatter}
 
 You can also add a `startup: true` key to [the frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter) of any Bunch to have it launch when the app loads. All Bunches with `startup: true` will be opened after any `.startup` files have been processed.
+
+### Interactively
+
+If `startup:` is set to `ask`, a prompt will be displayed on launch. Cancelling that prompt will skip opening the Bunch.
+
+### Selectively for Synced Macs
+
+If you sync your Bunches to multiple Macs, you may want to specify which Mac(s) run the Bunch as a startup script. To do this, open Preferences and press the "Copy UUID" button. Paste the result as the value of the `startup:` key and the startup will only be triggered on the Mac that matches this value. Multiple UUIDs can be combined with commas. 
+
+You can also use `startup unless:` instead of `startup:`. This has the inverse effects for excluding specific Macs by UUID.
 
 ## Conflicts
 

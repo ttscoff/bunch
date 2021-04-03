@@ -4,6 +4,55 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+1.4.0 (β83)
+: !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
+: (display) command accepts `chrome:none` for windows with no titlebar or buttons
+: Fix: Force apps to foreground before sending key combos
+: Fix: Pause Bunch item processing while sending key commands for better consistency
+: Bring all windows to foreground when Unhiding All Windows
+: Automatically resolve tildes (`~`) in shell command arguments to user's home directory
+: Waiting snippet checks for presence of main window before considering an app launched. Times out and proceeds with execution after 10s.
+
+---
+
+1.4.0 (β82)
+: Display and screen command, UUID matching for selective scheduling, various fixes
+: `(display)` command parameters can now be in any order. This involved some changes to the syntax, please [see the documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/).
+: New `(screen)` command for creating a full-screen, solid color window with optional transparency for hiding all windows below it. [See docs for usage.]({{ site.baseurl }}/docs/bunch-files/commands/screen/)
+: Support for `schedule if` and `schedule unless` frontmatter for [excluding Macs from scheduling]({{ site.baseurl }}/docs/bunch-files/scheduling/#selective) based on trigger file or UUID
+: `startup` frontmatter can be one or more UUIDs to start only on matching Macs
+: `startup unless` frontmatter can be one or more UUIDs
+: Copy UUID button in preferences for use with `schedule if`, `schedule unless`, and `startup`
+: Bunches can be organized in subfolders, which will create submenus in the main Bunch menu
+: Allow `folder.frontmatter` to [set properties of submenu]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#frontmatter)
+: Allow `folder.frontmatter` to [pass keys to all Bunches in a subfolder]({{ site.baseurl }}/docs/frontmatter/#folderfrontmatter)
+: Rename Save to Done in Preferences
+: More complete emoji handling
+: Add keyboard shortcut for Open Log (⇧⌘L)
+: Wait for Bunch commands and script items when executing sequentially
+: If a background color is set for a `display` text file but no foreground, pick a contrasting color
+: If a background color is specified for text or HTML display windows, change the window to dark mode appearance if the color is more than 50% black
+: Enable edit menu commands (copy/paste/etc.) in display commands windows
+: Don't cut top off scrolling quick look previews
+: Allow text preview/file watching of any file with a text mimetype, not just .txt and .log
+: Fix: Regression in schedule handling
+: Fix: Fixes for changing Bunch Folder preferences and storing recents
+: Fix: Ensure all window updates happen on the main thread
+: Fix: Quick Look windows via `display` command set to wallpaper level were empty
+
+---
+
+1.4.0 (β80)
+: If a background color is set for a `display` text file but no foreground, pick a contrasting color
+: If a background color is specified for text or HTML display windows, change the window to dark mode appearance if the color is less than 50% brightness
+: Enable edit menu commands (copy/paste/etc.) in display commands windows
+: Don't cut top off scrolling quick look previews
+: Allow text preview/file watching of any file with a text mimetype, not just .txt and .log
+: Fix: Ensure all window updates happen on the main thread
+: Fix: Quick Look windows via `display` command set to wallpaper level were empty
+
+---
+
 1.4.0 (β80)
 : Set variables [with script results]({{ site.baseurl }}/docs/bunch-files/variables/#script)
 : Remove option to run in Dock
