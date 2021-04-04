@@ -4,6 +4,10 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+{% docdifffiles %}
+
+{% docdiff %}
+
 1.4.0 (β83)
 : !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
 : (display) command accepts `chrome:none` for windows with no titlebar or buttons
@@ -11,7 +15,7 @@ page_id: changelog
 : Fix: Pause Bunch item processing while sending key commands for better consistency
 : Bring all windows to foreground when Unhiding All Windows
 : Automatically resolve tildes (`~`) in shell command arguments to user's home directory
-: Waiting snippet checks for presence of main window before considering an app launched. Times out and proceeds with execution after 10s.
+: Waiting Snippet waits for up to 10 seconds for presence of main window before considering an app launched.
 
 ---
 

@@ -247,8 +247,12 @@ If I have a folder called "Morning" and it contains three Bunches that I want la
 ---
 title: Good Morning
 open at: 8am
+single bunch mode: ignore
 ---
 ```
+
+> Note that it's a good idea to ignore Single Bunch Mode if you're going to be batch opening multiple Bunches on a schedule. If Single Bunch Mode is enabled, each one that opens will immediately close the one before it.
+{:.warning}
 
 This allows for some batch manipulation of Bunches, and means that if you have a key you want applied to multiple Bunches, you don't have to edit them all individually. It does mean that those Bunches have to appear in a submenu, but then modifying which Bunches have the key is as simple as moving a Bunch in or out of that folder, and changing the key for every Bunch is just a matter of editing one file.
 
