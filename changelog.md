@@ -4,8 +4,6 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
-{% docdifffiles %}
-
 {% docdiff %}
 
 1.4.0 (β83)
