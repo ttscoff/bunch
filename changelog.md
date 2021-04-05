@@ -4,7 +4,11 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+{% include news.html %}
+
 {% docdiff %}
+
+---
 
 1.4.0 (β83)
 : !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
