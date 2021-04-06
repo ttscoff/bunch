@@ -4,6 +4,8 @@ title: Changelog
 nav_order: 99
 page_id: changelog
 ---
+# Bunch Release Notes
+
 {% include news.html %}
 
 {% docdiff %}

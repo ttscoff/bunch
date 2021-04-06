@@ -5,7 +5,7 @@ parent: Running Scripts
 grand_parent: Bunch Files
 tags: [automator, scripts]
 ---
-# Running an Automator Workflow
+# Running Automator Workflows
 
 If a line starts with an ampersand (`&`), it will be run as an Automator workflow. These should be created in Automator as a Workflow, and saved with the `.workflow` extension.
 

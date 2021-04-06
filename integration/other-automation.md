@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Other Automation
+title: Home Automation
 parent: Integration
 tags: [integration]
 ---

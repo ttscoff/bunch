@@ -6,8 +6,12 @@ nav_order: 10
 tags: [scripting,applescript]
 ---
 # The Bunch AppleScript Dictionary
+{:.no_toc}
 
 Bunch provides an AppleScript dictionary that you can use to open, close, and toggle Bunches, process raw text, or access snippets.
+
+* Table of Contents
+{:toc}
 
 ## Open, close, and toggle Bunches
 
@@ -61,3 +65,25 @@ tell application "Bunch"
     run snippet "useful.snippets" fragment "Spotify" with variables "url=spotify:playlist:4AEt6vXGJYmyOEE8zzgvjQ&autoplay=false"
 end tell
 ```
+
+## Preferences {#prefs}
+
+You can retrieve several of Bunch's preferences using AppleScript, which avoids the need to use `defaults` in shell scripts.
+
+```applescript
+tell application "Bunch"
+   get preference "Bunch Folder" 
+end tell
+```
+
+All values are returned as text. Boolean values (which is everything other than "Bunch Folder" and "Debug Level") will return text containing either "0" (false) or "1" (true). Debug Level returns text containing a number between 0 (errors only) and 4 (debug messages).
+
+When returning a preference, Bunch just looks for keywords. As long as the text given to `get preference` includes one of the following words, it will return the associated preference:
+
+|         Keyword         |     Preference    |
+|-------------------------|-------------------|
+| "folder" or "directory" | Bunch Folder      |
+| "toggle"                | Toggle Bunches    |
+| "single"                | Single Bunch Mode |
+| "debug"                 | Debug Level (0-4) |
+| "preserve"              | Preserve Bunches  |

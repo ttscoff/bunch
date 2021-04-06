@@ -5,7 +5,7 @@ parent: Running Scripts
 grand_parent: Bunch Files
 tags: [display, shell, scripts]
 ---
-# Running shell scripts and commands
+# Running Shell Scripts and Commands
 {:.no_toc}
 
 * Table of Contents
