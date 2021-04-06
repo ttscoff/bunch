@@ -6,34 +6,44 @@ grand_parent: Integration
 tags: [password,scripts]
 ---
 # Running Privileged Tasks (sudo)
+{:.no_toc}
 
-You can make use of Bunch's scripting features and the macOS Keychain to enable secure use of `sudo` in your scripts.
+You can securely store and access passwords, including root passwords, by using built-in macOS tools. Using these tools makes it possible to run privileged tasks within a Bunch without having to hardcode your passwords in plain text.
 
-1. The first step is to create a Keychain entry for the password you want to use. In this case, this will be your system password.
+* Table of Contents
+{:toc}
 
-    Open __Keychain Access__ in /Applications/Utilities. Unlock your `login` keychain if needed, then click the "Create new" button in the toolbar. Give the item a unique name, any account name you want, and then enter the password and click "Add."
+## Adding a Password to Your Keychain
 
-    {% img aligncenter /bunch/images/keychainhelper.jpg 600 332 %}
+You can make use of Bunch's scripting features and the macOS Keychain to enable secure use of `sudo` in your scripts, as well as securely store and access passwords for other purposes.
 
-    > Note that you can right click on the login toolchain in the left sidebar and use __Change Settings...__ to tell it how long to remain unlocked. If your machine is private and you want it to remain unlocked for as long as you're logged in, diable "Lock after..." and enable "Lock when sleeping."
-    {:.tip}
+The first step is to create a Keychain entry for the password you want to use. In this case, this will be your system password.
 
-2. Now this password entry can be accessed using the command line tool `security`, which we can use in a script. If the keychain is unlocked, the password will be retrieved without interaction. If it's locked, you'll be asked to enter your keychain password before access is granted.
+Open __Keychain Access__ in /Applications/Utilities. Unlock your `login` keychain if needed, then click the "Create new" button in the toolbar. Give the item a unique name, any account name you want, and then enter the password and click "Add."
 
-    The first and simplest option is just to put all of the sudo commands you need in one script and call the `security` tool at the top. You can then echo the retrieved password to `sudo -S`, which tells `sudo` to read the password from the command line.
+{% img aligncenter /bunch/images/keychainhelper.jpg 600 332 %}
 
-    We'll call `security` and give it the name you assigned to the keychain item (`-l`), and the account name (`-a`). `-w` tells it to return only the password.
+> Note that you can right click on the login toolchain in the left sidebar and use __Change Settings...__ to tell it how long to remain unlocked. If your machine is private and you want it to remain unlocked for as long as you're logged in, diable "Lock after..." and enable "Lock when sleeping."
+{:.tip}
 
-    ```bash
-    #!/bin/bash
+## Scripting Keychain
 
-    PASS=$(security find-generic-password -l "bunch password" -a bunch -w|tr -d '\n')
+Now this password entry can be accessed using the command line tool `security`, which we can use in a script. If the keychain is unlocked, the password will be retrieved without interaction. If it's locked, you'll be asked to enter your keychain password before access is granted.
 
-    echo "$PASS" | sudo -S [your privileged command]
-    ```
+The first and simplest option is just to put all of the sudo commands you need in one script and call the `security` tool at the top. You can then echo the retrieved password to `sudo -S`, which tells `sudo` to read the password from the command line.
 
-    > The first time `security` is used from a script, you'll get a prompt to allow access. Be sure to click "Always Allow" to avoid getting the same prompt every time.
-    {:.tip}
+We'll call `security` and give it the name you assigned to the keychain item (`-l`), and the account name (`-a`). `-w` tells it to return only the password.
+
+```bash
+#!/bin/bash
+
+PASS=$(security find-generic-password -l "bunch password" -a bunch -w|tr -d '\n')
+
+echo "$PASS" | sudo -S [your privileged command]
+```
+
+> The first time `security` is used from a script, you'll get a prompt to allow access. Be sure to click "Always Allow" to avoid getting the same prompt every time.
+{:.tip}
 
 If you want to make the password available to multiple scripts with one call, or want to gather multiple passwords at once for different scripts, you can use frontmatter to store them.
 
@@ -77,6 +87,15 @@ $ tmutil stopbackup
 
 # Reverse on close with !$
 !$ echo "${password}" | sudo -S tmutil enable 2>/dev/null
+```
+
+### Inline Variable Assignment
+
+Rather than using `from script` and outputting YAML-formatted keys, you can also just run a single command and immediately assign it to a variable. If you're only getting one password, this would make sense.
+
+```bash
+password = $ security find-generic-password -l "bunch password" -a bunch -w|tr -d '\n'
+$ echo "${password}" | sudo -S [my command]
 ```
 
 ### Better Password Masking
