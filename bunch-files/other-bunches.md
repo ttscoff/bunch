@@ -32,6 +32,8 @@ _Example:_
 
 When closing the parent Bunch, any Bunches launched will also be closed. Use `%Name.bunch` to ignore the Bunch when closing.
 
+When using subfolders, it's a good idea to prefix the Bunch name with the subfolder (e.g. `Subfolder/Bunch Name.bunch`). The Bunch name alone _will_ match a subfolder Bunch, but because Bunches with the same name can exist in different subfolders, using Bunch name only will find the first match alphanumerically, which may not be the one you're looking for.
+
 ## Setting Frontmatter Variables {#variables}
 
 When calling a Bunch from another Bunch, you can override and add to frontmatter keys, which can then be used in variables. To do so, add dashed lines underneath the Bunch call with `key=value` pairs:
