@@ -3,6 +3,8 @@ layout: default
 title: Comments
 parent: Bunch Files
 ---
+# Commenting a Bunch
+
 Comments can be included in your Bunch files. They can be used to remind yourself what a long [key combo]({{ site.baseurl }}/docs/bunch-files/keystrokes/) string or a why apps are in a specific sequence, or they can be used to explain things when sharing Bunches with others. (Admittedly, they're mostly so I can clearly explain things in example Bunches.)
 
 ## Line comments

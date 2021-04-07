@@ -3,6 +3,12 @@ layout: default
 title: Troubleshooting
 nav_order: 75
 ---
+# Troubleshooting Bunch
+{:.no_toc}
+
+* Table of Contents
+{:toc}
+
 ## Debugging Bunches {#debugging}
 
 If you're having issues with a Bunch not doing what you expected, consult the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log) to see if you can trace the issue. 
@@ -13,6 +19,10 @@ If needed, split out sections of a longer Bunch into temporary smaller Bunches a
 {:.tip}
 
 If you know which line is problematic and it doesn't make sense, post about it [in the forum]({{ site.forum }}). If it seems like a bug in Bunch, please [let me know here]({{ site.bugs }}).
+
+## Debugging Scripts
+
+See [Debugging Scripts]({{ site.baseurl }}/docs/integration/advanced-scripting/debugging/) in the Advanced Scripting section for tips on tracking down issues with shell scripts.
 
 ## Specific App Not Launching or Quitting {#appnames}
 

@@ -5,6 +5,8 @@ parent: Integration
 nav_order: 5
 tags: [scripting]
 ---
+# The Bunch URL Handler
+
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
 __Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.

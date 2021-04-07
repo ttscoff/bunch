@@ -5,6 +5,8 @@ parent: Using Bunch
 nav_order: 20
 tags: [preferences]
 ---
+# Getting Started With Bunch
+
 First, you need some Bunch files located in [your Bunch folder]({{ site.baseurl }}/docs/bunch-files/bunch-folder). There's an example one in there, so go ahead and get started by editing that. See the [Bunch Files]({{ site.baseurl }}/docs/bunch-files) section to learn all about the syntax and features.
 
 Once you have one or more `.bunch` files in your Bunch folder they should show up automatically when you open the Bunch menu by clicking the Bunch icon in the menu bar. Select a Bunch in the menu to perform the actions defined in that Bunch file.

@@ -13,6 +13,8 @@ Bunch is a little macOS utility that sits in your menu bar. It doesn't have any 
 - Learn [how to install]({{ site.baseurl }}/docs/installation/)
 - Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/)
 
+{% include news.html %}
+
 ---
 
 {% donate "A Bunch of thanks for your consideration" %}

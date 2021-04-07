@@ -187,7 +187,7 @@ When one of these keys is detected, the file or script results will be merged wi
 
 Frontmatter is only updated when a Bunch is opened, when a change is made to the Bunch file itself, or when an imported file is changed. Changing a referenced script will not trigger an update, but the new data will be parsed before any additional snippets or scripts are opened.
 
-You can also incorporate dialogs in a frontmatter script. See [advanced scripting]({{ site.baseurl }}/docs/integration/advanced-scripting#password) for an example.
+You can also incorporate dialogs in a frontmatter script. See [advanced scripting]({{ site.baseurl }}/docs/integration/advanced-scripting/secure-input/) for an example.
 
 #### A Ridiculous Example
 {:.no_toc}

@@ -4,6 +4,10 @@ title: LaunchBar and Alfred
 parent: Integration
 tags: [integration]
 ---
+# LaunchBar and Alfred
+
+Despite Bunch's own [keyboard shortcuts]({{ site.baseurl }}/docs/using-bunch/keyboard-control), you may want to integrate with your favorite launcher. There are a couple of existing options.
+
 ## LaunchBar
 
 I've added a LaunchBar action for Bunch, which you can find on the [download page]({{ site.baseurl }}/download/). Download, unzip it, then double click the unzipped action to install. 

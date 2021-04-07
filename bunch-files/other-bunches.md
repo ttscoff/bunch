@@ -4,6 +4,15 @@ title: Opening Other Bunches
 parent: Bunch Files
 tags: [snippets]
 ---
+# Bunches Inside Bunches
+{:.no_toc}
+
+Bunch can perform actions on other Bunches from within a Bunch, opening or closing them, as well as passing variables to change their behavior.
+
+* Table of Contents
+{:toc}
+
+
 ## Opening Other Bunches {#opening}
 
 You can launch other Bunches just by adding the full name of the Bunch, including the ".bunch" extension, on a line, just like you would an app. Bunches launched in this manner behave as if you clicked them in the menu: it gets an "open" checkbox in the menu, and can be quit separately from the Bunch that launched it.
@@ -23,7 +32,9 @@ _Example:_
 
 When closing the parent Bunch, any Bunches launched will also be closed. Use `%Name.bunch` to ignore the Bunch when closing.
 
-### Setting Frontmatter Variables {#variables}
+When using subfolders, it's a good idea to prefix the Bunch name with the subfolder (e.g. `Subfolder/Bunch Name.bunch`). The Bunch name alone _will_ match a subfolder Bunch, but because Bunches with the same name can exist in different subfolders, using Bunch name only will find the first match alphanumerically, which may not be the one you're looking for.
+
+## Setting Frontmatter Variables {#variables}
 
 When calling a Bunch from another Bunch, you can override and add to frontmatter keys, which can then be used in variables. To do so, add dashed lines underneath the Bunch call with `key=value` pairs:
 

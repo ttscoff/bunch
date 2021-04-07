@@ -5,6 +5,7 @@ parent: Bunch Files
 tags: [snippets,variables]
 ---
 # Avoid Repitition With Reusable Snippets
+{:.no_toc}
 
 * Table of Contents
 {:toc}

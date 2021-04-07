@@ -3,9 +3,9 @@ layout: default
 title: Bunch Logging
 parent: Using Bunch
 nav_order: 50
-tags: [log,scripts]
+tags: [log,scripts,debug]
 ---
-# Bunch Log
+# The Bunch Log
 
 Because Bunch is reading plain text files and running everything in the background, it's easy for things to not work the way you expected and leave you with little idea what went wrong. That's where the Bunch Log comes in.
 
