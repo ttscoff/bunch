@@ -12,6 +12,20 @@ page_id: changelog
 
 ---
 
+1.4.0 (β84)
+: `get preference [key]` AppleScript command for retrieving various preference settings
+: `list open bunches` AppleScript command to list only open Bunches
+: `list bunches` returns an AppleScript list instead of a string
+: Remove some frivolous debug logging statements. It's the economy.
+: 10 second timeout for actions in sequential execution mode. The economy again.
+: When calling other Bunches via Bunches or handlers, allow matching subfolder and Bunch by display titles or any combination of title and display title
+: Allow Bunches with the same name in different subfolders
+: Include subfolder in log identifier
+: All Bunch name matching is case insensitive
+: Code refactoring to do a better job of catching bugs early
+
+---
+
 1.4.0 (β83)
 : !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
 : (display) command accepts `chrome:none` for windows with no titlebar or buttons
