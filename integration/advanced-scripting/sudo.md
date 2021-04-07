@@ -23,7 +23,7 @@ Open __Keychain Access__ in /Applications/Utilities. Unlock your `login` keychai
 
 {% img aligncenter /bunch/images/keychainhelper.jpg 600 332 %}
 
-> Note that you can right click on the login toolchain in the left sidebar and use __Change Settings...__ to tell it how long to remain unlocked. If your machine is private and you want it to remain unlocked for as long as you're logged in, diable "Lock after..." and enable "Lock when sleeping."
+> Note that you can right click on the login toolchain in the left sidebar and use __Change Settings...__ to tell it how long to remain unlocked after entering your password. If your machine is private and you want it to remain unlocked for as long as you're logged in, disable "Lock after..." and enable "Lock when sleeping."
 {:.tip}
 
 ## Scripting Keychain
