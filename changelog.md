@@ -12,6 +12,12 @@ page_id: changelog
 
 ---
 
+1.4.0 (β85)
+: Fix: Subfolder name appearing in menu item titles
+: Fix: URL handler calling open or close wasn't ignoring current state
+
+---
+
 1.4.0 (β84)
 : `get preference [key]` AppleScript command for retrieving various preference settings
 : `list open bunches` AppleScript command to list only open Bunches

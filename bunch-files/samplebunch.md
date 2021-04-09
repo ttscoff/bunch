@@ -87,41 +87,44 @@ x-marked://open?file=Work Stuff.md
 # See the documentation for more info: https://brettterpstra.com/bunch/docs
 ```
 
-## Simple Web Development
+## Screencasting {#screencast}
 
-These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `jekyll serve` to create a local server that updates automatically as the Markdown files change. I edit the docs in [nvUltra](https://nvultra.com/) and Sublime Text.
-
-This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
+Get set up to start recording a screencast.
 
 ```bash
 ---
-title: ✍🏻Documentation
-shortcut: d
+title: 🎥Screencast
+shortcut: S
 ---
-%Sublime Text
-@Sublime Text // Focus Sublime
+// General Settings
+(hide desktop) // hide desktop icons
+(hide dock)    // hide the Dock
+(dnd on)       // turn on Do Not Disturb
 
-nvUltra Beta
-- ~/Sites/dev/bunch/docs/
+// Launch Screenflow
+// Assume we'll need it open for editing after we're done 
+// recording, so ignore it when closing (%).
+%ScreenFlow
 
-// Launch the Jekyll server with a task monitor (see script below)
-$ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x100% right,top #2e3440 #86c0d1 a:95%)
+// Ask about specific project, handle setup
+?{
+  Marked => <<#Marked
+  Bunch => <<#Bunch
+} "Whatcha workin' on?"
 
-// Display a web view window of the documentation site 
-// after 20-second delay
-// 1200pt wide, full height, primary display, normal window level
-(display http://127.0.0.1:4000/ 1200x100% right,center) ~20
+// Focus Screenflow, hiding other apps
+@ScreenFlow
+___
+// Load specific settings for different projects
+
+#[Marked]
+(wallpaper ~/Pictures/Desktops/markeddesktop.jpg)
+Marked 2
+
+#[Bunch]
+(wallpaper ~/Pictures/Desktops/bunchdesktop.jpg)
 ```
 
-Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
-
-```bash
-#!/bin/bash
-source "$HOME/.rvm/scripts/rvm" &>/dev/null
-cd ~/Sites/dev/bunch
-rvm use ruby-2.6.5
-bundle exec jekyll serve --trace -l
-```
 
 ## Podcasting
 
@@ -341,7 +344,43 @@ Spotify
 - URL=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
 - Autoplay=${autoplay:true}
 ```
- 
+
+## Simple Web Development {#simpleweb}
+
+These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `jekyll serve` to create a local server that updates automatically as the Markdown files change. I edit the docs in [nvUltra](https://nvultra.com/) and Sublime Text.
+
+This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
+
+```bash
+---
+title: ✍🏻Documentation
+shortcut: d
+---
+%Sublime Text
+@Sublime Text // Focus Sublime
+
+nvUltra Beta
+- ~/Sites/dev/bunch/docs/
+
+// Launch the Jekyll server with a task monitor (see script below)
+$ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x100% right,top #2e3440 #86c0d1 a:95%)
+
+// Display a web view window of the documentation site 
+// after 20-second delay
+// 1200pt wide, full height, primary display, normal window level
+(display http://127.0.0.1:4000/ 1200x100% right,center) ~20
+```
+
+Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
+
+```bash
+#!/bin/bash
+source "$HOME/.rvm/scripts/rvm" &>/dev/null
+cd ~/Sites/dev/bunch
+rvm use ruby-2.6.5
+bundle exec jekyll serve --trace -l
+```
+
 ## CodeKit (Script Variable) {#scriptvariable}
 
 The following Bunch combines a multiple choice dialog with a frontmatter key (`previewurl`) that gets set by running an AppleScript. The multiple choice dialog runs first, which calls snippets that set the current project in CodeKit, then uses an AppleScript call to get the browser preview url. The URL is retrieved prior to running the display command, so it can be inserted into the command as the target URL.
