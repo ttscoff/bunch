@@ -12,6 +12,14 @@ page_id: changelog
 
 ---
 
+1.4.0 (β86)
+: Stop stripping underscores from variable names. Why did I think that was a good idea? I forget.
+: Assigning variables from dialogs when no frontmatter has previously been defined
+: Null logging when frontmatter wasn't changed
+: Don't let a Bunch quit itself in Single Bunch Mode when forced open from the menu
+
+---
+
 1.4.0 (β85)
 : Fix: Subfolder name appearing in menu item titles
 : Fix: URL handler calling open or close wasn't ignoring current state

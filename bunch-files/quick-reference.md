@@ -65,13 +65,13 @@ You can control some aspects of your Bunch using Frontmatter, including the titl
 
 [See documentation for details.]({{ site.baseurl }}/docs/integration/url-handler/)
 
-| URL | Method |
-| :--- | :--- |
-| `x-bunch://open?bunch=[BUNCH NAME]`  | Open a Bunch        |
-| `x-bunch://[BUNCH NAME]`             | Open shorthand  |
-| `x-bunch://close?bunch=[BUNCH NAME]` | Close a Bunch       |
-| `x-bunch://close/[BUNCH NAME]`       | Close shorthand |
-| `x-bunch://toggle?bunch=[BUNCH NAME]` | Toggle a Bunch       |
-| `x-bunch://toggle/[BUNCH NAME]`       | Toggle shorthand |
-| `x-bunch://raw?txt=[BUNCH TEXT]` | Run raw text as a Bunch       |
-| `x-bunch://snippet?file=[SNIPPET PATH]&fragment=[FRAGMENT]&foo=bar`       | Run a snippet with fragment and variables |
+| URL                                   | Method                        |
+| :-----------------------------------  | :---------------------------- |
+| `x-bunch://open?bunch=[BUNCH NAME]`   | Open a Bunch                  |
+| `x-bunch://[BUNCH NAME]`              | Open shorthand                |
+| `x-bunch://close?bunch=[BUNCH NAME]`  | Close a Bunch                 |
+| `x-bunch://close/[BUNCH NAME]`        | Close shorthand               |
+| `x-bunch://toggle?bunch=[BUNCH NAME]` | Toggle a Bunch                |
+| `x-bunch://toggle/[BUNCH NAME]`       | Toggle shorthand              |
+| `x-bunch://raw?txt=[BUNCH TEXT]`      | Run raw text as a Bunch       |
+| {% raw %}`x-bunch://snippet?file=[SNIPPET PATH]&fragment=[FRAGMENT]&foo=bar`{% endraw %} | Run a snippet with fragment and variables |
