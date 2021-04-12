@@ -12,6 +12,13 @@ page_id: changelog
 
 ---
 
+1.4.0 (β88)
+: Only run interactive dialogs to assign a variable if the variable isn't already defined (allow frontmatter to override dialogs)
+: Remove "Working" highlight on menu item after 10 seconds as a fallback
+: Crash caused by `(notify)` command
+
+---
+
 1.4.0 (β87)
 : Fix: Double trimming brackets on on-quit commands
 : Fix: Edge case where canceling a multiple choice dialog left Bunch with an empty string
