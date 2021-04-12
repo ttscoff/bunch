@@ -102,11 +102,13 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
         nvUltra => <coding.snippets#nvUltra
     } "Whatcha Coding?"
 
-### Assigning Variables With Input {#variables}
+## Assigning Variables With Input {#variables}
 
 You can always write your own scripts with dialogs to return frontmatter keys and values [using the `from script` key]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dynamicfrontmatter). But you can also assign them within a Bunch to get input at the time you open the Bunch and populate variables in snippets with it.
 
-To populate a frontmatter key for use as snippet variables, just start the line with the variable name, followed by `=`, and then the syntax for the type of query you want. __The variable name should not contain spaces.__
+To populate a frontmatter key for use as a variable, just start the line with the variable name, followed by `=`, and then the syntax for the type of query you want. __The variable name should not contain spaces.__
+
+___Note that the dialogs will only display if the frontmatter key is not already assigned.___ This allows you to have a Bunch offer interactivity when launched directly, but when called from another Bunch, an AppleScript, or the URL handler, you can assign the variable directly and skip the dialog.
 
 #### Text Input
 
@@ -145,3 +147,18 @@ ___
 ```
 
 My choice from the podcast query gets populated just like it is in the array (either "Overtired" or "Systematic"). If I wanted to provide different text for the options than the final values it returns, I would use a [Dictionary](#dictionary).
+
+As mentioned above, if I wanted to call this Bunch from the URL handler with a specific podcast pre-defined, I could just define the `podcast` and `episdoe` variables when calling it, and the select and input dialogs would not display:
+
+    `open x-bunch://open/?bunch=Podcast&podcast=Overtired&episode=203`
+
+> You can use variable assignment to abstract some of the above examples. Instead of having a dialog immediately call a snippet, you can assign a fragment name to a variable and then use that when calling the snippet. The following sets `which_snippet` to the result of the dialog, then calls a snippet, passing the result as the fragment to search for:
+> 
+> ```
+> which_snippet = ?[Snippet One, Snippet Two] "Which Snippet?"
+>
+> <MyBunch.snippets#${which_snippet:Default Snippet}
+> ```
+>
+> Include a default value to run in case the dialog is cancelled.
+{:.tip}

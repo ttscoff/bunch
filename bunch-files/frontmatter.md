@@ -74,36 +74,6 @@ Setting `ignores state: true` will allow Bunches to re-open or re-close when sch
 
 Setting `quit apps: always` will force the Bunch to quit apps it opened regardless of whether the app is open in another Bunch. This correlates with the "Quit Apps Open in Other Bunches" global preference, but allows enabling this on a per-Bunch basis.
 
-## Customizing Menu Display Title {#displaytitle}
-
-The "title" key changes the display title of the Bunch, as seen in the menu. When calling the Bunch from any other Bunch, you'll still use the filename.
-
-You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. The menus are sorted alphabetically by display title, so changing the `title:` key will change the sort order of the list. Sort order ignores emoji, so `😊Bunch A` still comes before `♥️Bunch B`.
-
-## Customizing Menu Order {#sortorder}
-
-The "menu order" key defines the sort order of Bunches in the menu that Bunch displays. 
-
-Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
-
-Bunches without a menu order value will be sorted alphabetically after the numbered bunches.
-
-Bunches with a menu order greater than 99 will be sorted by number and appended to the end of the list. Adding `menu order: 100` to a Bunch will force it the the end of the list. Duplicate numbers are sorted alphanumerically.
-
-> Tip: If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
-{:.tip}
-
-### Adding Menu Dividers {#dividers}
-
-You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
-
-    ---
-    title: Just A Bunch
-    menu order: 10
-    menu divider: after
-    ---
-
-
 ### Setting a Shortcut Key {#shortcuts}
 
 Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from 1-9 and then 0, assigned in menu display order. Subsequent items are assigned Command-Number, from "⌘1" to "⌘0". You can customize these using the `shortcut:` frontmatter key.
@@ -135,6 +105,36 @@ shortcut: @t
 Shortcuts can also use words in the format `option-command-t`.
 
 If you duplicate a shortcut between two Bunches, only the first one (in menu order) will get the shortcut. The conflicting Bunch will fall back to the auto-assigned numeric shortcuts.
+
+### Customizing Menu Display Title {#displaytitle}
+
+The "title" key changes the display title of the Bunch, as seen in the menu. When calling the Bunch from any other Bunch, you'll still use the filename.
+
+You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. The menus are sorted alphabetically by display title, so changing the `title:` key will change the sort order of the list. Sort order ignores emoji, so `😊Bunch A` still comes before `♥️Bunch B`.
+
+### Customizing Menu Order {#sortorder}
+
+The "menu order" key defines the sort order of Bunches in the menu that Bunch displays. 
+
+Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
+
+Bunches without a menu order value will be sorted alphabetically after the numbered bunches.
+
+Bunches with a menu order greater than 99 will be sorted by number and appended to the end of the list. Adding `menu order: 100` to a Bunch will force it the the end of the list. Duplicate numbers are sorted alphanumerically.
+
+> Tip: If you increment your menu order numbers by 5 or 10 when first starting out, you'll have room to stick new ones in or move them around without having to re-order everything. E.g. put your top menu item at 10, second one at 20. Then if in the future you want something else at the top of the list or between those two, you can just put it at position 5 or 15 and still have room to fit 4 more in either direction before you have to go through and renumber everything.
+{:.tip}
+
+### Adding Menu Dividers {#dividers}
+
+You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
+
+    ---
+    title: Just A Bunch
+    menu order: 10
+    menu divider: after
+    ---
+
 
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 
