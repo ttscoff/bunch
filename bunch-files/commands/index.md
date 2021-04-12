@@ -23,13 +23,14 @@ Commands are run by using lines surrounded by parenthesis in Bunch files. These 
 (display FILE)
 (sleep [display])
 (awake [interval])
+(log [MESSAGE])
 ```
 
 ## Reversing Commands
 
 Most commands are automatically reversed when closing a Bunch (hidden Desktop icons are shown, hidden dock is revealed, wallpapers switch back, etc.). Notable exceptions inclue Dock positioning, notification, and audio commands, which are not restored to their previous state when the Bunch closes.
 
-To _avoid_ reversing a command when closing the Bunch, precede the line with a `%` symbol, e.g. `%(hide dock)` (similar to [ignoring applications when quitting]({{ site.baseurl }}/docs/bunch-files/apps#ignoring-appscommands-on-close)). 
+To _avoid_ reversing a command when closing the Bunch, precede the line with a `%` symbol, e.g. `%(hide dock)` (just like [ignoring applications when quitting]({{ site.baseurl }}/docs/bunch-files/apps#ignoring-appscommands-on-close)).
 
 To run the command _only_ when closing a bunch, use an exclamation point (`!`) before the command, e.g. `!(show desktop)`.
 
