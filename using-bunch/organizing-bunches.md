@@ -88,4 +88,4 @@ __`menu divider`__
 
 All other keys are passed on to the Bunches the folder contains, with the exception of `shortcut` (which is ignored entirely).
 
-Folder frontmatter can also be used to apply frontmatter keys to every file it contains. See [Applying Frontmatter to Multiple Bunches]({{ site.baseurl }}/docs/frontmatter/#folderfrontmatter).
+Folder frontmatter can also be used to apply frontmatter keys to every file it contains. See [Applying Frontmatter to Multiple Bunches]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter).

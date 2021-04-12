@@ -65,8 +65,6 @@ You can optionally include a title for the dialog after the closing bracket in d
         TaskPaper
     ] "Which Task Manager?"
 
-{% gif images/MultiChoiceArray.gif "Multiple-choice array" %}
-
 By combining this with [variable assignment](#variables), you can have the list directly choose a snippet fragment to run. The following example assigns a `snippet` variable, then uses that to call a fragment of an [embedded snippet]({{ site.baseurl }}/docs/snippets/#embeddedsnippets).
 
 ```

@@ -12,6 +12,12 @@ page_id: changelog
 
 ---
 
+1.4.0 (β87)
+: Fix: Double trimming brackets on on-quit commands
+: Fix: Edge case where canceling a multiple choice dialog left Bunch with an empty string
+
+---
+
 1.4.0 (β86)
 : Stop stripping underscores from variable names. Why did I think that was a good idea? I forget.
 : Assigning variables from dialogs when no frontmatter has previously been defined

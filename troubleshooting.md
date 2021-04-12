@@ -18,6 +18,8 @@ If needed, split out sections of a longer Bunch into temporary smaller Bunches a
 > If you're debugging the opening of a Bunch and have your Bunches set to toggle, you can avoid having to repeatedly close the Bunch by holding down the Option key while clicking the menu item, or by using Clear All Checkmarks, which will tell Bunch that the Bunches are closed without actually executing any on-close behaviors or quitting any apps.
 {:.tip}
 
+Also see the [`(log)` command]({{ site.baseurl }}/bunch-files/commands/log/), which can be useful for pinpointing issues with variable assignment and execution sequence.
+
 If you know which line is problematic and it doesn't make sense, post about it [in the forum]({{ site.forum }}). If it seems like a bug in Bunch, please [let me know here]({{ site.bugs }}).
 
 ## Debugging Scripts

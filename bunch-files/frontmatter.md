@@ -28,7 +28,7 @@ Bunch treats keys the way MultiMarkdown does: it allows spaces and is case insen
 
 ## YAML-ish
 
-Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allowed in key names, but any spaces or underscores are removed when the variable is read in. All keys are lowercased. If your line is `First Name: Brett`, the variable would be accessed using `${firstname}`.
+Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allowed in key names, but they are removed when the variable is read in. All keys are lowercased. If your line is `First Name: Brett`, the variable would be accessed using `${firstname}`.
 
 Bunch frontmatter doesn't support the more complex structures of YAML, such as arrays and blocks. It's simply single-line keys and string values.
 
