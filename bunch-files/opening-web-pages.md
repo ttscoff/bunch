@@ -17,8 +17,8 @@ If you want to open web pages as part of a Bunch, you can just put a URL at the 
 
 If you want to open a url in a specific browser, you can use prefixes before the url. Examples:
 
-    safari:https://brettterpstra.com
-    firefox:https://mozilla.org
+    safari:​https://brettterpstra.com
+    firefox:​https://mozilla.org
 
 The recognized browser prefixes are:
 

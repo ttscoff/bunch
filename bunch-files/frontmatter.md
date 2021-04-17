@@ -16,7 +16,7 @@ Frontmatter goes at the very top of a Bunch, and is fenced off by three dashes (
 
 Example frontmatter:
 
-```
+```bunch
 ---
 title: 📞Comms
 open at: 8am
@@ -96,7 +96,7 @@ To use any of these symbols as the actual modifier key, use the Shift-equivalent
 
 To set a menu shortcut of Command-T for your Bunch, you would include this in the frontmatter:
 
-```bash
+```bunch
 ---
 shortcut: @t
 ---
@@ -129,18 +129,19 @@ Bunches with a menu order greater than 99 will be sorted by number and appended 
 
 You can use the `menu divider` key to add separators to the Bunch menu. The key can be set to `before` or `after`, determining whether the inserted divider comes before or after the Bunch in the menu.
 
-    ---
-    title: Just A Bunch
-    menu order: 10
-    menu divider: after
-    ---
-
+```bunch
+---
+title: Just A Bunch
+menu order: 10
+menu divider: after
+---
+```
 
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 
 You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to Bunches, snippets, and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.
 
-```bash
+```bunch
 ---
 say: anything
 ---
@@ -194,9 +195,11 @@ You can also incorporate dialogs in a frontmatter script. See [advanced scriptin
     
 Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that reads additional data in from a script called `frontmatter.rb`:
 
-    ---
-    from script: frontmatter.rb
-    ---
+```bunch
+---
+from script: frontmatter.rb
+---
+```
 
 The file `frontmatter.rb` would exist in your Bunch folder, so no path would be needed. It would do something like:
 
@@ -214,20 +217,26 @@ puts YAML.dump(data)
 
 The above script picks a random name and adds the current date. Now when the Bunch is read in, the frontmatter it actually stores looks like:
 
-    ---
-    fromscript: frontmatter.rb
-    name: Sara
-    date: Sat Jan 30 15:09:31 2021
-    ---
+```bunch
+---
+fromscript: frontmatter.rb
+name: Sara
+date: Sat Jan 30 15:09:31 2021
+---
+```
 
 Which means that in any snippets that are called within the Bunch, you can reference the `name` and `date` variables. Let's load a snippet called `test.snippets` that contains:
 
-    ---[Welcome]
-    * say "Hi ${name}, today is ${date}"
+```bunch
+---[Welcome]
+* say "Hi ${name}, today is ${date}"
+```
 
 Reference that snippet in the Bunch but don't define either of the variables:
 
-    <test.snippets#Welcome
+```bunch
+<test.snippets#Welcome
+```
 
 When it runs, the name variable will be replaced with a random name, and the current date will be passed. It will update every time the Bunch opens. This is obviously stupid, as you could have just written a script that said this without populating variables and importing snippets, but it illustrates how dynamic frontmatter can work.
 
@@ -243,7 +252,7 @@ This means that you can create a subfolder for Bunches you want to launch at a s
 
 If I have a folder called "Morning" and it contains three Bunches that I want launched at 8am, I could add a `folder.frontmatter` file to the folder and have the `open at` it contains applied to all three Bunches.
 
-```bash
+```bunch
 ---
 title: Good Morning
 open at: 8am
@@ -260,7 +269,7 @@ This can also be used to apply arbitrary keys to groups of Bunches. An entire fo
 
 Assign an arbitrary key, in this case a default browser:
 
-```bash
+```bunch
 ---
 default browser: Safari
 ---
@@ -268,7 +277,7 @@ default browser: Safari
 
 Then any Bunch in the folder (and any Snippets they contain) can reference that variable.
 
-```bash
+```bunch
 ${defaultbrowser}
 - https://example.com
 ```

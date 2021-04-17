@@ -19,7 +19,7 @@ These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/commen
 
 This example demonstrates the basic syntax for a Bunch file.
 
-```bash
+```bunch
 # Comments start with `#` or `//` and a space
 # blank lines are ignored
 
@@ -91,7 +91,7 @@ x-marked://open?file=Work Stuff.md
 
 Get set up to start recording a screencast.
 
-```bash
+```bunch
 ---
 title: 🎥Screencast
 shortcut: S
@@ -125,12 +125,11 @@ Marked 2
 (wallpaper ~/Pictures/Desktops/bunchdesktop.jpg)
 ```
 
-
 ## Podcasting
 
 Here's my `Podcast Record.bunch`.
 
-```bash
+```bunch
 ---
 title: 🎤Podcast: Record
 ---
@@ -178,7 +177,7 @@ $ killall Dropbox
 $ /Library/Backblaze.bzpkg/bztransmit -pausebackup
 
 ## Check for ad spots
-firefox:https://podman.backbeatmedia.com/shows
+firefox:​https://podman.backbeatmedia.com/shows
 
 ## Use Moom to position windows after everything has launched
 ## References the embedded snippet at the end using `<<`
@@ -202,7 +201,7 @@ ___
 
 I have this Bunch load on launch. It makes it easy to quit all of these apps at once, and load them back up at my convenience.
 
-```bash
+```bunch
 ---
 title: 📞Comms
 startup: true
@@ -240,7 +239,7 @@ Here's the Bunch I use when I'm ready to code. It offers a choice of my main pro
 
 I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/forklift/), with keystrokes assigned that this Bunch sends.
 
-```bash
+```bunch
 ---
 title: 🖥Code
 sequence: parallel
@@ -341,7 +340,7 @@ Xcode
 ----------------------------------------------------[Coding Spotify]-
 Spotify
 & workflows/Play Spotify URL
-- URL=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
+- URL=spotify:​playlist:3cSpIL4Q0H3uqdBMbT6c9x
 - Autoplay=${autoplay:true}
 ```
 
@@ -385,7 +384,7 @@ bundle exec jekyll serve --trace -l
 
 The following Bunch combines a multiple choice dialog with a frontmatter key (`previewurl`) that gets set by running an AppleScript. The multiple choice dialog runs first, which calls snippets that set the current project in CodeKit, then uses an AppleScript call to get the browser preview url. The URL is retrieved prior to running the display command, so it can be inserted into the command as the target URL.
 
-```bash
+```bunch
 ---
 title: CodeKit
 ---

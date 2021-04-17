@@ -20,7 +20,7 @@ In order to use a variable within a Bunch, you need to give it a value. Variable
 
 A variable is a key and a value. You can define the variable in frontmatter by using a `key: value` line. As long as the key doesn't conflict with one of [Bunch's built-in keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/#keys), you can use anything you want. Keys should be letters, numbers, and underscores only. They can contain spaces, but those will be compressed and stripped when they're used as a replacement, and the entire key will be lowercased, so "My Key" becomes "mykey".
 
-```bash
+```bunch
 ---
 title: My Bunch
 my variable: my value
@@ -39,9 +39,9 @@ Variables set by reading a file or running a script will supercede any values ha
 
 You can set a frontmatter key's value using a script (shell script or AppleScript). To do so, use the format:
 
-```bash
+```bunch
 # With a direct AppleScript command
-keyname = * tell app...
+keyname = * tell app... // AppleScript
 # With an AppleScript script file
 keyname = * myscript.applescript
 
@@ -68,7 +68,7 @@ When you call a Bunch or Snippet from within a Bunch, you can use file lines wit
 
 For a Bunch, you would use:
 
-```bash
+```bunch
 MyBunch.bunch
 - myvariable=my value
 ```
@@ -77,7 +77,7 @@ This value would override any matching key in `MyBunch.bunch`'s frontmatter. The
 
 For a Snippet, you would use:
 
-```bash
+```bunch
 <MySnippet.snippet
 - myvariable=my value
 ```
@@ -88,7 +88,7 @@ Values set using file lines will supercede any frontmatter or dialog values.
 
 ### With the URL Handler or AppleScript
 
-You can also define variables in query strings when using the [URL handler]({{ site.baseurl }}/docs/integration/url-hander/#variables). Arbitrary `key=value` pairs can be added when using the methods for opening, closing, and toggling Bunches, and when running Snippets directly.
+You can also define variables in query strings when using the [URL handler]({{ site.baseurl }}/docs/integration/url-handler/#variables). Arbitrary `key=value` pairs can be added when using the methods for opening, closing, and toggling Bunches, and when running Snippets directly.
 
 When using Bunch's [AppleScript]({{ site.baseurl }}/docs/integration/applescript/), you can add `with variables` and include a query string of keys and values, e.g. `with variables "variable1=My Value&variable2=Other Value"`.
 
@@ -116,14 +116,14 @@ Once a variable has a value, you can use it in your Bunch or Snippet by adding a
 
 In a Bunch or Snippet that might look like:
 
-```bash
+```bunch
 Xcode
 - ~/Code/Projects/${project}/${project}.xcworkspace
 ```
 
 You can use a placeholder anywhere, including in an app or command line.
 
-```bash
+```bunch
 ${apptolaunch}
 
 (display ${logtoshow} 800x800)
@@ -135,7 +135,7 @@ Placeholders can not be nested within other placeholders.
 
 You may need your variable to be percent encoded when it's used, for example when using it in a URL. In this case, use a percent symbol (`%`) instead of a dollar sign (`$`).
 
-```bash
+```bunch
 Safari
 - https://imdb.com/search?q=%{searchterm}
 ```
@@ -144,9 +144,9 @@ Safari
 
 You can (and generally should) define a default value for a placeholder. This will be used if the key is empty by the time the placeholder is reached. Add default values after a colon within the placeholder:
 
-```bash
+```bunch
 ${myvariable:Default Value}
 ```
 
-This is especially useful within a main Bunch, allowing the Bunch to function normally when called directly, but changing its functionality when its called from other Bunches or via the URL handler.
+This is especially useful within a main Bunch, allowing the Bunch to function normally when called directly, but changing its functionality when it's called from other Bunches or via the URL handler.
 

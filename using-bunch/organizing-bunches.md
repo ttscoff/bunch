@@ -61,7 +61,7 @@ The following frontmatter keys in `folder.frontmatter` only apply to subfolders 
 __`ignore`__
 : To ignore a folder completely, set `ignore` to true:
 
-:   ```bash
+:   ```bunch
     ---
     ignore: true
     ---
@@ -70,7 +70,7 @@ __`ignore`__
 __`title`__
 : Use the `title` key to set display title for the submenu, overriding the name of the folder. This can include emoji. Sort order of submenus is alphanumeric, ignoring emoji.
 
-:   ```bash
+:   ```bunch
     ---
     title: 👍🏻The Submenu Title
     ---
@@ -79,7 +79,7 @@ __`title`__
 __`menu divider`__
 : You can add menu separators before or after the submenu item as well, by setting `menu divider` to `before` or `after`:
 
-:   ```bash
+:   ```bunch
     ---
     title: Submenu After Divider
     menu divider: before

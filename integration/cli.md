@@ -7,9 +7,14 @@ tags: [scripting,cli]
 ---
 # The Bunch CLI
 
-The latest version is {% bunchcli version %}.
+The latest version is {% bunchcli version %}. 
 
-Install the Bunch CLI using `gem install bunchcli`. Run `bunch -h` for usage instructions.
+> While Bunch 1.4 is in Beta, use the pre-release version of the CLI (for Bunch 1.4+ only): `gem install bunchcli --pre`.
+{:.tip.important}
+
+Install the Bunch CLI using `gem install bunchcli`.
+
+Run `bunch -h` for usage instructions.
 
 {% bunchcli help %}
 

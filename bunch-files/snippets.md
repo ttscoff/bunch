@@ -26,29 +26,34 @@ You can even call other Bunch files as snippets. If you use "fragment" dividers 
 
 To make snippets flexible, Bunch [handles variables]({{ site.baseurl }}/docs/bunch-files/variables/) defined in the containing Bunch and replaced within the snippet. These are defined like files on the lines following the `<` line.
 
-    < generic.snippet
-    - proj_path=~/Code/MyProject
+```bunch
+< generic.snippet
+- proj_path=~/Code/MyProject
+```
 
 Now you can use `${proj_path}` anywhere in your snippet file, allowing you to use the same snippet for different projects.
 
-    TaskPaper
-    - ${proj_path}/todo.taskpaper
-    %iTerm
-    - ${proj_path}
-
+```bunch
+TaskPaper
+- ${proj_path}/todo.taskpaper
+%iTerm
+- ${proj_path}
+```
 
 You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
 
 You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content.
 
-    ---
-    search string: this is a search
-    ---
-    ___
-    Spotify
-    - spotify:search:%{searchstring}
+```bunch
+---
+search string: this is a search
+---
+___
+Spotify
+- spotify:​search:%{searchstring}
 
-    # sends "spotify:search:this%20is%20a%20search"
+# sends "spotify:​search:this%20is%20a%20search"
+```
 
 For more details see the [Variables]({{ site.baseurl }}/docs/bunch-files/variables/) documentation.
 
@@ -60,7 +65,9 @@ If you use a percent (`%`) instead of a dollar sign (`$`) in your snippet placeh
 
 If a snippet has variable placeholders but no values are provided when it's called, the placeholders will be removed. You can instead provide default values that will be used if no matching key/value pair is provided. To do this, just use a colon followed by the default within the placeholder:
 
-    ${proj_path:~/projects}
+```bunch
+${proj_path:~/projects}
+```
 
 Only the first colon is used to split the value, so the default value can contain colons.
 
@@ -68,22 +75,26 @@ Only the first colon is used to split the value, so the default value can contai
 
 You can define multiple snippets together in one file and label the sections with a hash (`#`) or hyphen (`-`) and the name in square brackets:
 
-    #[Section Label]
-    %nvUltra
-    &myWorkflow
+```bunch
+#[Section Label]
+%nvUltra
+&myWorkflow
 
-    #[Another Section]
-    MoreStuff
+#[Another Section]
+MoreStuff
+```
 
 Then you can reference the snippet with a fragment identifier, like this:
 
-    <MySnippet.snippet#Section Label
+```bunch
+<MySnippet.snippet#Section Label
+```
 
 If you load a snippet containing sections without using a fragment id, i.e. just `<MySnippet.snippet`, it will run all of the sections in the snippet.
 
 If you feel like being creative, Bunch allows the use of either dashes or hashes to create the section dividers, and you can have a variable number of them on either side of the brackets (you do need one dash or hash on the left, and the head and tail characters should match). The following all work:
 
-```
+```bunch
 ###[Section]
 #[Section]#########
 -------[Section]-----------
@@ -101,9 +112,11 @@ See the [Optional Snippets section]({{ site.baseurl }}/docs/bunch-files/interact
 
 Add a tilde and an integer at the end of the line to have the contents of the snippet run after a delay.
 
-    <General.snippets#Spotify ~10
-    - url=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
-    - autoplay=true
+```bunch
+<General.snippets#Spotify ~10
+- url=spotify:​playlist:3cSpIL4Q0H3uqdBMbT6c9x
+- autoplay=true
+```
 
 A delay can be combined with a query for an optional snippet. The delay should always be the last item on the line.
 
@@ -111,12 +124,16 @@ A delay can be combined with a query for an optional snippet. The delay should a
 
 Like most script types in Bunch, you can precede a snippet line with an exclamation point (`!`) to run it when the Bunch closes instead of when it opens.
 
-    !<General.snippets#Close Commands
+```bunch
+!<General.snippets#Close Commands
+```
 
 These can also have a delay:
-    
-    # Run 5 seconds after closing the snippet
-    !<General.snippets#Close Commands ~5
+
+```bunch    
+# Run 5 seconds after closing the snippet
+!<General.snippets#Close Commands ~5
+```
 
 ## Wait Until Apps Have Launched {#waitingsnippet}
 
@@ -124,7 +141,7 @@ A "Waiting Snippet" is a snippet line indented by 4 spaces or 1 tab.
 
 A Waiting Snippet will try to wait until all of the apps in the bunch have launched (or quit, if they're `!apps`). There's a timeout in case not all apps properly report their launch/termination to the OS.
 
-```
+```bunch
 Skype
 Audio Hijack
     <useful.snippets#Position Podcast
@@ -153,17 +170,21 @@ These work like any snippet file, and you can divide them into sections to refer
 
 To reference an embedded snippet, just use an additional `<` instead of a filename:
 
-    <<
+```bunch
+<<
+```
 
 That would run everything after the `___` as a snippet. You could also divide your embedded snippet into sections and reference it with a fragment identifier:
 
-    <<#Section 1
+```bunch
+<<#Section 1
+```
 
 Embedded snippets also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables and all frontmatter variables are available to them.
 
 __Embedded snippet example:__
 
-```bash
+```bunch
 <<#First Section
 
 !<<#On Close

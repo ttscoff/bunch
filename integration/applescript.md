@@ -62,7 +62,7 @@ The `with variables` parameter accepts a string of text formatted like a URL que
 
 ```applescript
 tell application "Bunch"
-    run snippet "useful.snippets" fragment "Spotify" with variables "url=spotify:playlist:4AEt6vXGJYmyOEE8zzgvjQ&autoplay=false"
+    run snippet "useful.snippets" fragment "Spotify" with variables "url=spotify:​playlist:4AEt6vXGJYmyOEE8zzgvjQ&autoplay=false"
 end tell
 ```
 

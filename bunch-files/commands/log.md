@@ -13,13 +13,13 @@ If your Log Level is set to Errors Only, log commands won't register in the log.
 
 ## Examples
 
-```bash
+```bunch
 (log myvariable is set to ${myvariable})
 ```
 
 You can also use it when debugging by setting the execution order to sequential and placing log statements at various points in the Bunch to see when they're reached.
 
-```bash
+```bunch
 ---
 title: Debug Bunch
 sequence: sequential

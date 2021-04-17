@@ -8,7 +8,7 @@ has_children: true
 
 Commands are run by using lines surrounded by parenthesis in Bunch files. These offer shortcuts to some system tasks and special actions.
 
-```
+```bunch
 (dark mode [on|off])
 (do not disturb [on|off])
 ([hide|show] dock)

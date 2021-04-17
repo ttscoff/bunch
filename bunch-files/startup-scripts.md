@@ -26,7 +26,7 @@ If you have Single Bunch mode enabled, only the last item processed will be laun
 
 You can also add a `startup: true` key to [the frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter) of any Bunch to have it launch when the app loads. All Bunches with `startup: true` will be opened after any `.startup` files have been processed.
 
-```bash
+```bunch
 ---
 title: My Startup Bunch
 startup: true

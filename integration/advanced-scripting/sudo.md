@@ -64,7 +64,7 @@ If you want to make the password available to multiple scripts with one call, or
 2. Save that as "password.sh" in your Bunch folder and make it executable with `chmod a+x password.sh`. 
 3. In the Bunch, we'll set the script to load the result as frontmatter using `from script`:
 
-    ```bash
+    ```bunch
     ---
     title: My sudo Bunch
     from script: password.sh
@@ -75,7 +75,7 @@ If you want to make the password available to multiple scripts with one call, or
 
 The following Bunch disables automatic Time Machine backup when it opens, and re-enables it when it closes. We're also running `tmutil stopbackup` to gracefully terminate any currently-running backups, which doesn't require privileged access.
 
-```bash
+```bunch
 ---
 title: My Time Machine Bunch
 from script: password.sh
@@ -122,7 +122,7 @@ tmutil status
 
 __Time Machine.bunch:__
 
-```bash
+```bunch
 ---
 title: My Time Machine Bunch
 from script: password.sh

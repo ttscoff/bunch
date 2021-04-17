@@ -29,18 +29,20 @@ This is not a "web browser." However, you can navigate to links, there are back,
 
 > Tip: If you point to a local server with LiveReload enabled, the preview will update appropriately. That makes it a decent preview for writing, say, documentation built on Jekyll (ahem), without opening a tab in your browser.
 >
-> `(display http://127.0.0.1:4000/bunch/ 1200x100% right,top)`
+> `(display http:​//127.0.0.1:4000/bunch/ 1200x100% right,top)`
+>
+> If you want to use the Webkit Web Inspector on a web display window, you can do it through Safari. If you have the Develop menu enabled, any open Bunch web views will show up under your host name in that menu.
 {:.tip}
 
-A web view allows navigation to any link. If you'd rather open a link in the web view in your default browser, hold down Command (<kbd>⌘</kbd>) when clicking it.
+A web view allows navigation to any link. If you'd rather open a link in the web view in your default browser, hold down Command ({% kbd ⌘ %}) when clicking it.
 
-Navigate backwards and forwards with the `<` and `>` buttons, or use <kbd>⌘[</kbd> and <kbd>⌘]</kbd>.
+Navigate backwards and forwards with the `<` and `>` buttons, or use {% kbd ⌘[ %} and {% kbd ⌘] %}.
 
-Refresh the view with the "Reload" button, or hit <kbd>⌘R</kbd>.
+Refresh the view with the "Reload" button, or hit {% kbd ⌘R %}.
 
-Press the Home button in the toolbar (or hit <kbd>⇧⌘H</kbd>) at any time to return to the URL originally specified for the display command.
+Press the Home button in the toolbar (or hit {% kbd ⇧⌘H %}) at any time to return to the URL originally specified for the display command.
 
-> If the initial window width is less than 1024, a mobile user agent string will be sent to any remote url requests.
+If the initial window width is less than 1024, a mobile user agent string will be sent to any remote url requests. This can be overridden (or forced) by using `ua:desktop` or `ua:mobile`.
 
 ## __Text Files__
 
@@ -86,13 +88,15 @@ You can define which display to open the window on, what size it should be, what
 | LEVEL      | level:[w,d,n,f]   | "wallpaper", "desktop"                  \
 |            |                   | "normal", "floating"                    |
 | CHROME     | chrome:none       | Create a "chromelss" window             |
+| USER AGENT |ua:[desktop,mobile]| Specify whether an HTML view should     \
+|            |                   | identify as desktop or mobile           |
 
 
 Any of these may be omitted. Each parameter must be preceded by a space.
 
 A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the scrreen) on the second display with a light-on-dark color scheme and slight transparency.
 
-```bash
+```bunch
 (display myfile.txt display:1 100%x500 left,top #111111 #efefef alpha:97% level:desktop)
 ```
 
@@ -109,15 +113,15 @@ __Display__
 
 __Window Size__
 
-: You can also append a size parameter in the form of WxH, e.g. `(display myfile.html 800x600)`. If this is omitted a default size will be assigned.
+: To set the size of the window, include a size parameter in the form of WxH, e.g. `(display myfile.html 800x600)`. If this is omitted a default size will be assigned.
 
-    You can also specify these as percents, with a minimum of 10% and a maximum of 100%: `(display myfile.txt 25%x100%)`. These can be mixed with integers: `(display myfile.txt 500x100%)`.
+    You can specify these as percents, with a minimum of 10% and a maximum of 100%: `(display myfile.txt 25%x100%)`. These can be mixed with integers: `(display myfile.txt 500x100%)`.
 
-    You can also use `full` in place of 100%: `(display myfile.txt 500xfull)` displays a 500pt-wide window the full height of the display.
+    You can use `full` in place of 100%: `(display myfile.txt 500xfull)` displays a 500pt-wide window the full height of the display.
 
 __Window Position__
 
-: You can also set a location on the screen, either using coordinates or words. The format is X,Y (no space around comma) and must come _after_ any specified size, e.g. `(display myfile.html 800x800 left,center)`. 
+: Set a location on the screen using either coordinates or words. The format is X,Y (no space around comma), e.g. `(display myfile.html 800x800 left,center)`. 
     
     You can mix integers and words, e.g. : `(display myfile.html 500x900 right,800)`
     
@@ -137,13 +141,13 @@ __Background__ and __Foreground__ color
 
     When used with text/log files, background and foreground will accurately set the colors of the display. If a foreground color is omitted, a color that contasts the background will be automatically generated.
 
-    With other display types (web, quick look), setting a background color less greater than 50% black will cause the window chrome to display in Dark mode. Foreground color is ignored in these cases.
+    With other display types (web, quick look), setting a background color greater than 50% black will cause the window chrome to display in Dark Mode. Foreground color is ignored in these cases.
 
     Example: `(display myfile.txt 800x600 #000 #eee)`
 
 __Window Opacity__
 
-: You can specify an opacity for the window using `alpha:XX%`. This can be abbreviated as `a:75%`. Opacity must be between 0 and 100. 
+: Specify an opacity for the window using `alpha:XX%`. This can be abbreviated as `a:75%`. Opacity must be between 0 and 100. 
 
     Example: `(display https://youtube.com 800x600 right,top a:90%)`
 
@@ -161,7 +165,7 @@ __Window Level__
 
 __Chrome__
 
-: Make a window "chromeless" with `chrome:none` (or `c:n`) and it will display a window with no titlebar or close/zoom buttons. The window is still be resized from the edges and is draggable (see below). Chromelss windows can be closed with <kbd>⌘W</kbd>.
+: Make a window "chromeless" with `chrome:none` (or `c:n`) and it will display a window with no titlebar or close/zoom buttons. The window is still be resized from the edges and is draggable (see below). Chromelss windows can be closed with {% kbd ⌘W %}.
     
     This setting affects window dragging in the various preview types differently.
 
@@ -173,9 +177,23 @@ __Chrome__
 
     Example `(display my presentation.keynote 600x1000 chrome:none)`
 
+    In Quick Look previews, hovering over the window will display the title and "traffic light" buttons.
+
+__User Agent__
+
+: Applies only to web views. By default, if a window has an initial width less than 1024, a mobile user agent string will be sent, indicating to the site that you're on a mobile device. This often provides a better experience for viewing websites in small windows, simulating an phone or tablet screen. There are times you may want to override this, though, and you can do so using `ua:desktop` to force desktop mode, or `ua:mobile` to force mobile.
+
+    In the case of Facebook Messenger, for example, sending a mobile user agent makes the site only offer the option to download the iPhone app. To use Messenger in a display window at a narrow width, add `ua:desktop` to the command.
+
+    Example `(display https://messenger.com ua:desktop)`
+
+    This parameter can be abbreviated as `ua:d` or `ua:m`.
+
 > __Tip:__ Display a "visor" of `system.log` on secondary display as a desktop-level window:
 > 
 >     (display /var/log/system.log d:1 100%x300 left,b #333 #b0d17d a:95% l:d)
 > 
 > {% img aligncenter /images/displayvisor-600.jpg 600 375 %}
+> 
+> The log file will be watched for changes and the window will automatically update, "tailing" the file.
 {:.tip}

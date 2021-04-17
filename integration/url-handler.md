@@ -42,6 +42,7 @@ Methods:
 - [`reveal`](#urlhandlerreveal)
 - [`setPref`](#urlhandlersetpref)
 - [`snippet`](#urlhandlersnippet)
+- [`prefs`](#urlhandlerprefs)
 
 See the [`x-success` parameter](#urlhandlerxsuccess) to control what happens after a URL method is executed.
 
@@ -248,11 +249,21 @@ Additional variables (_Optional_)
 # Load a snippet file called "useful.snippets", 
 # targeting the "Music" section, and passing a 
 # value to the "playlist" variable, call:
-open 'x-bunch://snippet?file=useful.snippets&fragment=Music&playlist=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x'
+open 'x-bunch:​//snippet?file=useful.snippets&fragment=Music&playlist=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x'
 
 # Path syntax, loading "useful.snippets", targeting 
 # the "Speak" fragment, and passing two variables
 open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
+```
+
+## `prefs` {#urlhandlerprefs}
+
+Cause Bunch to display the Preferences dialog.
+
+### Examples
+
+```bash
+open 'x-bunch://prefs'
 ```
 
 ## Additional parameters
@@ -273,10 +284,10 @@ All url methods accept an `x-success` parameter which can define a bundle ID or 
 
 ```bash
 # Open a bunch and then open Marked 2 after a 15-second delay
-open 'x-bunch://open?bunch=Comms&x-success=com.brettterpstra.marked2&x-delay=15'
+open 'x-bunch:​//open?bunch=Comms&x-success=com.brettterpstra.marked2&x-delay=15'
 
 # Open iThoughts using its URL handler (default 1-second delay)
-open 'x-bunch://open/Comms&x-success=ithoughts://'
+open 'x-bunch:​//open/Comms&x-success=ithoughts://'
 ```
 
 ## Setting Frontmatter Values {#variables}

@@ -44,7 +44,7 @@ You can also use "d" to specify days. If you want to launch every other day, use
 
 It will even let you do seconds (`s`), if you needed to.
 
-```
+```bunch
 ---
 open every: 1h30m
 ---
@@ -69,7 +69,7 @@ The "at" commands trigger daily.
 
 The `open at` key creates a daily "alarm" that will go off at the same time every day, as long as Bunch is running.
 
-```
+```bunch
 ---
 open at: 5pm
 ---
@@ -79,7 +79,7 @@ Time can be specified with a meridian (am/pm) or as 24 hour time. Whatever time 
 
 Multiple times can be listed, separated by commas. To have a Bunch launch at 8am, Noon, and 5pm, use:
 
-```
+```bunch
 ---
 open at: 8am, 12pm, 5pm
 ---
@@ -97,7 +97,7 @@ The "on" commands trigger weekly, multiple days are allowed.
 
 You can specify a day of the week and a time to create weekly Bunches, great for end-of-the week reviews, or celebrating the weekend by shutting down Slack.
 
-```
+```bunch
 ---
 open on: friday 5pm
 ---
@@ -106,7 +106,7 @@ open on: friday 5pm
 
 Multiple days can be listed with a time, separated by commas. Only one time can be used per group of days, but you can repeat the list. To open at different times on Tuesday and Thursday than on Monday, Wednesday, and Friday, use:
 
-```
+```bunch
 ---
 open on: MWF 8am, TTh 9am
 ---
@@ -116,7 +116,7 @@ Days can be just initial letters or spelled out or abbreviated day names. Single
 
 To open at two different times on the same day, repeat the day block with a second time:
 
-```
+```bunch
 ---
 open on: MWF 8am, MWF 12pm
 ---

@@ -10,7 +10,7 @@ If you use Indigo, there's a whole [REST API](https://wiki.indigodomo.com/doku.p
 
 Example REST call to turn my office lights on to 100%:
 
-    $ curl 'http://192.168.1.9:8177/devices/office%20lights.json?brightness=100&_method=put'
+    $ curl 'http:​//192.168.1.9:8177/devices/office%20lights.json?brightness=100&_method=put'
 
 Using `curl` and a shell command prevents Bunch from trying to open the URL in the browser, performing the HTTP GET request in the background. You can also use `curl` to perform POST requests, add headers and body content, and anything else you need to do.
 
