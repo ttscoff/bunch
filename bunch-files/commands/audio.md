@@ -20,7 +20,7 @@ See [Bunch gets audio control](https://brettterpstra.com/2020/09/10/bunch-gets-a
 
 ## Examples
 
-```
+```bunch
 (audio output Macbook Pro)
 (audio output volume 50)
 (audio input Scarlett)

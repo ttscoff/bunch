@@ -28,26 +28,26 @@ Lastly, the log message itself.
 Here's a sample log:
 
 ```
-⚪2021-01-23 14:32:16: Launched ==========================================
-⚪2021-01-23 14:32:16: [Default] Setting display title to "👍Important Stuff"
-⚪2021-01-23 14:32:16: [Music] Setting display title to "🎵Easy Listening"
-⚪2021-01-23 14:32:16: [Misc] Setting display title to "😴Relax"
-⚪2021-01-23 14:32:16: [Marked Screencast] Setting display title to "🎥Marked Screencast"
-⚪2021-01-23 14:32:16: [Bunch] Setting display title to "🍇Bunch"
-⚪2021-01-23 14:32:16: [Marked] Setting display title to "📖Marked"
-⚪2021-01-23 14:32:16: [Podcast] Setting display title to "🎤Podcast"
-⚪2021-01-23 14:32:16: [Comms] Setting display title to "📞Comms"
-🟡2021-01-23 14:32:16: [Comms] Scheduled to open daily starting 2021-01-23 22:21:45 +0000
-⚪2021-01-23 14:32:16: [nvUltra] Setting display title to "🚀nvUltra"
-⚪2021-01-23 14:32:16: [Code] Setting display title to "🖥Coding"
-⚪2021-01-23 14:32:16: [Comms] Open >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-⚪2021-01-23 14:32:16: [Comms] Adding 12s delay to (* tell application "Moom" to arrange windows according to snapshot "Comms")
-⚪2021-01-23 14:32:16: [Comms] Opening app Tweetbot 
-⚪2021-01-23 14:32:16: [Comms] Opening app MailMate 
-⚪2021-01-23 14:32:16: [Comms] Opening app Slack 
-⚪2021-01-23 14:32:16: [Comms] Opening app Messages 
-⚪2021-01-23 14:32:16: [Comms] Opening app Discord 
-⚪2021-01-23 14:32:28: [Comms] Running AppleScript (tell application "Moom" to arrange windows according to snapshot "Comms")
+⚪2021-01-23 14:​32:​16: Launched ==========================================
+⚪2021-01-23 14:​32:​16: [Default] Setting display title to "👍Important Stuff"
+⚪2021-01-23 14:​32:​16: [Music] Setting display title to "🎵Easy Listening"
+⚪2021-01-23 14:​32:​16: [Misc] Setting display title to "😴Relax"
+⚪2021-01-23 14:​32:​16: [Marked Screencast] Setting display title to "🎥Marked Screencast"
+⚪2021-01-23 14:​32:​16: [Bunch] Setting display title to "🍇Bunch"
+⚪2021-01-23 14:​32:​16: [Marked] Setting display title to "📖Marked"
+⚪2021-01-23 14:​32:​16: [Podcast] Setting display title to "🎤Podcast"
+⚪2021-01-23 14:​32:​16: [Comms] Setting display title to "📞Comms"
+🟡2021-01-23 14:​32:​16: [Comms] Scheduled to open daily starting 2021-01-23 22:21:45 +0000
+⚪2021-01-23 14:​32:​16: [nvUltra] Setting display title to "🚀nvUltra"
+⚪2021-01-23 14:​32:​16: [Code] Setting display title to "🖥Coding"
+⚪2021-01-23 14:​32:​16: [Comms] Open >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+⚪2021-01-23 14:​32:​16: [Comms] Adding 12s delay to (* tell application "Moom" to arrange windows according to snapshot "Comms")
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Tweetbot 
+⚪2021-01-23 14:​32:​16: [Comms] Opening app MailMate 
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Slack 
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Messages 
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Discord 
+⚪2021-01-23 14:​32:​28: [Comms] Running AppleScript (tell application "Moom" to arrange windows according to snapshot "Comms")
 ```
 
 You should be able to compare the results of opening a Bunch to your Bunch file and see what worked, what didn't, and what might have had unexpected results.

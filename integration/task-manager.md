@@ -12,7 +12,7 @@ When you call a Bunch URL, you can pass frontmatter keys to it that populate var
 
 Here's an example. You have an Audio Editing Bunch that you use when new audio files appear in your Dropbox. It loads your editor, but you need a different file every time. Your Bunch could be set up like this:
 
-```bash
+```bunch
 ---
 title: Audio Editing
 ---

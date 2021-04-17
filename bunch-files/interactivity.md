@@ -18,13 +18,17 @@ There are a couple of ways you can add interactivity to a Bunch.
 
 You can have Bunch ask whether a snippet should be loaded when opening a Bunch by adding a query at the end of it. The format for the query is a question mark (?) immediately followed by a double-quoted string. The string within the quotes will be used as the text of the dialog, with buttons "Yes" and "No".
 
-    < MySnippet.snippet ?"Load My Snippet?"
+```bunch
+< MySnippet.snippet ?"Load My Snippet?"
+```
 
 When the Bunch is launched, a dialog will ask "Load My Snippet?" and request user interaction. Clicking "Yes" will load the referenced snippet, clicking "No" will skip loading it. This can be used with variables and fragments, as well:
 
-    <General.snippets#Spotify ?"Play some music while you work?"
-    - url=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
-    - autoplay=true
+```bunch
+<General.snippets#Spotify ?"Play some music while you work?"
+- url=spotify:​playlist:3cSpIL4Q0H3uqdBMbT6c9x
+- autoplay=true
+```
 
 {% gif images/optionalsnippet.gif "Optional Snippets" %}
 
@@ -32,7 +36,9 @@ You can include multiple optional snippets, but --- due to the asynchronous way 
 
 You can also ask about snippets when the Bunch is closing:
 
-    !<General.snippets#Goodbye ?"Turn off the lights on your way out?"
+```bunch
+!<General.snippets#Goodbye ?"Turn off the lights on your way out?"
+```
 
 ## Multiple Choice Dialogs {#multiplechoice}
 
@@ -55,19 +61,21 @@ An array is defined by `?[...]`. Items in an array are separated by either a com
 
 You can optionally include a title for the dialog after the closing bracket in double quotes on the same line as the right bracket.
 
-    ?[Omnifocus, Things, TaskPaper] "Which Task Manager?"
+```bunch
+?[Omnifocus, Things, TaskPaper] "Which Task Manager?"
 
-    # or...
+# or...
 
-    ?[
-        Omnifocus
-        Things
-        TaskPaper
-    ] "Which Task Manager?"
-
-By combining this with [variable assignment](#variables), you can have the list directly choose a snippet fragment to run. The following example assigns a `snippet` variable, then uses that to call a fragment of an [embedded snippet]({{ site.baseurl }}/docs/snippets/#embeddedsnippets).
-
+?[
+    Omnifocus
+    Things
+    TaskPaper
+] "Which Task Manager?"
 ```
+
+By combining this with [variable assignment](#variables), you can have the list directly choose a snippet fragment to run. The following example assigns a `snippet` variable, then uses that to call a fragment of an [embedded snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets).
+
+```bunch
 snippet = ?[
     First
     Second
@@ -96,11 +104,13 @@ Dictionaries are defined by `?{key => value}`. The separator between key and val
 
 Here's a query included in a "Coding" Bunch that asks me which project I'm tackling, then loads snippets for each answer.
 
-    ?{
-        Marked => <coding.snippets#Marked
-        Bunch => <coding.snippets#Bunch
-        nvUltra => <coding.snippets#nvUltra
-    } "Whatcha Coding?"
+```bunch
+?{
+    Marked => <coding.snippets#Marked
+    Bunch => <coding.snippets#Bunch
+    nvUltra => <coding.snippets#nvUltra
+} "Whatcha Coding?"
+```
 
 ## Assigning Variables With Input {#variables}
 
@@ -114,15 +124,19 @@ ___Note that the dialogs will only display if the frontmatter key is not already
 
 To display a text field and request user input, use this in your Bunch:
 
-    myvar = ?"Question to ask"
+```bunch
+myvar = ?"Question to ask"
+```
 
 When the field pops up, type your response and hit OK. Then the `myvar` variable will be populated for any snippets that include it with `${myvar}`.
 
 As an example, you could use this to enter a search term when opening a Bunch:
 
-    spotifyurl = ?"Spotify Search"
-    Spotify
-    - spotify:search:%{spotifyurl}
+```bunch
+spotifyurl = ?"Spotify Search"
+Spotify
+- spotify:​search:%{spotifyurl}
+```
 
 That will take your input and url encode it into a Spotify URL that is directly opened by Spotify.
 
@@ -130,11 +144,13 @@ That will take your input and url encode it into a Spotify URL that is directly 
 
 You can use the same syntax from [Query Arrays](#array) or [Query Dictionaries](#dictionary) to offer multiple choice dialogs.
 
-    podcast = ?[Overtired, Systematic] "Which Podcast are you recording?"
+```bunch
+podcast = ?[Overtired, Systematic] "Which Podcast are you recording?"
+```
 
 Now you'll get a dialog asking you to pick a podcast, and then you can use the `podcast` variable in a snippet. I use something like this when building a new show notes file in nvUltra, creating a note called, for example "Overtired 250.md".
 
-```
+```bunch
 podcast = ?[Overtired, Systematic] "Which podcast?"
 episode = ?"Episode Number"
 <<
@@ -143,18 +159,18 @@ ___
 // If the script has populated an episode note title, include it in the URL
 %nvUltra Beta
 - XX
-- x-nvultra://open?path=/Users/ttscoff/Dropbox/Notes/Podcasting/&note=%{podcast:Podcast}%20${episode}.md
+- x-nvultra:​//open?path=/Users/ttscoff/Dropbox/Notes/Podcasting/&note=%{podcast:Podcast}%20${episode}.md
 ```
 
 My choice from the podcast query gets populated just like it is in the array (either "Overtired" or "Systematic"). If I wanted to provide different text for the options than the final values it returns, I would use a [Dictionary](#dictionary).
 
 As mentioned above, if I wanted to call this Bunch from the URL handler with a specific podcast pre-defined, I could just define the `podcast` and `episdoe` variables when calling it, and the select and input dialogs would not display:
 
-    `open x-bunch://open/?bunch=Podcast&podcast=Overtired&episode=203`
+    open x-bunch://open/?bunch=Podcast&podcast=Overtired&episode=203
 
 > You can use variable assignment to abstract some of the above examples. Instead of having a dialog immediately call a snippet, you can assign a fragment name to a variable and then use that when calling the snippet. The following sets `which_snippet` to the result of the dialog, then calls a snippet, passing the result as the fragment to search for:
 > 
-> ```
+> ```bunch
 > which_snippet = ?[Snippet One, Snippet Two] "Which Snippet?"
 >
 > <MyBunch.snippets#${which_snippet:Default Snippet}

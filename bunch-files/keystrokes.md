@@ -98,9 +98,9 @@ That sends Command-Shift-F1 as a general keystroke. You can trigger global key c
 
 ### Adding Pauses to Key Combos {#combopause}
 
-You can include a pause in a key command sequence using `!` immediately followed by a number, e.g. `!2` for a 2-second pause. So to hit ⌘N to create a new window, then wait a few seconds for the window to load before continuing, you would use:
+You can include a pause in a key command sequence using `!` immediately followed by a number, e.g. `!2` for a 2-second pause. So to hit {% kbd ⌘N %} to create a new window, then wait a few seconds for the window to load before continuing, you would use:
 
-```
+```bunch
 TextEdit
 - {@n !3 "This is a new window"}
 ```
@@ -111,7 +111,7 @@ The delay must be a positive integer representing a number of seconds, with no d
 
 You can also type strings in a specific app using square brackets (`[]`). To open TextEdit, create a new document, and type out "Testing something," you would use:
 
-```
+```bunch
 TextEdit
 - {@n}
 - [Testing something]
@@ -145,7 +145,7 @@ Example: `- [\\\\n\\\\n\\\\tThis has two newlines and an indent before it\\\\n]`
 
 You can pause typing for any number of seconds using `\\!` followed by a number within a typed string (this works in interpolated strings as well):
 
-```
+```bunch
 - [This is a dramatic \\\\!5pause]
 ```
 
@@ -160,14 +160,14 @@ You can also include typed strings within the curly brackets notation for key co
 
 The example in the above section can be condensed down to:
 
-```
+```bunch
 TextEdit
 - {@n "Testing something"}
 ```
 
 To send an email in MailMate, you might use something like:
 
-```
+```bunch
 MailMate
 - {@n "me@dummy.com" tab "An email subject" tab "This is an email\\n\\nSincerely,\\nBrett" @$d`}
 ```
@@ -176,7 +176,7 @@ MailMate
 
 In addition to the `!` syntaxes above, you can pause between strings by inserting a file line between key commands containing `(pause 5)` (for a 5 second pause). The delay must be a positive integer representing a number of seconds, with no letters or decimals.
 
-```
+```bunch
 TextEdit
 - {@n "Typing in the first file" @n}
 - (pause 3)

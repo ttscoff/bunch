@@ -5,7 +5,7 @@ parent: Commands
 grand_parent: Bunch Files
 tags: [screen,command]
 ---
-The `(screen)` command creates a layer of solid color that can be used to hide applications and Desktop icons. Clicking on the layer will hide everything (except for floating windows), then activating apps using the Dock or <kbd>⌘-Tab</kbd> will bring them in front of the layer.
+The `(screen)` command creates a layer of solid color that can be used to hide applications and Desktop icons. Clicking on the layer will hide everything (except for floating windows), then activating apps using the Dock or {% kbd ⌘ %}-Tab will bring them in front of the layer.
 
 The screen command accepts two optional arguments, background color and alpha transparency.
 

@@ -24,12 +24,12 @@ var app = Application.currentApplication()
 app.includeStandardAdditions = true
      
 var playlists = {
-    "Mellow": "spotify:playlist:37i9dQZF1E35F7NsH3aWbs",
-    "Pop": "spotify:playlist:37i9dQZF1E39mpAvbgovri",
-    "Punk": "spotify:playlist:37i9dQZF1E3930Ag6USpnA",
-    "Indie": "spotify:playlist:37i9dQZF1E39UzhnpcOJqd",
-    "Metal": "spotify:playlist:37i9dQZF1E35o96rAfTenf",
-    "Rock": "spotify:playlist:37i9dQZF1E38gxK1HWfQU0",
+    "Mellow": "spotify:​playlist:37i9dQZF1E35F7NsH3aWbs",
+    "Pop": "spotify:​playlist:37i9dQZF1E39mpAvbgovri",
+    "Punk": "spotify:​playlist:37i9dQZF1E3930Ag6USpnA",
+    "Indie": "spotify:​playlist:37i9dQZF1E39UzhnpcOJqd",
+    "Metal": "spotify:​playlist:37i9dQZF1E35o96rAfTenf",
+    "Rock": "spotify:​playlist:37i9dQZF1E38gxK1HWfQU0",
     "Search": ""
 }
 
@@ -46,7 +46,7 @@ if (list === undefined) {
     buttons: ["Cancel", "Search"],
     defaultButton: "Search"
   });
-  `spotify url: spotify:search:${encodeURIComponent(search.textReturned)}`
+  `spotify url: spotify:​search:${encodeURIComponent(search.textReturned)}`
 } else {
   `spotify url: ${playlists[list]}`
 }
@@ -56,7 +56,7 @@ The above script offers a list with the keys from the `playlists` object. If you
 
 Now create a Bunch that just contains:
 
-```bash
+```bunch
 ---
 title: 🎵Listen
 from script: scripts/ChoosePlaylist.applescript
@@ -71,7 +71,7 @@ Spotify
 
 When the Bunch is opened, it runs the above script and stores the `spotifyurl` variable. The embedded snippet launches Spotify and passes the URL to it. Having Silicio and Spotify in the Bunch means that when I close it, both apps quit, making music listening easy to manage. You could also add automation for setting audio devices and volumes, running Moom to position windows, etc.
 
-```
+```bunch
 ---
 title: 🎵Listen
 from script: scripts/ChoosePlaylist.applescript

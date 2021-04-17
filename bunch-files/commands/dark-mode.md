@@ -11,7 +11,7 @@ Turn macOS Dark Mode on and off: `(dark mode on)`, `(dark mode off)`. An "on" co
 
 ## Examples
 
-```
+```bunch
 (dark mode)
-(dark mode off)
+(dark mode off) # or (light mode)
 ```

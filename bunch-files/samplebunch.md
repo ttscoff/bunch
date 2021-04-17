@@ -19,7 +19,7 @@ These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/commen
 
 This example demonstrates the basic syntax for a Bunch file.
 
-```bash
+```bunch
 # Comments start with `#` or `//` and a space
 # blank lines are ignored
 
@@ -93,7 +93,7 @@ These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `
 
 This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
 
-```bash
+```bunch
 ---
 title: ✍🏻Documentation
 shortcut: d
@@ -110,7 +110,7 @@ $ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x100% right,top #2e3440 #86c0
 // Display a web view window of the documentation site 
 // after 20-second delay
 // 1200pt wide, full height, primary display, normal window level
-(display http://127.0.0.1:4000/ 1200x100% right,center) ~20
+(display http:​//127.0.0.1:4000/ 1200x100% right,center) ~20
 ```
 
 Here's the `servejekyll.sh` script that the Bunch runs. Note that it loads up my ruby environment using RVM so that `bundle` works properly.
@@ -127,7 +127,7 @@ bundle exec jekyll serve --trace -l
 
 Here's my `Podcast Record.bunch`.
 
-```bash
+```bunch
 ---
 title: 🎤Podcast: Record
 ---
@@ -175,7 +175,7 @@ $ killall Dropbox
 $ /Library/Backblaze.bzpkg/bztransmit -pausebackup
 
 ## Check for ad spots
-firefox:https://podman.backbeatmedia.com/shows
+firefox:​https://podman.backbeatmedia.com/shows
 
 ## Use Moom to position windows after everything has launched
 ## References the embedded snippet at the end using `<<`
@@ -199,7 +199,7 @@ ___
 
 I have this Bunch load on launch. It makes it easy to quit all of these apps at once, and load them back up at my convenience.
 
-```bash
+```bunch
 ---
 title: 📞Comms
 startup: true
@@ -237,7 +237,7 @@ Here's the Bunch I use when I'm ready to code. It offers a choice of my main pro
 
 I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/forklift/), with keystrokes assigned that this Bunch sends.
 
-```bash
+```bunch
 ---
 title: 🖥Code
 sequence: parallel
@@ -338,7 +338,7 @@ Xcode
 ----------------------------------------------------[Coding Spotify]-
 Spotify
 & workflows/Play Spotify URL
-- URL=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x
+- URL=spotify:​playlist:3cSpIL4Q0H3uqdBMbT6c9x
 - Autoplay=${autoplay:true}
 ```
  
@@ -346,7 +346,7 @@ Spotify
 
 The following Bunch combines a multiple choice dialog with a frontmatter key (`previewurl`) that gets set by running an AppleScript. The multiple choice dialog runs first, which calls snippets that set the current project in CodeKit, then uses an AppleScript call to get the browser preview url. The URL is retrieved prior to running the display command, so it can be inserted into the command as the target URL.
 
-```bash
+```bunch
 ---
 title: CodeKit
 ---
