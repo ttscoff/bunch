@@ -42,6 +42,7 @@ Methods:
 - [`reveal`](#urlhandlerreveal)
 - [`setPref`](#urlhandlersetpref)
 - [`snippet`](#urlhandlersnippet)
+- [`prefs`](#urlhandlerprefs)
 
 See the [`x-success` parameter](#urlhandlerxsuccess) to control what happens after a URL method is executed.
 
@@ -253,6 +254,16 @@ open 'x-bunch:​//snippet?file=useful.snippets&fragment=Music&playlist=spotify:
 # Path syntax, loading "useful.snippets", targeting 
 # the "Speak" fragment, and passing two variables
 open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
+```
+
+## `prefs` {#urlhandlerprefs}
+
+Cause Bunch to display the Preferences dialog.
+
+### Examples
+
+```bash
+open 'x-bunch://prefs'
 ```
 
 ## Additional parameters

@@ -12,6 +12,17 @@ page_id: changelog
 
 ---
 
+1.4.0 (β91)
+: Url handler method for opening Preference pane in the GUI (`x-bunch://prefs`)
+: Add user agent setting to HTML display windows to allow forcing Dekstop or Mobile views regardless of window size (`ua:desktop`)
+: Fully activate an app when @focusing it
+: Update all internal links to point to bunchapp.co
+: Fix: Replace deprecated preference storage methods
+: Fix: Spelling error in preferences (Thanks Jay)
+: Fix: Directly close preference view rather than relying on a notification
+
+---
+
 1.4.0 (β88)
 : Only run interactive dialogs to assign a variable if the variable isn't already defined (allow frontmatter to override dialogs)
 : Remove "Working" highlight on menu item after 10 seconds as a fallback
