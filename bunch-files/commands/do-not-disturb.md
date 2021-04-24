@@ -11,7 +11,7 @@ Toggle notifications. The commands can be abbreviated as `(dnd on)` and `(dnd of
 
 ## Examples
 
-```
+```bunch
 (dnd on) // or just (dnd)
 (dnd off)
 ```

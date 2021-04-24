@@ -25,11 +25,11 @@ If a file parameter (a dashed line after app name) is surrounded by curly bracke
 
 | symbol   | key         |
 | :------: | :---        |
-| $        | Shift       |
-| ~        | Option      |
-| @        | Command     |
-| ^        | Control     |
-| %        | Hyper Key\* |
+| __$__    | Shift       |
+| __~__    | Option      |
+| __@__    | Command     |
+| __^__    | Control     |
+| __%__    | Hyper Key\* |
 
 
 \* The Hyper key is a custom key that sends Control, Shift, Option, and Command all at once. It's the equivalent of `^$~@`.

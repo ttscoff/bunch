@@ -11,9 +11,11 @@ Commands are run by using lines surrounded by parenthesis in Bunch files. These 
 ```bunch
 (dark mode [on|off])
 (do not disturb [on|off])
-([hide|show] dock)
+(hide dock)
+(show dock)
 (dock [left|right|bottom])
-([hide|show] desktop)
+(hide desktop)
+(show desktop)
 (wallpaper [path(s)])
 (screen)
 (audio [input|output] device_name)

@@ -79,13 +79,13 @@ page_id: changelog
 : Display and screen command, UUID matching for selective scheduling, various fixes
 : `(display)` command parameters can now be in any order. This involved some changes to the syntax, please [see the documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/).
 : New `(screen)` command for creating a full-screen, solid color window with optional transparency for hiding all windows below it. [See docs for usage.]({{ site.baseurl }}/docs/bunch-files/commands/screen/)
-: Support for `schedule if` and `schedule unless` frontmatter for [excluding Macs from scheduling]({{ site.baseurl }}/docs/bunch-files/scheduling/#selective) based on trigger file or UUID
+: Support for `schedule if` and `schedule unless` frontmatter for [excluding Macs from scheduling]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/#selective) based on trigger file or UUID
 : `startup` frontmatter can be one or more UUIDs to start only on matching Macs
 : `startup unless` frontmatter can be one or more UUIDs
 : Copy UUID button in preferences for use with `schedule if`, `schedule unless`, and `startup`
 : Bunches can be organized in subfolders, which will create submenus in the main Bunch menu
 : Allow `folder.frontmatter` to [set properties of submenu]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#frontmatter)
-: Allow `folder.frontmatter` to [pass keys to all Bunches in a subfolder]({{ site.baseurl }}/docs/frontmatter/#folderfrontmatter)
+: Allow `folder.frontmatter` to [pass keys to all Bunches in a subfolder]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter)
 : Rename Save to Done in Preferences
 : More complete emoji handling
 : Add keyboard shortcut for Open Log (⇧⌘L)

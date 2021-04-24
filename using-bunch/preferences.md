@@ -17,10 +17,10 @@ Launch at Login
 : Add and remove Bunch from your User Login Items.
 
 Remember Open Bunches
-: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts/), it will be ignored during launch.
+: If this option is enabled, any Bunches you had open when Bunch was quit (or terminated) will be reloaded when Bunch is relaunched. If an open Bunch is also part of a [startup script]({{ site.baseurl }}/docs/bunch-files/startup-scripts/), it will be ignored by this option as it will launch anyway.
 
 Hotkey
-: You can assign a global hotkey by clicking in the hotkey field and then pressing your desired key combination. When pressed while using any application, it will display the Bunch menu, allowing you to use [keyboard shortcuts]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shorcuts) to launch your Bunches.
+: You can assign a global shortcut by clicking in the hotkey field and then pressing your desired key combination. When pressed while using any application, it will display the Bunch menu, allowing you to use [keyboard shortcuts]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shortcuts) to launch your Bunches.
 
 Accessibility
 : Bunch requires Accessibility permission to be granted to perform some of its functions. If permission isn't granted, you can click this button to open the appropriate Security pane in System Preferences.
@@ -60,5 +60,5 @@ Click the button to select an external editor for your Bunch files. You can hold
 
 ## Copy UUID
 
-This copies a unique identifier for the current Mac to your clipboard. This can be used in `startup` and `schedule if` frontmatter to only run as startup or add schedules on the current Mac. This is useful if you run Bunch on multiple machines and sync your Bunch folder.
+This copies a unique identifier for the current Mac to your clipboard. This can be used in `startup` and `schedule if` frontmatter to only [run as startup]({{ site.baseurl }}/docs/bunch-files/startup-scripts/) or [add schedules]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/#selective) on the current Mac. This is useful if you run Bunch on multiple machines and sync your Bunch folder.
 

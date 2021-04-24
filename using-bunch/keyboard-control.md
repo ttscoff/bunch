@@ -20,13 +20,13 @@ After using the keyboard shortcut to open the Bunch menu, you can also navigate 
 
 Additionally, the following keyboard shortcuts are available when the menu is open:
 
-| Shortcut |          Action          |
-|----------|--------------------------|
-| ⌃⌥⌘C     | Clear Checkmarks         |
-| ⌘,       | Open Preferences         |
-| ⇧⌘N      | New Bunch With Open Apps |
-| ⇧⌘R      | Refresh Bunches          |
-| ⇧⌘L      | Open Log                 |
-| ⌘H       | Hide All Windows         |
-| ⇧⌘H      | Unhide All Windows       |
-| ⌘Q       | Quit Bunch               |
+|    Shortcut    |          Action          |
+|----------------|--------------------------|
+| {% kbd ⌃⌥⌘C %} | Clear Checkmarks         |
+| {% kbd ⌘,  %}  | Open Preferences         |
+| {% kbd ⇧⌘N %}  | New Bunch With Open Apps |
+| {% kbd ⇧⌘R %}  | Refresh Bunches          |
+| {% kbd ⇧⌘L %}  | Open Log                 |
+| {% kbd ⌘H  %}  | Hide All Windows         |
+| {% kbd ⇧⌘H %}  | Unhide All Windows       |
+| {% kbd ⌘Q  %}  | Quit Bunch               |

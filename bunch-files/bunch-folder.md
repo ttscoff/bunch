@@ -3,6 +3,7 @@ layout: default
 title: The Bunch Folder
 parent: Bunch Files
 nav_order: 1
+tags: [basics]
 ---
 # Bunch Folder Setup
 

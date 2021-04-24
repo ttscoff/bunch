@@ -13,20 +13,28 @@ Note that all Workflows for Bunch must have a variable named "Bunch" defined. Se
 
 In your Bunch, you can specify a full path to a Workflow like this:
 
-    & ~/Dropbox/MyWorkflow.workflow
+```bunch
+& ~/Dropbox/MyWorkflow.workflow
+```
 
 ...but if the workflow is in the same folder as your Bunches, you can just list its filename, with or without `.workflow`. For example, if my Bunch folder contained `Do Something.workflow`, I could use a line in my Bunch with simply:
 
-    & Do Something
+```bunch
+& Do Something
+```
 
 If you want to keep a subfolder of Workflows in your Bunch folder, just reference them with a relative path, e.g.
 
-    & workflows/Do Something
+```bunch
+& workflows/Do Something
+```
 
 You can pass variables to a workflow the way you pass files to an application in Bunch, using hyphens below the line that calls the workflow, one variable per line:
 
-    & Do Something
-    - variable1 = Contents of var 1
+```bunch
+& Do Something
+- variable1 = Contents of var 1
+```
 
 The spacing around the `=` doesn't matter, as long as there is a single key and a value. Additional `=` in the line will be included in the variable value.
 

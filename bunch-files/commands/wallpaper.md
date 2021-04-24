@@ -15,7 +15,7 @@ The desktop image(s) that are in place when Bunch first launches will be restore
 
 ## Examples
 
-```
+```bunch
 (wallpaper ~/Pictures/Desktop 1.jpg|~/Pictures/Desktop 2.jpg)
 ```
 

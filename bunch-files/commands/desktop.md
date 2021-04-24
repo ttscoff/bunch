@@ -13,9 +13,9 @@ tags: [desktop, command]
 ### Examples
 {:.text-beta}
 
-```
+```bunch
 (show dock)
-(dock botttom)
+(dock bottom)
 ```
 
 ## Desktop Commands
@@ -26,7 +26,7 @@ Hide and show desktop icons: `(hide desktop)`, `(show desktop)`.
 ### Examples
 {:.text-beta}
 
-```
+```bunch
 (show desktop)
 (hide desktop)
 ```

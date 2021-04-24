@@ -14,10 +14,12 @@ When this is turned on, all items in the Bunch file are added to the queue to be
 
 You can change the sequence of execution for a single Bunch, regardless of the Preference setting, by using the [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/) key `sequence`. This can be set to either `sequential` or `parallel`. You only need the first letter of either value to trigger it, so `sequence: p` is all it takes to enable parallel execution for the Bunch.
 
-	---
-	title: All At Once
-	sequence: parallel
-	---
+```bunch
+---
+title: All At Once
+sequence: parallel
+---
+```
 
 (Just to make things confusing, you can also use `parallel: true|false` or `sequential: true|false`. Whatever makes the most sense to your brain.)
 
@@ -29,7 +31,7 @@ Items marked with a pipe are taken out of the sequence and executed immediately 
 
 If the script is an on-close script, put the pipe before the exclamation point.
 
-```
+```bunch
 |$ scripts/parallel1.sh
 |$ scripts/parallel2.sh
 

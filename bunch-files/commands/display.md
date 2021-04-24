@@ -10,7 +10,9 @@ tags: [display, command, browser, shell]
 
 The display command is used to open an HTML file, website, or text/log file in a viewer. The command allows for flexible window sizing and positioning. In it's most basic form it's just `display` and a filename:
 
-    (display myfile.html)
+```bunch
+(display myfile.html)
+```
 
 If the file is in your Bunch folder, it can be a relative path[^relative]. The above command would show a 600x600 web view centered on the main display. Read on to learn about the myriad options.
 
@@ -190,8 +192,10 @@ __User Agent__
     This parameter can be abbreviated as `ua:d` or `ua:m`.
 
 > __Tip:__ Display a "visor" of `system.log` on secondary display as a desktop-level window:
-> 
->     (display /var/log/system.log d:1 100%x300 left,b #333 #b0d17d a:95% l:d)
+>
+> ```bunch
+> (display /var/log/system.log d:1 100%x300 left,b #333 #b0d17d a:95% l:d)
+> ```
 > 
 > {% img aligncenter /images/displayvisor-600.jpg 600 375 %}
 > 

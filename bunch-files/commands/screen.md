@@ -19,3 +19,10 @@ __Alpha Transparency__
 : Example `(screen 90%)`
 
 The two parameters can be combined in any order: `(screen #666 90%)`
+
+## Examples:
+
+```bunch
+(screen #9a9a9a)
+(screen #404040 90%)
+```

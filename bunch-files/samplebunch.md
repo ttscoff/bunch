@@ -3,7 +3,7 @@ layout: default
 title: Sample Bunches
 parent: Bunch Files
 nav_order: 3
-tags: [interactivity,frontmatter,snippets,variables,example,apps]
+tags: [interactivity,frontmatter,snippets,variables,example,apps,basics]
 ---
 # Some examples to get you started
 {:.no_toc}
