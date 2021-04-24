@@ -12,6 +12,12 @@ page_id: changelog
 
 ---
 
+1.4.0 (β92)
+: Fix: Handle edge case where running applications includes an app that doesn't return an app name
+: Fix: Error checking for string manipulation functions
+
+---
+
 1.4.0 (β91)
 : Url handler method for opening Preference pane in the GUI (`x-bunch://prefs`)
 : Add user agent setting to HTML display windows to allow forcing Dekstop or Mobile views regardless of window size (`ua:desktop`)
