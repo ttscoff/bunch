@@ -3,6 +3,7 @@ layout: default
 title: Bunch Files
 nav_order: 60
 has_children: true
+tags: [basics]
 ---
 {% img float-right /bunch/images/bunch-folder-cropped.jpg 362 382 %}
 

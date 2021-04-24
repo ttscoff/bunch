@@ -87,10 +87,10 @@ Modifiers can be specified using symbols:
 
 | symbol |   modifier  |
 |--------|-------------|
-| @      | Command (⌘) |
-| $      | Shift (⇧)   |
-| ~      | Option (⌥)  |
-| ^      | Control (⌃) |
+| __@__  | Command (⌘) |
+| __$__  | Shift (⇧)   |
+| __~__  | Option (⌥)  |
+| __^__  | Control (⌃) |
 
 To use any of these symbols as the actual modifier key, use the Shift-equivalent, i.e. `$` would be `$6` (Shift-6), and `@` would be `$2`.
 

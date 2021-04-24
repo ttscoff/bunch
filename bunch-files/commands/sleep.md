@@ -17,7 +17,7 @@ See also: [Awake Commands]({{ site.baseurl }}/docs/bunch-files/commands/awake/)
 
 ## Examples
 
-```
+```bunch
 (sleep)
 (sleep display)
 (sleep screensaver)

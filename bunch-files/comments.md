@@ -11,7 +11,7 @@ Comments can be included in your Bunch files. They can be used to remind yoursel
 
 Line comments are preceded by `#` or `//`. They can be at the beginning of a line, or included with a regular line at the end. Comments indicators must be followed by one or more spaces, and comments at the end of a line must also be preceded by one or more spaces.
 
-```
+```bunch
 // This is a line comment
 # This is also a line comment
 
@@ -37,7 +37,7 @@ Line comments are preceded by `#` or `//`. They can be at the beginning of a lin
 
 Block comments can also be used. These are delineated with `/*` at the beginning, and `*/` at the end. These markers can be on the same line or on their own line.
 
-```
+```bunch
 /* This is a block comment
    It has a couple of lines */
 

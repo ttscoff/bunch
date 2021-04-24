@@ -3,7 +3,7 @@ layout: default
 title: Getting Started
 parent: Using Bunch
 nav_order: 20
-tags: [preferences]
+tags: [preferences,basics]
 ---
 # Getting Started With Bunch
 

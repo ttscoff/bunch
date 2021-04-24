@@ -14,6 +14,6 @@ This simply takes a string of text and creates a Notification Center alert or ba
 
 ## Example
 
-```
+```bunch
 (notify Some text to display)
 ```
