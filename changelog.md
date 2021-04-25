@@ -12,6 +12,12 @@ page_id: changelog
 
 ---
 
+1.4.0 (β93)
+: Reduce error messages in log (move to debug level)
+: Handle 2 and 3-character app names (sorry VLC)
+
+---
+
 1.4.0 (β92)
 : Fix: Handle edge case where running applications includes an app that doesn't return an app name
 : Fix: Error checking for string manipulation functions
