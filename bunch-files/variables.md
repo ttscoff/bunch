@@ -112,7 +112,7 @@ Because variables can be set in multiple ways, you need to be aware of which val
 
 ## Using Variables {#usingvariables}
 
-Once a variable has a value, you can use it in your Bunch or Snippet by adding a placeholder in the format `${variablename}`. Remember that spaces and underscores are removed and the name will be lowercase, regardless of casing and spacing in the key you defined.
+Once a variable has a value, you can use it in your Bunch or Snippet by adding a placeholder in the format `${variablename}`. Remember that spaces are removed and the name will be lowercase, regardless of casing and spacing in the key you defined.
 
 In a Bunch or Snippet that might look like:
 

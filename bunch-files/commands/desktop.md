@@ -8,7 +8,7 @@ tags: [desktop, command]
 ## Dock Commands
 {:.text-alpha}
 
-(`(hide dock)`, `(show dock)`) show and hide the Dock (Turn Hiding On), or reposition the dock (`(dock left)`, `(dock bottom)`, `(dock right)`).
+`(hide dock)` and `(show dock)` hide and show the Dock (toggle Hiding). Reposition the dock with `(dock left)`, `(dock bottom)`, or `(dock right)`.
 
 ### Examples
 {:.text-beta}
