@@ -28,7 +28,7 @@ Accessibility
 Notification Settings
 : This is a shortcut to opening Bunch's notification settings in System Preferences. It's recommended that you enable notifications and set the notification style to "Alerts," which will allow Bunch to most conveniently provide status reports.
 
-## Bunch Behavior
+## Bunch Behavior {#prefsbunchbehavior}
 
 Toggle Bunches
 : When this is enabled, running bunches are shown with a checkmark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.

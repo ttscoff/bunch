@@ -90,7 +90,7 @@ Default
 
 This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches) instead of files.
 
-### Inserting a Pause
+### Inserting a Pause {#filepause}
 
 You can pause between files by inserting a file line containing `(pause 5)` (for a 5 second pause). The number must be a positive integer representing a number of seconds, with no letters or decimals. This is mostly useful if you want to send keystrokes or wait for a URL to load between actions.
 

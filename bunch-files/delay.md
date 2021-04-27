@@ -29,3 +29,28 @@ You can also put a delay on snippets that run when the Bunch closes, triggered X
 ```
 
 See the [Snippets]({{ site.baseurl }}/docs/bunch-files/snippets) documentation to learn how to have snippets [wait until apps have finished launching]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet).
+
+## Delay Command
+
+You can also insert delays as commands. This only works when the Bunch's [execution sequence](,,{{ site.baseurl }}/docs/bunch-files/sequence/) is set to sequential (or Parallel execution is [disabled entirely in Preferences](,,{{ site.baseurl }}/docs/using-bunch/preferences/#prefsbunchbehavior)).
+
+To pause a Bunch before opening remaining items, use `(pause X)`, where X is a number of seconds to wait (must be a whole, positive integer).
+
+```bunch
+Affinity Publisher
+(pause 15)
+& MyWorkflow
+```
+
+This will launch Affinity Publisher, then wait 15 seconds. The Bunch menu will be inaccessible during this time, but Affinity Publisher (and any apps/scripts/commands before the pause command) will continue to launch. After 15 seconds, processing will continue, starting with the execution of `MyWorkflow`.
+
+You can also insert pauses [between file lines]({{ site.baseurl }}/docs/bunch-files/apps/#filepause):
+
+```bunch
+TextEdit
+- My first file.txt
+- [type some stuff]
+- (delay 5)
+- My second file.txt
+```
+
