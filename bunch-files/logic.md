@@ -1,17 +1,20 @@
 ---
 layout: default
-title: Logic
+title: Conditional Logic
 parent: Bunch Files
 tags: [snippets,variables]
 ---
 # Conditional Logic
 {:.no_toc}
 
-If you want to take your Bunches to the next level, conditional logic can add flexibility and control.
+If you want to make your Bunches more flexible, performing different tasks based on various criteria, conditional logic can add flexibility and control.
+
+* Table of Contents
+{:toc}
 
 ## Syntax
 
-Bunch supports if/else syntax. There are a number of conditions you can use to determine if a certain block will run. The most basic form of this is just the if statement. The block starts with an "if _condition_" line, no indentation, and ends with a line containing just "end". The contents between the "if" and "end" can optionally be indented for readability.
+Bunch supports if/else syntax. There are a number of conditions you can use to determine if a certain block will run. The most basic form of this is the "if" statement. The block starts with an "if _condition_" line, no indentation, and ends with a line containing just "end". The contents between the "if" and "end" are indented 4 spaces or one tab.
 
 ```bunch
 if var_one
@@ -19,6 +22,9 @@ if var_one
 	<Snippets.snip#Group 1
 end
 ```
+
+> Indentation must be exactly four (4) spaces or one (1) tab per level, with an additional 4 spaces/1 tab per nested level. If using spaces instead of tabs, every indentation level must be a multiple of 4.
+{:.warning}
 
 The condition can use a variety of syntax, from human readable to symbolic. See the next section for details. In the example above, Bunch simply tests the contents of a variable called var_one to see if it's "truthy" (yes, true, or 1). If so, it launches Messages and runs a snippet.
 
@@ -36,7 +42,7 @@ else
 end
 ```
 
-### Boolean operators
+### Boolean Operators
 
 Conditions can be combined using "AND" and "OR". 
 
@@ -51,6 +57,36 @@ You can group multiple conditions in parentheses and compare multiple groupings.
 ```bunch
 if (condition 1 AND condition 2) OR (condition 3 AND condition 4)
 	<<#You Win
+end
+```
+
+### Nesting If/Else Blocks
+
+You can nest if/else blocks, continuing to indent contents 4 spaces or one tab from the last level of indentation. Variables can be changed within blocks and tested again in nested conditions.
+
+```bunch
+test_var = true
+
+if test_var
+	(log test_var is true)
+	test_var = false
+
+	if test_var
+		(log test_var is true)
+	else
+		(log test_var is false)
+	end
+end
+```
+
+### Waiting Snippets in If/Else Blocks
+
+[Waiting Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#waitingsnippet) are specified by indenting 4 spaces or 1 tab, so within an if/else block they should be indented an extra 4 spaces or 1 tab beyond the indentation of the block level.
+
+```bunch
+if TweetBot is running
+	Messages
+		<<#Position Comms
 end
 ```
 
@@ -149,7 +185,7 @@ This works with AppleScripts as well (`my_var = * ...`), as long as the script r
 
 ### Combine Dialogs and Conditions
 
-You can set a variable using a dialog, and then use an if/else block to perform different actions based on the choice. In its simplest form, this is essentially the same as just having a dialog run different snippets based on user selection, but by setting a variable you can have multiple if/else blocks, and the variable is passed to snippets, allowing if/else blocks to be nested.
+You can set a variable using a dialog, and then use an if/else block to perform different actions based on the choice. In its simplest form, this is essentially the same as just having a dialog run different snippets based on user selection, but by setting a variable you can have multiple if/else blocks, and the variable is passed to snippets (which can also contain their own if/else blocks).
 
 ```bunch
 my_var = ?[Option 1, Option 2, Option 3] "Which option?"
@@ -166,19 +202,16 @@ else if my_var ends with "2"
 end
 ```
 
-### Use Snippets To Run Logic On Close
+### Use Snippets To Run Conditional Logic On Close
 
 Because if/else blocks can be used within Snippets, you can use an on-close Snippet to run logic when closing a Bunch.
 
 ```bunch
-!<<
+!<<#On Close
 
-___
+__________________________
+--[On Close]--------------
 if Tweetbot is not running
 	Comms.bunch
 end
 ```
-
-{% notes %}
-- setting variables within snippets
-{% endnotes %}
