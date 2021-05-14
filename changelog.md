@@ -12,7 +12,7 @@ page_id: changelog
 
 ---
 
-1.4.0 (β97)
+1.4.0 (β98)
 : If/Else [logic parsing]({{ site.baseurl }}/docs/bunch-files/logic/)
 : Allow direct `key = value` variable assignment in snippets.
 : Direct variable assignments are parsed before snippets are loaded
