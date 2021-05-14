@@ -94,16 +94,34 @@ end
 
 Variable names in conditions can be "bare," writing just the variable name (with no spaces). You can optionally use a `$`, e.g. `$variable` for clarity. If a variable matching the key isn't defined, it will return false and not run the block.
 
-All conditions can be negated using "not" or `! condition`.
+All conditions can be negated using "not" or `! condition`. Negatives can only be invoked once, e.g. `weekday not !Friday` will be interpreted as `weekday is not Friday`.
 
 Syntax: `if [condition]` where `[condition]` is one of the following.
+
+Bunch is opening/closing
+: Test if self is in the process of opening or closing. Use "self" or "this" to test current Bunch.
+
+	`self is opening`      | Current Bunch is opening
+	`self is closing`      | Current Bunch is closing
+	`BunchName is opening` | Test another Bunch such as a parent 
+	^^                     | ^^  Bunch which opened this Bunch
 
 Bunch is open/closed
 : Test if another Bunch is currently open or closed.
 	
-	`BunchName is open` | Bunch is currently open
+	`BunchName is open`   | Bunch is currently open
 	`BunchName is closed` | Bunch is currently closed. 
-	^^                      |^^ Also works as `BunchName is not open`
+	^^                    |^^ Also works as `BunchName is not open`
+
+Parent tests
+: If a Bunch was opened by another Bunch, its parent can be tested
+
+	`has parent`/`is child`    | Bunch was opened by another Bunch
+	`not parent`/`is not child`| Negative test
+	`!child`                   | Negative shorthand
+	`parent is BunchName`      | Test which Bunch opened this Bunch
+	^^                         | ^^ Any string comparison operators work
+	^^                         | ^^ e.g. `parent contains PartialName`
 
 App is running
 : Test if a given app is running or not.

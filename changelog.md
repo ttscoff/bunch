@@ -12,18 +12,19 @@ page_id: changelog
 
 ---
 
-1.4.0 (β96)
+1.4.0 (β97)
 : If/Else [logic parsing]({{ site.baseurl }}/docs/bunch-files/logic/)
 : Allow direct `key = value` variable assignment in snippets.
 : Direct variable assignments are parsed before snippets are loaded
 : If/then blocks can set/change variables before next block is processed
 : All Snippets (including Waiting Snippets) inherit their parent's frontmatter so variables carry forward
-: Fix: Don’t parse = in URLs as a variable assignment
+: Allow [global variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#global) that persist across launches and are available in all Bunches
+: Fix: Don't parse = in URLs as a variable assignment
 : Fix: Notification issue when assigning a variable with an applescript and the script fails
-: Fix: `From script` variable assignments becoming empty
+: Fix: `from script` variable assignments becoming empty
 : Fix: Allow spaces and underscores in `var = $ script` assignments
-: Fix: Variable placeholders don’t have to be lowercased to match
-: Fix: If processing a script as AppleScript fails, attempt to execute as shell script (JXA scripts executed with `* script` items return error
+: Fix: Variable placeholders don't have to be lowercased to match
+: Fix: If processing a script as AppleScript fails, attempt to execute as shell script (JXA scripts executed with `* script` items return error)
 : Fix: Allow arguments to be passed when assigning variables with script results
 : Fix: Don't strip underscores from variable keys in `key_name = $"Query"` assignments
 : Fix: Bug with running AppleScript commands in serial execution
