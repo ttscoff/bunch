@@ -97,5 +97,6 @@ Make a donation
 
 You can hide all windows that Bunch creates ([file displays]({{ site.baseurl }}/docs/bunch-files/commands/display/), [task monitors]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts), etc.), using the "Hide All Window" and "Unhide All Windows". These have the shortcuts {% kbd ⌘H %} and {% kbd ⇧⌘H %} respectively. Keyboard shortcuts are only active when the Bunch menu is showing.
 
-> You can also refresh and reveal Bunches in Finder from the __File__ menu, and check for updates and control preferences (Bunch location, Single Bunch Mode) from the __Bunch__ menu.
+If a Bunch window is active, the menu item "Copy Dimensions of Active Window" will place the current dimensions and position of the window into your clipboard in a format that can be directly pasted into a display command to affect the window parameters next time it opens.
 {:.tip}
+

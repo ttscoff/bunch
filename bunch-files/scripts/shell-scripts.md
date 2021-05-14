@@ -70,6 +70,7 @@ Additionally, the following environment variables are available:
 | `$BUNCH_DOCK`          | Dock visibility (1: visible, 0: autohide)          |
 | `$BUNCH_DESKTOP_ICONS` | Desktop icons (1: visible, 0: hidden)              |
 | `$BUNCH_PHASE`         | "OPEN" or "CLOSE"                                  |
+| `$BUNCH_PARENT`        | Parent Bunch if opened by another Bunch            |
 
 > You can fork a script using the `$BUNCH` variable. If you have a script with common tasks but you need it to differ between Bunches in some way, do something along the lines of (in Bash):
 >
@@ -111,7 +112,7 @@ Bunch doesn't do anything with the output of a command other than report it [in 
     osascript -e "display notification \"$INFO\""
 
 
-## Monitoring Scripts
+## Monitoring Scripts {#monitor}
 
 Scripts launched by a Bunch show up under "🔴 Shell Scripts" in the 
 Bunch menu. Clicking any script in the list will open a task monitor 
@@ -155,7 +156,7 @@ If a background color is specified without a foreground color, a contrasting col
 
 All size, positioning, and color arguments are optional, and any combination of them can be used. See the [`display` window documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#window) for details.
 
-The following command sets up a local Jekyll server for developing this documentation, with a task monitor in the upper right quarter of my secondary display:
+The following runs a script that sets up a local Jekyll server for developing this documentation, with a task monitor in the upper right quarter of my secondary display:
 
 ```bunch
 $ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x50% right,top #222 #38c5eb a:95% l:d)

@@ -102,6 +102,9 @@ A display command that uses every option would look like the below. This command
 (display myfile.txt display:1 100%x500 left,top #111111 #efefef alpha:97% level:desktop)
 ```
 
+> Tip: If you leave size and position empty, it will create the window with default settings. Resize and position the window to your liking, then choose "Copy Dimensions of Active Window" from the Bunch menu. A compatible string containing that window's new dimensions and position will be copied to your clipboard for use in the `(display)` command.
+{:.tip}
+
 __Display__
 : By default the display window will open on the screen that has the menu bar when the Bunch is opened.
 

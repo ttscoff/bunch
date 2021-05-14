@@ -58,9 +58,32 @@ See the [CodeKit example Bunch]({{ site.baseurl }}/docs/bunch-files/samplebunch/
 
 ### With a Dialog
 
-You can use interactive dialogs to define values for variables. See [Interactivity->Variables]({{ site.baseurl }}/docs/bunch-files/interactivity/#variables) to learn how. Values assigned in this way will supercede values defined in Frontmatter or Dynamic Frontmatter.
+You can use interactive dialogs to define values for variables. See [Interactivity->Variables]({{ site.baseurl }}/docs/bunch-files/interactivity/#variables) to learn how. A dialog that sets a variable will only be triggered if the variable is not already assigned a value via another method.
 
 For an example of a Bunch with a multiple choice dialog, see the [Coding example Bunch]({{ site.baseurl }}/docs/bunch-files/samplebunch/#multiplechoice).
+
+### In a Snippet
+
+You can also directly assign a variable from within a Snippet, including embedded snippets. This abstracts the process, but allows you to use a dialog to load Snippets and have the variable set by the snippet instead of by setting with the dialog itself. A variable set within a snippet is available after the snippet is imported, but will not override a variable already set by other methods (see [Variable Precedence](#precedence)).
+
+To assign a variable directly from a Snippet:
+
+```
+choice = ?[One, Two]
+
+<<${choice}
+
+TextEdit
+- ${text_file}
+___
+#[One]
+text_file = "~/Documents/File 1.txt"
+
+#[Two]
+text_file = "~/Documents/File 2.txt"
+```
+
+> Direct assignment also works in a Bunch itself, having the same effect as setting a frontmatter key. For the sake of clarity, it's better that you use frontmatter in this case.
 
 ### When Calling a Snippet or Bunch {#filelines}
 
@@ -99,16 +122,36 @@ Values set in this manner will supercede frontmatter values, but will be overrid
 > Scenario: you have Hazel watching for new audio files that need processing in a shared Dropbox folder. A new file shows up, and a Hazel script adds an entry to your task manager that includes a Bunch url with the file specified as a parameter. Clicking it not only switches to your audio editing context, but also loads the file in question in your audio editor.
 {:.tip}
 
-## Variable Precedence
+## Global Variables {#global}
+
+You can use the keyword `global` when setting a variable and the value will be stored in Bunch's preferences, accessible to other Bunches and persisting across application launches. To make a variable global just put `global` in front of the variable name (with a space between):
+
+```bunch
+global my_global_variable = true
+```
+
+You can reference a global variable just like any other variable: `${my_global_variable}`. It can be used in [logic conditions]({{ site.baseurl }}/docs/bunch-files/logic/) in any Bunch, e.g. `if my_global_variable is true`.
+
+The last value assigned using the `global` keyword is what will be stored. Modifying a variable's value without the `global` keyword does not affect the global value, on the value local to the current Bunch.
+
+If a variable with a matching name is set within a Bunch, that value will take precedence over the global variable's value. Global variables have the lowest precedence, so even a value set in a Bunch's frontmatter will override it.
+
+## Variable Precedence {#precedence}
 
 Because variables can be set in multiple ways, you need to be aware of which value takes precedence. Variables are set in this order, the top available value being used.
 
-1. Variables defined in file lines
-2. Variables defined in the URL handler query string
-3. Variables defined with interactive dialogs
-4. Variables defined in dynamic frontmatter
-5. Variables defined in frontmatter
-6. Variable default values
+> Precedence also takes into account assignment order. If a variable is already assigned (e.g. by a URL handler query string), a dialog that sets that variable (`var = ?[]`) will be skipped, as will a direct assignment (`var = val`). This allows you to, for example, skip a dialog if opening via a URL by setting the variable in the URL itself.
+{:.tip}
+
+1. Variables set in __file lines__
+2. Variables set by in a __URL call__/__AppleScript method__
+3. Variables set by __interactive dialogs__
+4. Variables set in __dynamic frontmatter__
+5. Variables set in __frontmatter__
+6. Variables set using __direct assignment__
+7. Variable __default values__
+8. Global Variables
+
 
 ## Using Variables {#usingvariables}
 
