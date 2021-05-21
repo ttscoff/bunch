@@ -143,7 +143,7 @@ Example: `- [\\\\n\\\\n\\\\tThis has two newlines and an indent before it\\\\n]`
 
 ### Adding Pauses to Typed Strings {#typedpause}
 
-You can pause typing for any number of seconds using `\\!` followed by a number within a typed string (this works in interpolated strings as well):
+You can pause typing for any number of seconds using `\\\\!` followed by a number within a typed string (this works in interpolated strings as well):
 
 ```bunch
 - [This is a dramatic \\\\!5pause]

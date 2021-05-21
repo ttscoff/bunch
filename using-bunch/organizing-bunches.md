@@ -52,7 +52,7 @@ A few things to note:
 
 ### Submenu Frontmatter {#frontmatter}
 
-If you include a file called `folder.frontmatter` inside the subfolder, [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/) in this file will be [applied to all Bunches it contains]({{ site.baseurl }}/docs/frontmatter/#folderfrontmatter), with the exceptions listed below. 
+If you include a file called `folder.frontmatter` inside the subfolder, [frontmatter keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/) in this file will be [applied to all Bunches it contains]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter), with the exceptions listed below. 
 
 > A `folder.frontmatter` file can also exist in the base Bunch Folder, but doesn't affect subfolders and all submenu-specific keys are ignored. Other keys it contains will be applied to all Bunches in the root folder.
 

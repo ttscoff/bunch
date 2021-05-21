@@ -21,6 +21,7 @@ Commands are run by using lines surrounded by parenthesis in Bunch files. These 
 (audio [input|output] device_name)
 (audio [input|output] volume [0-100])
 (audio [input|output] [mute|unmute])
+(input source [name])
 (notify TEXT)
 (display FILE)
 (sleep [display])

@@ -283,3 +283,6 @@ ${defaultbrowser}
 ```
 
 Now if I want to change the browser for any of the Bunches in that folder using that variable, I just edit `default browser` in `folder.frontmatter`.
+
+> `folder.frontmatter` files can exist in the root of your Bunch folder as well. Submenu keys like `ignore` and `title` are ignored, but arbitrary keys assigned in that file will apply to all Bunches in the root folder.
+{:.tip}

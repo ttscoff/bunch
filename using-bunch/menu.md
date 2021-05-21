@@ -9,6 +9,8 @@ tags: [shortcuts]
 
 Just click on the Bunch status item to reveal the menu.
 
+{% gif /images/menubarclick.gif %}
+
 ## Bunch List
 
 At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close/)" lines.
