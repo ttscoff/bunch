@@ -39,7 +39,7 @@ Scopes and limits can be combined.
 
 ## Spotlight Search {#spotlightsearch}
 
-You can also harness the full power of Spotlight using the syntax you're used to in the floating Spotlight window. Just surround your search in single quotes. A scope can be defined as above, but with this query you can only specify one folder. It defaults to your Home folder and all of its subfolders. The same query limit and modifier as above apply.
+You can also harness the full power of Spotlight using the syntax you're used to in the floating Spotlight window. Just surround your search in single quotes. A scope can be defined as above, but with this query you can only specify one folder. It defaults to your Home folder and all of its subfolders. The same scope and result limit modifiers as above apply.
 
 ```
 Default

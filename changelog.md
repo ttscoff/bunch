@@ -12,6 +12,16 @@ page_id: changelog
 
 ---
 
+1.4.0 (β101)
+: Special handling for Visual Studio Code when attempting to quit the app
+: `(input source XXX)` command to switch keyboard input source
+: Fix: Change "Clear Checkmarks" shortcut to Control-Option-Command-R
+: Fix: Don't trigger `screen` commands on wake from sleep if parent Bunch isn't open
+: Create checkbox dialogs to handle optional launching of multiple apps/snippets in one dialog
+: Present dialogs in the order they’re listed in the Bunch
+
+---
+
 1.4.0 (β99)
 : Fix: Running an AppleScript file with a `*` line wasn't actually running anything
 

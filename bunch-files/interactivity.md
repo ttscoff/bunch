@@ -112,15 +112,48 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 } "Whatcha Coding?"
 ```
 
-## Assigning Variables With Input {#variables}
+{% gif /images/querydictionary.gif %}
+
+### Checkbox Arrays
+
+If you'd like multiple choice dialogs using checkboxes, you can use the Checkbox Array syntax. This consists of GitHub-style checkboxes followed by a title and the snippet or app to load.
+
+Start the lines with `-[ ]`. If the brackets contain "x" (`-[x]`), the checkbox will be initially checked. Title and value are separated by `=>`. 
+
+```bunch
+-[x] Option 1 => <<#One
+-[x] Option 2 => <<#Two
+-[] Option 3 => <<#Three
+___
+#[One]
+(log Snippet One)
+#[Two]
+(log Snippet Two)
+#[Three]
+(log Snippet Three)
+```
+
+{% img aligncenter /images/checkboxes.png 644 323 %}
+
+If the (`=>`) is omitted, the contents of the line will be used for both the item title and the returned value. This can be used to easily offer a list of optional apps to load:
+
+{% img aligncenter /images/appscheckboxes.png 521 311 %}
+
+Add one checkbox item per line. All consecutive lines will be grouped into one dialog, empty lines between items are ignored. If you want to create separate dialogs from multiple groupings of options, separate the groups with a horizontal rule (`---`) or a line starting with at least two hashes (`## A divider line`).
+
+Checkbox Arrays do not work in on-close Snippets --- they can only be used when opening a Bunch.
+
+## Populating Variables Interactively {#variables}
 
 You can always write your own scripts with dialogs to return frontmatter keys and values [using the `from script` key]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dynamicfrontmatter). But you can also assign them within a Bunch to get input at the time you open the Bunch and populate variables in snippets with it.
 
 To populate a frontmatter key for use as a variable, just start the line with the variable name, followed by `=`, and then the syntax for the type of query you want. __The variable name should not contain spaces.__
 
+Variable assignment does not work with Checkbox Arrays.
+
 ___Note that the dialogs will only display if the frontmatter key is not already assigned.___ This allows you to have a Bunch offer interactivity when launched directly, but when called from another Bunch, an AppleScript, or the URL handler, you can assign the variable directly and skip the dialog.
 
-#### Text Input
+### Text Input
 
 To display a text field and request user input, use this in your Bunch:
 
@@ -140,7 +173,7 @@ Spotify
 
 That will take your input and url encode it into a Spotify URL that is directly opened by Spotify.
 
-#### Multiple Choice Input
+### Menu Selection Input
 
 You can use the same syntax from [Query Arrays](#array) or [Query Dictionaries](#dictionary) to offer multiple choice dialogs.
 

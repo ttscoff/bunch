@@ -7,7 +7,7 @@ tags: [snippets,variables]
 # Conditional Logic
 {:.no_toc}
 
-If you want to make your Bunches more flexible, performing different tasks based on various criteria, conditional logic can add flexibility and control.
+If you want to have your Bunches perform different tasks based on various criteria, conditional logic can add flexibility and control.
 
 * Table of Contents
 {:toc}
@@ -136,7 +136,7 @@ App is running
 Numeric comparison
 : Test a variable's contents numerically. Conditions can be written out or represented with mathematical symbols. 
 
-	All conditions can be negated with `not`, e.g. `var_name is not less than` is the same as `var_name is greater than or equal to`. 
+	All conditions can be negated with `not`, e.g. `var_name is not less than` is the same as `var_name is greater than or equal to`. Symbols can be negated with `!`, e.g. `var_name !<= 5`.
 
 	Example: `if var_name is greater than 1`
 	
@@ -166,7 +166,9 @@ Text comparison
 
 
 Weekday comparison
-: Test whether the current weekday is before, after or is a given day, with the week starting on Sunday. Days can be abbreviated with standard abbreviations. This comparison only works in English. The condition just needs to start with `weekday`.
+: Test whether the current weekday is before, after or is a given day, with the week starting on Sunday. Days can be abbreviated with standard abbreviations (`mon`, `wed`, `fri`). This comparison only works in English. The condition just needs to start with `weekday`.
+
+	Remember that you can combine multiple conditions with "OR", so to have a block run on Tuesday and Thursday, use `weekday is Tues OR weekday is Thurs`
 
 	Example: `if weekday is Wednesday`
 
@@ -187,7 +189,7 @@ Time comparison
 
 ### Use Script Results As Conditions
 
-You can use the [output of shell scripts to set variables]({{ site.baseurl }}/docs/bunch-files/variables/#script) that can then be tested with if/else blocks.
+You can use the [output of shell scripts to set variables]({{ site.baseurl }}/docs/bunch-files/variables/#script) which can then be tested with if/else blocks.
 
 ```bunch
 my_var = $ test_script.sh // returns a string value on STDOUT
@@ -226,9 +228,8 @@ Because if/else blocks can be used within Snippets, you can use an on-close Snip
 
 ```bunch
 !<<#On Close
-
 __________________________
---[On Close]--------------
+-[On Close]---------------
 if Tweetbot is not running
 	Comms.bunch
 end

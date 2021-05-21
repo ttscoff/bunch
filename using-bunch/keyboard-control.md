@@ -22,7 +22,7 @@ Additionally, the following keyboard shortcuts are available when the menu is op
 
 |    Shortcut    |          Action          |
 |----------------|--------------------------|
-| {% kbd ⌃⌥⌘C %} | Clear Checkmarks         |
+| {% kbd ⌃⌥⌘R %} | Clear Checkmarks         |
 | {% kbd ⌘,  %}  | Open Preferences         |
 | {% kbd ⇧⌘N %}  | New Bunch With Open Apps |
 | {% kbd ⇧⌘R %}  | Refresh Bunches          |

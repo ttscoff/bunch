@@ -9,6 +9,8 @@ The `(screen)` command creates a layer of solid color that can be used to hide a
 
 The screen command accepts two optional arguments, background color and alpha transparency.
 
+Screens are created for all attached displays. If the number of displays changes, the command will regenerate screens to match the new number.
+
 __Background Color__
 : The color for the layer is specified using 6-digit RGB hex codes. Black is `#000000`, white is `#ffffff`, and middle gray is around `#9a9a9a`. When all 6 digits are the same, you can shorten to 3, e.g. `#333333` can be `#333`.
 : The default is a dark gray (`#666`).
