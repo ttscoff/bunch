@@ -38,10 +38,14 @@ Logic Pro is a curious beast. It needs to be called "Logic Pro X" to launch, but
 
 If all of these fail, please do leave a note on the [discussion forums]({{ site.forum }}).
 
-## Empty Menu {#emptymenu}
+## Empty Menu or A Bunch Not Appearing {#emptymenu}
 
-If you make a change to a Bunch and suddenly your menu is empty, it means that something in the file caused Bunch to crash while reading in your Bunches. If possible, undo that change and use __Refresh Bunches__ to attempt to reload.
+Bunch files absolutely require the extension `.bunch`. If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If a Bunch isn't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check. 
 
-On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Bunch Folder->Set__ button in Preferences, then change it right back (it will be in the dropdown).
+{% img aligncenter /images/showextensions.jpg 412 158 %}
+
+If you make a change to a Bunch and suddenly your menu is empty, it means that something in the file caused Bunch to choke while reading in your Bunches. If possible, undo that change and use __Refresh Bunches__ to attempt to reload.
+
+On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Bunch Folder->Add__ button in Preferences, then change it right back (it will be in the dropdown).
 
 If these steps don't fix the issue, or the issue you're having is not mentioned heere, [see the support page]({{ site.baseurl }}/support) to get in touch.

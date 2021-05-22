@@ -12,6 +12,13 @@ page_id: changelog
 
 ---
 
+1.4.0 (β102)
+: Fix: Variables set in parent Bunch are now available to Waiting Snippets
+: Fix: Allow HTML display command to handle non-http url schemes
+: Fixes for Example Bunch
+
+---
+
 1.4.0 (β101)
 : Special handling for Visual Studio Code when attempting to quit the app
 : `(input source XXX)` command to switch keyboard input source
