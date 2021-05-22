@@ -25,7 +25,7 @@ The first time you run Bunch, a Bunch Folder will be created in your Documents f
 
 The Bunch folder contains Bunch files, also called "Bunches." A Bunch file is just a plain text file with the extension `.bunch`. You can edit them in TextEdit (in plain text mode, ___not Rich Text___), or in any plain text editor such as VS Code, Sublime Text, or any Markdown editor.
 
-> Bunch files absolutely require the extension `.bunch`. If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If your Bunches aren't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check. 
+> Bunch files absolutely require the extension `.bunch`. If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If your Bunches aren't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check.
 > 
 > {% img aligncenter /images/showextensions.jpg 412 158 %}
 {:.warning}
