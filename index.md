@@ -8,11 +8,14 @@ tags: [basics]
 
 {% img float-right /bunch/images/bunchicon-350.png 350 350 %}
 
-Bunch is a little macOS utility that sits in your menu bar. It doesn't have any windows. When you click the menu item, it gives you a list of "Bunches" you can select from, each one launching a group of applications that you configure. Bunches are just easily-edited text files which can be configured to open apps, specific files in an app, and even web pages in your default browser. For the Power Users, It also allows advanced scripting, system commands, and integration via URL handler.
+Bunch is a macOS utility that uses plain text scripts called "Bunches" to automate context switching. It sits in your menu bar, out of the way. When you click the menu item, it provides a list of your Bunches, each one representing an environment for your work or play. Bunches can open apps, specific files, web pages, and more. For the Power Users, It also allows advanced scripting, system commands, and integration via a URL handler.
+
+{% include context-carousel.html %}
 
 - [Download Bunch]({{ site.baseurl }}/download/)
 - Learn [how to install]({{ site.baseurl }}/docs/installation/)
-- Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/)
+- Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/) and [example Bunches]({{ site.baseurl }}/docs/bunch-files/samplebunch/)
+{:#markdown-toc}
 
 {% include news.html %}
 
