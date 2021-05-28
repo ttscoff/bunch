@@ -10,6 +10,9 @@ page_id: changelog
 
 {% docdiff %}
 
+1.4.0 (β105)
+: Walk back change to force-hiding apps before @focus lines
+
 ---
 
 1.4.0 (β104)
