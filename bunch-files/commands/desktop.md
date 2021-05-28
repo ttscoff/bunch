@@ -10,6 +10,8 @@ tags: [desktop, command]
 
 `(hide dock)` and `(show dock)` hide and show the Dock (toggle Hiding). Reposition the dock with `(dock left)`, `(dock bottom)`, or `(dock right)`.
 
+Hiding is automatically reversed when closing the Bunch, positioning is not.
+
 ### Examples
 {:.text-beta}
 
@@ -18,10 +20,26 @@ tags: [desktop, command]
 (dock bottom)
 ```
 
+## Menu Bar Commands
+{:.text-alpha}
+
+___macOS 11+ (Big Sur) only___.
+
+`(hide menu bar)` and `(show menu bar)` hide and show the Menu Bar. Automatically reversed when closing the Bunch.
+
+### Examples
+{:.text-beta}
+
+```bunch
+(show menu bar)
+(hide menu bar)
+```
+
+
 ## Desktop Commands
 {:.text-alpha}
 
-Hide and show desktop icons: `(hide desktop)`, `(show desktop)`.
+Hide and show desktop icons: `(hide desktop)`, `(show desktop)`. Automatically reversed when closing the Bunch.
 
 ### Examples
 {:.text-beta}

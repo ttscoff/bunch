@@ -123,6 +123,15 @@ Note that a windowed app in the foreground when you run the Bunch will likely fa
 > You can also append an underscore to any single app name and Bunch will attempt to hide it after launching. (This can be flaky depending on how long the app takes to launch.)
 {:.tip}
 
+## Activating Apps {#activatingapps}
+
+By default apps will launch without activating, meaning that if the app allows it, it won't become the foreground app when it launches, keeping focus on whatever app you're working in. If the app is already running, it won't activate, and if it's hidden, it will remain hidden.
+
+To force an app to become foreground (and unhide if hidden), append a caret (^) to the app name.
+
+```bunch
+Messages^
+```
 
 ## "Focusing" an App {#focus}
 

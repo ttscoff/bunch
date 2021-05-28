@@ -2,7 +2,8 @@
 layout: default
 title: URL Handler
 parent: Integration
-nav_order: 5
+nav_order: 30
+top_menu: true
 tags: [scripting]
 ---
 # The Bunch URL Handler
@@ -10,6 +11,10 @@ tags: [scripting]
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
 __Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.
+
+## Quick Reference
+
+{% include snippets/quick-urlhandler.md %}
 
 > Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/integration/stream-deck), just imagine the possibilities...
 >

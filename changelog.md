@@ -12,6 +12,27 @@ page_id: changelog
 
 ---
 
+1.4.0 (β104)
+: Add AppName syntax to indicate an app should activate/foreground on launch. By default apps now won’t activate, unless they’re receiving keystrokes
+: (hide/show menu bar) command
+: Allow `#clear` as window background color
+: Use better async app launch method on 10.15+
+: Slightly more reliable hiding and focusing of apps, including forcing any apps before an @focus line to launch hidden (previously just relied on activateHidingOthers)
+: Better formatting of long scripts in Running Scripts menu
+: Allow setting actual window background color for (display) windows
+: Fix: A Bunch with no frontmatter or non-comment items in the Bunch folder was causing the entire menu to be empty
+: Fix: Remove Bunch default keys from frontmatter when inherited by child Bunches (launched by another Bunch)
+: Fix: (input source) command now performs all actions on main thread (crasher)
+
+---
+
+1.4.0 (β103)
+: Allow `#clear` as a background color for Quick Look display windows
+: Allow migration of Bunch Beta prefs back to stable channel
+: Add `(hide menu bar)` command
+
+---
+
 1.4.0 (β102)
 : Fix: Variables set in parent Bunch are now available to Waiting Snippets
 : Fix: Allow HTML display command to handle non-http url schemes

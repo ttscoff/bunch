@@ -36,23 +36,7 @@ Bunch frontmatter doesn't support the more complex structures of YAML, such as a
 
 Here are the available keys:
 
-| `title:`       | Override the [display title](#displaytitle). Emojis OK. |
-| `menu order:`  | Force menu [sort order](#sortorder)                     |
-| `shortcut:`    | Define a keyboard shortcut for opening the Bunch        |
-| `open at:`     | Set a time to open this bunch daily                     |
-| `close at:`    | Set a time to close this bunch daily                    |
-| `close after:` | Automatically close after an interval                   |
-| `open on:`     | Set a weekday and time to repeat weekly                 |
-| `open every:`  | Repeat open at intervals                                |
-| `startup:`     | `true`, `false`, or `ask` to open this Bunch on launch  |
-| `from file:`   | A file path to load additional key/value pairs          |
-| `from script:` | A shell script path that returns YAML                   |
-| `sequence:`    | parallel or sequential, determines execution order      |
-| `single bunch mode:`  | `ignore` prevents closing                        |
-| `toggles:`     | `false` prevents toggling this Bunch open/closed        |
-| `only opens:`  | `true` has the same effect as `toggles: false`          |
-| `ignores state:`| Allow open/close even when already open/closed         |
-| `quits apps:`  | `always` close apps open in other Bunches               |
+{% include snippets/quick-frontmatter.md %}
 
 {% img float-right pl-4 pt-4 /bunch/images/emojititles.jpg 490 212 %}
 

@@ -40,11 +40,13 @@ If all of these fail, please do leave a note on the [discussion forums]({{ site.
 
 ## Empty Menu or A Bunch Not Appearing {#emptymenu}
 
-Bunch files absolutely require the extension `.bunch`. If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If a Bunch isn't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check. 
+__Bunch files absolutely require the extension `.bunch`.__ If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If a Bunch isn't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check.
 
 {% img aligncenter /images/showextensions.jpg 412 158 %}
 
-If you make a change to a Bunch and suddenly your menu is empty, it means that something in the file caused Bunch to choke while reading in your Bunches. If possible, undo that change and use __Refresh Bunches__ to attempt to reload.
+__Make sure your Bunch is plain text.__ If you edit in TextEdit or another Rich Text capable editor, the file may get saved as rich text. Switch to plain text mode and resave the Bunch (double checking that it still has the `.bunch` extension).
+
+If you make a change to a Bunch and __suddenly your menu is empty__, it means that something in the file caused Bunch to choke while reading in your Bunches. If possible, undo the last change and use __Refresh Bunches__ to attempt to reload.
 
 On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Bunch Folder->Add__ button in Preferences, then change it right back (it will be in the dropdown).
 
