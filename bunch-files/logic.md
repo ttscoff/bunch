@@ -99,7 +99,7 @@ All conditions can be negated using "not" or `! condition`. Negatives can only b
 Syntax: `if [condition]` where `[condition]` is one of the following.
 
 Bunch is opening/closing
-: Test if self is in the process of opening or closing. Use "self" or "this" to test current Bunch.
+: Test if a Bunch is in the process of opening or closing (phase). Use "self" or "this" to test current Bunch.
 
 	`self is opening`      | Current Bunch is opening
 	`self is closing`      | Current Bunch is closing
@@ -128,10 +128,10 @@ App is running
 	
 	Example: `if Messages is running`
 
-	`AppName is running` | App is currently running
+	`AppName is running`     | App is currently running
 	`AppName is not running` | App is not running
 	
-	`is` is optional, works as `AppName running`, `AppName not running`
+	`is` is optional in all tests, so this works as `AppName running`, `AppName not running`
 
 Numeric comparison
 : Test a variable's contents numerically. Conditions can be written out or represented with mathematical symbols. 

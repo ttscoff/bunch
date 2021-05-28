@@ -9,7 +9,7 @@ tags: [shortcuts]
 
 Just click on the Bunch status item to reveal the menu.
 
-{% gif /images/menubarclick.gif %}
+{% gif /images/menubarclick.gif "Animated GIF of the Bunch Menu in the Menu Bar" "The Bunch Menu in the Menu Bar" %}
 
 ## Bunch List
 
@@ -38,7 +38,7 @@ Clearing a checkmark causes the Bunch to register as closed without performing i
 
 Holding any modifier combination while the menu is open will display its function at the top of the menu as a reminder.
 
-{% img aligncenter /images/menumodifiers.jpg 400 79 %}
+{% gif /images/menumodifiers.gif "Animation showing menu with modifier keys held" "Pressing modifier keys" %}
 
 ## Bunch
 
@@ -50,14 +50,6 @@ About Bunch
 Check For Updates
 : Check for new versions and automatically update Bunch.
 
-Changelog
-: Quick access to the latest changes.
-
-Make a Donation
-: If you love Bunch, [pay what you can]({{ site.baseurl }}/donate/) for it.
-
-There are also shortcuts to the [Preference items]({{ site.baseurl }}/docs/using-bunch/preferences/) in the Bunch menu when running in Dock mode.
-
 ## Main Menu
 
 Clear Checkmarks
@@ -66,7 +58,7 @@ Clear Checkmarks
 New Bunch With Open Apps
 : Use this command to create a new Bunch file containing all of the currently open apps on your Mac. This will only include apps that show up in your Dock, not apps that run in your menu bar only (Finder and Bunch will also be ignored). You will have the option to name the new Bunch, and to either save the Bunch to your Bunch folder, or copy the contents to your clipboard.
 
-    {% gif images/newbunchwithopenapps.gif "New Bunch With Open Apps" %}
+    {% gif images/newbunchwithopenapps.gif "Animation demonstrating New Bunch With Open Apps command" "New Bunch With Open Apps" %}
 
 Save Current Wallpaper as Default
 : When you use [Wallpaper commands](http://brettterpstra.com/bunch-beta/docs/bunch-files/commands/wallpaper/), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.

@@ -3,6 +3,7 @@ layout: default
 title: Sample Bunches
 parent: Bunch Files
 nav_order: 3
+top_menu: true
 tags: [interactivity,frontmatter,snippets,variables,example,apps,basics]
 ---
 # Some examples to get you started
@@ -370,11 +371,11 @@ ___
 * tell application "CodeKit" to select project containing path "~/Sites/dev/marked2app/"
 ```
 
-### Dynamic Images
+## Dynamic Images
 
 When I was transitioning to a new M1 Mac mini I was using several different machines, switching my display between them and sometimes using VNC to log into them. Because my goal was to make one system behave look and behave like the other, it could get confusing as to which one I was logged into at the time.
 
-I built the following Bunch which takes the host name of the current machine and uses ImageMagick to create a green-on-black image of the machine's name, then uses the `display` command to put it in the lower left corner of the desktop in a wallpaper-level chromeless window. The Bunch syncs between machines via Dropbox, opens at startup, and shows the name of whatever machine it opens on.
+I built the following Bunch which takes the host name of the current machine and uses ImageMagick to create a green-on-transparent PNG of the machine's name, then uses the `display` command to put it in the lower left corner of the desktop in a wallpaper-level chromeless window with transparent (`#clear`) background. The Bunch syncs between machines via Dropbox, opens at startup, and shows the name of whatever machine it opens on.
 
 (Requires [ImageMagick](https://imagemagick.org/index.php), `brew install imagemagick`)
 
@@ -386,8 +387,8 @@ menu order: 120
 single bunch mode: ignore
 toggles: false
 ---
-$ hostname | sed 's/.local$//'|tr "[a-z]" "[A-Z]" | xargs -I '{}' convert -size 500x500 xc:transparent -fill green -font AvantGarde-Demi -pointsize 64 -draw "text 0,150 '{}'" -trim ~/thismachine.png
+$ hostname | sed 's/.local$//'|tr "[a-z]" "[A-Z]" | xargs -I '{}' convert -size 500x500 xc:transparent -fill '#a2bf8a' -font AvantGarde-Demi -pointsize 64 -draw "text 0,150 '{}'" -trim ~/thismachine.png
 
-(display ~/thismachine.png d:0 150x63 0,0 #000 a:50% c:n l:w)
+(display ~/thismachine.png d:0 150x63 0,0 #clear a:50% c:n l:w)
 ```
 

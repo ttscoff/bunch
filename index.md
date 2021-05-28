@@ -14,6 +14,7 @@ Bunch is a macOS utility that uses plain text scripts called "Bunches" to automa
 
 - [Download Bunch]({{ site.baseurl }}/download/)
 - Learn [how to install]({{ site.baseurl }}/docs/installation/)
+- [Get started using Bunch]({{ site.baseurl }}/docs/using-bunch/)
 - Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/) and [example Bunches]({{ site.baseurl }}/docs/bunch-files/samplebunch/)
 {:#markdown-toc}
 

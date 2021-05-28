@@ -150,6 +150,8 @@ __Background__ and __Foreground__ color
 
     Example: `(display myfile.txt 800x600 #000 #eee)`
 
+    When specifying a background for a Quick Look display window (any file type other than text or HTML), you can use `#clear` as the background color to create a transparent window.
+
 __Window Opacity__
 
 : Specify an opacity for the window using `alpha:XX%`. This can be abbreviated as `a:75%`. Opacity must be between 0 and 100. 
