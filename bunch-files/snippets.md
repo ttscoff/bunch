@@ -73,7 +73,7 @@ Only the first colon is used to split the value, so the default value can contai
 
 ## Referencing Partial Snippets (fragments) {#fragments}
 
-You can define multiple snippets together in one file and label the sections with a hash (`#`) or hyphen (`-`) and the name in square brackets:
+You can define multiple snippets together in one file and label the sections with a hash (`#`) or other accepted symbols (see below), and the name in square brackets:
 
 ```bunch
 #[Section Label]
@@ -92,14 +92,24 @@ Then you can reference the snippet with a fragment identifier, like this:
 
 If you load a snippet containing sections without using a fragment id, i.e. just `<MySnippet.snippet`, it will run all of the sections in the snippet.
 
-If you feel like being creative, Bunch allows the use of either dashes or hashes to create the section dividers, and you can have a variable number of them on either side of the brackets (you do need one dash or hash on the left, and the head and tail characters should match). The following all work:
+
+If you feel like being creative, Bunch allows the use of several symbols to create the section dividers, and you can have a variable number of them on either side of the brackets (you do need one symbol on the left). 
+
+Accepted characters for the divider lines are `#`, `-`, `=`, and `>`. The line must start with one or more of these symbols, followed by the title in square brackets. Whitespace is allowed after the first character. In the case of a hyphen, two or more are required (to avoid confusion with file lines). The other symbols only require a single character.
+
+Anything after the closing square bracket is ignored. You can use the rest of the line to continue a divider, add a comment, or just leave it blank.
+
+The following all work:
 
 ```bunch
 ###[Section]
 #[Section]#########
 -------[Section]-----------
--[Section]-
-------------------------------------------[Section]-
+--[Section]
+------------------------------------------[Section]--
+>>>[Section]
+=[Section]== Add a comment, if you like
+>-=# [Section] #=-<
 ```
 
 You get the idea. When you amass a lot of snippets in one file because you're  making great use of sections and fragments, it's just nice to make them look pretty...

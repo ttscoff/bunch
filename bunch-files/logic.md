@@ -26,7 +26,7 @@ end
 > Indentation must be exactly four (4) spaces or one (1) tab per level, with an additional 4 spaces/1 tab per nested level. If using spaces instead of tabs, every indentation level must be a multiple of 4.
 {:.warning}
 
-The condition can use a variety of syntax, from human readable to symbolic. See the next section for details. In the example above, Bunch simply tests the contents of a variable called var_one to see if it's "truthy" (yes, true, or 1). If so, it launches Messages and runs a snippet.
+The condition can use a variety of syntax, from human readable to symbolic. See the next section for details. In the example above, Bunch simply tests the contents of a variable called var_one to see if it exists (is defined and has a value that's not "false" or "no"). If so, it launches Messages and runs a snippet.
 
 You can go further by providing "else" statements. These can be "else if _condition_", or just "else" to have a block that runs if nothing else matches. Both are optional. If used, the "else" block should come last.
 
