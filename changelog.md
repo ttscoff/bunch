@@ -10,6 +10,21 @@ page_id: changelog
 
 {% docdiff %}
 
+---
+
+1.4.0 (β107)
+: __Breaking change:__ fragment ID syntax no longer accepts a single dash before the square brackets, must have at least 2 or use a different symbol
+: Everything after closing square bracket in fragment id lines is ignored
+: Whitespace is allowed anywhere in a fragment id line, as long as the first character is one of the accepted divider symbols (#->=)
+: Fragment id divider syntax now accepts `>` and `=` as divider lines
+: Better searching for apps NSWorkspace doesn't recognize as apps by name
+: If Bunch Item type is Unknown, consider it an app name that wasn’t found and make an attempt to launch it anyway
+: `if VarName` condition with no operator will return true if `VarName` is defined and contains ANY content other than `false` or `no`.
+: Fix: Make `if VarName` conditions case insensitive
+: Fix: Process snippets within conditions
+
+---
+
 1.4.0 (β105)
 : Walk back change to force-hiding apps before @focus lines
 
