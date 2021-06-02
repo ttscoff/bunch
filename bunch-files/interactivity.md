@@ -30,7 +30,7 @@ When the Bunch is launched, a dialog will ask "Load My Snippet?" and request use
 - autoplay=true
 ```
 
-{% gif images/optionalsnippet.gif "Animation showing result of Optional Snippet" "Optional Snippets" %}
+{% hovergif images/optionalsnippet.gif "Animation showing result of Optional Snippet" "Optional Snippets" %}
 
 You can include multiple optional snippets, but --- due to the asynchronous way Bunches are launched --- the questions may not be asked in file order. Make the queries descriptive to avoid confusion.
 
@@ -112,7 +112,7 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 } "Whatcha Coding?"
 ```
 
-{% gif /images/querydictionary.gif "Animation showing result of Query Dictionary" "Query Dictionary" %}
+{% hovergif /images/querydictionary.gif "Animation showing result of Query Dictionary" "Query Dictionary" %}
 
 ### Checkbox Arrays
 

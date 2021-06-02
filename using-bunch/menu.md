@@ -9,7 +9,7 @@ tags: [shortcuts]
 
 Just click on the Bunch status item to reveal the menu.
 
-{% gif /images/menubarclick.gif "Animated GIF of the Bunch Menu in the Menu Bar" "The Bunch Menu in the Menu Bar" %}
+{% hovergif /images/menubarclick.gif "Animated GIF of the Bunch Menu in the Menu Bar" "The Bunch Menu in the Menu Bar" %}
 
 ## Bunch List
 
@@ -38,7 +38,7 @@ Clearing a checkmark causes the Bunch to register as closed without performing i
 
 Holding any modifier combination while the menu is open will display its function at the top of the menu as a reminder.
 
-{% gif /images/menumodifiers.gif "Animation showing menu with modifier keys held" "Pressing modifier keys" %}
+{% hovergif /images/menumodifiers.gif "Animation showing menu with modifier keys held" "Pressing modifier keys" %}
 
 ## Bunch
 

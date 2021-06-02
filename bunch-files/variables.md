@@ -53,6 +53,9 @@ keyname = $ myscript.sh
 
 A script line like this is executed in the order of the Bunch. It should appear before any usage of the variable, but can be added after other script items and will allow their execution before running.
 
+> If your script returns more than one line, newlines are translated to `\n` in the variable's value. This allows Bunch to treat it as one line, making it available for uses like string comparisons in [conditionals]({{ site.baseurl }}/docs/bunch-files/logic/#conditions). You can output the newlines in various ways; see the [notes on transforms](#transforms).
+{:.tip}
+
 See the [CodeKit example Bunch]({{ site.baseurl }}/docs/bunch-files/samplebunch/#scriptvariable) for a demonstration of this in action.
 
 
@@ -138,7 +141,7 @@ If a variable with a matching name is set within a Bunch, that value will take p
 
 ## Variable Precedence {#precedence}
 
-Because variables can be set in multiple ways, you need to be aware of which value takes precedence. Variables are set in this order, the top available value being used.
+Because variables can be set in multiple ways, you need to be aware of which value takes precedence. Variables are set in this order, the top available value (lowest number in the list below) being used.
 
 > Precedence also takes into account assignment order. If a variable is already assigned (e.g. by a URL handler query string), a dialog that sets that variable (`var = ?[]`) will be skipped, as will a direct assignment (`var = val`). This allows you to, for example, skip a dialog if opening via a URL by setting the variable in the URL itself.
 {:.tip}
@@ -174,16 +177,50 @@ ${apptolaunch}
 
 Placeholders can not be nested within other placeholders.
 
-### Percent Encoding
+### Transforming Values {#transforms}
 
-You may need your variable to be percent encoded when it's used, for example when using it in a URL. In this case, use a percent symbol (`%`) instead of a dollar sign (`$`).
+You can transform the output of a variable placeholder using a set of pre-defined transforms with the syntax `${VarName/[transform]}`. The available tranformations are:
+
+| Transform    | Result                                               |
+| -----------: | :--------------------------------------------------- |
+| `/url`       | Percent encode the value                             |
+| `/shell`     | Backslash escape spaces and special characters       |
+| `/raw`       | Output "\n" as actual newlines (see note below)      |
+| `/typed`     | Output "\n" as `\\\n` for use in `[typed strings]`   |
+
+Transforms can be used in addition to [default values](#defaultvalues): `${VarName/url:Default%20Value}`. Transforms are not applied to default value replacements by default, but can be added if needed: `${VarName/url:Default Value/url}`.
+
+#### Newlines
+
+When variables are assigned values containing newlines, usually through script output, the newlines are converted to the characters "\n". When output as `/raw`, these are converted back into actual newlines. This allows contents to be used as part of a Bunch. Say for example you had a text file containing a list of options, perhaps dynamically generated:
+
+```
+Option 1 => Value 1
+Option 2 => Value 2
+```
+
+The contents of this file can be inserted into a dialog using the `/raw` transform:
+
+```bunch
+my_menu = $ cat ~/scripts/menu_options.txt
+
+result = ?{${my_menu/raw}}
+```
+
+When performing `/url` transforms, "\n" is first converted to actual newlines, and then the newlines are percent encoded.
+
+When performing `/shell` transforms, "\n" is left as is, and not double-escaped. Output with `echo -e`, this results in an actual newline being echoed.
+
+When performing `/typed` transforms, "\n" is converted to `\\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.
+
+As a shortcut to the `/url` transform, you can use a percent symbol (`%`) instead of a dollar sign (`$`):
 
 ```bunch
 Safari
 - https://imdb.com/search?q=%{searchterm}
 ```
 
-### Default Values
+### Default Values {#defaultvalues}
 
 You can (and generally should) define a default value for a placeholder. This will be used if the key is empty by the time the placeholder is reached. Add default values after a colon within the placeholder:
 
@@ -192,4 +229,39 @@ ${myvariable:Default Value}
 ```
 
 This is especially useful within a main Bunch, allowing the Bunch to function normally when called directly, but changing its functionality when it's called from other Bunches or via the URL handler.
+
+## Tips and Tricks
+
+### Getting the Clipboard {#clipboard}
+
+You can get the contents of your clipboard into a variable using the `pbpaste` command. Bunch will automatically strip any newlines from the beginning and end of the contents, so you can simply run:
+
+```bunch
+var_name = $ pbpaste
+```
+
+Now you can use the contents of your clipboard in a  snippet, e.g. to pass to a URL handler or test as a condition with tests like `if starts with` or `if contains`.
+
+### Getting the Date {#date}
+
+Bunch doesn't have built-in date placeholders, but you can acheive them in a variable using the UNIX `date` command. This command uses `strftime` placeholders and can generate just about any format of date/time string you need. [See this article](https://www.cyberciti.biz/faq/unix-date-command-howto-see-set-date-time/) for examples and a list of placeholders.
+
+```bunch
+var_name = date '+%Y-%m-%d %H:%M'
+```
+
+### Additional Text Transforms
+
+Variables are processed in document order, so you can use any variable that has been assigned in a preceding line as part of a command.
+
+You can use UNIX commands like `tr` and `sed` to perform text manipulation, or shell out to your preferred scripting language like Python, Perl, or Ruby with one-liners.
+
+```bunch
+project = ?[Bunch,nvUltra,Marked] "What are you working on?"
+
+uppercase = $ echo "${project}" | tr '[:lower:]' '[:upper:]'
+subbed = $ echo "${uppercase}" | sed -E 's/^B/BR/i'
+concatenated = "${project} -> ${subbed}"
+escaped = $ echo "${concatenated}" | /usr/bin/env ruby -rshellwords -e 'print Shellwords.escape(STDIN.read.strip)'
+```
 

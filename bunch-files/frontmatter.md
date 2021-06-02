@@ -121,6 +121,26 @@ menu divider: after
 ---
 ```
 
+### Before/After Scripts
+
+You can use frontmatter to run scripts before and after opening and closing the Bunch. Because variables are defined before any script items are run within the Bunch, it may be useful to have some scripts run prior to processing variables that may read from that script's output. For example, if you needed to pull some JSON data from an API and populate a text file that could then be read into a query dialog, you would want to run the script that populates the text file before the variable assignment that reads it. See this [advanced script]({{ site.baseurl }}/docs/integration/advanced-scripting/dialogs-from-files/) for an example.
+
+To run scripts before doing anything else in a Bunch, use the `run before:` key. The value should be a comma-separated list of shell or applescripts to execute. Each script can include arguments. If you don't provide an absolute path to the script (tildes can be used for your home directory), Bunch will assume the script is relative to your Bunch Folder.
+
+To run scripts after processing all of the items in a Bunch, use `run after:`.
+
+To run scripts when closing a Bunch but before processing any on-close items, use `run before close:`.
+
+To run scripts after performing all on-close operations and terminating any other running scripts, use `run after close:`.
+
+```bunch
+---
+title: Script Example
+run before: prescript.sh arg1, otherscript.sh arg2
+run after close: postscript.sh
+---
+```
+
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 
 You can add arbitrary key/value pairs in the frontmatter. These will be stored and passed as default values to Bunches, snippets, and scripts. For example, if your snippet had a variable `${say}` in it, and the calling Bunch had a `say:` line in the frontmatter, that value would be passed unless specifically passed as a variable to the snippet.

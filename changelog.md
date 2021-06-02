@@ -12,6 +12,24 @@ page_id: changelog
 
 ---
 
+1.4.0 (β108)
+
+: Frontmatter keys for running scripts before/after opening a Bunch, and before/after closing
+: Variables can hold values with newlines
+: Perform pre-defined transformations on variable values (url encode, shell escape, raw newlines, newlines for typed strings)
+: Percent encode newlines
+: Do some translating on built-in frontmatter keys to allow for some variations in syntax
+: URL encoding of variables now encodes question marks and other symbols not allowed in URL paths
+: Limit length of info logging messages to 50 characters
+: Process variable assignments in document order
+: Process variable assignment dialogs inline with other variables, allowing dynamically-assigned variables to be used in dialogs
+: Fix: Remove Bunch-specific frontmatter keys from variables passed to Waiting Snippets
+: Fix: Prevent backslash escapes from disappearing from values during variable assignment
+: Fix: Don't change case when logging commands
+: Fix: Make variables available prior to processing shell script variable assignments
+
+---
+
 1.4.0 (β107)
 : __Breaking change:__ fragment ID syntax no longer accepts a single dash before the square brackets, must have at least 2 or use a different symbol
 : Everything after closing square bracket in fragment id lines is ignored
