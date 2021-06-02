@@ -203,6 +203,8 @@ end
 
 This works with AppleScripts as well (`my_var = * ...`), as long as the script returns a string or number.
 
+There are a some UNIX commands commands that can make very useful variables with things like [your clipboard contents]({{ site.baseurl }}/docs/bunch-files/variables/#clipboard) or various [date formats]({{ site.baseurl }}/docs/bunch-files/variables/#date).
+
 ### Combine Dialogs and Conditions
 
 You can set a variable using a dialog, and then use an if/else block to perform different actions based on the choice. In its simplest form, this is essentially the same as just having a dialog run different snippets based on user selection, but by setting a variable you can have multiple if/else blocks, and the variable is passed to snippets (which can also contain their own if/else blocks).

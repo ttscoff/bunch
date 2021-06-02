@@ -136,7 +136,7 @@ All of the scheduling keys (other than `open every`) allow natural language date
 
 ## Cancelling an Automatic Launch or Close
 
-{% gif images/bunchcancel.gif "Animation demonstrating cancelling a scheduled launch" "Cancelling a scheduled launch" %}
+{% hovergif images/bunchcancel.gif "Animation demonstrating cancelling a scheduled launch" "Cancelling a scheduled launch" %}
 
 When launching and closing Bunches on a schedule, Bunch will attempt to show a notification 15 seconds before the action happens. Clicking the notification will cause it to the action to happen immediately, and there's a cancel button to skip that scheduled launch until the interval comes around again. This notification system is only tested on Big Sur. I highly recommend setting Bunch's notification style to "Alert" in System Preferences, they work much better for what Bunch uses them for.
 
