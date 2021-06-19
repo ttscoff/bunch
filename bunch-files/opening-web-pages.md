@@ -34,6 +34,8 @@ The recognized browser prefixes are:
 In most cases, you can also send a URL as a file to a browser and it will open it properly, as in:
 
     Safari
-    - https://brettterpstra.com/bunch
+    - https://bunchapp.co
 
+## Sending GET/POST Requests
 
+Some URLs, such as webhook triggers, are meant to be pinged but not opened in your browser. To accomplish this with Bunch, you can use the `curl` command in a shell script item. See [Home Automation]({{ site.baseurl }}/docs/integration/other-automation/) for examples of sending GET requests using `curl`.

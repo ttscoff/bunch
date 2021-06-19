@@ -12,6 +12,23 @@ page_id: changelog
 
 ---
 
+1.4.0 (β110)
+: Attempt to quit an app even if it's not immediately located among running apps
+: Fix: Don't convert app name to value of localizedName property, fixes issues with iTerm. Trying too hard is detrimental, apparently.
+: Fix: Don't automatically quit Finder if included in a Bunch
+
+---
+
+1.4.0 (β109)
+
+: Allow `!!!Triple Negative` to quit an app when closing a Bunch without launching on open
+: `space:all` parameter for `(display)` command to cause a display window to join all spaces
+: Special handling for "FileMaker Pro 18 Advanced"
+: Switch to using mdfind as backup app locator
+: Convert some Info-level log messages to Debug-level for cleaner log output
+
+---
+
 1.4.0 (β108)
 
 : Frontmatter keys for running scripts before/after opening a Bunch, and before/after closing
@@ -200,15 +217,8 @@ page_id: changelog
 : More complete emoji handling
 : Add keyboard shortcut for Open Log (⇧⌘L)
 : Wait for Bunch commands and script items when executing sequentially
-: If a background color is set for a `display` text file but no foreground, pick a contrasting color
-: If a background color is specified for text or HTML display windows, change the window to dark mode appearance if the color is more than 50% black
-: Enable edit menu commands (copy/paste/etc.) in display commands windows
-: Don't cut top off scrolling quick look previews
-: Allow text preview/file watching of any file with a text mimetype, not just .txt and .log
 : Fix: Regression in schedule handling
 : Fix: Fixes for changing Bunch Folder preferences and storing recents
-: Fix: Ensure all window updates happen on the main thread
-: Fix: Quick Look windows via `display` command set to wallpaper level were empty
 
 ---
 

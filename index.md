@@ -18,8 +18,6 @@ Bunch is a macOS utility that uses plain text scripts called "Bunches" to automa
 - Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/) and [example Bunches]({{ site.baseurl }}/docs/bunch-files/samplebunch/)
 {:#markdown-toc}
 
-{% include news.html %}
-
 ---
 
 {% donate "A Bunch of thanks for your consideration" %}
@@ -32,3 +30,4 @@ I wrote Bunch because I tend to launch a specific group of apps depending on the
 
 Bunch has expanded a _lot_. It can serve as a full context switcher, and handle just about everything you'd want to automate when starting a new context (see the [Syntax Summary]({{ site.baseurl }}/docs/bunch-files/quick-reference/) for an overview of all the stuff I've added).
 
+{% include news.html %}

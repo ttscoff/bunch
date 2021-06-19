@@ -54,3 +54,21 @@ To quit Twitter when opening the Bunch, then re-launch it on close:
 !Twitter
 !!Twitter
 ```
+
+## Quit an App When Closing {#triplenegative}
+
+Normally an app launched by a Bunch would quit when the Bunch closes (unless ignored with `%`). You can also specify that an app should quit when closing a Bunch --- without having to launch it first --- by using `!!!AppName`. If the app is running, it will be quit when the Bunch closes, but the item will have no effect when opening the Bunch.
+
+```bunch
+// Slack is quit when this Bunch is closing
+!!!Slack
+```
+
+This can be useful as a workaround when an app like FileMaker Pro Advanced or Visual Studio Code will launch with one name, but needs another to quit. In the case of FileMaker, you would use:
+
+```bunch
+FileMaker Pro 18 Advanced
+!!!FileMaker Pro Advanced
+```
+
+(The specific cases of FileMaker and VS Code are handled automatically by Bunch, but there will almost certainly be other examples of this where you'll need to manually specify.)

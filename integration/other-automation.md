@@ -2,7 +2,7 @@
 layout: default
 title: Home Automation
 parent: Integration
-tags: [integration]
+tags: [integration,webhook]
 ---
 ### Home Automation with Indigo
 
@@ -16,9 +16,9 @@ Using `curl` and a shell command prevents Bunch from trying to open the URL in t
 
 ### IFTTT
 
-Like the Indigo automation, you can set up IFTTT applets to respond to Webhooks and call them with `curl`. You'll need your Maker key, which you can get when you're signed in: visit [this link](https://ifttt.com/maker_webhooks), and click "Documentation." Create a new applet with a Webhook for the "If", and give it an event name, and add your "Then" actions. Your URL will look like:
+Like the Indigo automation, you can set up IFTTT applets to respond to Webhooks and call them with `curl`. You'll need your Maker key, which you can get when you're signed in: visit [this link](https://ifttt.com/maker_webhooks), and click "Documentation." Create a new applet with a Webhook for the "If", give it an event name, and add your "Then" actions. Your URL will look like:
 
-    $ curl -X POST https://maker.ifttt.com/trigger/EVENTNAME/with/key/YOURMAKERKEY
+    $ curl -X POST https:​//maker.ifttt.com/trigger/EVENTNAME/with/key/YOURMAKERKEY
 
 ### Others?
 
