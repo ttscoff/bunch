@@ -30,13 +30,47 @@ See [Debugging Scripts]({{ site.baseurl }}/docs/integration/advanced-scripting/d
 
 If you list an app to launch or quit in your Bunch and nothing happens, the app in question may have a different name in the system than it shows in Finder. First double check that the filename you're listing in your Bunch exactly matches the name of the application in Finder (minus the `.app`). If it does, and still doesn't work, there are a couple of possibilities.
 
+### Finding a "Registered" Name
+
 The first thing to try when tracking down the name an app responds to is to open Script Editor and go to __File->Open Dictionary__ ({% kbd ⇧⌘O %}). If the app has an AppleScript dictionary, it will show up in that list with the name you _probably_ need to use to operate on it. In cases like the app Things, this will reveal that the app is actually called "Things3."
 
-If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find Info.plist. Open Info.plist in your text editor and locate the CFBundleName. If it's different than the display name, try that in your Bunch.
+### Getting an App's "Real" Name
 
-Logic Pro is a curious beast. It needs to be called "Logic Pro X" to launch, but "Logic Pro" to quit. Bunch has a workaround for this that should allow you to safely use "Logic Pro X" without issue. I'm sure there are other weird cases I'll have to compensate for as they come up.
+If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. Open Info.plist in your text editor and locate the key `CFBundleName`. If it's different than the display name, try that in your Bunch.
+
+### Using the Bundle Identifier
+
+You can also use the contents of the key `CFBundleIdentifier` instead of the app name. This is the bundle identifier, and is a string that looks kind of like a URL. For example, Bunch's bundle identifier is `com.brettterpstra.Bunch`. If you use the bundle id instead of the app name, it can help Bunch clarify instances where the app responds to a different name than the app's filename.
+
+### Known Exceptions
+
+> In cases where an app responds to one name when launching but needs a different name to quit the running application (such as those detailed below), you can use a [triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative) to quit an app using a different name when closing.
+> 
+> ```bunch
+> %FileMaker Pro 18 Advanced
+> !!!FileMaker Pro Advanced
+> ```
+{:.tip}
+
+#### Coherence X
+
+Single Site Browser's created using [Coherence X](https://www.bzgapps.com/buycoherence) suffer all kinds of problems in Bunch. They can't be launched if Chrome is running, you can't launch more than one, and once they're launched, quitting them is hit and miss, depending on what else is running. This is because they launch multiple instances of Chrome that NSWorkspace can't identify as separate applications. I don't currently have a good workaround for these. I recommend using AppleScript commands to launch and quit them.
+
+#### Logic Pro (X)
+
+__Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch, but "Logic Pro" to quit. Bunch has a workaround for this that should allow you to safely use "Logic Pro X" without issue. 
+
+#### Visual Studio Code
+
+Similar case with "__Visual Studio Code__". Bunch has a harcoded workaround for VS Code that should allow you to safely use "Visual Studio Code" as the app name.
 
 If all of these fail, please do leave a note on the [discussion forums]({{ site.forum }}).
+
+#### FileMaker Pro Advanced
+
+You can launch the current version with `FileMaker Pro 18 Advanced`, but Bunch can't quit using the same name. If you use `FileMaker Pro Advanced`, Bunch will be able to quit it if it's already running, but won't be able to launch it. 
+
+In this case Bunch attempts to remove the number from the name when trying to quit the app, so use the numbered version in your Bunch, e.g. `FileMaker Pro 18 Advanced` or `FileMaker Pro 18`.
 
 ## Empty Menu or A Bunch Not Appearing {#emptymenu}
 

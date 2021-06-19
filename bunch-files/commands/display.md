@@ -76,8 +76,8 @@ You can define which display to open the window on, what size it should be, what
 |------------|-------------------|-----------------------------------------|
 | FILE/URL   | file path or URL  |                                         |
 | DISPLAY    | display:[0-9]     |                                         |
-| SIZE       | [W]x[H]           | Points (800x600)                        \
-|            |                   | Percentage (50%x50%)                    \
+| SIZE       | [W]x[H]           | Points (e.g. 800x600)                   \
+|            |                   | Percentage (e.g. 50%x50%)               \
 |            |                   | "full" (same as 100%)                   \
 |            |                   | Options can be mixed (50%x900)          |
 | POSITION   | [X],[Y]           | Points from lower left (e.g. 600,800)   \
@@ -89,12 +89,17 @@ You can define which display to open the window on, what size it should be, what
 | OPACITY    | alpha:[0-100]%    |                                         |
 | LEVEL      | level:[w,d,n,f]   | "wallpaper", "desktop"                  \
 |            |                   | "normal", "floating"                    |
-| CHROME     | chrome:none       | Create a "chromelss" window             |
+| CHROME     | chrome:none       | Create a "chromeless" window            |
+| SPACE      |space:[all,current]| Display window on "all" spaces          \
+|            |                   | or only on "current" (default)          |
 | USER AGENT |ua:[desktop,mobile]| Specify whether an HTML view should     \
 |            |                   | identify as desktop or mobile           |
 
 
 Any of these may be omitted. Each parameter must be preceded by a space.
+
+> All options can be abbreviated to one letter, i.e. `alpha:90%` can be written as `a:90%`, `display:1` can be shortened to `d:1`.
+{:.tip}
 
 A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the scrreen) on the second display with a light-on-dark color scheme and slight transparency.
 
@@ -185,6 +190,10 @@ __Chrome__
     Example `(display my presentation.keynote 600x1000 chrome:none)`
 
     In Quick Look previews, hovering over the window will display the title and "traffic light" buttons.
+
+__Space__
+: Specify `space:all` to cause the window to display on all available spaces, staying stationary when switching spaces. If set to `space:current` or omitted, window displays only on the active space when the Bunch is opened.
+: Can be abbreviated as `s:a`.
 
 __User Agent__
 

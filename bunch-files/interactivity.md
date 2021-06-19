@@ -114,7 +114,7 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 
 {% hovergif /images/querydictionary.gif "Animation showing result of Query Dictionary" "Query Dictionary" %}
 
-### Checkbox Arrays
+### Checkbox Arrays {#checkbox}
 
 If you'd like multiple choice dialogs using checkboxes, you can use the Checkbox Array syntax. This consists of GitHub-style checkboxes followed by a title and the snippet or app to load.
 

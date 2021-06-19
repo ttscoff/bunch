@@ -18,8 +18,6 @@ Bunch is a macOS utility that uses plain text scripts called "Bunches" to automa
 - Check out the [quick reference]({{ site.baseurl }}/docs/bunch-files/quick-reference/) and [example Bunches]({{ site.baseurl }}/docs/bunch-files/samplebunch/)
 {:#markdown-toc}
 
-{% include news.html %}
-
 ---
 
 {% donate "A Bunch of thanks for your consideration" %}

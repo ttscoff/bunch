@@ -1,4 +1,4 @@
-[Bunch.app](https://brettterpstra.com/bunch) documentation archive. Feel free to submit pull requests.
+[Bunch.app](https://bunchapp.co) documentation archive. Feel free to submit pull requests.
 
 To discuss ideas and ask questions, please use the [Discussions area](https://github.com/ttscoff/bunch/discussions).
 

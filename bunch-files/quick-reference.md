@@ -28,6 +28,7 @@ tags: [example]
 |`- [string]`|_[type a string]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typingstrings) in the preceding app_|
 |`!AppName`|_[Quit app]({{ site.baseurl }}/docs/bunch-files/apps/#quitting)_|
 |`!!AppName`|_Launch app when closing bunch ([double negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#doublenegative))_|
+|`!!!AppName`|_Quit app when closing bunch ([triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative))_|
 |`@AppName`|_[Focus app]({{ site.baseurl }}/docs/bunch-files/apps/#focus) (run at end of bunch to hide all other apps)_|
 |`AppName_`|_[Hide an app]({{ site.baseurl }}/docs/bunch-files/apps/#hidingapps)_|
 | __Snippets__ ||

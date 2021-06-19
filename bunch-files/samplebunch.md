@@ -85,7 +85,7 @@ x-marked://open?file=Work Stuff.md
    Focus commands should be the last item in the Bunch */
 @Marked 2
 
-# See the documentation for more info: https://brettterpstra.com/bunch/docs
+# See the documentation for more info: https://bunchapp.co/docs
 ```
 
 ## Screencasting {#screencast}

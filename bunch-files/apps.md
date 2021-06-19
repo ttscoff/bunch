@@ -64,7 +64,7 @@ Finder
 -> ~/Pictures
 ```
 
-You can open multiple windows by starting a new line without the `>`. This will open two windows with two tabs each:
+You can open multiple windows by starting a new line without the `>`. The following will open two windows with two tabs each:
 
 ```bunch
 Finder
@@ -118,7 +118,7 @@ Finder
 
 If you use "@@" alone on a line, Bunch will hide all visible apps. (Menu bar apps like Dash or TextExpander may not hide properly.) This is ideal for use at the very beginning of a Bunch, giving you a clean slate for a new set of apps.
 
-Note that a windowed app in the foreground when you run the Bunch will likely fail to hide. The better option is [focus](#focus) one of the apps that the Bunch launches.
+Note that a windowed app in the foreground when you run the Bunch will likely fail to hide. The better option is to [focus](#focus) one of the apps that the Bunch launches.
 
 > You can also append an underscore to any single app name and Bunch will attempt to hide it after launching. (This can be flaky depending on how long the app takes to launch.)
 {:.tip}
@@ -130,7 +130,7 @@ By default apps will launch without activating, meaning that if the app allows i
 To force an app to become foreground (and unhide if hidden), append a caret (^) to the app name.
 
 ```bunch
-Messages^
+Visual Studio Code^
 ```
 
 ## "Focusing" an App {#focus}
@@ -168,7 +168,7 @@ If the app in question is not responding, see the troubleshooting section on [Ap
 
 ## Ignoring apps/commands on close {#ignoring}
 
-When you close a Bunch (or "Toggle Bunches" or "Single Bunch Mode" are enabled), any apps launched by the Bunch will be quit. To avoid quitting an app when the Bunch is closed or toggled off, place a percent symbol before it in the Bunch (e.g. `%Finder`). This will launch the app as normal, but ignore it when closing the Bunch.
+When you close a Bunch (or "Toggle Bunches" or "Single Bunch Mode" are enabled), any apps launched by the Bunch will be quit. To avoid quitting an app when the Bunch is closed or toggled off, place a percent symbol before it in the Bunch (e.g. `%iTerm`). This will launch the app as normal, but ignore it when closing the Bunch.
 
 ```bunch
 %iTerm
@@ -188,3 +188,11 @@ This works for commands as well:
 
 This will enable Dark Mode when opening the Bunch, and leave it in Dark Mode when closing.
 
+> Finder is always ignored (won't be quit) when closing a Bunch. If you want to actually quit Finder when closing a Bunch, use a [triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative):
+> 
+> ```bunch
+> Finder
+> - ~/Desktop
+> !!!Finder
+> ```
+{:.tip}

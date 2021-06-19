@@ -7,7 +7,10 @@ tags: [interactive,dialog]
 ---
 # Dialogs Allowing Multiple Selections
 
-Bunch offers several methods for creating [interactive Bunches]({{ site.baseurl }}/docs/interactivity/), but you can also use a little scripting if you need more flexibility. In this case, we'll add a dialog that allows the user to select multiple options and then act on them.
+Bunch offers several methods for creating [interactive Bunches]({{ site.baseurl }}/docs/bunch-files/interactivity/), but you can also use a little scripting if you need more flexibility. In this case, we'll add a dialog that allows the user to select multiple options and then act on them.
+
+> Since writing this howto, [multi-select dialogs]({{ site.baseurl }}/docs/bunch-files/interactivity/#checkbox) have been added to Bunch. That said, this is still a good example of scripting within a Bunch.
+{:.tip}
 
 You can use AppleScript to display a multiple choice dialog allowing multiple selections. This can be used to launch multiple bunches with user interaction.
 
@@ -15,7 +18,7 @@ You can use AppleScript to display a multiple choice dialog allowing multiple se
 set _res to choose from list {"Comms", "Podcast Record", "Podcast Edit", "Music"} with prompt "What next?" OK button name "Launch" with multiple selections allowed and empty selection allowed
 
 repeat with _bunch in _res
-    do shell script "open 'x-bunch-beta://open/" & _bunch & "'"
+    do shell script "open 'x-bunch://open/" & _bunch & "'"
 end repeat
 ```
 
