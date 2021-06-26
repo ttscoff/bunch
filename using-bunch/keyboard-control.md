@@ -16,7 +16,7 @@ Once these are set up, hit your hotkey and you'll see that the Bunches listed in
 
 You can customize the shortcut for each Bunch with the [`shortcut` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shortcuts).
 
-After using the keyboard shortcut to open the Bunch menu, you can also navigate with the arrow keys. Or, if you're a keyboard pro, you can use Control-p and Control-n to move up and down (this works in any macOS menu).
+After using the keyboard shortcut to open the Bunch menu, you can also navigate with the arrow keys. Or, if you're a keyboard pro, you can use {% kbd Control-p / Control-n %} to move up and down (this works in any macOS menu).
 
 Additionally, the following keyboard shortcuts are available when the menu is open:
 
@@ -30,3 +30,4 @@ Additionally, the following keyboard shortcuts are available when the menu is op
 | {% kbd ⌘H  %}  | Hide All Windows         |
 | {% kbd ⇧⌘H %}  | Unhide All Windows       |
 | {% kbd ⌘Q  %}  | Quit Bunch               |
+| {% kbd @,  %}  | Preferences              |

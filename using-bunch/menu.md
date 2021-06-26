@@ -25,16 +25,16 @@ Holding down modifier keys when clicking Bunches in the menu can perform differe
 
 |          Modifier         |       Function      |
 |---------------------------|---------------------|
-| Command (⌘-Click)         | Edit Selected Bunch |
-| Option-Command (⌥⌘-Click) | Force Close         |
-| Shift-Command  (⇧⌘-Click) | Force Open          |
-| Option (⌥-Click)          | Clear Checkmark     |
+| Command ({% kbd @click %})         | Edit Selected Bunch |
+| Option-Command ({% kbd ~@click %}) | Force Close         |
+| Shift-Command  ({% kbd $@click %}) | Force Open          |
+| Option ({% kbd ~click %})          | Clear Checkmark     |
 
-To use the Edit command (⌘-Click), be sure to specify your preferred text editor in [Preferences]({{ site.baseurl }}/docs/using-bunch/preferences/).
+To use the Edit command ({% kbd @click %}), be sure to specify your preferred text editor in [Preferences]({{ site.baseurl }}/docs/using-bunch/preferences/).
 
-The "Force" commands cause the Bunch to perform its open or close items even if it's already open or closed.
+The "Force" commands cause the Bunch to execute its open or close items even if it's already open or closed.
 
-Clearing a checkmark causes the Bunch to register as closed without performing its close functions. This will also remove it from the list of Bunches to restore if "Remember Open Bunches" is enabled.
+Clearing a checkmark causes the Bunch to register as closed without executing its close items. This will also remove it from the list of Bunches to restore if "Remember Open Bunches" is enabled.
 
 Holding any modifier combination while the menu is open will display its function at the top of the menu as a reminder.
 
@@ -54,17 +54,20 @@ Check For Updates
 
 Clear Checkmarks
 : When in Toggle Bunches or Single Bunch modes, this options will clear the checkmarks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single checkmark by Option-clicking a checked Bunch in the menu.
+: Shortcut {% kbd ^~@R %}
 
-New Bunch With Open Apps
+New Bunch With Open Apps 
 : Use this command to create a new Bunch file containing all of the currently open apps on your Mac. This will only include apps that show up in your Dock, not apps that run in your menu bar only (Finder and Bunch will also be ignored). You will have the option to name the new Bunch, and to either save the Bunch to your Bunch folder, or copy the contents to your clipboard.
 
     {% gif images/newbunchwithopenapps.gif "Animation demonstrating New Bunch With Open Apps command" "New Bunch With Open Apps" %}
+: Shortcut {% kbd @$N %}
 
 Save Current Wallpaper as Default
 : When you use [Wallpaper commands]({{ site.baseurl }}/docs/bunch-files/commands/wallpaper/), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
 
-Refresh Bunches
+Refresh Bunches 
 : You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. Bunch should detect any changes and update automatically, but you can use this to force a refresh if something seems out of date.
+: Shortcut {% kbd @$R %}
 
 ## Preferences
 
@@ -89,7 +92,7 @@ Make a donation
 
 ## Windows
 
-You can hide all windows that Bunch creates ([file displays]({{ site.baseurl }}/docs/bunch-files/commands/display/), [task monitors]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts), etc.), using the "Hide All Window" and "Unhide All Windows". These have the shortcuts {% kbd ⌘H %} and {% kbd ⇧⌘H %} respectively. Keyboard shortcuts are only active when the Bunch menu is showing.
+You can hide all windows that Bunch creates ([file displays]({{ site.baseurl }}/docs/bunch-files/commands/display/), [task monitors]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts), etc.), using the "Hide All Window" and "Unhide All Windows". These have the shortcuts {% kbd @h %} and {% kbd @$h %} respectively. Keyboard shortcuts are only active when the Bunch menu is showing.
 
 If a Bunch window is active, the menu item "Copy Dimensions of Active Window" will place the current dimensions and position of the window into your clipboard in a format that can be directly pasted into a display command to affect the window parameters next time it opens.
 {:.tip}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Integration
-nav_order: 70
+nav_order: 80
 has_children: true
 ---
 # Integrating Bunch With Other Tools

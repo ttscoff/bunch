@@ -1,7 +1,7 @@
 ---
 layout: default
 title: What's New?
-nav_order: 4
+nav_order: 50
 page_id: whatsnew
 ---
 # Key Changes in Bunch 1.4

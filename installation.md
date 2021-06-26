@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installation
-nav_order: 3
+nav_order: 40
 tags: [basics]
 ---
 # Download And Install

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Changelog
-nav_order: 99
+nav_order: 130
 page_id: changelog
 ---
 # Bunch Release Notes

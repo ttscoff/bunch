@@ -211,7 +211,7 @@ When performing `/url` transforms, "\n" is first converted to actual newlines, a
 
 When performing `/shell` transforms, "\n" is left as is, and not double-escaped. Output with `echo -e`, this results in an actual newline being echoed.
 
-When performing `/typed` transforms, "\n" is converted to `\\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.
+When performing `/typed` transforms, "\n" is converted to `\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.
 
 As a shortcut to the `/url` transform, you can use a percent symbol (`%`) instead of a dollar sign (`$`):
 

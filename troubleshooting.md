@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Troubleshooting
-nav_order: 75
+nav_order: 90
 ---
 # Troubleshooting Bunch
 {:.no_toc}
@@ -36,11 +36,40 @@ The first thing to try when tracking down the name an app responds to is to open
 
 ### Getting an App's "Real" Name
 
-If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. Open Info.plist in your text editor and locate the key `CFBundleName`. If it's different than the display name, try that in your Bunch.
+#### Method 1: From Finder
 
-### Using the Bundle Identifier
+If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. 
 
-You can also use the contents of the key `CFBundleIdentifier` instead of the app name. This is the bundle identifier, and is a string that looks kind of like a URL. For example, Bunch's bundle identifier is `com.brettterpstra.Bunch`. If you use the bundle id instead of the app name, it can help Bunch clarify instances where the app responds to a different name than the app's filename.
+If `Info.plist` is in text format (they usually are), you can open it in your text editor and locate the key `CFBundleName`. If it's different than the display name, try that in your Bunch.
+
+```
+  [...]
+  <key>CFBundleName</key>
+  <string>Google Chrome</string>
+  [...]
+```
+
+If `Info.plist` is in binary format (which will be obvious when you try to open it in your text editor), you'll need to use Terminal to get the info you're looking for.
+
+#### Method 2: From Terminal
+
+Open Terminal and enter the following command, substituting `[App Name]` with the actual application name. If the app is not located in `/Applications`, you'll need to correct that part of the path as well.
+
+```bash
+mdls -name kMDItemDisplayName -r "/Applications/[App Name].app"
+```
+
+### Using the Bundle Identifier {#bundleid}
+
+You can also use an app's bundle identifier instead of the app name. Use the steps above to read the app's info, but look for the `CFBundleIdentifier` key instead.
+
+```bash
+mdls -name kMDItemCFBundleIdentifier -r "/Applications/[App Name].app"
+```
+
+This is the bundle identifier, and is a string that looks kind of like a URL. For example, Bunch's bundle identifier is `com.brettterpstra.Bunch`. If you use the bundle id instead of the app name, it can help Bunch clarify instances where the app responds to a different name than the app's filename.
+
+If all of these fail, please do leave a note on the [discussion forums]({{ site.forum }}).
 
 ### Known Exceptions
 
@@ -54,7 +83,18 @@ You can also use the contents of the key `CFBundleIdentifier` instead of the app
 
 #### Coherence X
 
-Single Site Browser's created using [Coherence X](https://www.bzgapps.com/buycoherence) suffer all kinds of problems in Bunch. They can't be launched if Chrome is running, you can't launch more than one, and once they're launched, quitting them is hit and miss, depending on what else is running. This is because they launch multiple instances of Chrome that NSWorkspace can't identify as separate applications. I don't currently have a good workaround for these. I recommend using AppleScript commands to launch and quit them.
+Single Site Browser's created using [Coherence X](https://www.bzgapps.com/buycoherence) suffer all kinds of problems in Bunch. They can't be launched if Chrome is running, you can't launch more than one, and once they're launched, quitting them is hit and miss, depending on what else is running. This is because they launch multiple instances of Chrome that NSWorkspace can't identify as separate applications.
+
+As of v1.4.1, Bunch has a built-in workaround for this. You need to refer to the applications by their bundle identifier. This will usually be `com.BZG.Coherence[Name of App]`, but sometimes (for reasons I'm unclear on) is just `com.[Name of App]`. So for an app called MindMeister, the bundle id would be `com.BZG.CoherenceMindMeister`, or possibly `com.MindMeister`. Try both, or see ["Using the Bundle Identifier"](#bundleid) to track it down yourself. 
+
+If you use the correct bundle id instead of the app name in your Bunch, the app should be able to launch and quit, regardless of whether Chrome/Brave/Canary is running.
+
+```bunch
+// Doesn't work
+MindMeister
+// Does work
+com.BZG.CoherenceMindMeister
+```
 
 #### Logic Pro (X)
 
@@ -62,9 +102,7 @@ __Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch,
 
 #### Visual Studio Code
 
-Similar case with "__Visual Studio Code__". Bunch has a harcoded workaround for VS Code that should allow you to safely use "Visual Studio Code" as the app name.
-
-If all of these fail, please do leave a note on the [discussion forums]({{ site.forum }}).
+"__Visual Studio Code__" has the same issue as Logic above. Bunch has a harcoded workaround for VS Code that should allow you to safely use "Visual Studio Code" as the app name.
 
 #### FileMaker Pro Advanced
 
