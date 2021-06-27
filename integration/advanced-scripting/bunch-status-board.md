@@ -125,10 +125,51 @@ The JSON status file will be created the next time you open or close a Bunch, an
 
 ## Optimizations
 
-First, you may want to move the JSON file out of the Bunch folder by manually editing that part of the `folder.frontmatter` script. Every time the file saves within the Bunch folder, Bunch will see that as a change and trigger a refresh on all Bunches (you'll see the icon flash green in the menu bar). Moving the file outside of the Bunch folder will prevent this from happening.
+First, you may want to move the JSON file out of the Bunch folder by manually editing that part of the `folder.frontmatter` script. Every time the file saves within the Bunch folder, Bunch will see that as a change and trigger a refresh on all Bunches (you'll see the icon flash green in the menu bar). Moving the file outside of the Bunch folder will prevent this from happening. If you do this, you'll also need to change the location of the file in `bunch_state.rb`.
 
-Second, there's an alternative route you can take that would prevent the 5-second polling on the BetterTouchTool script widgets. Each Bunch would update its own Touch Bar button when it opens or closes. This would involve going into each button's script widget in BetterTouchTool, right clicking to copy its UUID, then adding a script line to the Bunch that called the BetterTouchTool url handler:
+Second, there's an alternative route you can take that would prevent the 5-second polling on the BetterTouchTool script widgets. Each Bunch would update its own Touch Bar button when it opens or closes. This would involve going into each button's script widget in BetterTouchTool, right clicking to copy its UUID, then adding a frontmatter key to each Bunch with its BetterTouchTool button UUID:
 
-    $ open "btt://refresh_widget/?uuid=C40D3AE2-2F4E-49B1-A00C-F7E4C3632F07"
+```bunch
+---
+title: Comms
+btt_uuid: C40D3AE2-2F4E-49B1-A00C-F7E4C3632F07
+---
+```
 
-In this case you would either still need the JSON file to be written out with the Bunch states on every open/close, or you would need the BetterTouchTool script to run the JSON-generating script itself when triggered. The latter would probably be the most efficient.
+Now create a new script called `refresh_btt.rb`. This is very simple and could easily be written in any scripting language:
+
+```ruby
+#!/usr/bin/env ruby
+raise 'No UUID' unless ARGV.length == 1
+
+uuid = ARGV[0]
+`open "btt://refresh_widget/?uuid=#{uuid}"`
+```
+
+Change the `folder.frontmatter` scripts to run the above script instead of the JSON-generating script, passing the current Bunch's `btt_uuid` value as the argument:
+
+```bunch
+---
+run after: scripts/refresh_btt ${btt_uuid}
+run after close: scripts/refresh_btt ${btt_uuid}
+---
+```
+
+Now you'd need to alter the BetterTouchTool `bunch_status.rb` script to check that specific Bunch directly:
+
+```ruby
+#!/usr/bin/env ruby
+open_color = '165,218,120,255'
+closed_color = '95,106,129,255'
+
+bunch = ARGV[0].strip.downcase
+open_bunches = `/usr/bin/osascript -e 'tell app "Bunch" to list open bunches'`.strip.downcase.split(/, /)
+
+color = open_bunches.include?(bunch.downcase) ? open_color : closed_color
+
+print "{\"background_color\":\"#{color}\"}"
+```
+
+When called with `/path/to/bunch_status.rb "Comms"` in the BetterTouchTool widget's script body, this script would now check the state of the Comms Bunch directly, circumventing the need for the JSON status file entirely. Set the "Execute script every..." value to 0 so the script only runs when we call the `refresh_widget` url. Be sure to enable "Always run when widget becomes visible" to ensure the inital state is set.
+
+This method definitely requires more manual setup (copying all of the UUIDs into every Bunch), but is a far more efficient solution.

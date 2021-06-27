@@ -12,6 +12,14 @@ page_id: changelog
 
 ---
 
+1.4.1 (β111)
+: Allow variable placeholders in "run before/after" frontmatter scripts
+: Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)
+: Remove superfluous log statements
+: Empty comment lines stopping processing
+
+---
+
 1.4.0 (β110)
 : Attempt to quit an app even if it's not immediately located among running apps
 : Fix: Don't convert app name to value of localizedName property, fixes issues with iTerm. Trying too hard is detrimental, apparently.
