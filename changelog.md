@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Changelog
-nav_order: 99
+nav_order: 130
 page_id: changelog
 ---
 # Bunch Release Notes
@@ -9,6 +9,14 @@ page_id: changelog
 {% include news.html %}
 
 {% docdiff %}
+
+---
+
+1.4.1 (β111)
+: Allow variable placeholders in "run before/after" frontmatter scripts
+: Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)
+: Remove superfluous log statements
+: Empty comment lines stopping processing
 
 ---
 

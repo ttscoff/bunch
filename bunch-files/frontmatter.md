@@ -60,7 +60,7 @@ Setting `quit apps: always` will force the Bunch to quit apps it opened regardle
 
 ### Setting a Shortcut Key {#shortcuts}
 
-Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from 1-9 and then 0, assigned in menu display order. Subsequent items are assigned Command-Number, from "⌘1" to "⌘0". You can customize these using the `shortcut:` frontmatter key.
+Bunch has full keyboard control. Assign a Hotkey key in preferences to open the Bunch menu, and then use keyboard shortcuts to open your Bunches. By default Bunches are given numbers as shortcuts, from {% kbd 1 %} to {% kbd 9 %} and then {% kbd 0 %}, assigned in menu display order. Subsequent items are assigned Command-Number, from {% kbd ⌘1 %} to {% kbd ⌘0 %}. You can customize these using the `shortcut:` frontmatter key.
 
 A shortcut can be anything other than a number, and can include modifiers (control, option, shift, command). A capital letter automatically implies the Shift modifier.
 
@@ -69,12 +69,11 @@ A shortcut can be anything other than a number, and can include modifiers (contr
 
 Modifiers can be specified using symbols:
 
-| symbol |   modifier  |
-|--------|-------------|
-| __@__  | Command (⌘) |
-| __$__  | Shift (⇧)   |
-| __~__  | Option (⌥)  |
-| __^__  | Control (⌃) |
+| -------: | ------------- |
+| `@`      | Command (⌘)   |
+| `$`      | Shift (⇧)     |
+| `~`      | Option (⌥)    |
+| `^`      | Control (⌃)   |
 
 To use any of these symbols as the actual modifier key, use the Shift-equivalent, i.e. `$` would be `$6` (Shift-6), and `@` would be `$2`.
 
@@ -121,7 +120,7 @@ menu divider: after
 ---
 ```
 
-### Before/After Scripts
+### Before/After Scripts {#beforeafterscripts}
 
 You can use frontmatter to run scripts before and after opening and closing the Bunch. Because variables are defined before any script items are run within the Bunch, it may be useful to have some scripts run prior to processing variables that may read from that script's output. For example, if you needed to pull some JSON data from an API and populate a text file that could then be read into a query dialog, you would want to run the script that populates the text file before the variable assignment that reads it. See this [advanced script]({{ site.baseurl }}/docs/integration/advanced-scripting/dialogs-from-files/) for an example.
 
