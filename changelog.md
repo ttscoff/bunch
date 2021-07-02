@@ -12,11 +12,11 @@ page_id: changelog
 
 ---
 
-1.4.1 (β111)
+1.4.1
 : Allow variable placeholders in "run before/after" frontmatter scripts
 : Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)
 : Remove superfluous log statements
-: Empty comment lines stopping processing
+: Fix: Empty comment lines stopping processing
 
 ---
 
