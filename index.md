@@ -30,4 +30,12 @@ I wrote Bunch because I tend to launch a specific group of apps depending on the
 
 Bunch has expanded a _lot_ since that humble beginning. It can serve as a full context switcher, and handle just about everything you'd want to automate when starting a new context (see the [Syntax Summary]({{ site.baseurl }}/docs/bunch-files/quick-reference/) for an overview of all the cool stuff you can do).
 
+---
+
+<div class="text-center">
+    <a class="product-hunt" href="https://www.producthunt.com/posts/bunch-6?utm_source=badge-review&utm_medium=badge&utm_souce=badge-bunch-6#discussion-body" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=302391&theme=dark" alt="Bunch - Text-based automation for macOS - Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</div>
+
+---
+
 {% include news.html %}

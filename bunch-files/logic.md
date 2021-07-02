@@ -143,7 +143,7 @@ Numeric comparison
 	Natural language | Symbolic
 	:------ | :------
 	`is less than` | `var_name < 5`  
-	`is less than or equal` | `var_name >= 5`  
+	`is less than or equal` | `var_name <= 5`  
 	`is greater than` | `var_name > 1`  
 	`is greater than or equal to` | `var_name >= 3`  
 	`equals` / `is equal` / `is` | `var_name == 2`  
