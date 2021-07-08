@@ -25,6 +25,10 @@ Holding modifier keys when opening the action changes the default methods for th
 * __Command__: toggle Bunches
 * __Shift__: open Bunches
 
+The menu also contains the ability to switch your opening preference between "Open" and "Toggle." This will affect your Bunch preferences directly.
+
+If you bring up the Bunches action and press Space, you can type or paste raw Bunch commands to be executed.
+
 See ["Better Bunch for LaunchBar"](https://brettterpstra.com/2019/06/10/better-bunch-for-launchbar/) for the latest changes to the Action.
 
 ## Alfred
