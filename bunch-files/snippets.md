@@ -4,7 +4,7 @@ title: Snippets
 parent: Bunch Files
 tags: [snippets,variables]
 ---
-# Avoid Repitition With Reusable Snippets
+# Avoid Repetition With Reusable Snippets
 {:.no_toc}
 
 * Table of Contents
@@ -44,6 +44,10 @@ You can also define values for snippet variables [using frontmatter]({{ site.bas
 
 You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content.
 
+### URL Encoding
+
+If you use a percent (`%`) instead of a dollar sign (`$`) in your snippet placeholder, the value will be URL encoded when the variables are inserted. For example, if you have a variable called "foo" and the value passed to it is "This? This needs % encoding" then `%{foo}` will be replaced with `This%3F%20This%20needs%20%25%20encoding`, which is safe for use in URLs.
+
 ```bunch
 ---
 search string: this is a search
@@ -55,11 +59,7 @@ Spotify
 # sends "spotify:​search:this%20is%20a%20search"
 ```
 
-For more details see the [Variables]({{ site.baseurl }}/docs/bunch-files/variables/) documentation.
-
-### URL Encoding
-
-If you use a percent (`%`) instead of a dollar sign (`$`) in your snippet placeholder, the value will be URL encoded when the variables are inserted. For example, if you have a variable called "foo" and the value passed to it is "This? This needs % encoding" then `%{foo}` will be replaced with `This%3F%20This%20needs%20%25%20encoding`, which is safe for use in URLs.
+For more details and other transformations, see [Variables: Transforming Values]({{ site.baseurl }}/docs/bunch-files/variables/#transforms).
 
 ### Default Variable Values {#defaultvalues}
 
@@ -70,6 +70,8 @@ ${proj_path:~/projects}
 ```
 
 Only the first colon is used to split the value, so the default value can contain colons.
+
+For more details, see [Variables - Default Values]({{ site.baseurl }}/docs/bunch-files/variables/#defaultvalues).
 
 ## Referencing Partial Snippets (fragments) {#fragments}
 
@@ -116,7 +118,7 @@ You get the idea. When you amass a lot of snippets in one file because you're  m
 
 ## Adding Interactivity {#optionalsnippets}
 
-See the [Optional Snippets section]({{ site.baseurl }}/docs/bunch-files/interactivity/#optionalsnippets) for details on adding interactive choices to snippet loading.
+See [Interactivity: Optional Snippets]({{ site.baseurl }}/docs/bunch-files/interactivity/#optionalsnippets) for details on adding interactive choices to snippet loading.
 
 ## Run After Delay
 

@@ -12,6 +12,15 @@ page_id: changelog
 
 ---
 
+1.4.2
+: Fix: Reversible commands not reversing when closing a bunch
+: Fix: Do Not Disturb not disabling
+: Fix: If Bunches are open when changing the "Toggle Bunches" preference to OFF, register them as closed so they can be opened again
+: Fix: If a Bunch is open when it's changed to `toggles: false`, reset its open state so it can be opened again
+: Fix: If a multiple choice dialog sets a variable in an opens-only Bunch, reset the variable after opening so the dialog appears again next time
+
+---
+
 1.4.1
 : Allow variable placeholders in "run before/after" frontmatter scripts
 : Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)

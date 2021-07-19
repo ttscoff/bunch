@@ -247,7 +247,7 @@ Now you can use the contents of your clipboard in a  snippet, e.g. to pass to a 
 Bunch doesn't have built-in date placeholders, but you can acheive them in a variable using the UNIX `date` command. This command uses `strftime` placeholders and can generate just about any format of date/time string you need. [See this article](https://www.cyberciti.biz/faq/unix-date-command-howto-see-set-date-time/) for examples and a list of placeholders.
 
 ```bunch
-var_name = date '+%Y-%m-%d %H:%M'
+var_name = $ date '+%Y-%m-%d %H:%M'
 ```
 
 ### Additional Text Transforms
