@@ -12,7 +12,7 @@ page_id: changelog
 
 ---
 
-1.4.2
+1.4.3
 : Fix: Reversible commands not reversing when closing a bunch
 : Fix: Do Not Disturb not disabling
 : Fix: If Bunches are open when changing the "Toggle Bunches" preference to OFF, register them as closed so they can be opened again
