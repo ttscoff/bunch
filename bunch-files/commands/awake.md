@@ -3,7 +3,7 @@ layout: default
 title: Awake
 parent: Commands
 grand_parent: Bunch Files
-tags: [awake, command]
+tags: [sleep, awake, command]
 ---
 # Awake Commands
 
