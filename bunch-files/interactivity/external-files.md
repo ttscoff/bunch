@@ -69,3 +69,28 @@ A script should have a shebang line (e.g. `#! /bin/zsh`) and return output in JS
 
 > AppleScript `.scpt` files are not currently supported. If you want to use an AppleScript to populate the menu, save it as a plain text `.applescript` file, insert `#!/usr/bin/osascript` as the first line of the file, and make it executable. Then just use `?< MyScript.applescript` to run it.
 {:.tip}
+
+## Checkbox Dialogs from External Files
+
+You can't use `?<` syntax to populate a [checkbox dialog]({{ site.baseurl }}/docs/bunch-files/interactivity/multiple-choice/#checkbox), but you can use a snippet to directly load options for a menu. As long as the text file is written in the GitHub style checkbox format, you can just include it as a snippet and the options will be presented.
+
+A text file called `apps.txt` written to by a script (or whatever):
+
+```
+-[x] TaskPaper
+-[ ] OmniFocus
+```
+
+Then in the Bunch, just add:
+
+```bunch
+<apps.txt
+```
+
+When the Bunch is opened, the app options are presented. Apps opened by the Bunch are also closed when the Bunch closes (if the Bunch toggles). You could take this a step further and make the whole dialog optional, too:
+
+```bunch
+<apps.txt ?"Load additional apps?"
+```
+
+Now you'll get a prompt, and if you cancel it the checkbox dialog will be skipped. Just in case you wanted to get crazy with it.
