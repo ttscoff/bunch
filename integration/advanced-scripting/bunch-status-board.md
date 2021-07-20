@@ -16,7 +16,7 @@ I've created a [BetterTouchTool-Widgets script](https://github.com/ttscoff/Bette
 1. Run `btt_stats.rb add touch bunch`.
 2. Select the new group in BTT configuration. If it was open at the time you ran the script, you'll need to switch to a different screen (e.g. Keyboard) and back to Touch Bar to see the new group.
 3. Right click and choose "Copy" to copy the group's data to the clipboard.
-4. Run `btt_stats.rb uuids` to get a configuration block for the widgets in the Bunch group.
+4. Run `btt_stats.rb uuids` to get a configuration block for the group data in the clipboard.
 5. Add the configuration block to `~/.config/bttstats.yml`, merging with any existing keys in the `:refresh:` section.
 6. Add (or update) a `folder.frontmatter` file in your Bunch folder with the following keys:
 

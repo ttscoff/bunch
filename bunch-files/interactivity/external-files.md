@@ -9,6 +9,8 @@ tags: [interactivity,interactive,dialog]
 # Populating Dialogs with External Files
 {:.no_toc}
 
+{% include betafeature.md %}
+
 * Table of Contents
 {:toc}
 
