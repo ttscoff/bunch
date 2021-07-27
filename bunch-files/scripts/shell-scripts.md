@@ -146,6 +146,12 @@ You can cause a task monitor to display for a task automatically by including `(
 $ cd ~/Sites/bunch && jekyll serve (display)
 ```
 
+To use both the task monitor and a [delay]({{ site.baseurl }}/docs/bunch-files/delay), the delay must appear after the display:
+
+```bunch
+$ cd ~/Sites/bunch && jekyll serve (display) ~5
+```
+
 The display command in a shell command can take the same arguments as the regular [display command]({{ site.baseurl }}/docs/bunch-files/commands/display/#window), just without the file path that the regular command would require. For example, to run a command with a visor-like window on your second display, you can use:
 
 ```bunch
