@@ -27,13 +27,13 @@ The display command can display HTML files and web URLs. You can provide a full 
 
 If the file is either a local HTML file (which must have the extension `.html`) or a URL, it will be viewed in a popup web view that floats above all other windows and can be dismissed with either Enter or Escape. It's clickable and scrollable.
 
-This is not a "web browser." However, you can navigate to links, there are back, forward, and refresh buttons, and you can interact with sign-ins and forms. It's primarily designed for _displaying_, as the command name indicates, but it can replace opening a browser in a lot of situations. In situations where it's appopriate, this avoids having to open (possibly duplicate) browser tabs for task-related sites. Think of it as a lightweight Single Site Browser (SSB).
+This is not a "web browser." However, you can navigate to links, there are back, forward, and refresh buttons, and you can interact with sign-ins and forms. It's primarily designed for _displaying_, as the command name indicates, but it can replace opening a browser in a lot of situations. In situations where it's appropriate, this avoids having to open (possibly duplicate) browser tabs for task-related sites. Think of it as a lightweight Single Site Browser (SSB).
 
 > Tip: If you point to a local server with LiveReload enabled, the preview will update appropriately. That makes it a decent preview for writing, say, documentation built on Jekyll (ahem), without opening a tab in your browser.
 >
 > `(display http:​//127.0.0.1:4000/bunch/ 1200x100% right,top)`
 >
-> If you want to use the Webkit Web Inspector on a web display window, you can do it through Safari. If you have the Develop menu enabled, any open Bunch web views will show up under your host name in that menu.
+> If you want to use the WebKit Web Inspector on a web display window, you can do it through Safari. If you have the Develop menu enabled, any open Bunch web views will show up under your host name in that menu.
 {:.tip}
 
 A web view allows navigation to any link. If you'd rather open a link in the web view in your default browser, hold down Command ({% kbd ⌘ %}) when clicking it.
@@ -101,7 +101,7 @@ Any of these may be omitted. Each parameter must be preceded by a space.
 > All options can be abbreviated to one letter, i.e. `alpha:90%` can be written as `a:90%`, `display:1` can be shortened to `d:1`.
 {:.tip}
 
-A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the scrreen) on the second display with a light-on-dark color scheme and slight transparency.
+A display command that uses every option would look like the below. This command displays a text file as a desktop-level "visor" (full-width window at stuck to the top of the screen) on the second display with a light-on-dark color scheme and slight transparency.
 
 ```bunch
 (display myfile.txt display:1 100%x500 left,top #111111 #efefef alpha:97% level:desktop)
@@ -177,7 +177,7 @@ __Window Level__
 
 __Chrome__
 
-: Make a window "chromeless" with `chrome:none` (or `c:n`) and it will display a window with no titlebar or close/zoom buttons. The window is still be resized from the edges and is draggable (see below). Chromelss windows can be closed with {% kbd ⌘W %}.
+: Make a window "chromeless" with `chrome:none` (or `c:n`) and it will display a window with no title bar or close/zoom buttons. The window is still be resized from the edges and is draggable (see below). Chromeless windows can be closed with {% kbd ⌘W %}.
     
     This setting affects window dragging in the various preview types differently.
 

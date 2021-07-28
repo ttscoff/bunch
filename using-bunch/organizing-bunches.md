@@ -17,9 +17,28 @@ If you have a significant number of Bunches, you may want more control over how 
 
 Start by setting the title displayed in the menu using [title frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#displaytitle). You can use emoji in the display title without affecting the alphanumeric sort order.
 
+Just add a block of text at the top of your Bunch:
+
+```bunch
+---
+title: 🎉My First Bunch!
+---
+```
+
+Whatever you specify in the `title` frontmatter is what will be shown in the menu instead of the filename.
+
 ## Define Menu Order
 
 You can manually control the order of menu items using [menu order frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#sortorder).
+
+```bunch
+---
+title: 👍My Second Bunch
+menu order: 2
+---
+```
+
+Using `menu order` frontmatter overrides the alphanumeric sorting of Bunches in the menu. Any Bunches that don't have `menu order` assigned will still be sorted alphabetically.
 
 ## Sort With Submenus
 

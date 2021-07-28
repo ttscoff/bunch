@@ -52,7 +52,7 @@ The `startup` key can be set to `true`, `false`, or `ask`. (or `yes`/`no`/`?`) a
 
 Setting `single bunch mode: ignore` will prevent the Bunch from affecting or being affected by the launch of other Bunches in Single Bunch Mode. This allows you to use Single Bunch Mode to quit one Bunch when opening the next, but have Bunches that can be always-on.
 
-Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a checkmark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other apps, and won't prevent other apps from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
+Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a check mark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other apps, and won't prevent other apps from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
 
 Setting `ignores state: true` will allow Bunches to re-open or re-close when scheduled. Normally if a schedule is set for a Bunch to open or close and it already is, that schedule is ignored. With this option set you can have the Bunch re-launch or re-close, restoring the launched or quit apps and running scripts on a schedule. This setting functions independently of `toggles/only opens`.
 
@@ -124,7 +124,7 @@ menu divider: after
 
 You can use frontmatter to run scripts before and after opening and closing the Bunch. Because variables are defined before any script items are run within the Bunch, it may be useful to have some scripts run prior to processing variables that may read from that script's output. For example, if you needed to pull some JSON data from an API and populate a text file that could then be read into a query dialog, you would want to run the script that populates the text file before the variable assignment that reads it. See this [advanced script]({{ site.baseurl }}/docs/integration/advanced-scripting/dialogs-from-files/) for an example.
 
-To run scripts before doing anything else in a Bunch, use the `run before:` key. The value should be a comma-separated list of shell or applescripts to execute. Each script can include arguments. If you don't provide an absolute path to the script (tildes can be used for your home directory), Bunch will assume the script is relative to your Bunch Folder.
+To run scripts before doing anything else in a Bunch, use the `run before:` key. The value should be a comma-separated list of shell or AppleScripts to execute. Each script can include arguments. If you don't provide an absolute path to the script (tildes can be used for your home directory), Bunch will assume the script is relative to your Bunch Folder.
 
 To run scripts after processing all of the items in a Bunch, use `run after:`.
 
@@ -162,7 +162,7 @@ These variables are available in Snippets and as environment variables in shell 
 
 ## Flexible Frontmatter
 
-In addition to hardcoding frontmatter keys and values, you can set them on the fly using several flexible options.
+In addition to hard coding frontmatter keys and values, you can set them on the fly using several flexible options.
 
 ### Interactively Setting Variable Values
 
@@ -170,9 +170,9 @@ You can use dialogs to set values for frontmatter keys interactively when the Bu
 
 ### Setting Variables On Open
 
-When calling a Bunch [from another Bunch]({{ site.baseurl }}/docs/bunch-files/other-bunches/#variables) or via the [URL handler]({{ site.baseurl }}/docs/integration/url-handler/), you can pass key/value pairs to override hardcoded (or missing) frontmatter keys for use in `${variables}`.
+When calling a Bunch [from another Bunch]({{ site.baseurl }}/docs/bunch-files/other-bunches/#variables) or via the [URL handler]({{ site.baseurl }}/docs/integration/url-handler/), you can pass key/value pairs to override hard coded (or missing) frontmatter keys for use in `${variables}`.
 
-If using `${variables}` in a Bunch, be sure to include [default values]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues) (`${variable:default value}`) or hardcoded frontmatter values for the keys for when the Bunch is called directly from the menu and can't have values passed to it.
+If using `${variables}` in a Bunch, be sure to include [default values]({{ site.baseurl }}/docs/bunch-files/snippets#defaultvalues) (`${variable:default value}`) or hard coded frontmatter values for the keys for when the Bunch is called directly from the menu and can't have values passed to it.
 
 ### Dynamic Frontmatter {#dynamicfrontmatter}
 

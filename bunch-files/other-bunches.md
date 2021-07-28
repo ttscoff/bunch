@@ -67,7 +67,7 @@ You can nest these calls, having one Bunch open another which opens another, but
 
 ## Launching Bunches as Snippets
 
-You can also use any Bunch file as a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/). This will incorporate the contents of the Bunch (or any [fragment]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments) within it) directly into the calling Bunch, starting and quitting items when the calling Bunch opens and closes. In this case the Bunch in the menu does not get a checkmark, it's contents are now part of the Bunch you called it from.
+You can also use any Bunch file as a [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/). This will incorporate the contents of the Bunch (or any [fragment]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments) within it) directly into the calling Bunch, starting and quitting items when the calling Bunch opens and closes. In this case the Bunch in the menu does not get a check mark, it's contents are now part of the Bunch you called it from.
 
 It does have the benefit of directly using things like [optional snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#optionalsnippets) and delays.
 

@@ -24,7 +24,7 @@ page_id: whatsnew
 - New [commands]({{ site.baseurl }}/docs/bunch-files/commands/): [log]({{ site.baseurl }}/docs/bunch-files/commands/log/), [sleep]({{ site.baseurl }}/docs/bunch-files/commands/sleep/), [notify]({{ site.baseurl }}/docs/bunch-files/commands/notify/), [stay awake]({{ site.baseurl }}/docs/bunch-files/commands/awake/), [audio]({{ site.baseurl }}/docs/bunch-files/commands/audio/), [input source]({{ site.baseurl }}/docs/bunch-files/commands/input-source/), [screen]({{ site.baseurl }}/docs/bunch-files/commands/screen/), and more.
 	- Use the [(display) command]({{ site.baseurl }}/docs/bunch-files/commands/display/) to create Single Site Browsers, tail log files, or display any file in a customizable window
 - Improved shell script parsing and execution
-    - [Task monitors]({{ site.basurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) for shell scripts launched by a Bunch
+    - [Task monitors]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) for shell scripts launched by a Bunch
 - [Full Spotlight search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#spotlightsearch) and [tag search]({{ site.baseurl }}/docs/bunch-files/spotlight-searches#tagsearch) for files to open
     - [Launch files in their default app]({{ site.baseurl }}/docs/bunch-files/apps/#defaultapp) by using "Default" as app name
 - Use `${variables}` inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)

@@ -31,7 +31,7 @@ Notification Settings
 ## Bunch Behavior {#prefsbunchbehavior}
 
 Toggle Bunches
-: When this is enabled, running bunches are shown with a checkmark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.
+: When this is enabled, running bunches are shown with a check mark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.
 : It's recommended that you turn this setting on. Bunches can do different things when opening and closing and if you can't toggle, you can't easily close a Bunch. You can always use `toggles: false` [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/) to override this setting on a per-Bunch basis.
 
 Single Bunch Mode

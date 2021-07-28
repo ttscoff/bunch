@@ -22,10 +22,22 @@ I've created a [BetterTouchTool-Widgets script](https://github.com/ttscoff/Bette
 
     ```bunch
     ---
-    run after: /path/to/btt_stats.rb refresh "bunch:${title}"
-    run after close: /path/to/btt_stats.rb refresh "bunch:${title}"
+    run after: /path/to/btt_stats.rb refresh "bunch:${basename}"
+    run after close: /path/to/btt_stats.rb refresh "bunch:${basename}"
     ---
     ```
+
+The above scripts make use of the built-in frontmatter key `basename`, which returns the actual filename of your Bunch, ignoring any display title settings. The keys that the script creates based on the AppleScript response to `tell app "Bunch" to list bunches` will match the value of `basename` key for whatever Bunch is calling it.
+
+> Note that this method applies the `run after:` scripts to every Bunch in the folder. If you're using `run after:` scripts in any of your individual Bunches, you'll need to append this script after the existing ones in Bunches containing that key, as that will override the setting in `folder.frontmatter`. You can run multiple scripts by separating with a comma:
+> 
+> ```bunch
+> ---
+> run after: my_original_script.sh, /path/to/btt_stats.rb refresh "bunch:${basename}"
+> run after close: my_original_script.sh, /path/to/btt_stats.rb refresh "bunch:${basename}"
+> ---
+> ```
+{:.tip}
 
 Now whenever a Bunch opens or closes, its associated Touch Bar button will be updated with its state. The script to handle checking state is created and linked automatically when running `btt_stats.rb add touch bunch`.
 

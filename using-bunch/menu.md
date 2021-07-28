@@ -9,11 +9,11 @@ tags: [shortcuts]
 
 Just click on the Bunch status item to reveal the menu.
 
-{% hovergif /images/menubarclick.gif "Animated GIF of the Bunch Menu in the Menu Bar" "The Bunch Menu in the Menu Bar" %}
+{% hovergif /images/menubarclick.mp4 "Animation of the Bunch menu item being clicked" "The Bunch Menu in the Menu Bar" %}
 
 ## Bunch List
 
-At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a checkmark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close/)" lines.
+At the top you'll see your available Bunches. Clicking any of them will launch that Bunch. If you have "Toggle Bunches" enabled, a check mark will appear next to open Bunches in the menu. Clicking a checked Bunch will close it, reversing app launches and commands, and running any "[run on close]({{ site.baseurl }}/docs/bunch-files/run-on-close/)" lines.
 
 Bunches that have an active [schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) (e.g. scheduled to launch or waiting to close) will have a timer emoji after their title.
 
@@ -34,11 +34,11 @@ To use the Edit command ({% kbd @click %}), be sure to specify your preferred te
 
 The "Force" commands cause the Bunch to execute its open or close items even if it's already open or closed.
 
-Clearing a checkmark causes the Bunch to register as closed without executing its close items. This will also remove it from the list of Bunches to restore if "Remember Open Bunches" is enabled.
+Clearing a check mark causes the Bunch to register as closed without executing its close items. This will also remove it from the list of Bunches to restore if "Remember Open Bunches" is enabled.
 
 Holding any modifier combination while the menu is open will display its function at the top of the menu as a reminder.
 
-{% hovergif /images/menumodifiers.gif "Animation showing menu with modifier keys held" "Pressing modifier keys" %}
+{% hovergif /images/menumodifiers.mp4 "Animation showing menu with modifier keys held" "Pressing modifier keys" %}
 
 ## Bunch
 
@@ -53,20 +53,20 @@ Check For Updates
 ## Main Menu
 
 Clear Checkmarks
-: When in Toggle Bunches or Single Bunch modes, this options will clear the checkmarks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single checkmark by Option-clicking a checked Bunch in the menu.
+: When in Toggle Bunches or Single Bunch modes, this options will clear the check marks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single check mark by Option-clicking a checked Bunch in the menu.
 : Shortcut {% kbd ^~@R %}
 
 New Bunch With Open Apps 
 : Use this command to create a new Bunch file containing all of the currently open apps on your Mac. This will only include apps that show up in your Dock, not apps that run in your menu bar only (Finder and Bunch will also be ignored). You will have the option to name the new Bunch, and to either save the Bunch to your Bunch folder, or copy the contents to your clipboard.
 
-    {% gif images/newbunchwithopenapps.gif "Animation demonstrating New Bunch With Open Apps command" "New Bunch With Open Apps" %}
+    {% hovergif images/newbunchwithopenapps.mp4 "Animation demonstrating New Bunch With Open Apps command" "New Bunch With Open Apps" %}
 : Shortcut {% kbd @$N %}
 
 Save Current Wallpaper as Default
 : When you use [Wallpaper commands]({{ site.baseurl }}/docs/bunch-files/commands/wallpaper/), Bunch stores your current wallpaper so it can restore it when the Bunch closes. Use this option if you change your wallpaper while Bunch is running and want to make sure it has the right desktops stored.
 
 Refresh Bunches 
-: You can use "Refresh Bunches" at any time to update the menu after editing your configutation files. Bunch should detect any changes and update automatically, but you can use this to force a refresh if something seems out of date.
+: You can use "Refresh Bunches" at any time to update the menu after editing your configuration files. Bunch should detect any changes and update automatically, but you can use this to force a refresh if something seems out of date.
 : Shortcut {% kbd @$R %}
 
 ## Preferences

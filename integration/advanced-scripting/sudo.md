@@ -8,7 +8,7 @@ tags: [password,scripts]
 # Running Privileged Tasks (sudo)
 {:.no_toc}
 
-You can securely store and access passwords, including root passwords, by using built-in macOS tools. Using these tools makes it possible to run privileged tasks within a Bunch without having to hardcode your passwords in plain text.
+You can securely store and access passwords, including root passwords, by using built-in macOS tools. Using these tools makes it possible to run privileged tasks within a Bunch without having to hard code your passwords in plain text.
 
 * Table of Contents
 {:toc}
