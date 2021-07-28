@@ -10,13 +10,13 @@ tags: [scripting]
 
 Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and scripts.
 
-__Beta testers:__ Bunch Beta can be targetted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.
+__Beta testers:__ Bunch Beta can be targeted with `x-bunch-beta` if you have both installed and need to make sure your URLs open in the right version.
 
 ## Quick Reference
 
 {% include snippets/quick-urlhandler.md %}
 
-> Tip: You can use urls with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/integration/stream-deck), just imagine the possibilities...
+> Tip: You can use URLs with apps like [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool) and [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro) to assign Bunch actions to hotkeys, buttons and other triggers. If you have a [cool programmable keypad](https://shop.pimoroni.com/products/keybow) or a [Stream Deck]({{ site.baseurl }}/docs/integration/stream-deck), just imagine the possibilities...
 >
 > Just create an action that opens a URL and use something like:
 >
@@ -311,4 +311,4 @@ Then normally that Bunch would launch Safari when it opens, as that's the [defau
 
     x-bunch://open?bunch=Default&launch=TextEdit
 
-Opening this URL will launch TextEdit instead of Safari. Variables defined in the query string override keys hardcoded in the Bunch frontmatter. Variables defined on-the-fly by `from script` or `from file` frontmatter will still override query parameters.
+Opening this URL will launch TextEdit instead of Safari. Variables defined in the query string override keys hard coded in the Bunch frontmatter. Variables defined on-the-fly by `from script` or `from file` frontmatter will still override query parameters.

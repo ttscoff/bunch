@@ -98,29 +98,29 @@ All conditions can be negated using "not" or `! condition`. Negatives can only b
 
 Syntax: `if [condition]` where `[condition]` is one of the following.
 
-Bunch is opening/closing
+Bunch Phase
 : Test if a Bunch is in the process of opening or closing (phase). Use "self" or "this" to test current Bunch.
 
 	`self is opening`      | Current Bunch is opening
 	`self is closing`      | Current Bunch is closing
-	`BunchName is opening` | Test another Bunch such as a parent 
-	^^                     | ^^  Bunch which opened this Bunch
+	`BunchName is opening` | Test another Bunch such as a 
+	^^                     | ^^ parent Bunch which opened this Bunch
 
-Bunch is open/closed
+Bunch State
 : Test if another Bunch is currently open or closed.
 	
 	`BunchName is open`   | Bunch is currently open
 	`BunchName is closed` | Bunch is currently closed. 
 	^^                    |^^ Also works as `BunchName is not open`
 
-Parent tests
+Parent
 : If a Bunch was opened by another Bunch, its parent can be tested
 
 	`has parent`/`is child`    | Bunch was opened by another Bunch
 	`not parent`/`is not child`| Negative test
 	`!child`                   | Negative shorthand
 	`parent is BunchName`      | Test which Bunch opened this Bunch
-	^^                         | ^^ Any string comparison operators work
+	^^                         | ^^ Any text comparison operators work
 	^^                         | ^^ e.g. `parent contains PartialName`
 
 App is running
@@ -133,7 +133,7 @@ App is running
 	
 	`is` is optional in all tests, so this works as `AppName running`, `AppName not running`
 
-Numeric comparison
+Numeric
 : Test a variable's contents numerically. Conditions can be written out or represented with mathematical symbols. 
 
 	All conditions can be negated with `not`, e.g. `var_name is not less than` is the same as `var_name is greater than or equal to`. Symbols can be negated with `!`, e.g. `var_name !<= 5`.
@@ -148,7 +148,7 @@ Numeric comparison
 	`is greater than or equal to` | `var_name >= 3`  
 	`equals` / `is equal` / `is` | `var_name == 2`  
 
-Text comparison
+Text
 : Compare variable contents as a string. Comparisons are always case insensitive. 
 
 	Example: `if var_name contains "complete"`
@@ -160,12 +160,12 @@ Text comparison
 	`ends with` / `does not end with` | `$=` / `!$=`
 	`contains` / `does not contain` | `*=` / `!*=`
 
-"Truthy" comparison
+"Truthy"
 : If the string being compared to is "yes", "no", "true", or "false", the comparison is "truthy", meaning it's registered as a boolean (true/false), and if the variable starts with "t", "y", or a number greater than 0, it matches true, and if it starts with "n", "f", or zero, it matches false. 
 : I.e. if `var_name` is set to "yes" and the condition is `if var_name is true`, the condition will pass.
 
 
-Weekday comparison
+Weekday
 : Test whether the current weekday is before, after or is a given day, with the week starting on Sunday. Days can be abbreviated with standard abbreviations (`mon`, `wed`, `fri`). This comparison only works in English. The condition just needs to start with `weekday`.
 
 	Remember that you can combine multiple conditions with "OR", so to have a block run on Tuesday and Thursday, use `weekday is Tues OR weekday is Thurs`
@@ -176,7 +176,7 @@ Weekday comparison
 	`weekday is before` / `is not before` | From Sunday up to current day
 	`weekday is after` / `is not after` | After current day and before next Sunday
 
-Time comparison
+Time
 : Test whether the current time is before, after, or matches a test value. Times can be in 24-hour format, or 12-hour with a meridian (am/pm).
 
 	Example: `if time is before 12pm`

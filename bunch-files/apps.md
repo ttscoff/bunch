@@ -74,7 +74,7 @@ Finder
 -> /Volumes/OtherDrive
 ```
 
-> For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's ok to click other windows while waiting for the Finder tabs to finish opening.
+> For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's OK to click other windows while waiting for the Finder tabs to finish opening.
 {:.warning}
 
 ## Opening Files in Their Default Application {#defaultapp}
@@ -143,7 +143,7 @@ MultiMarkdown Composer
 @OmniFocus
 ```
 
-Everything is launched in the order listed in the Bunch file. Some apps take longer than others to launch or open a file, so execution will continue in the background after the inital launch of the app.
+Everything is launched in the order listed in the Bunch file. Some apps take longer than others to launch or open a file, so execution will continue in the background after the initial launch of the app.
 
 If an app is still launching at the time another app is focused, windows from the slower app may appear after other windows are hidden. To ensure that the app you want focused remains the only app visible, you can add a delay to the focus command. Make it just long enough for other apps to finish launching.
 

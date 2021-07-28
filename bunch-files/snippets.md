@@ -159,7 +159,7 @@ Audio Hijack
     <useful.snippets#Position Podcast
 ```
 
-This is especially handy for running window management scripts ([ala Moom]({{ site.baseurl }}/docs/integration/moom/)) that need all of the apps to have windows present. It's more flexible than just putting a hard delay on the script, as it will take into account unusually long (or short) launch times. Just put the script line into a snippet or fragment and call it with an indented line.
+This is especially handy for running window management scripts ([a la Moom]({{ site.baseurl }}/docs/integration/moom/)) that need all of the apps to have windows present. It's more flexible than just putting a hard delay on the script, as it will take into account unusually long (or short) launch times. Just put the script line into a snippet or fragment and call it with an indented line.
 
 Waiting Snippets rely on the apps to report that they've launched to the operating system. Just because an app has reported that it's launched doesn't necessarily mean it's _finished_ launching. Adding an additional delay is wise if some of the apps you're waiting on take a long time to display their windows.
 
@@ -170,7 +170,7 @@ You can have multiple Waiting Snippets in a Bunch, but they all wait for all app
 
 Waiting Snippets also work with [additional time delays]({{ site.baseurl }}/docs/bunch-files/delay/) as well as interactive optional snippets (see above).
 
-Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is waiting for are already launched, it won't receieve any notifications of their launch to trigger the snippet, so if it hasn't heard back it will check to see if all of the required apps are running (or have been terminated). If its requirements are satisfied, it will launch the Waiting Snippet.
+Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is waiting for are already launched, it won't receive any notifications of their launch to trigger the snippet, so if it hasn't heard back it will check to see if all of the required apps are running (or have been terminated). If its requirements are satisfied, it will launch the Waiting Snippet.
 
 ## Embedded Snippet {#embeddedsnippets}
 

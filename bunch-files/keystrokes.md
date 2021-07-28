@@ -2,7 +2,7 @@
 layout: default
 title: Keystrokes
 parent: Bunch Files
-tags: [keystrokes, apps]
+tags: [keystrokes, apps, keyboard, combo, shortcut]
 ---
 # Sending keystrokes and combos
 {:.no_toc}
@@ -47,7 +47,7 @@ To send multiple shortcuts, just separate them with a space, i.e. `{@a @c @$~v}`
 
 You can include system keys (arrows, delete key, function keys, etc.) by using their name, such as `@~up` (Option-Command-Up Arrow) or `@$F12` (Shift-Command-F12). These can also be written as hyphenated strings using the longer formats for modifier keys, e.g. `cmd-opt-up` or even `command-option-up`. This format can still be combined with multiple keystrokes separated by spaces, e.g. `{opt-left cmd-up}` to hit Option-Left Arrow followed by Command-Up Arrow. 
 
-Keys can also be referenced by using their unicode symbols like `↑`, `↓` `⌅`, and `␣`.
+Keys can also be referenced by using their Unicode symbols like `↑`, `↓` `⌅`, and `␣`.
 
     Gradius
     - {↑ ↑ ↓ ↓← → ← → b a ↩}
@@ -130,9 +130,9 @@ You can use "escape" codes (letters preceded by a double backslash, e.g. `\\\\n`
 | `\\\\\\f` | Right Arrow     | forward              |
 | `\\\\\\u` | Up Arrow        | up                   |
 | `\\\\\\d` | Down Arrow      | down                 |
-| `\\\\\\a` | Home            | ask emacs            |
+| `\\\\\\a` | Home            | ask Emacs            |
 | `\\\\\\e` | End             | end                  |
-| `\\\\\\h` | Backspace       | ask unix...          |
+| `\\\\\\h` | Backspace       | ask UNIX...          |
 | `\\\\\\x` | Escape          | e was already used   |
 | `\\\\\\!X`| Pause for X seconds                   ||
 

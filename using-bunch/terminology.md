@@ -46,7 +46,7 @@ Frontmatter
 Snippet
 : A [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/) is a file in the Bunch folder that has any extension other than `.bunch`. It can contain anything a Bunch can, and can be included from within a Bunch to allow sharing of common tasks between Bunches. Snippets are also used to allow interactivity, delayed execution, and other fun stuff.
 
-## Keyboard Shorcuts
+## Keyboard Shortcuts
 
 Keyboard shortcuts are displayed as symbols: {% kbd @$H %}. Hovering over a keyboard shortcut will display a tooltip showing the natural language version of the key combination, e.g. "Shift-Command-H."
 

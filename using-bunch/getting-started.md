@@ -41,7 +41,7 @@ Bunch can do much more than just launch apps, though. Take some time to explore 
 
 Once you have one or more `.bunch` files in your Bunch folder they should show up automatically when you open the Bunch menu by clicking the Bunch icon in the menu bar. Select a Bunch in the menu to perform the actions defined in that Bunch file.
 
-{% hovergif /images/menubarclick.gif "Animation of the Bunch menu item being clicked" %}
+{% hovergif /images/menubarclick.mp4 "Animation of the Bunch menu item being clicked" %}
 
 If "Toggle Bunches" is enabled in Preferences, each Bunch gets a circle indicator on the left. When a Bunch is opened its indicator is filled in, indicating it's open. Selecting an open Bunch will "toggle" the Bunch, quitting any apps it launched (if they're running and not open in other Bunches), restoring commands, and running any [On-Close items]({{ site.baseurl }}/docs/bunch-files/run-on-close).
 

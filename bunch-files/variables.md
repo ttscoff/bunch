@@ -12,6 +12,23 @@ Bunch allows the use of variables within Bunches and Snippets, adding flexibilit
 * Table of Contents
 {:toc}
 
+## Default Variables
+
+Some variables are populated automatically and can be referenced within a Bunch.
+
+`${title}`
+: contains either the filename, or the display title if it's been set with `title:` frontmatter.
+
+`${basename}`
+: contains the filename of the Bunch, without the `.bunch` extension. This is the name by which AppleScript and any tools that rely on AppleScript responses will recognize, so if you need to a Bunch to reference itself, e.g. in a script argument, you can use `${basename}`.
+
+`${BUNCHPHASE}`
+: This value will be "OPENING" or "CLOSING" if the Bunch is currently being processed.
+
+`${BUNCHPARENT}`
+: If the current Bunch is being opened by another Bunch, this variable will contain the title of the parent Bunch.
+
+
 ## Defining Variables
 
 In order to use a variable within a Bunch, you need to give it a value. Variables get their values in a variety of ways: from frontmatter, from interactive dialogs, or from arguments passed when opening a Snippet or Bunch from within a Bunch or via automation tools.
@@ -33,7 +50,7 @@ The variable `my variable` is now available as `myvariable` for use in the Bunch
 
 Using the [dynamic frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#dynamicfrontmatter) options `from file` or `from script`, you can set variable values dynamically when opening the Bunch.
 
-Variables set by reading a file or running a script will supercede any values hardcoded in the frontmatter.
+Variables set by reading a file or running a script will supersede any values hard coded in the frontmatter.
 
 ### With a Script {#script}
 
@@ -110,7 +127,7 @@ For a Snippet, you would use:
 
 This variable would be set only for the snippet, but would not affect the frontmatter keys for the calling Bunch or any Bunches the snippet calls.
 
-Values set using file lines will supercede any frontmatter or dialog values.
+Values set using file lines will supersede any frontmatter or dialog values.
 
 ### With the URL Handler or AppleScript
 
@@ -118,7 +135,7 @@ You can also define variables in query strings when using the [URL handler]({{ s
 
 When using Bunch's [AppleScript]({{ site.baseurl }}/docs/integration/applescript/), you can add `with variables` and include a query string of keys and values, e.g. `with variables "variable1=My Value&variable2=Other Value"`.
 
-Values set in this manner will supercede frontmatter values, but will be overridden by [file lines](#filelines).
+Values set in this manner will supersede frontmatter values, but will be overridden by [file lines](#filelines).
 
 > With this capability, you can create Bunches that focus efforts around a particular file (or files), but change that file with each opening of the Bunch. Set up a `${placeholder} in the Bunch for the filename, then specify the file in the url when calling the Bunch.
 > 
@@ -179,7 +196,7 @@ Placeholders can not be nested within other placeholders.
 
 ### Transforming Values {#transforms}
 
-You can transform the output of a variable placeholder using a set of pre-defined transforms with the syntax `${VarName/[transform]}`. The available tranformations are:
+You can transform the output of a variable placeholder using a set of pre-defined transforms with the syntax `${VarName/[transform]}`. The available transformations are:
 
 | Transform    | Result                                               |
 | -----------: | :--------------------------------------------------- |
@@ -244,7 +261,7 @@ Now you can use the contents of your clipboard in a  snippet, e.g. to pass to a 
 
 ### Getting the Date {#date}
 
-Bunch doesn't have built-in date placeholders, but you can acheive them in a variable using the UNIX `date` command. This command uses `strftime` placeholders and can generate just about any format of date/time string you need. [See this article](https://www.cyberciti.biz/faq/unix-date-command-howto-see-set-date-time/) for examples and a list of placeholders.
+Bunch doesn't have built-in date placeholders, but you can achieve them in a variable using the UNIX `date` command. This command uses `strftime` placeholders and can generate just about any format of date/time string you need. [See this article](https://www.cyberciti.biz/faq/unix-date-command-howto-see-set-date-time/) for examples and a list of placeholders.
 
 ```bunch
 var_name = $ date '+%Y-%m-%d %H:%M'

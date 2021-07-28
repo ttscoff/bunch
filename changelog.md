@@ -12,7 +12,14 @@ page_id: changelog
 
 ---
 
-1.4.2
+1.4.4 (β117)
+: Create menus from YAML, JSON, text, or executable script files
+: Better replacement of variable placeholders that are populated mid-stream
+: Rewrite of Do Not Disturb handling on Big Sur and later
+
+---
+
+1.4.3
 : Fix: Reversible commands not reversing when closing a bunch
 : Fix: Do Not Disturb not disabling
 : Fix: If Bunches are open when changing the "Toggle Bunches" preference to OFF, register them as closed so they can be opened again
@@ -105,7 +112,7 @@ page_id: changelog
 
 1.4.0 (β102)
 : Fix: Variables set in parent Bunch are now available to Waiting Snippets
-: Fix: Allow HTML display command to handle non-http url schemes
+: Fix: Allow HTML display command to handle non-HTTP url schemes
 : Fixes for Example Bunch
 
 ---
@@ -133,7 +140,7 @@ page_id: changelog
 : All Snippets (including Waiting Snippets) inherit their parent's frontmatter so variables carry forward
 : Allow [global variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#global) that persist across launches and are available in all Bunches
 : Fix: Don't parse = in URLs as a variable assignment
-: Fix: Notification issue when assigning a variable with an applescript and the script fails
+: Fix: Notification issue when assigning a variable with an AppleScript and the script fails
 : Fix: `from script` variable assignments becoming empty
 : Fix: Allow spaces and underscores in `var = $ script` assignments
 : Fix: Variable placeholders don't have to be lowercased to match
@@ -158,7 +165,7 @@ page_id: changelog
 
 1.4.0 (β91)
 : Url handler method for opening Preference pane in the GUI (`x-bunch://prefs`)
-: Add user agent setting to HTML display windows to allow forcing Dekstop or Mobile views regardless of window size (`ua:desktop`)
+: Add user agent setting to HTML display windows to allow forcing Desktop or Mobile views regardless of window size (`ua:desktop`)
 : Fully activate an app when @focusing it
 : Update all internal links to point to bunchapp.co
 : Fix: Replace deprecated preference storage methods
@@ -210,7 +217,7 @@ page_id: changelog
 
 1.4.0 (β83)
 : !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
-: (display) command accepts `chrome:none` for windows with no titlebar or buttons
+: (display) command accepts `chrome:none` for windows with no title bar or buttons
 : Fix: Force apps to foreground before sending key combos
 : Fix: Pause Bunch item processing while sending key commands for better consistency
 : Bring all windows to foreground when Unhiding All Windows
@@ -244,7 +251,7 @@ page_id: changelog
 : If a background color is specified for text or HTML display windows, change the window to dark mode appearance if the color is less than 50% brightness
 : Enable edit menu commands (copy/paste/etc.) in display commands windows
 : Don't cut top off scrolling quick look previews
-: Allow text preview/file watching of any file with a text mimetype, not just .txt and .log
+: Allow text preview/file watching of any file with a text mime-type, not just .txt and .log
 : Fix: Ensure all window updates happen on the main thread
 : Fix: Quick Look windows via `display` command set to wallpaper level were empty
 
@@ -274,15 +281,15 @@ page_id: changelog
 
 1.4.0 (β77)
 : Major overhaul of shell command runner
-: [__Task monitors__]({{ site.basurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) for shell scripts launched by a Bunch
-: [__(display) command__]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other filetypes as Quick Look previews
-: Specify [__multiple days/times in scheduling frontmater__]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/), e.g. `open on: M W F 8am, T Th 10am`
+: [__Task monitors__]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) for shell scripts launched by a Bunch
+: [__(display) command__]({{ site.baseurl }}/docs/bunch-files/commands/display/) for positionable floating windows containing local HTML, web sites, text or log files, or other file types as Quick Look previews
+: Specify [__multiple days/times in scheduling frontmatter__]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/), e.g. `open on: M W F 8am, T Th 10am`
 : Assign a [__global keyboard shortcut__]({{ site.baseurl }}/docs/using-bunch/keyboard-control/) for opening Bunch menu in menu bar mode
 : Assign __keyboard shortcuts for each Bunch__ using [`shortcut:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#shortcuts)
 : More keyboard shortcuts for internal commands
 : Make default keyboard shortcuts for opening Bunches single numbers without modifiers (like ⌘)
 : Use `${variables}` inside of Bunches (like you would in Snippets), populated by frontmatter keys or manually when calling a Bunch from a Bunch. [Documentation]({{ site.baseurl }}/docs/bunch-files/variables/)
-: [`ignores state:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior) to allow open bunches to reopen, closed bunches to reclose
+: [`ignores state:` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior) to allow open bunches to reopen, closed bunches to re-close
 : Command-Option click to force close (menu bar mode)
 : Command-Shift click to force open (menu bar mode)
 : Header on Bunch menu shows what action modifier key clicks will perform (menu bar mode)
@@ -331,7 +338,7 @@ page_id: changelog
 : Added [new formats for comments]({{ site.baseurl }}/docs/bunch-files/comments/), `//` and block comments `/* ... */`
 : Allow comments on same line as Bunch items
 : Fixed infinite loop if referenced snippet file is not found
-: Accept more unicode characters in key combo strings (`↩`, `␣`, `⎋`, etc.)
+: Accept more Unicode characters in key combo strings (`↩`, `␣`, `⎋`, etc.)
 : Slow down automated typing by a couple milliseconds/key stroke
 : "Bunch Editor" preference
 : Allow Command-Clicking an app in the menu to open it in an editor
@@ -493,7 +500,7 @@ page_id: changelog
 : Launch Bunches on startup with *.startup files
 : On/Off images for Bunches in menu bar mode
 : Allow Bunches to be launched like applications
-: If a Bunch is launched by another Bunch, affect its checkmark
+: If a Bunch is launched by another Bunch, affect its check mark
 : Keyboard shortcuts in menu bar menu
 : Snippet files not found when they absolutely do exist
 : Better handling if a fragment isn't matched
@@ -509,7 +516,7 @@ page_id: changelog
 1.3.1
 : Handle Do Not Disturb commands on Big Sur
 : Add syntax for confirm dialog when loading snippets, e.g. `<test.snippet ?"Load this snippet?"`
-: Allow Option-click on checked Bunch to clear checkmark
+: Allow Option-click on checked Bunch to clear check mark
 : AppleScript command "process text" to process raw Bunch commands
 
 ---
@@ -520,7 +527,7 @@ page_id: changelog
 ---
 
 1.2.9
-: Better at maintaining "open" checkmarks
+: Better at maintaining "open" check marks
 : Reduce delay when storing and changing wallpaper
 : Add option to delay a launch or command with ~X at the end of line
 : Big Sur Dock Icon
@@ -557,7 +564,7 @@ page_id: changelog
 ---
 
 1.2.3
-: Allow urls to be [opened in a specific browser](#specificbrowser).
+: Allow URLs to be [opened in a specific browser](#specificbrowser).
 
 ---
 
@@ -566,7 +573,7 @@ page_id: changelog
 : Add \\\\h delete, \\\\a home, \\\\e end escape codes
 : Allow leading and trailing space for `[ typed string ]` commands
 : Allow system key names in key commands, e.g. {@up}
-: Allow unicode characters for arrow keys, e.g. {@↑}
+: Allow Unicode characters for arrow keys, e.g. {@↑}
 : Allow hyphenated long-form commands, e.g. {opt-left opt-left cmd-shift-up}
 : Make about panel appear in foreground when running in menu bar mode
 
@@ -651,7 +658,7 @@ page_id: changelog
 1.0.10
 : Use `& workflowname` to run automator workflows
 : Use `$ shell command` to run shell scripts/commands
-: Menu command to clear checkmarks in toggle/single bunch mode (force launched Bunches to launch again)
+: Menu command to clear check marks in toggle/single bunch mode (force launched Bunches to launch again)
 : Url method `raw` for directly loading any Bunch-formatted file or directly passing bunch commands as a string
 : (dnd on) and (dnd off) commands for Do Not Disturb
 : Watch bunch folder for changes and refresh automatically
@@ -676,7 +683,7 @@ page_id: changelog
 ---
 
 1.0.7
-: Toggle Bunches mode, checkmark opened Bunches, click checkmarked Bunch to close
+: Toggle Bunches mode, check mark opened Bunches, click check marked Bunch to close
 : Single Bunch Mode
 : Quit Apps in Bunch... submenu
 : Bunch commands `(hide dock)` `(show dock)`
@@ -695,7 +702,7 @@ page_id: changelog
 ---
 
 1.0.4
-: Allow URL schemes (in addition to http)
+: Allow URL schemes (in addition to HTTP)
 : Test if app is running or hidden before launching, hiding, quitting
 : Use NSWorkspace instead of AppleScript where possible
 : Allow `_` suffix to hide app (experimental)

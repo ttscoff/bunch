@@ -2,7 +2,7 @@
 layout: default
 title: Opening Websites/URL schemes
 parent: Bunch Files
-tags: [display,browser]
+tags: [display,browser,webpage,website]
 ---
 # Opening URLs
 

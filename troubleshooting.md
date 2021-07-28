@@ -38,7 +38,7 @@ The first thing to try when tracking down the name an app responds to is to open
 
 #### Method 1: From Finder
 
-If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (ctrl-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. 
+If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (CTRL-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. 
 
 If `Info.plist` is in text format (they usually are), you can open it in your text editor and locate the key `CFBundleName`. If it's different than the display name, try that in your Bunch.
 
@@ -102,7 +102,7 @@ __Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch,
 
 #### Visual Studio Code
 
-"__Visual Studio Code__" has the same issue as Logic above. Bunch has a harcoded workaround for VS Code that should allow you to safely use "Visual Studio Code" as the app name.
+"__Visual Studio Code__" has the same issue as Logic above. Bunch has a hard coded workaround for VS Code that should allow you to safely use "Visual Studio Code" as the app name.
 
 #### FileMaker Pro Advanced
 
@@ -116,10 +116,10 @@ __Bunch files absolutely require the extension `.bunch`.__ If you have macOS set
 
 {% img aligncenter /images/showextensions.jpg 412 158 %}
 
-__Make sure your Bunch is plain text.__ If you edit in TextEdit or another Rich Text capable editor, the file may get saved as rich text. Switch to plain text mode and resave the Bunch (double checking that it still has the `.bunch` extension).
+__Make sure your Bunch is plain text.__ If you edit in TextEdit or another Rich Text capable editor, the file may get saved as rich text. Switch to plain text mode and re-save the Bunch (double checking that it still has the `.bunch` extension).
 
 If you make a change to a Bunch and __suddenly your menu is empty__, it means that something in the file caused Bunch to choke while reading in your Bunches. If possible, undo the last change and use __Refresh Bunches__ to attempt to reload.
 
 On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Bunch Folder->Add__ button in Preferences, then change it right back (it will be in the dropdown).
 
-If these steps don't fix the issue, or the issue you're having is not mentioned heere, [see the support page]({{ site.baseurl }}/support) to get in touch.
+If these steps don't fix the issue, or the issue you're having is not mentioned here, [see the support page]({{ site.baseurl }}/support) to get in touch.

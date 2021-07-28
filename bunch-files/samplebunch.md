@@ -12,7 +12,7 @@ tags: [interactivity,frontmatter,snippets,variables,example,apps,basics]
 * Table of Contents
 {:toc}
 
-These are mostly Bunches that I (Brett, the developer) actually use. Several of them incoporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include all of my snippet files to let you see what's going on. Anything in an Embedded Snippet can also be moved to an external file.
+These are mostly Bunches that I (Brett, the developer) actually use. Several of them incorporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include all of my snippet files to let you see what's going on. Anything in an Embedded Snippet can also be moved to an external file.
 
 These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening.
 

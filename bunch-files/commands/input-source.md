@@ -3,7 +3,7 @@ layout: default
 title: Input Source
 parent: Commands
 grand_parent: Bunch Files
-tags: [audio,command]
+tags: [input,language,command]
 ---
 # Input Source Commands
 

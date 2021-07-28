@@ -6,7 +6,7 @@ tags: [basics]
 ---
 # Download And Install
 
-Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. You can then launch Bunch from your Applications folder. (Or with Spotlight. Or [Launchbar or Alfred]({{ site.baseurl }}/docs/integration/launchbar-and-alfred). Or [the command line]({{ site.baseurl }}/docs/integration/cli). Or [AppleScript]({{ site.baseurl }}/docs/integration/applescript)...)
+Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. You can then launch Bunch from your Applications folder. (Or with Spotlight. Or [LaunchBar or Alfred]({{ site.baseurl }}/docs/integration/launchbar-and-alfred). Or [the command line]({{ site.baseurl }}/docs/integration/cli). Or [AppleScript]({{ site.baseurl }}/docs/integration/applescript)...)
 
 When Bunch launches, it will appear in your menu bar (no Dock icon). All of Bunch's features are accessed by clicking the stem icon in the menu bar.
 

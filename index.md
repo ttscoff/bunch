@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Intro
+title: Introducing Bunch
 nav_order: 1
 tags: [basics]
 ---

@@ -19,5 +19,5 @@ The desktop image(s) that are in place when Bunch first launches will be restore
 (wallpaper ~/Pictures/Desktop 1.jpg|~/Pictures/Desktop 2.jpg)
 ```
 
-> __Tip:__ Alternatively, you can simluate a wallpaper change while a Bunch is running using the `(display)` command with a background image. See the tip [in the `(display)` documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#simulatewallpaper) for an example.
+> __Tip:__ Alternatively, you can simulate a wallpaper change while a Bunch is running using the `(display)` command with a background image. See the tip [in the `(display)` documentation]({{ site.baseurl }}/docs/bunch-files/commands/display/#simulatewallpaper) for an example.
 {:.tip}

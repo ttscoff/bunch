@@ -7,7 +7,7 @@ tags: [do not disturb, dnd, command]
 ---
 # Do Not Disturb Commands
 
-Toggle notifications. The commands can be abbreviated as `(dnd on)` and `(dnd off)`. Actually, `(dnd on)` can just be `(dnd)`, too. I like to make things intuitive by overcomplicating them sometimes.
+Toggle notifications. The commands can be abbreviated as `(dnd on)` and `(dnd off)`. Actually, `(dnd on)` can just be `(dnd)`, too. I like to make things intuitive by over complicating them sometimes.
 
 ## Examples
 

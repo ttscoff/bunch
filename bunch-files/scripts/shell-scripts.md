@@ -28,7 +28,7 @@ If a task monitor isn't visible for a task, output (both STDOUT and STDERR) from
 
 If the first element of a `$` line is a full path to a file, or a path relative to your Bunch folder[^relative], and the file exists, it will be executed directly. This assumes either a binary or an executable file with a proper hashbang in the script. Arguments can be passed on the same line.
 
-[^relative] Remember that relative paths in Bunches within subfolders are relative to the base Bunch Folder, not the containing subfolder.
+[^relative]: Remember that relative paths in Bunches within subfolders are relative to the base Bunch Folder, not the containing subfolder.
 
 Any spaces in filenames or within arguments should be escaped just like they would on the command line, using either double quotes or escaping individual spaces with backslashes.
 

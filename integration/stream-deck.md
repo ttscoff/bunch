@@ -16,4 +16,4 @@ You can also integrate further using [Keyboard Maestro](https://www.keyboardmaes
 
 First, the [KM Link](https://github.com/Corcules/KMlink) plugin for Stream Deck allows you to select from existing macros and assign them to the button. It's probably the easiest to use.
 
-Second, the official Keyboard Maestro plugin from Elgato is available in the plugins library. With this one, a virtual button code is assigned to each button based on its coordinates on the panel. You can then add a device button trigger to a macro in KM and hit that button to assign it. I reccommend manually assigning a number for row and column so that if you move the button later, it doesn't change which macro it triggers.
+Second, the official Keyboard Maestro plugin from Elgato is available in the plugins library. With this one, a virtual button code is assigned to each button based on its coordinates on the panel. You can then add a device button trigger to a macro in KM and hit that button to assign it. I recommend manually assigning a number for row and column so that if you move the button later, it doesn't change which macro it triggers.
