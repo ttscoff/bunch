@@ -8,7 +8,7 @@ nav_order: 140
 - [ ] Better means of opening Finder windows in tabs
 - [ ] Webhooks: ability to send HTTP POST requests with body in background
 - [ ] Allow multiple Waiting snippets (in sequence) for groupings of items within a Bunch
-- [ ] Ability to wait for a script, or specific text in the output
+- [ ] Ability to wait for a script, or wiat for specific text in the output
 
 ### Someday/Maybe
 
