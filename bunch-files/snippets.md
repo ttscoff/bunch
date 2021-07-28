@@ -10,21 +10,21 @@ tags: [snippets,variables]
 * Table of Contents
 {:toc}
 
-If you have a series of tasks that are often repeated between Bunches, you can separate them into their own "snippet" files and include them in any Bunch. You can also [embed snippets](#embeddedsnippets) right in a Bunch.
+If a series of tasks is repeated in multiple Bunches, you can separate them into their own "snippet" files and include the snippet in any Bunch. You can also [embed snippets](#embeddedsnippets) right in a Bunch.
 
 ## What Is a Snippet
 
-A snippet file can be named with any extension other than `.bunch`, and can be stored in the same folder as your Bunches, or in a subfolder.
+A snippet file can be named with any extension other than `.bunch`, stored in your Bunch Folder. You can store snippets in a subfolder for organization, you'll just need to reference them with an appropriate path.
 
-To include a snippet in a bunch, use `< snippet.name` on a line in the Bunch.
+To include a snippet in a bunch, use `< snippet.name` on a line in the Bunch. If the snippet is in a subfolder, you would use `< folder_name/snippet.name`.
 
-Snippet contents are treated like part of the Bunch that imports them, so any apps that are launched by the snippet will also be closed when the Bunch closes.
+Snippet contents are treated like part of the Bunch that imports them, so when the Bunch closes, any apps or commands included by the snippet will be closed/reversed.
 
-You can even call other Bunch files as snippets. If you use "fragment" dividers in your Bunch file, you can call just a portion of one Bunch from another, e.g. `< Comms.bunch#Social`.
+You can even call other Bunch files as snippets. If you use [fragment headers](#fragments) in your Bunch file, you can call just a portion of one Bunch from another, e.g. `< Comms.bunch#Social`. Fragment headers are ignored when processing a Bunch normally.
 
 ## Snippet Variables {#snippetvariables}
 
-To make snippets flexible, Bunch [handles variables]({{ site.baseurl }}/docs/bunch-files/variables/) defined in the containing Bunch and replaced within the snippet. These are defined like files on the lines following the `<` line.
+To make snippets flexible, Bunch allows [variables]({{ site.baseurl }}/docs/bunch-files/variables/) defined in the containing Bunch to be replaced within the snippet. Existing variable values are passed to the snippet, and you can specify additional/different values when calling the snippet. These are defined like files on the lines following the `<` line.
 
 ```bunch
 < generic.snippet
@@ -42,7 +42,7 @@ TaskPaper
 
 You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
 
-You can replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content.
+Replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content. See the Variables documentation for more about [value transforms]({{ site.baseurl }}/docs/bunch-files/variables/#transforms).
 
 ### URL Encoding
 
@@ -216,3 +216,4 @@ ___
 ---[After Launch]
 * say "Done launching"
 ```
+
