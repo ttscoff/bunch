@@ -91,7 +91,7 @@ To assign a variable directly from a Snippet:
 ```
 choice = ?[One, Two]
 
-<<${choice}
+<<#${choice}
 
 TextEdit
 - ${text_file}

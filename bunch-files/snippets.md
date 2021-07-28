@@ -73,48 +73,47 @@ Only the first colon is used to split the value, so the default value can contai
 
 For more details, see [Variables - Default Values]({{ site.baseurl }}/docs/bunch-files/variables/#defaultvalues).
 
-## Referencing Partial Snippets (fragments) {#fragments}
+## Referencing Fragments {#fragments}
 
-You can define multiple snippets together in one file and label the sections with a hash (`#`) or other accepted symbols (see below), and the name in square brackets:
+A snippet or bunch can contain multiple fragments, each beginning with a fragment header. Create a fragment header with a hash (`#`) or other accepted symbols (see below), and a fragment name in square brackets:
 
 ```bunch
-#[Section Label]
+#[First Fragment]
 %nvUltra
 &myWorkflow
 
-#[Another Section]
+#[Second Fragment]
 MoreStuff
 ```
 
-Then you can reference the snippet with a fragment identifier, like this:
+Reference the fragment with the snippet and fragment name, like this:
 
 ```bunch
-<MySnippet.snippet#Section Label
+<MySnippet.snippet#Second Fragment
 ```
 
-If you load a snippet containing sections without using a fragment id, i.e. just `<MySnippet.snippet`, it will run all of the sections in the snippet.
+If you load a snippet containing fragments without using a fragment name, i.e. just `<MySnippet.snippet`, it will run all of the fragments in the snippet.
 
+If you feel like being creative, Bunch allows the use of several symbols to create the fragment headers, and you can have a variable number of them on either side of the brackets (you do need one symbol on the left). 
 
-If you feel like being creative, Bunch allows the use of several symbols to create the section dividers, and you can have a variable number of them on either side of the brackets (you do need one symbol on the left). 
-
-Accepted characters for the divider lines are `#`, `-`, `=`, and `>`. The line must start with one or more of these symbols, followed by the title in square brackets. Whitespace is allowed after the first character. In the case of a hyphen, two or more are required (to avoid confusion with file lines). The other symbols only require a single character.
+Begin a fragment header using one of `#`, `-`, `=`, or `>`. The line must start with one or more of these symbols, followed by the fragment name enclosed in square brackets. In the case of a hyphen, two or more are required at the beginning of the line to avoid confusion with file lines. The other symbols only require a single character. Whitespace is allowed in the fragment header after the first (or second in the case of `--`) character. Fragment names can also include spaces.
 
 Anything after the closing square bracket is ignored. You can use the rest of the line to continue a divider, add a comment, or just leave it blank.
 
-The following all work:
+The following all work as fragment headers:
 
 ```bunch
-###[Section]
-#[Section]#########
--------[Section]-----------
---[Section]
-------------------------------------------[Section]--
->>>[Section]
-=[Section]== Add a comment, if you like
->-=# [Section] #=-<
+###[Fragment Name]
+# [ Fragment ] #########
+-------[My Fragment]-----------
+-- [Fragment]
+------------------------------------------[Frag]--
+>>>[Some Fragment]
+=[Fragment]== Add a comment, if you like
+>-=# [My Fragment] #=-<
 ```
 
-You get the idea. When you amass a lot of snippets in one file because you're  making great use of sections and fragments, it's just nice to make them look pretty...
+You get the idea. When you amass a lot of snippets in one file because you're making great use of fragments, it's just nice to make them look pretty...
 
 ## Adding Interactivity {#optionalsnippets}
 
@@ -174,11 +173,11 @@ Waiting Snippets get a 5-second timer attached. If all of the apps the Bunch is 
 
 ## Embedded Snippet {#embeddedsnippets}
 
-You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed snippets right in the Bunch. Add a divider of three or more underscores (`___`) at the end of the document, and anything after it will be read as a snippet file.
+You can create separate snippet files to hold reusable items, but if you just need snippets to make use of features like Waiting Snippets, delayed blocks, or blocks to run on close, you can also embed a snippet right in the Bunch. Add a divider of three or more underscores (`___`) at the end of the document, and anything after it will be read as a snippet file.
 
 Only a Bunch can contain an embedded snippet. The syntax won't have any effect on files loaded as snippets.
 
-These work like any snippet file, and you can divide them into sections to reference with fragments.
+These work like any snippet file, and you can divide them into fragments to reference by name.
 
 To reference an embedded snippet, just use an additional `<` instead of a filename:
 
@@ -186,18 +185,18 @@ To reference an embedded snippet, just use an additional `<` instead of a filena
 <<
 ```
 
-That would run everything after the `___` as a snippet. You could also divide your embedded snippet into sections and reference it with a fragment identifier:
+That would run everything after the `___` as a snippet. You could also divide your embedded snippet into fragments and reference one of them with a fragment name:
 
 ```bunch
-<<#Section 1
+<<#My Fragment
 ```
 
-Embedded snippets also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables and all frontmatter variables are available to them.
+Embedded snippets and fragments also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables and all frontmatter variables are available to them.
 
 __Embedded snippet example:__
 
 ```bunch
-<<#First Section
+<<#First Fragment
 
 !<<#On Close
 
@@ -205,7 +204,7 @@ __Embedded snippet example:__
 
     <<#After Launch
 ___
----[First Section]
+---[First Fragment]
 * say "first"
 
 ---[After Pause]

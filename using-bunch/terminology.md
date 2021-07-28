@@ -44,7 +44,17 @@ Frontmatter
 : [Frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/) is an optional block of text at the top of a Bunch. It's delimited by `---` at the top and bottom of the block. Frontmatter consists of key/value pairs and affect the display, behavior, and additional functionality of the Bunch that contains them.
 
 Snippet
-: A [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/) is a file in the Bunch folder that has any extension other than `.bunch`. It can contain anything a Bunch can, and can be included from within a Bunch to allow sharing of common tasks between Bunches. Snippets are also used to allow interactivity, delayed execution, and other fun stuff.
+: A [snippet]({{ site.baseurl }}/docs/bunch-files/snippets/) is a file in the Bunch folder that has any extension other than `.bunch`. It can contain anything a Bunch can, and can be included from within a Bunch to allow sharing of common tasks between Bunches. Snippets are also used to allow interactivity, delayed execution, and other fun stuff. A snippet can be [embedded]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in a bunch.
+
+Fragment
+: A portion of a snippet or a bunch file introduced by a fragment header and terminated by the end of the file or another fragment header. A snippet or bunch can contain multiple fragments.
+
+Fragment Header
+: A line in a Bunch file or a snippet which indicates the beginning of a fragment.
+
+Fragment Name
+: The string between the brackets in a fragment header. Fragment names can include spaces.
+
 
 ## Keyboard Shortcuts
 
