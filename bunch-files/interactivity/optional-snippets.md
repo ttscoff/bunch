@@ -22,7 +22,7 @@ When the Bunch is launched, a dialog will ask "Load My Snippet?" and request use
 - autoplay=true
 ```
 
-{% hovergif images/optionalsnippet.gif "Animation showing result of Optional Snippet" "Optional Snippets" %}
+{% hovergif images/optionalsnippet.mp4 "Animation showing result of Optional Snippet" "Optional Snippets" %}
 
 You can include multiple optional snippets, but --- due to the asynchronous way Bunches are launched --- the questions may not be asked in file order. Make the queries descriptive to avoid confusion.
 
