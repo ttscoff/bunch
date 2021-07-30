@@ -10,5 +10,7 @@ I prefer [Forklift](https://binarynights.com/) to Finder for file management. It
 
 It doesn't have a great AppleScript dictionary, though, and automating the opening of tabs and panes isn't possible. However, you can create Sets, with all of the tabs and panes set up just the way you like them, then assign the Set a keyboard shortcut in Preferences->Shortcuts. Then you can have Bunch send a key combo to it after it launches to get things just the way you like them.
 
-	%Forklift   // Focus Forklift, open if needed
-	- {^$~p}    // Send control-shift-option-P
+```bunch
+%Forklift   // Focus Forklift, open if needed
+- {^$~p}    // Send control-shift-option-P
+```

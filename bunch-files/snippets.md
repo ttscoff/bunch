@@ -191,7 +191,7 @@ That would run everything after the `___` as a snippet. You could also divide yo
 <<#My Fragment
 ```
 
-Embedded snippets and fragments also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables and all frontmatter variables are available to them.
+Embedded snippets and fragments also work as Waiting Snippets, on-close snippets, and with delays, just like regular snippets. You can pass variables using file lines, and all frontmatter variables and variables assigned using dialogs in the Bunch are available to them.
 
 __Embedded snippet example:__
 

@@ -2,6 +2,7 @@
 layout: default
 title: Troubleshooting
 nav_order: 90
+tags: [error,debug,log,problem]
 ---
 # Troubleshooting Bunch
 {:.no_toc}

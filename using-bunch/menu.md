@@ -3,11 +3,11 @@ layout: default
 title: The Bunch Menu
 parent: Using Bunch
 nav_order: 30
-tags: [shortcuts]
+tags: [shortcuts,keyboard,menu]
 ---
 # The Bunch Menu
 
-Just click on the Bunch status item to reveal the menu.
+Just click on the Bunch status item to reveal the menu. 
 
 {% hovergif /images/menubarclick.mp4 "Animation of the Bunch menu item being clicked" "The Bunch Menu in the Menu Bar" %}
 
