@@ -12,10 +12,12 @@ page_id: changelog
 
 ---
 
-1.4.4 (β117)
+1.4.4
 : Create menus from YAML, JSON, text, or executable script files
 : Better replacement of variable placeholders that are populated mid-stream
 : Rewrite of Do Not Disturb handling on Big Sur and later
+: Fix case sensitivity when replacing variable placeholders
+: Improved variable (re)assignment inside of conditional logic blocks
 
 ---
 

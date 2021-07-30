@@ -3,7 +3,7 @@ layout: default
 title: Apps
 parent: Bunch Files
 nav_order: 4
-tags: [apps,screen]
+tags: [apps,screen,launch,file]
 ---
 # Application Actions
 {:.no_toc}

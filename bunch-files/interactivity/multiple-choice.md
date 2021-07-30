@@ -43,6 +43,8 @@ You can optionally include a title for the dialog after the closing bracket in d
 ] "Which Task Manager?"
 ```
 
+{% hovergif /images/arraydialog.mp4 "Array syntax multiple choice dialog" %}
+
 By combining this with [variable assignment]({{ site.baseurl }}/docs/bunch-files/interactivity/multiple-choice/populating-variables/), you can have the list directly choose a snippet fragment to run. The following example assigns a `snippet` variable, then uses that to call a fragment of an [embedded snippet]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets).
 
 ```bunch
@@ -82,7 +84,7 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 } "Whatcha Coding?"
 ```
 
-{% hovergif /images/querydictionary.gif "Animation showing result of Query Dictionary" "Query Dictionary" %}
+{% hovergif /images/dictionarydialog.mp4 "Animation showing result of Query Dictionary" "Query Dictionary" %}
 
 ## Checkbox Arrays {#checkbox}
 
