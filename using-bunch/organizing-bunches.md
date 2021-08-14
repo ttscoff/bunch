@@ -108,3 +108,22 @@ __`menu divider`__
 All other keys are passed on to the Bunches the folder contains, with the exception of `shortcut` (which is ignored entirely).
 
 Folder frontmatter can also be used to apply frontmatter keys to every file it contains. See [Applying Frontmatter to Multiple Bunches]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter).
+
+## Organize With Tags {#tags}
+
+{% include betafeature.md %}
+
+If one or more Bunch's frontmatter includes a `tags:` key, a __Tags__ submenu will be created. Each tag will have a menu entry, and it will contain all Bunches with that tag. Bunches in a tag can be launched individually, or you can use the __Open__, __Close__, and __Toggle__ commands within the tag's submenu to act on all Bunches with that tag.
+
+The `tags:` key should contain a list of one or more tags, separated by commas. Tags are case insensitive. You do not need to surround tag lists in quotes or brackets (though either will be ignored if you do). Tags can have spaces, but they're easiest to manage if they're one word (hyphenated if needed).
+
+```bunch
+---
+title: My Cool Bunch
+tags: login, comms
+---
+```
+
+### Tag Frontmatter {#tagfrontmatter}
+
+You can create frontmatter that applies to all Bunches with a certain tag by creating a file in your Bunch folder called `@[tagname].frontmatter`, where `[tagname]` is the name of the tag to which the frontmatter should apply. Any Bunch with a tag matching `[tagname]` will receive that frontmatter. Frontmatter keys applied in this fashion are low priority, and if values for a given key are supplied using any other means, they will override the tag frontmatter.

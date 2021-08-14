@@ -12,8 +12,13 @@ page_id: changelog
 
 ---
 
+1.4.5
+: Variable placeholders no longer require removing spaces from variable names
+
+---
+   
 1.4.4
-: Create menus from YAML, JSON, text, or executable script files
+: Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
 : Better replacement of variable placeholders that are populated mid-stream
 : Rewrite of Do Not Disturb handling on Big Sur and later
 : Fix case sensitivity when replacing variable placeholders

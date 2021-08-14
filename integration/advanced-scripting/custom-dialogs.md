@@ -88,4 +88,4 @@ Spotify
 # * tell app "Spotify" to play track "${spotifyurl}"
 ```
 
-{% hovergif images/Listen.gif "Animation demonstrating the Listen Bunch" "Listen.bunch" %}
+{% hovergif images/listendemo.mp4 "Animation demonstrating the Listen Bunch" "Listen.bunch" %}

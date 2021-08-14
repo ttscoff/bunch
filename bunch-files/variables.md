@@ -35,7 +35,7 @@ In order to use a variable within a Bunch, you need to give it a value. Variable
 
 ### In Frontmatter
 
-A variable is a key and a value. You can define the variable in frontmatter by using a `key: value` line. As long as the key doesn't conflict with one of [Bunch's built-in keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/#keys), you can use anything you want. Keys should be letters, numbers, and underscores only. They can contain spaces, but those will be compressed and stripped when they're used as a replacement, and the entire key will be lowercased, so "My Key" becomes "mykey".
+A variable is a key and a value. You can define the variable in frontmatter by using a `key: value` line. As long as the key doesn't conflict with one of [Bunch's built-in keys]({{ site.baseurl }}/docs/bunch-files/frontmatter/#keys), you can use anything you want. Keys should be letters, numbers, and underscores only.
 
 ```bunch
 ---
@@ -44,7 +44,7 @@ my variable: my value
 ---
 ```
 
-The variable `my variable` is now available as `myvariable` for use in the Bunch and any snippets it calls. See [using variables](#usingvariables) to see how.
+The variable `my variable` is now available for use in the Bunch and any snippets it calls. See [using variables](#usingvariables) to see how.
 
 #### Dynamic Frontmatter
 
@@ -175,7 +175,7 @@ Because variables can be set in multiple ways, you need to be aware of which val
 
 ## Using Variables {#usingvariables}
 
-Once a variable has a value, you can use it in your Bunch or Snippet by adding a placeholder in the format `${variablename}`. Remember that spaces are removed and the name will be lowercase, regardless of casing and spacing in the key you defined.
+Once a variable has a value, you can use it in your Bunch or Snippet by adding a placeholder in the format `${variable name}`. Remember that spaces are removed and the name will be lower case when looking up the variable's value, regardless of casing and spacing in the key you defined, so `${Variable Name}` is the same as `${variablename}`.
 
 In a Bunch or Snippet that might look like:
 

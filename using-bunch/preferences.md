@@ -13,6 +13,8 @@ Click the Bunch icon in the menu bar and select __Preferences...__.
 
 ## Application Settings
 
+<section class="term-section-green" markdown=1>
+
 Launch at Login
 : Add and remove Bunch from your User Login Items.
 
@@ -28,7 +30,11 @@ Accessibility
 Notification Settings
 : This is a shortcut to opening Bunch's notification settings in System Preferences. It's recommended that you enable notifications and set the notification style to "Alerts," which will allow Bunch to most conveniently provide status reports.
 
+</section>
+
 ## Bunch Behavior {#prefsbunchbehavior}
+
+<section class="term-section-purple" markdown="1">
 
 Toggle Bunches
 : When this is enabled, running bunches are shown with a check mark in the menu, and clicking them again will quit apps contained in that bunch instead of relaunching them.
@@ -44,7 +50,11 @@ Launch Items in Parallel
 Quit Apps Open in Other Bunches
 : When this is off and you toggle a Bunch closed, it will avoid quitting apps that are currently open in another Bunch. Turn it on to quit all apps in the Bunch, regardless of their state in other Bunches. This can be enabled on individual Bunches using the [`quits apps: always` frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#behavior).
 
+</section>
+
 ## Bunch Folder
+
+<section class="term-section-bright-blue" markdown="1">
 
 The field next to "Bunch Folder" will show your current Bunch Folder location. If you've changed the Bunch Folder location, clicking the popup button will allow you to quickly change between recent locations.
 
@@ -53,6 +63,8 @@ Set
 
 Reveal
 : Opens the folder containing your `.bunch` configuration files (Bunches) in Finder for editing.
+
+</section>
 
 ## Bunch Editor
 

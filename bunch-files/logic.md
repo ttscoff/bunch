@@ -92,7 +92,7 @@ end
 
 ## Conditions
 
-Variable names in conditions can be "bare," writing just the variable name (with no spaces). You can optionally use a `$`, e.g. `$variable` for clarity. If a variable matching the key isn't defined, it will return false and not run the block.
+Variable names in conditions can be "bare," writing just the variable name. You can optionally use a `$`, e.g. `$variable` for clarity. If a variable matching the key isn't defined, it will return false and not run the block. If your variable name contains spaces, you must either write it without spaces (`first name` -> `firstname`) or use curly brackets (`${first name}`).
 
 All conditions can be negated using "not" or `! condition`. Negatives can only be invoked once, e.g. `weekday not !Friday` will be interpreted as `weekday is not Friday`.
 

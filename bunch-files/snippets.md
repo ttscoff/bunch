@@ -40,7 +40,7 @@ TaskPaper
 - ${proj_path}
 ```
 
-You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys). Remember that the variable name in your snippet is the key name, lowercased, with any spaces removed ('First Name' becomes '${firstname}').
+You can also define values for snippet variables [using frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#arbitrarykeys).
 
 Replace the dollar sign (`$`) with a percent symbol (`%`) in the placeholder and Bunch will URL encode the content. See the Variables documentation for more about [value transforms]({{ site.baseurl }}/docs/bunch-files/variables/#transforms).
 
