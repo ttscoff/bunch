@@ -8,6 +8,7 @@ tags: [integration,sublime,editor]
 
 [sublime]: https://github.com/ttscoff/Sublime-Bunch
 [package control]: https://packagecontrol.io/packages/Bunch
+[textmate]: https://github.com/kotfu/Bunch.tmbundle
 
 ## Sublime Text
 
@@ -24,6 +25,17 @@ A [Sublime Text package][sublime] for Bunch is available.
 
 The package is hosted [on GitHub][sublime], but is most easily installed using [Package Control][]. Open the command palette, run `Package Control: Install Package`, and search for "Bunch."
 
-## Other Editors
+## TextMate
 
-Currently no other packages have been developed. If you'd like to help port the Sublime Text package to other editors, your contribution would be greatly appreciated.
+Kotfu created a [TextMate bundle][textmate] which includes:
+
+- Syntax highlighting for Bunch files and Snippets
+- Completions for Bunch commands
+- Completion for any installed application name
+- Completion for frontmatter keys
+
+{% img aligncenter https://www.kotfu.net/software-scraps/bunch-tmbundle-dark-cobalt.png %}
+
+## Contributions Welcome
+
+If you'd like to add support for Bunch files to your favorite editor or IDE, your contribution would be greatly appreciated.
