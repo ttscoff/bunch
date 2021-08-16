@@ -34,7 +34,7 @@ Kotfu created a [TextMate bundle][textmate] which includes:
 - Completion for any installed application name
 - Completion for frontmatter keys
 
-{% img aligncenter https://www.kotfu.net/software-scraps/bunch-tmbundle-dark-cobalt.png %}
+{% img aligncenter /images/bunch-tmbundle-dark-cobalt.png %}
 
 ## Contributions Welcome
 
