@@ -12,8 +12,25 @@ page_id: changelog
 
 ---
 
+1.4.5 (β119)
+: [Heredoc support for shell commands]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#heredoc)
+: [Snippet syntax support for script lines]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#snippet) (`$ <file#fragment`)
+: [Heredoc support for variable assignments]({{ site.baseurl }}/docs/bunch-files/scripts/variables/#heredoc)
+: [Snippet syntax support for variable assignment]({{ site.baseurl }}/docs/bunch-files/variables/#snippet) (`var = <file#fragment`)
+: [Submenu with bunches listed by tag]({{ site.baseurl }}/docs/bunch-files/organizing-bunches/#tags)
+: [AppleScript "open/close/toggle/list bunches tagged"]({{ site.baseurl }}/docs/bunch-files/integration/applescript/#tags)
+: [URL handler for open/close/toggle commands accepts "tag=X" as optional replacement for "bunch=X"]({{ site.baseurl }}/docs/bunch-files/integration/url-handler/#tags)
+: Variable placeholders no longer require removing spaces from variable names
+: Better truncation of long script paths/names in running scripts menu
+: Fix: Don't register `var_name = ${old_var}` as a shell script assignment
+: Fix: Remove "tag:" key from folder frontmatter
+: Fix: Action buttons on script error dialogs not opening Bunch Log
+: Fix: Remove single and double quotes from ends of frontmatter values
+
+---
+   
 1.4.4
-: Create menus from YAML, JSON, text, or executable script files
+: Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
 : Better replacement of variable placeholders that are populated mid-stream
 : Rewrite of Do Not Disturb handling on Big Sur and later
 : Fix case sensitivity when replacing variable placeholders

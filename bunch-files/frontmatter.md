@@ -28,7 +28,7 @@ Bunch treats keys the way MultiMarkdown does: it allows spaces and is case insen
 
 ## YAML-ish
 
-Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allowed in key names, but they are removed when the variable is read in. All keys are lowercased. If your line is `First Name: Brett`, the variable would be accessed using `${firstname}`.
+Bunch frontmatter resembles YAML, but it's a simplified system. Spaces are allowed in key names, but they are removed when the variable is read in. All keys are lowercased. If your line is `First Name: Brett`, the variable would be accessed using `${firstname}`. However, spaces are also removed from variable placeholders when looking up the value, so `${first name}` will also match.
 
 Bunch frontmatter doesn't support the more complex structures of YAML, such as arrays and blocks. It's simply single-line keys and string values.
 
@@ -139,6 +139,25 @@ run before: prescript.sh arg1, otherscript.sh arg2
 run after close: postscript.sh
 ---
 ```
+
+{% available 119 %}
+
+## Tagging
+
+You can add tags to a Bunch using the `tags:` key:
+
+```bunch
+---
+title: My Tagged Bunch
+tags: tag1, tag2
+---
+```
+
+These tags can be used for [organizing Bunches]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#tags) into groups, allowing you to control multiple Bunches at once from the Bunch menu.
+
+You can also open and close tagged groups of Bunches from within a Bunch using `\tagname`. See the [documentation here]({{ site.baseurl }}/docs/bunch-files/tags/).
+
+{% endavailable %}
 
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 

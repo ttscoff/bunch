@@ -44,13 +44,19 @@ Holding any modifier combination while the menu is open will display its functio
 
 The Bunch menu is a submenu that contains what would usually be in the application menu of a standard application.
 
+<section class="term-section-green" markdown="1">
+
 About Bunch
 : Standard About Panel.
 
 Check For Updates
 : Check for new versions and automatically update Bunch.
 
+</section>
+
 ## Main Menu
+
+<section class="term-section-red" markdown="1">
 
 Clear Checkmarks
 : When in Toggle Bunches or Single Bunch modes, this options will clear the check marks next to "active" Bunches, forcing them to relaunch next time even if they're already running. You can also clear a single check mark by Option-clicking a checked Bunch in the menu.
@@ -69,11 +75,15 @@ Refresh Bunches
 : You can use "Refresh Bunches" at any time to update the menu after editing your configuration files. Bunch should detect any changes and update automatically, but you can use this to force a refresh if something seems out of date.
 : Shortcut {% kbd @$R %}
 
+</section>
+
 ## Preferences
 
 [See Preferences.]({{ site.baseurl }}/docs/using-bunch/preferences/)
 
 ## Help
+
+<section class="term-section-bright-blue" markdown="1">
 
 Open Log
 : Open the [Bunch log]({{ site.baseurl }}/docs/using-bunch/bunch-log/) in Console for debugging.
@@ -89,6 +99,8 @@ Changelog
 
 Make a donation
 : Because it's the [right thing to do]({{ site.baseurl }}/donate/), in my opinion.
+
+</section>
 
 ## Windows
 

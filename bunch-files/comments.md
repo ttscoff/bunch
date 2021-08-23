@@ -9,7 +9,10 @@ Comments can be included in your Bunch files. They can be used to remind yoursel
 
 ## Line comments
 
-Line comments are preceded by `#` or `//`. They can be at the beginning of a line, or included with a regular line at the end. Comments indicators must be followed by one or more spaces, and comments at the end of a line must also be preceded by one or more spaces.
+Line comments are preceded by `#` or `//`. They can be at the beginning of a line, or included with a regular line at the end. Comment indicators must be followed by one or more spaces, and inline comments (comments at the end of a line) must also be preceded by one or more spaces, e.g. `AppName // Inline comment`.
+
+> Inline comments can not be used on the same line as fragment headers, variable assignment lines, or script lines.
+{:.warning}
 
 ```bunch
 // This is a line comment
@@ -31,6 +34,11 @@ Line comments are preceded by `#` or `//`. They can be at the beginning of a lin
 
 // But they won't work on a fragment divider line
 ###[My Fragment]### # This fragment won't be found.
+
+// Inline comments also won't work on script lines
+$ echo # This comment is part of the command, even though the shell will ignore it
+// Or on variable assignments
+my_var = Value # This comment is read as part of the value
 ```
 
 ## Block Comments
