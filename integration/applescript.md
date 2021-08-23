@@ -14,6 +14,18 @@ Bunch provides an AppleScript dictionary that you can use to open, close, and to
 * Table of Contents
 {:toc}
 
+## List Bunches
+
+The following commands return AppleScript lists:
+
+```applescript
+-- list all Bunches in current Bunch Folder
+tell application "Bunch" to list bunches
+
+-- list currently open Bunches
+tell application "Bunch" to list open bunches
+```
+
 ## Open, close, and toggle Bunches
 
 ```applescript
@@ -24,6 +36,26 @@ tell application "Bunch"
     toggle bunch "Comms"
 end tell
 ```
+
+{% available 119 %}
+
+## Acting on tagged Bunches {#tags}
+
+You can also act on [tagged]({{ site.baseurl }}/docs/bunch-files/tags/) Bunches
+
+```applescript
+-- list bunches containing tag string
+tell application "Bunch" to list bunches tagged "tag1+tag2"
+
+-- perform actions on all Bunches matching tag (or tag combo)
+tell application "Bunch"
+    open tag "Tag1"
+    close tag "Tag2+Tag3"
+    toggle tag "Tag2,Tag3"
+end tell
+```
+
+{% endavailable %}
 
 ## Process raw Bunch text
 

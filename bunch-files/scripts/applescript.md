@@ -11,7 +11,7 @@ There are several ways to use AppleScript within Bunch.
 
 ## Running a Single AppleScript Command
 
-Put a `*` at the beginning of a line to have the line interpreted as raw AppleScript. There will be some permissions requests and some commands that just refuse to run, but try it out. You can open Console.app to see any errors that your command might run into. This feature is only *marginally tested*.
+Put a `*` at the beginning of a line to have the line interpreted as raw AppleScript. There will be some permissions requests and some commands that just refuse to run, but most commands will work fine. {% available 119 %}If you need to use multiple lines, you can either create an external [script file](#script), or use a [heredoc](#heredoc) or [snippet import](#snippet).{% endavailable %}
 
 ```bunch
 * say "Welcome to the communications context"
@@ -19,7 +19,7 @@ Put a `*` at the beginning of a line to have the line interpreted as raw AppleSc
 * display notification "Bunch Opened"
 ```
 
-## Running an AppleScript Script
+## Running an AppleScript Script {#script}
 
 If the content of a `*` line references an existing filename, that file will be executed as an AppleScript using the `osascript` command. If the script is in your Bunch directory, you can run it with just the filename (or a relative path to a subfolder[^relative]). Otherwise, specify an absolute path to the script.
 
@@ -44,6 +44,61 @@ Arguments can be passed to the script on the same line (same escaping rules appl
 ```
 
 Scripts run using `*` commands are monitored like shell scripts, and show up under the "🔴 Shell Scripts" menu.
+
+{% available 119 %}
+
+## Multi-line/Heredoc {#heredoc}
+
+Multi-line scripts can also be embedded using the same [heredoc syntax]({{ site.baseurl }}/docs/bunch-files/variables/#heredoc) as variable assignment. The contents of the heredoc block will be saved to a temporary file and executed as AppleScript. This allows you to embed multi-line AppleScripts in your Bunch without having to generate external script files for every one.
+
+All lines within a block will be outdented to the indent level of the first line.
+
+__Markdown Syntax__
+
+````bunch
+* ```
+set source_folder to choose folder with prompt "Please select directory."
+-- do some cool stuff
+```
+````
+
+__Heredoc Syntax__
+
+```bunch
+* <<EOFILE
+set source_folder to choose folder with prompt "Please select directory."
+-- do some cool stuff
+EOFILE
+```
+
+Variable placeholders can be used in heredocs. Heredocs do not accept environment variables on file lines following them the way that regular script/command lines do.
+
+{% endavailable %}
+
+{% available 119 %}
+
+## Snippets {#snippet}
+
+You can also use [snippet syntax]({{ site.baseurl }}/docs/bunch-files/snippets/) to import AppleScript, allowing for use of fragments to combine multiple scripts into one file (or an embedded snippet, as shown below).
+
+```bunch
+* <<#AppleScript Fragment
+___
+--[AppleScript Fragment]
+set source_folder to choose folder with prompt "Please select directory."
+set newline to ASCII character 10
+
+set finalText to ""
+
+tell application "Mail"
+  set theMessages to (messages of inbox whose read status is false)
+  set {astid, AppleScript's text item delimiters} to {AppleScript's text item delimiters, " "}
+[...]
+```
+
+This works for both shell (`$`) and AppleScript (`*`) script lines. In most cases you'll probably want to just write actual scripts and execute them directly, but if you want to combine multiple scripts with fragment headers or make use of embedded snippets to store scripts for the current Bunch, this syntax will do the trick.
+
+{% endavailable %}
 
 ## Running with Automator
 

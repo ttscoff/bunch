@@ -38,6 +38,58 @@ $ my\ script.sh "argument 1" arg2
 
 > If the script has a "shebang" line, it will be executed using the specified processor, e.g. `#!/usr/bin/ruby` will cause the script to be run as `/usr/bin/ruby SCRIPT ARGS`. If it lacks a shebang, it will be executed using `/bin/sh SCRIPT ARGS`.
 
+{% available 119 %}
+
+## Embedded Scripts/Heredoc {#heredoc}
+
+Multi-line scripts can also be embedded using the same [heredoc syntax]({{ site.baseurl }}/docs/bunch-files/variables/#heredoc) as variable assignment. The contents of the heredoc block will be saved to a temporary file and executed as a script. This allows you to embed multi-line scripts and commands in your Bunch without having to generate external script files for every one.
+
+Heredoc scripts start with `$` for shell scripts and `*` for AppleScripts. If you use `$`, you should also provide a shebang line (e.g. `#!/usr/bin/python`) to tell the system what to process the script with. If there's no shebang, the script will be assumed to be a shell script executable by `/usr/bin/sh`.
+
+If it's a `*` command, a shebang of `#!/usr/bin/osascript` will be added automatically if one doesn't exist, so you can just write AppleScript out as if you were in Script Editor.
+
+All lines within a block will be outdented to the indent level of the first line.
+
+__Markdown Syntax__
+
+````bunch
+$ ```
+#!/bin/bash
+say one
+say two
+/usr/bin/ruby run_my_script.rb
+```
+````
+
+__Heredoc Syntax__
+
+```bunch
+* <<EOFILE
+set source_folder to choose folder with prompt "Please select directory."
+-- do some cool stuff
+EOFILE
+```
+
+Variable placeholders can be used in heredocs. Heredocs do not accept environment variables on file lines following them the way that regular script/command lines do.
+
+{% endavailable %}
+
+{% available 119 %}
+
+## Snippets {#snippet}
+
+You can also use [snippet syntax]({{ site.baseurl }}/docs/bunch-files/snippets/) to import shell scripts, allowing for use of fragments to combine multiple scripts into one file (or an embedded snippet).
+
+```bunch
+$ <myscripts.sh#This Script
+// or
+* <<#Embedded AppleScript
+```
+
+This works for both shell (`$`) and AppleScript (`*`) script lines. In most cases you'll probably want to just write actual scripts and execute them directly, but if you want to combine multiple scripts with fragment headers or make use of embedded snippets to store scripts for the current Bunch, this syntax will do the trick.
+
+{% endavailable %}
+
 ## Raw commands
 
 If the content of the `$` line is not a recognizable file, it will be executed with `/bin/sh -c`. It's possible to chain commands with `&&` and `||`. 

@@ -31,7 +31,74 @@ Some variables are populated automatically and can be referenced within a Bunch.
 
 ## Defining Variables
 
-In order to use a variable within a Bunch, you need to give it a value. Variables get their values in a variety of ways: from frontmatter, from interactive dialogs, or from arguments passed when opening a Snippet or Bunch from within a Bunch or via automation tools.
+In order to use a variable within a Bunch, you need to give it a value. Variables get their values in a variety of ways: from frontmatter, from interactive dialogs, or from arguments passed when opening a Snippet or Bunch from within a Bunch or via automation tools. You can also assign variables directly in the Bunch using strings or file imports.
+
+### Direct Assignment
+
+Direct assignment works like most scripting languages, defining the variable and it's value like this:
+
+```bunch
+my_var = The Value
+
+// which can now be used as
+* say "${my_var}"
+```
+
+You don't need to quote or escape the value in any way. This is essentially the same as defining the variable in frontmatter, but allows you to define/modify values within [conditional logic blocks]({{ site.baseurl }}/docs/bunch-files/logic/).
+
+{% available 119 %}
+
+#### Heredoc {#heredoc}
+
+If you want to create a value with multiple lines, you can use one of Bunch's heredoc syntaxes.
+
+__Markdown Syntax__
+
+The first form of this syntax is similar to fenced code blocks in Markdown. You start the block with three backticks (\`\`\`) and a newline, insert your text, then end the block with another newline and triple backticks.
+
+All content will be outdented to the level of the first line, so you can indent the entire block as much as you like for readability.
+
+```bunch
+my_var = ```
+         line one
+         all of this will be outdented
+         line three
+         ```
+```
+
+The last three backticks must be on a line by themselves, but can be indented with any number of tabs and/or spaces.
+
+__Traditional Syntax__
+
+The second heredoc syntax is taken from programming languages, using `<<MARKER` to start the block, and `MARKER` on a line to end the block. `MARKER` can be any combination of uppercase alphabetical characters (basic latin A-Z only).
+
+Like the Markdown syntax, all content between the start and end markers will be outdented to the level of the first line.
+
+```bunch
+my_var = <<EOFILE
+         line one
+         all of this will be outdented
+         line three
+         EOFILE
+```
+
+{% endavailable %}
+
+{% available 119 %}
+
+#### Snippet/External File {#snippet}
+
+You can also use Bunch's snippet syntax when defining a variable, including fragment support.
+
+```bunch
+my_var = <external.snippet
+```
+
+The contents of the file `external.snippet` (relative to your Bunch folder) will be imported as the value of `my_var`. If the file you're importing makes use of [fragments]({{ site.baseurl }}/docs/bunch-files/snippets/#fragments), you can specify that with `<external.snippet#fragment name`.
+
+This syntax also supports [embedded snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets), e.g. `my_var = <<#Text Section`. As long as nothing else is trying to execute the text section as Bunch lines, you can include any text you want in the embedded snippet or fragment.
+
+{% endavailable %}
 
 ### In Frontmatter
 
@@ -172,6 +239,41 @@ Because variables can be set in multiple ways, you need to be aware of which val
 7. Variable __default values__
 8. Global Variables
 
+## Variable Parsing Order (Modifying Values at Runtime)
+
+Bunch is not (yet) an actual compiler, so things like scope and sequence are different from a scripting language.
+
+Variable placeholders are replaced as soon as their value is known, and variables assigned inside of conditional logic are parsed after placeholders outside of the condition are already updated. 
+
+For example, we assign a variable at the top of the Bunch or in frontmatter, then in a conditional block we append more text to its value, and then at the end we use the value in a placeholder. The value at the end will be replaced with the initial value before the conditional block appends the new value, so the changes within the conditional block won't be reflected in the final use of the placeholder.
+
+To illustrate, the example below will log "Prefix text", as the `appended text` isn't added until after the placeholder in the log statement is already replaced:
+
+```bunch
+final_text = Prefix text
+
+if append
+    final_text = ${final_text} appended text
+end
+
+(log ${final_text})
+```
+
+The solution to the above example is to use a different value for the initial value and the appended value. If our first variable is defined as `pre_text = Prefix`, and then in the conditional block we use `final_text = ${pre_text} appended text`, then we can use `${final_text}` in our placeholder at the end, and it won't be replaced until `final_text` receives its value.
+
+Solution:
+
+```bunch
+pre_text = Prefix text
+
+if true
+    final_text = ${pre_text} appended text
+else
+    final_text = ${pre_text}
+end
+
+(log ${final_text})
+```
 
 ## Using Variables {#usingvariables}
 
@@ -209,7 +311,7 @@ Transforms can be used in addition to [default values](#defaultvalues): `${VarNa
 
 #### Newlines
 
-When variables are assigned values containing newlines, usually through script output, the newlines are converted to the characters "\n". When output as `/raw`, these are converted back into actual newlines. This allows contents to be used as part of a Bunch. Say for example you had a text file containing a list of options, perhaps dynamically generated:
+When variables are assigned values containing newlines, usually through script output or [heredoc syntax](#heredoc), the newlines are converted to the characters "\n". When output as `/raw`, these are converted back into actual newlines. This allows contents to be used as part of a Bunch. Say for example you had a text file containing a list of options, perhaps dynamically generated:
 
 ```
 Option 1 => Value 1
@@ -227,6 +329,9 @@ result = ?{${my_menu/raw}}
 When performing `/url` transforms, "\n" is first converted to actual newlines, and then the newlines are percent encoded.
 
 When performing `/shell` transforms, "\n" is left as is, and not double-escaped. Output with `echo -e`, this results in an actual newline being echoed.
+
+> Tip: If you want to use a variable containing newlines in a shell command, you can use `$'${variable_name}'` to have the shell (`/bin/sh`) respect the newlines as part of the argument. So if your variable contains `one\ntwo`, you could use `$ say $'${variable/shell}'` and you would get the expected results (you Mac would say "one two").
+{:.tip}
 
 When performing `/typed` transforms, "\n" is converted to `\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.
 

@@ -140,9 +140,9 @@ run after close: postscript.sh
 ---
 ```
 
-## Tagging
+{% available 119 %}
 
-{% include betafeature.md %}
+## Tagging
 
 You can add tags to a Bunch using the `tags:` key:
 
@@ -156,6 +156,8 @@ tags: tag1, tag2
 These tags can be used for [organizing Bunches]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#tags) into groups, allowing you to control multiple Bunches at once from the Bunch menu.
 
 You can also open and close tagged groups of Bunches from within a Bunch using `\tagname`. See the [documentation here]({{ site.baseurl }}/docs/bunch-files/tags/).
+
+{% endavailable %}
 
 ## Arbitrary Keys as Default Variable Values {#arbitrarykeys}
 

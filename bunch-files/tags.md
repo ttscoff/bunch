@@ -4,7 +4,9 @@ title: Tags
 parent: Bunch Files
 tags: [tag]
 ---
-{% include betafeature.md %}
+{% availablenotif 119 %}
+
+# Organizing With Tags
 
 You can add `tags:` frontmatter to a Bunch for organization and batch operations.
 
