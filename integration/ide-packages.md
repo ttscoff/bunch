@@ -13,6 +13,7 @@ tags: [integration,sublime,editor]
 [sublime]: https://github.com/ttscoff/Sublime-Bunch
 [package control]: https://packagecontrol.io/packages/Bunch
 [textmate]: https://github.com/kotfu/Bunch.tmbundle
+[vscode]: https://github.com/ttscoff/VSCode-bunch
 
 ## Sublime Text
 
@@ -40,20 +41,22 @@ Kotfu created a [TextMate bundle][textmate] which includes:
 
 {% img aligncenter /images/bunch-tmbundle-dark-cobalt.png %}
 
-## VS Code
+## Visual Studio Code
 
-I don't personally use VS Code much, and there hasn't currently been an extension submitted for it. However, I took a minute and converted the syntax definition from kotfu's TextMate package and bundled it into [a rough draft of a VS Code extension](https://github.com/ttscoff/VSCode-Bunch).
+Kotfu also created a Bunch extension for Visual Studio Code which is available in the Visual Studio Code Marketplace. When you open a bunch file in Visual Studio Code you will be prompted you to install the extension. To install the extension manually:
 
-To install, download the entire repo to your `~/.vscode/extensions` folder. You can just git clone it there:
+- Launch Visual Studio Code
+- Click the "Extensions" button in the sidebar
+- Search for "Bunch" and click on the one with the icon showing the bunch of grapes
+- Click "Install"
 
-```bash
-cd ~/.vscode/extensions
-git clone https://github.com/ttscoff/VSCode-Bunch
-```
+Visual Studio Code will keep the extension updated as new versions are released.
 
-(Restart VS Code after installing)
+This extension includes:
 
-This will give you syntax highlighting for Bunch files (any file ending in `.bunch`, `.bunchsnippet`, or `.frontmatter`). It doesn't currently do anything else. If you're interested in developing this extension, just let me know. Happy to add maintainers to the existing repo, or replace it with your own.
+- Syntax highlighting for Bunch files and Snippets
+
+The source code is available [on GitHub][vscode].
 
 {% img aligncenter /images/bunch-vscode.jpg %}
 
