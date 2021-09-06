@@ -10,83 +10,92 @@ page_id: changelog
 
 {% docdiff %}
 
+
+{% available 120 %}
+---
+
+1.4.5 (β120)
+: {% icon new %} Add "Untagged" submenu to tags menu
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
+{% endavailable %}
+
 ---
 
 1.4.5 (β119)
-: [Heredoc support for shell commands]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#heredoc)
-: [Snippet syntax support for script lines]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#snippet) (`$ <file#fragment`)
-: [Heredoc support for variable assignments]({{ site.baseurl }}/docs/bunch-files/scripts/variables/#heredoc)
-: [Snippet syntax support for variable assignment]({{ site.baseurl }}/docs/bunch-files/variables/#snippet) (`var = <file#fragment`)
-: [Submenu with bunches listed by tag]({{ site.baseurl }}/docs/bunch-files/organizing-bunches/#tags)
-: [AppleScript "open/close/toggle/list bunches tagged"]({{ site.baseurl }}/docs/bunch-files/integration/applescript/#tags)
-: [URL handler for open/close/toggle commands accepts "tag=X" as optional replacement for "bunch=X"]({{ site.baseurl }}/docs/bunch-files/integration/url-handler/#tags)
-: Variable placeholders no longer require removing spaces from variable names
-: Better truncation of long script paths/names in running scripts menu
-: Fix: Don't register `var_name = ${old_var}` as a shell script assignment
-: Fix: Remove "tag:" key from folder frontmatter
-: Fix: Action buttons on script error dialogs not opening Bunch Log
-: Fix: Remove single and double quotes from ends of frontmatter values
+: {% icon new %} [Heredoc support for shell commands]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#heredoc)
+: {% icon new %} [Snippet syntax support for script lines]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#snippet) (`$ <file#fragment`)
+: {% icon new %} [Heredoc support for variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#heredoc)
+: {% icon new %} [Snippet syntax support for variable assignment]({{ site.baseurl }}/docs/bunch-files/variables/#snippet) (`var = <file#fragment`)
+: {% icon new %} [Submenu with bunches listed by tag]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#tags)
+: {% icon new %} [AppleScript "open/close/toggle/list bunches tagged"]({{ site.baseurl }}/docs/integration/applescript/#tags)
+: {% icon new %} [URL handler for open/close/toggle commands accepts "tag=X" as optional replacement for "bunch=X"]({{ site.baseurl }}/docs/integration/url-handler/#tags)
+: {% icon imp %} Variable placeholders no longer require removing spaces from variable names
+: {% icon imp %} Better truncation of long script paths/names in running scripts menu
+: {% icon fix %} Don't register `var_name = ${old_var}` as a shell script assignment
+: {% icon fix %} Remove "tag:" key from folder frontmatter
+: {% icon fix %} Action buttons on script error dialogs not opening Bunch Log
+: {% icon fix %} Remove single and double quotes from ends of frontmatter values
 
 ---
    
 1.4.4
-: Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
-: Better replacement of variable placeholders that are populated mid-stream
-: Rewrite of Do Not Disturb handling on Big Sur and later
-: Fix case sensitivity when replacing variable placeholders
-: Improved variable (re)assignment inside of conditional logic blocks
+: {% icon new %} Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
+: {% icon imp %} Better replacement of variable placeholders that are populated mid-stream
+: {% icon imp %} Rewrite of Do Not Disturb handling on Big Sur and later
+: {% icon imp %} Improved variable (re)assignment inside of conditional logic blocks
+: {% icon bug %} Fix case sensitivity when replacing variable placeholders
 
 ---
 
 1.4.3
-: Fix: Reversible commands not reversing when closing a bunch
-: Fix: Do Not Disturb not disabling
-: Fix: If Bunches are open when changing the "Toggle Bunches" preference to OFF, register them as closed so they can be opened again
-: Fix: If a Bunch is open when it's changed to `toggles: false`, reset its open state so it can be opened again
-: Fix: If a multiple choice dialog sets a variable in an opens-only Bunch, reset the variable after opening so the dialog appears again next time
+: {% icon bug red %} Reversible commands not reversing when closing a bunch
+: {% icon bug red %} Do Not Disturb not disabling
+: {% icon bug red %} If Bunches are open when changing the "Toggle Bunches" preference to OFF, register them as closed so they can be opened again
+: {% icon bug red %} If a Bunch is open when it's changed to `toggles: false`, reset its open state so it can be opened again
+: {% icon bug red %} If a multiple choice dialog sets a variable in an opens-only Bunch, reset the variable after opening so the dialog appears again next time
 
 ---
 
 1.4.1
-: Allow variable placeholders in "run before/after" frontmatter scripts
-: Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)
-: Remove superfluous log statements
-: Fix: Empty comment lines stopping processing
+: {% icon imp %} Allow variable placeholders in "run before/after" frontmatter scripts
+: {% icon imp %} Allow Coherence X apps to function properly if referred to by bundle identifier (e.g. com.BZG.CoherenceMyApp)
+: {% icon imp %} Remove superfluous log statements
+: {% icon bug red %} Empty comment lines stopping processing
 
 ---
 
 1.4.0 (β110)
-: Attempt to quit an app even if it's not immediately located among running apps
-: Fix: Don't convert app name to value of localizedName property, fixes issues with iTerm. Trying too hard is detrimental, apparently.
-: Fix: Don't automatically quit Finder if included in a Bunch
+: {% icon imp %} Attempt to quit an app even if it's not immediately located among running apps
+: {% icon bug red %} Don't convert app name to value of localizedName property, fixes issues with iTerm. Trying too hard is detrimental, apparently.
+: {% icon bug red %} Don't automatically quit Finder if included in a Bunch
 
 ---
 
 1.4.0 (β109)
 
-: Allow `!!!Triple Negative` to quit an app when closing a Bunch without launching on open
-: `space:all` parameter for `(display)` command to cause a display window to join all spaces
-: Special handling for "FileMaker Pro 18 Advanced"
-: Switch to using mdfind as backup app locator
-: Convert some Info-level log messages to Debug-level for cleaner log output
+: {% icon new %} Allow `!!!Triple Negative` to quit an app when closing a Bunch without launching on open
+: {% icon new %} `space:all` parameter for `(display)` command to cause a display window to join all spaces
+: {% icon imp %} Special handling for "FileMaker Pro 18 Advanced"
+: {% icon imp %} Switch to using mdfind as backup app locator
+: {% icon imp %} Convert some Info-level log messages to Debug-level for cleaner log output
 
 ---
 
 1.4.0 (β108)
 
-: Frontmatter keys for running scripts before/after opening a Bunch, and before/after closing
-: Variables can hold values with newlines
-: Perform pre-defined transformations on variable values (url encode, shell escape, raw newlines, newlines for typed strings)
-: Percent encode newlines
-: Do some translating on built-in frontmatter keys to allow for some variations in syntax
-: URL encoding of variables now encodes question marks and other symbols not allowed in URL paths
-: Limit length of info logging messages to 50 characters
-: Process variable assignments in document order
-: Process variable assignment dialogs inline with other variables, allowing dynamically-assigned variables to be used in dialogs
-: Fix: Remove Bunch-specific frontmatter keys from variables passed to Waiting Snippets
-: Fix: Prevent backslash escapes from disappearing from values during variable assignment
-: Fix: Don't change case when logging commands
-: Fix: Make variables available prior to processing shell script variable assignments
+: {% icon new %} Frontmatter keys for running scripts before/after opening a Bunch, and before/after closing
+: {% icon new %} Variables can hold values with newlines
+: {% icon new %} Perform pre-defined transformations on variable values (url encode, shell escape, raw newlines, newlines for typed strings)
+: {% icon imp %} Percent encode newlines
+: {% icon imp %} Do some translating on built-in frontmatter keys to allow for some variations in syntax
+: {% icon imp %} URL encoding of variables now encodes question marks and other symbols not allowed in URL paths
+: {% icon imp %} Limit length of info logging messages to 50 characters
+: {% icon imp %} Process variable assignments in document order
+: {% icon imp %} Process variable assignment dialogs inline with other variables, allowing dynamically-assigned variables to be used in dialogs
+: {% icon bug red %} Remove Bunch-specific frontmatter keys from variables passed to Waiting Snippets
+: {% icon bug red %} Prevent backslash escapes from disappearing from values during variable assignment
+: {% icon bug red %} Don't change case when logging commands
+: {% icon bug red %} Make variables available prior to processing shell script variable assignments
 
 ---
 
@@ -98,8 +107,8 @@ page_id: changelog
 : Better searching for apps NSWorkspace doesn't recognize as apps by name
 : If Bunch Item type is Unknown, consider it an app name that wasn’t found and make an attempt to launch it anyway
 : `if VarName` condition with no operator will return true if `VarName` is defined and contains ANY content other than `false` or `no`.
-: Fix: Make `if VarName` conditions case insensitive
-: Fix: Process snippets within conditions
+: {% icon bug red %} Make `if VarName` conditions case insensitive
+: {% icon bug red %} Process snippets within conditions
 
 ---
 
@@ -116,9 +125,9 @@ page_id: changelog
 : Slightly more reliable hiding and focusing of apps, including forcing any apps before an @focus line to launch hidden (previously just relied on activateHidingOthers)
 : Better formatting of long scripts in Running Scripts menu
 : Allow setting actual window background color for (display) windows
-: Fix: A Bunch with no frontmatter or non-comment items in the Bunch folder was causing the entire menu to be empty
-: Fix: Remove Bunch default keys from frontmatter when inherited by child Bunches (launched by another Bunch)
-: Fix: (input source) command now performs all actions on main thread (crasher)
+: {% icon bug red %} A Bunch with no frontmatter or non-comment items in the Bunch folder was causing the entire menu to be empty
+: {% icon bug red %} Remove Bunch default keys from frontmatter when inherited by child Bunches (launched by another Bunch)
+: {% icon bug red %} (input source) command now performs all actions on main thread (crasher)
 
 ---
 
@@ -130,8 +139,8 @@ page_id: changelog
 ---
 
 1.4.0 (β102)
-: Fix: Variables set in parent Bunch are now available to Waiting Snippets
-: Fix: Allow HTML display command to handle non-HTTP url schemes
+: {% icon bug red %} Variables set in parent Bunch are now available to Waiting Snippets
+: {% icon bug red %} Allow HTML display command to handle non-HTTP url schemes
 : Fixes for Example Bunch
 
 ---
@@ -139,15 +148,15 @@ page_id: changelog
 1.4.0 (β101)
 : Special handling for Visual Studio Code when attempting to quit the app
 : `(input source XXX)` command to switch keyboard input source
-: Fix: Change "Clear Checkmarks" shortcut to Control-Option-Command-R
-: Fix: Don't trigger `screen` commands on wake from sleep if parent Bunch isn't open
+: {% icon bug red %} Change "Clear Checkmarks" shortcut to Control-Option-Command-R
+: {% icon bug red %} Don't trigger `screen` commands on wake from sleep if parent Bunch isn't open
 : Create checkbox dialogs to handle optional launching of multiple apps/snippets in one dialog
 : Present dialogs in the order they’re listed in the Bunch
 
 ---
 
 1.4.0 (β99)
-: Fix: Running an AppleScript file with a `*` line wasn't actually running anything
+: {% icon bug red %} Running an AppleScript file with a `*` line wasn't actually running anything
 
 ---
 
@@ -158,15 +167,15 @@ page_id: changelog
 : If/then blocks can set/change variables before next block is processed
 : All Snippets (including Waiting Snippets) inherit their parent's frontmatter so variables carry forward
 : Allow [global variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#global) that persist across launches and are available in all Bunches
-: Fix: Don't parse = in URLs as a variable assignment
-: Fix: Notification issue when assigning a variable with an AppleScript and the script fails
-: Fix: `from script` variable assignments becoming empty
-: Fix: Allow spaces and underscores in `var = $ script` assignments
-: Fix: Variable placeholders don't have to be lowercased to match
-: Fix: If processing a script as AppleScript fails, attempt to execute as shell script (JXA scripts executed with `* script` items return error)
-: Fix: Allow arguments to be passed when assigning variables with script results
-: Fix: Don't strip underscores from variable keys in `key_name = $"Query"` assignments
-: Fix: Bug with running AppleScript commands in serial execution
+: {% icon bug red %} Don't parse = in URLs as a variable assignment
+: {% icon bug red %} Notification issue when assigning a variable with an AppleScript and the script fails
+: {% icon bug red %} `from script` variable assignments becoming empty
+: {% icon bug red %} Allow spaces and underscores in `var = $ script` assignments
+: {% icon bug red %} Variable placeholders don't have to be lowercased to match
+: {% icon bug red %} If processing a script as AppleScript fails, attempt to execute as shell script (JXA scripts executed with `* script` items return error)
+: {% icon bug red %} Allow arguments to be passed when assigning variables with script results
+: {% icon bug red %} Don't strip underscores from variable keys in `key_name = $"Query"` assignments
+: {% icon bug red %} Bug with running AppleScript commands in serial execution
 
 ---
 
@@ -177,8 +186,8 @@ page_id: changelog
 ---
 
 1.4.0 (β92)
-: Fix: Handle edge case where running applications includes an app that doesn't return an app name
-: Fix: Error checking for string manipulation functions
+: {% icon bug red %} Handle edge case where running applications includes an app that doesn't return an app name
+: {% icon bug red %} Error checking for string manipulation functions
 
 ---
 
@@ -187,9 +196,9 @@ page_id: changelog
 : Add user agent setting to HTML display windows to allow forcing Desktop or Mobile views regardless of window size (`ua:desktop`)
 : Fully activate an app when @focusing it
 : Update all internal links to point to bunchapp.co
-: Fix: Replace deprecated preference storage methods
-: Fix: Spelling error in preferences (Thanks Jay)
-: Fix: Directly close preference view rather than relying on a notification
+: {% icon bug red %} Replace deprecated preference storage methods
+: {% icon bug red %} Spelling error in preferences (Thanks Jay)
+: {% icon bug red %} Directly close preference view rather than relying on a notification
 
 ---
 
@@ -201,8 +210,8 @@ page_id: changelog
 ---
 
 1.4.0 (β87)
-: Fix: Double trimming brackets on on-quit commands
-: Fix: Edge case where canceling a multiple choice dialog left Bunch with an empty string
+: {% icon bug red %} Double trimming brackets on on-quit commands
+: {% icon bug red %} Edge case where canceling a multiple choice dialog left Bunch with an empty string
 
 ---
 
@@ -215,8 +224,8 @@ page_id: changelog
 ---
 
 1.4.0 (β85)
-: Fix: Subfolder name appearing in menu item titles
-: Fix: URL handler calling open or close wasn't ignoring current state
+: {% icon bug red %} Subfolder name appearing in menu item titles
+: {% icon bug red %} URL handler calling open or close wasn't ignoring current state
 
 ---
 
@@ -237,8 +246,8 @@ page_id: changelog
 1.4.0 (β83)
 : !X syntax for inserting pauses [in key commands]({{ site.baseurl }}/docs/bunch-files/keystrokes/#combopause) and [typed strings]({{ site.baseurl }}/docs/bunch-files/keystrokes/#typedpause)
 : (display) command accepts `chrome:none` for windows with no title bar or buttons
-: Fix: Force apps to foreground before sending key combos
-: Fix: Pause Bunch item processing while sending key commands for better consistency
+: {% icon bug red %} Force apps to foreground before sending key combos
+: {% icon bug red %} Pause Bunch item processing while sending key commands for better consistency
 : Bring all windows to foreground when Unhiding All Windows
 : Automatically resolve tildes (`~`) in shell command arguments to user's home directory
 : Waiting Snippet waits for up to 10 seconds for presence of main window before considering an app launched.
@@ -260,8 +269,8 @@ page_id: changelog
 : More complete emoji handling
 : Add keyboard shortcut for Open Log (⇧⌘L)
 : Wait for Bunch commands and script items when executing sequentially
-: Fix: Regression in schedule handling
-: Fix: Fixes for changing Bunch Folder preferences and storing recents
+: {% icon bug red %} Regression in schedule handling
+: {% icon bug red %} Fixes for changing Bunch Folder preferences and storing recents
 
 ---
 
@@ -271,8 +280,8 @@ page_id: changelog
 : Enable edit menu commands (copy/paste/etc.) in display commands windows
 : Don't cut top off scrolling quick look previews
 : Allow text preview/file watching of any file with a text mime-type, not just .txt and .log
-: Fix: Ensure all window updates happen on the main thread
-: Fix: Quick Look windows via `display` command set to wallpaper level were empty
+: {% icon bug red %} Ensure all window updates happen on the main thread
+: {% icon bug red %} Quick Look windows via `display` command set to wallpaper level were empty
 
 ---
 
@@ -288,8 +297,8 @@ page_id: changelog
 : Move what can be truly executed in the background from async on main thread to a background thread
 : Give Quick Look previews in display command their own positionable window
 : Window titles for text and html display windows
-: Fix: Attempt to fix Preference layout on 10.13
-: Fix: Open-only Bunches not launching
+: {% icon bug red %} Attempt to fix Preference layout on 10.13
+: {% icon bug red %} Open-only Bunches not launching
 
 ---
 
@@ -332,17 +341,17 @@ page_id: changelog
 : Default to menu bar application, show Dock if preferred
 : Reduce transparency on preference window to improve legibility
 : Better image/text contrast for Welcome splash and Preferences
-: Fix: file watchers not deallocating
-: Fix: Don't make preference window float above all other windows if running in Dock mode
-: Fix: allow Bunch main menu to appear when run in Dock Mode
-: Fix: Remove notification and stop timer when countdown clicked
-: Fix: F1-F12 not working as {keyboard combos}
-: Fix: Process variables before importing snippets so that placeholders can be used for snippet fragments (`<snippet#${fragmentvar}`)
-: Fix: Keyboard focus for popups buttons and text fields in interactive dialogs
-: Fix: Scheduled open/close being invalidated after opening
-: Fix: Allow keyboard focus for popup buttons and text fields in interactive dialogs
-: Fix: Shell scripts in sequential mode fully wait for previous task to complete
-: Fix: Close Items in wouldn't close if the Bunch wasn't open, now forces
+: {% icon bug red %} file watchers not deallocating
+: {% icon bug red %} Don't make preference window float above all other windows if running in Dock mode
+: {% icon bug red %} allow Bunch main menu to appear when run in Dock Mode
+: {% icon bug red %} Remove notification and stop timer when countdown clicked
+: {% icon bug red %} F1-F12 not working as {keyboard combos}
+: {% icon bug red %} Process variables before importing snippets so that placeholders can be used for snippet fragments (`<snippet#${fragmentvar}`)
+: {% icon bug red %} Keyboard focus for popups buttons and text fields in interactive dialogs
+: {% icon bug red %} Scheduled open/close being invalidated after opening
+: {% icon bug red %} Allow keyboard focus for popup buttons and text fields in interactive dialogs
+: {% icon bug red %} Shell scripts in sequential mode fully wait for previous task to complete
+: {% icon bug red %} Close Items in wouldn't close if the Bunch wasn't open, now forces
 
 ---
 
