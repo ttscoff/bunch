@@ -14,7 +14,7 @@ tags: [interactivity,frontmatter,snippets,variables,example,apps,basics]
 
 These are mostly Bunches that I (Brett, the developer) use. Several of them incorporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include my snippet files just to let you see what's going on. Anything in an Embedded Snippet can be moved to an external file as desired.
 
-These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening.
+These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening. 
 
 ## Example.bunch
 
