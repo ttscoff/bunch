@@ -58,7 +58,7 @@ This extension includes:
 
 The source code is available [on GitHub][vscode].
 
-{% img aligncenter /images/bunch-vscode.jpg %}
+{% img aligncenter /images/vs-code-dark-theme-screenshot.png %}
 
 ## Contributions Welcome
 
