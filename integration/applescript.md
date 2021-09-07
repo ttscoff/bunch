@@ -14,7 +14,7 @@ Bunch provides an AppleScript dictionary that you can use to open, close, and to
 * Table of Contents
 {:toc}
 
-## List Bunches
+## List all Bunches
 
 The following commands return AppleScript lists:
 
@@ -28,6 +28,7 @@ tell application "Bunch" to list open bunches
 
 ## Open, close, and toggle Bunches
 
+
 ```applescript
 tell application "Bunch" to open bunch "Comms"
 
@@ -40,6 +41,7 @@ end tell
 {% available 119 %}
 
 ## Acting on tagged Bunches {#tags}
+{:.method}
 
 You can also act on [tagged]({{ site.baseurl }}/docs/bunch-files/tags/) Bunches
 
@@ -120,3 +122,29 @@ When returning a preference, Bunch just looks for keywords. As long as the text 
 | "single"                | Single Bunch Mode |
 | "debug"                 | Debug Level (0-4) |
 | "preserve"              | Preserve Bunches  |
+
+{% available 120 %}
+
+## Refresh Browsers {#refresh}
+
+If your Bunches make use of the [display command]({{ site.baseurl }}/docs/bunch-files/commands/display/) to create single site browsers, you can reload their contents via AppleScript. This takes effect on all browsers opened by a Bunch, or you can affect _all_ open browsers. You can't currently target a specific browser window.
+
+To refresh every open browser:
+
+```applescript
+tell application "Bunch"
+    refresh browsers
+end tell
+```
+
+To refresh only browsers opened by a specific bunch:
+
+```applescript
+tell application "Bunch"
+    refresh browsers for bunch "Bunch Name"
+end
+```
+
+The bunch name is case insensitive and the best match will be targeted.
+
+{% endavailable %}
