@@ -10,6 +10,22 @@ page_id: changelog
 
 {% docdiff %}
 
+{% available 122 %}
+---
+
+1.4.5 (β122)
+: {% icon new %} Fancy new icon design by Felippe van Eekhout
+: {% icon new %} Add "Untagged" submenu to tags menu
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
+{% endavailable %}
+
+{% available 121 %}
+---
+
+1.4.5 (β121)
+: {% icon new %} Refresh all browsers AppleScript command
+: {% icon imp %} Allow (display) and ~delay syntax for heredoc scripts
+{% endavailable %}
 
 {% available 120 %}
 ---
@@ -19,6 +35,7 @@ page_id: changelog
 : {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
 {% endavailable %}
 
+{% available 119 %}
 ---
 
 1.4.5 (β119)
@@ -35,6 +52,7 @@ page_id: changelog
 : {% icon fix %} Remove "tag:" key from folder frontmatter
 : {% icon fix %} Action buttons on script error dialogs not opening Bunch Log
 : {% icon fix %} Remove single and double quotes from ends of frontmatter values
+{% endavailable %}
 
 ---
    

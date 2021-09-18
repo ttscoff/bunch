@@ -8,7 +8,7 @@ tags: [basics]
 
 Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. 
 
-{% img /images/bunchinstall-1200.jpg %}
+{% img aligncenter /images/bunchinstall-1200.jpg %}
 
 You can then launch Bunch from your Applications folder. (Or with Spotlight. Or [LaunchBar or Alfred]({{ site.baseurl }}/docs/integration/launchbar-and-alfred). Or [the command line]({{ site.baseurl }}/docs/integration/cli). Or [AppleScript]({{ site.baseurl }}/docs/integration/applescript)...)
 
