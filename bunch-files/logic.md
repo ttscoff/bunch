@@ -44,7 +44,7 @@ end
 
 ### Boolean Operators
 
-Conditions can be combined using "AND" and "OR". 
+Conditions can be combined using "AND" and "OR".
 
 ```bunch
 if condition 1 AND condition 2
@@ -103,14 +103,14 @@ Bunch Phase
 
 	`self is opening`      | Current Bunch is opening
 	`self is closing`      | Current Bunch is closing
-	`BunchName is opening` | Test another Bunch such as a 
+	`BunchName is opening` | Test another Bunch such as a
 	^^                     | ^^ parent Bunch which opened this Bunch
 
 Bunch State
 : Test if another Bunch is currently open or closed.
 	
 	`BunchName is open`   | Bunch is currently open
-	`BunchName is closed` | Bunch is currently closed. 
+	`BunchName is closed` | Bunch is currently closed.
 	^^                    |^^ Also works as `BunchName is not open`
 
 Parent
@@ -134,7 +134,7 @@ App is running
 	`is` is optional in all tests, so this works as `AppName running`, `AppName not running`
 
 Numeric
-: Test a variable's contents numerically. Conditions can be written out or represented with mathematical symbols. 
+: Test a variable's contents numerically. Conditions can be written out or represented with mathematical symbols.
 
 	All conditions can be negated with `not`, e.g. `var_name is not less than` is the same as `var_name is greater than or equal to`. Symbols can be negated with `!`, e.g. `var_name !<= 5`.
 
@@ -142,14 +142,14 @@ Numeric
 	
 	Natural language | Symbolic
 	:------ | :------
-	`is less than` | `var_name < 5`  
-	`is less than or equal` | `var_name <= 5`  
-	`is greater than` | `var_name > 1`  
-	`is greater than or equal to` | `var_name >= 3`  
-	`equals` / `is equal` / `is` | `var_name == 2`  
+	`is less than` | `var_name < 5`
+	`is less than or equal` | `var_name <= 5`
+	`is greater than` | `var_name > 1`
+	`is greater than or equal to` | `var_name >= 3`
+	`equals` / `is equal` / `is` | `var_name == 2`
 
 Text
-: Compare variable contents as a string. Comparisons are always case insensitive. 
+: Compare variable contents as a string. Comparisons are always case insensitive.
 
 	Example: `if var_name contains "complete"`
 	
@@ -161,7 +161,7 @@ Text
 	`contains` / `does not contain` | `*=` / `!*=`
 
 "Truthy"
-: If the string being compared to is "yes", "no", "true", or "false", the comparison is "truthy", meaning it's registered as a boolean (true/false), and if the variable starts with "t", "y", or a number greater than 0, it matches true, and if it starts with "n", "f", or zero, it matches false. 
+: If the string being compared to is "yes", "no", "true", or "false", the comparison is "truthy", meaning it's registered as a boolean (true/false), and if the variable starts with "t", "y", or a number greater than 0, it matches true, and if it starts with "n", "f", or zero, it matches false.
 : I.e. if `var_name` is set to "yes" and the condition is `if var_name is true`, the condition will pass.
 
 

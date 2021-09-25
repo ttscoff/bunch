@@ -7,7 +7,7 @@ tags: [log,scripts,debug]
 ---
 # Debugging Scripts Run By Bunch
 
-STDOUT and STDERR from scripts run by Bunch are reported in the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log), if your Log Level is set to Debug (__Help -> Set Log Level__). 
+STDOUT and STDERR from scripts run by Bunch are reported in the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log), if your Log Level is set to Debug (__Help -> Set Log Level__).
 
 If your script is returning an exit code other than 0 and there's content in STDERR, the script will produce an error in the log. All pertinent error messages will be shown.
 

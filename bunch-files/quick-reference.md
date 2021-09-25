@@ -8,7 +8,7 @@ tags: [example]
 ---
 # Quick Reference
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -42,13 +42,13 @@ tags: [example]
 |__Bunch Commands__||
 |`(command)`|_Run a [Bunch command]({{ site.baseurl }}/docs/bunch-files/commands/)_|
 | `(dark mode [on|off])` | dark mode on/off |
-| `(do not disturb [on|off])` | do not disturb on/off | 
-| `([hide|show] dock)` | hide/show dock | 
-| `(dock [left|right|bottom])` | dock left/right/bottom | 
-| `([hide|show] desktop)` | hide/show desktop | 
-| `(wallpaper [path(s)])` | change wallpaper | 
-| `(audio [input|output] device_name)` | audio input/output | 
-| `(audio [input|output] volume [0-100])` | audio volume | 
+| `(do not disturb [on|off])` | do not disturb on/off |
+| `([hide|show] dock)` | hide/show dock |
+| `(dock [left|right|bottom])` | dock left/right/bottom |
+| `([hide|show] desktop)` | hide/show desktop |
+| `(wallpaper [path(s)])` | change wallpaper |
+| `(audio [input|output] device_name)` | audio input/output |
+| `(audio [input|output] volume [0-100])` | audio volume |
 | `(audio [input|output] [mute|unmute])`| mute/unmute  audio |
 |__AppleScripts__||
 |`* AppleScript command`|_[Execute Applescript]({{ site.baseurl }}/docs/bunch-files/scripts/applescript/)_|

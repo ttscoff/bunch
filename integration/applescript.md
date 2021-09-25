@@ -107,7 +107,7 @@ You can retrieve several of Bunch's preferences using AppleScript, which avoids 
 
 ```applescript
 tell application "Bunch"
-   get preference "Bunch Folder" 
+   get preference "Bunch Folder"
 end tell
 ```
 

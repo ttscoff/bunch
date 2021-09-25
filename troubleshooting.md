@@ -12,7 +12,7 @@ tags: [error,debug,log,problem]
 
 ## Debugging Bunches {#debugging}
 
-If you're having issues with a Bunch not doing what you expected, consult the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log) to see if you can trace the issue. 
+If you're having issues with a Bunch not doing what you expected, consult the [Bunch Log]({{ site.baseurl }}/docs/using-bunch/bunch-log) to see if you can trace the issue.
 
 If needed, split out sections of a longer Bunch into temporary smaller Bunches and test them one at a time to narrow down any issues. Or just create one new, blank Bunch and copy one line at a time into it from the misbehaving Bunch, launching it for each now line until the behavior you're trying to avoid happens, thus narrowing it down to that line.
 
@@ -39,7 +39,7 @@ The first thing to try when tracking down the name an app responds to is to open
 
 #### Method 1: From Finder
 
-If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (CTRL-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`. 
+If that fails, you can locate the app in Finder (easy to do by {% kbd ⌘ %}-clicking the app icon in the Dock while it's running). Right click (CTRL-click) on the app and choose [Show Package Contents]. Inside the "Contents" folder you'll find `Info.plist`.
 
 If `Info.plist` is in text format (they usually are), you can open it in your text editor and locate the key `CFBundleName`. If it's different than the display name, try that in your Bunch.
 
@@ -75,7 +75,7 @@ If all of these fail, please do leave a note on the [discussion forums]({{ site.
 ### Known Exceptions
 
 > In cases where an app responds to one name when launching but needs a different name to quit the running application (such as those detailed below), you can use a [triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative) to quit an app using a different name when closing.
-> 
+>
 > ```bunch
 > %FileMaker Pro 18 Advanced
 > !!!FileMaker Pro Advanced
@@ -86,7 +86,7 @@ If all of these fail, please do leave a note on the [discussion forums]({{ site.
 
 Single Site Browser's created using [Coherence X](https://www.bzgapps.com/buycoherence) suffer all kinds of problems in Bunch. They can't be launched if Chrome is running, you can't launch more than one, and once they're launched, quitting them is hit and miss, depending on what else is running. This is because they launch multiple instances of Chrome that NSWorkspace can't identify as separate applications.
 
-As of v1.4.1, Bunch has a built-in workaround for this. You need to refer to the applications by their bundle identifier. This will usually be `com.BZG.Coherence[Name of App]`, but sometimes (for reasons I'm unclear on) is just `com.[Name of App]`. So for an app called MindMeister, the bundle id would be `com.BZG.CoherenceMindMeister`, or possibly `com.MindMeister`. Try both, or see ["Using the Bundle Identifier"](#bundleid) to track it down yourself. 
+As of v1.4.1, Bunch has a built-in workaround for this. You need to refer to the applications by their bundle identifier. This will usually be `com.BZG.Coherence[Name of App]`, but sometimes (for reasons I'm unclear on) is just `com.[Name of App]`. So for an app called MindMeister, the bundle id would be `com.BZG.CoherenceMindMeister`, or possibly `com.MindMeister`. Try both, or see ["Using the Bundle Identifier"](#bundleid) to track it down yourself.
 
 If you use the correct bundle id instead of the app name in your Bunch, the app should be able to launch and quit, regardless of whether Chrome/Brave/Canary is running.
 
@@ -99,7 +99,7 @@ com.BZG.CoherenceMindMeister
 
 #### Logic Pro (X)
 
-__Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch, but "Logic Pro" to quit. Bunch has a workaround for this that should allow you to safely use "Logic Pro X" without issue. 
+__Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch, but "Logic Pro" to quit. Bunch has a workaround for this that should allow you to safely use "Logic Pro X" without issue.
 
 #### Visual Studio Code
 
@@ -107,7 +107,7 @@ __Logic Pro__ is a curious beast. It needs to be called "Logic Pro X" to launch,
 
 #### FileMaker Pro Advanced
 
-You can launch the current version with `FileMaker Pro 18 Advanced`, but Bunch can't quit using the same name. If you use `FileMaker Pro Advanced`, Bunch will be able to quit it if it's already running, but won't be able to launch it. 
+You can launch the current version with `FileMaker Pro 18 Advanced`, but Bunch can't quit using the same name. If you use `FileMaker Pro Advanced`, Bunch will be able to quit it if it's already running, but won't be able to launch it.
 
 In this case Bunch attempts to remove the number from the name when trying to quit the app, so use the numbered version in your Bunch, e.g. `FileMaker Pro 18 Advanced` or `FileMaker Pro 18`.
 

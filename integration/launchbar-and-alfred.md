@@ -15,7 +15,7 @@ Despite Bunch having plenty of its own [keyboard shortcuts]({{ site.baseurl }}/d
 
 Download the [Bunches Action for LaunchBar](https://cdn3.brettterpstra.com/downloads/Bunches2.0.3.zip)
 
-I've added a LaunchBar action for Bunch. Download, unzip it, then double click the unzipped action to install. 
+I've added a LaunchBar action for Bunch. Download, unzip it, then double click the unzipped action to install.
 
 Selecting the Bunch action in LaunchBar and pressing return will list your available Bunches. If you have "Toggle Bunches" enabled, selecting a Bunch from the list will toggle it (quitting apps if it's already been opened), otherwise it will simply open the Bunch. Each Bunch in the menu will also have a submenu you can access by pressing the right arrow which contains the actions (open, close, toggle) that aren't the default action.
 

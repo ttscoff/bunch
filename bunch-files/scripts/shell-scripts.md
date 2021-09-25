@@ -92,7 +92,7 @@ This works for both shell (`$`) and AppleScript (`*`) script lines. In most case
 
 ## Raw commands
 
-If the content of the `$` line is not a recognizable file, it will be executed with `/bin/sh -c`. It's possible to chain commands with `&&` and `||`. 
+If the content of the `$` line is not a recognizable file, it will be executed with `/bin/sh -c`. It's possible to chain commands with `&&` and `||`.
 
 It's not recommended that you background commands run by a Bunch (using `&`).
 
@@ -107,7 +107,7 @@ Within scripts you can also exit with a zero error code regardless of errors tha
 
 ## Arguments and environment variables {#argsandenv}
 
-You can specify direct arguments after the command or shell script path. As with [Automator Workflow]({{ site.baseurl }}/docs/bunch-files/scripts/automator-workflows) items, you can also use `- ...` lines below the script line to set environment variables. 
+You can specify direct arguments after the command or shell script path. As with [Automator Workflow]({{ site.baseurl }}/docs/bunch-files/scripts/automator-workflows) items, you can also use `- ...` lines below the script line to set environment variables.
 
 When Bunch launches it checks your default shell (`$SHELL`) and performs a login in the background to get your usual environment variables. Your path and any custom environment should be picked up before the first time you run a script.
 
@@ -166,23 +166,23 @@ Bunch doesn't do anything with the output of a command other than report it [in 
 
 ## Monitoring Scripts {#monitor}
 
-Scripts launched by a Bunch show up under "🔴 Shell Scripts" in the 
-Bunch menu. Clicking any script in the list will open a task monitor 
-for that script. The monitor shows STDOUT at the top, STDERR at the 
-bottom, and the status bar shows whether the task is running, paused, 
+Scripts launched by a Bunch show up under "🔴 Shell Scripts" in the
+Bunch menu. Clicking any script in the list will open a task monitor
+for that script. The monitor shows STDOUT at the top, STDERR at the
+bottom, and the status bar shows whether the task is running, paused,
 completed, or terminated along with any non-zero exit codes.
 
-> Closing the window does not terminate the task. Windows can be 
+> Closing the window does not terminate the task. Windows can be
 reopened at any time from the Shell Scripts menu.
 {:.tip}
 
-The display window understands ANSI colors and emoji in the script or 
+The display window understands ANSI colors and emoji in the script or
 command output.
 
-There's a Pause button that will suspend the primary task for the 
-monitor. If the primary task is a script that has launched 
-subprocesses (as most scripts do), those subprocesses will not be 
-paused by this button. When a script is paused the button will read 
+There's a Pause button that will suspend the primary task for the
+monitor. If the primary task is a script that has launched
+subprocesses (as most scripts do), those subprocesses will not be
+paused by this button. When a script is paused the button will read
 "Resume" and will resume the paused task when clicked.
 
 The Kill button will send a SIGSTOP command to the process. This should kill any child processes as well, assuming they haven't been run in the background by the script. Once a script is terminated or completed, the button changes to read "Restart" and clicking it will re-run the script or command.

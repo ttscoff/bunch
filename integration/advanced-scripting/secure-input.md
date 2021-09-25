@@ -16,7 +16,7 @@ Also see [Using Sudo]({{ site.baseurl }}/docs/integration/advanced-scripting/sud
 You can use the `from script` [frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter#dynamicfrontmatter) to implement a password dialog that can be passed on to your scripts. This could, for example, allow you to automate unlocking a keychain and getting a secure password for a scripted curl call. It also serves as an example of just getting interactive input for a script and could be applied to select dialogs, file select dialogs, and more.
 
 1. Create a script that uses AppleScript to show a dialog. This can be done in an actual AppleScript, or in a shell script that calls `osascript`. Here's a ruby example:
-	    
+	
 	```ruby
 	#!/usr/bin/env ruby
 	require 'yaml'
@@ -27,7 +27,7 @@ You can use the `from script` [frontmatter]({{ site.baseurl }}/docs/bunch-files/
 	
 	puts YAML.dump({'password' => password})
 	```
-    
+
     This displays a secure input dialog (secure in that the input is hidden) and returns the response formatted as YAML.
 2. Save the script in your Bunch folder as `mypasswordscript.rb`. Make the script executable (`chmod a+x mypasswordscript.rb`) and you can call it from a Bunch's frontmatter:
 
@@ -45,10 +45,10 @@ You can use the `from script` [frontmatter]({{ site.baseurl }}/docs/bunch-files/
     ---
     from script: mypasswordscript.rb
     ---
-    
+
     <<#Password Protected
     - user=ttscoff
-    
+
     ___
 
     ---[Password Protected]

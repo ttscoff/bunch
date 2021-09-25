@@ -6,7 +6,7 @@ tags: [integration,email,mailmate]
 ---
 # Integrating with MailMate
 
-You can use MailMate for sending automated emails. There's a utility included with MailMate called `emate`. To install it, run: 
+You can use MailMate for sending automated emails. There's a utility included with MailMate called `emate`. To install it, run:
 
 	ln -s /Applications/MailMate.app/Contents/Resources/emate /usr/local/bin/
 

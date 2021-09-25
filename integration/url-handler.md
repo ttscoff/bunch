@@ -26,7 +26,7 @@ Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and 
 > Just create an action that opens a URL and use something like:
 >
 > `x-bunch://toggle/BunchName`
->   
+>
 > to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
 
@@ -266,12 +266,12 @@ Additional variables
 **Examples**
 
 ```bash
-# Load a snippet file called "useful.snippets", 
-# targeting the "Music" section, and passing a 
+# Load a snippet file called "useful.snippets",
+# targeting the "Music" section, and passing a
 # value to the "playlist" variable, call:
 open 'x-bunch:​//snippet?file=useful.snippets&fragment=Music&playlist=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x'
 
-# Path syntax, loading "useful.snippets", targeting 
+# Path syntax, loading "useful.snippets", targeting
 # the "Speak" fragment, and passing two variables
 open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
 ```

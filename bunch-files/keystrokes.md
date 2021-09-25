@@ -6,7 +6,7 @@ tags: [keystrokes, apps, keyboard, combo, shortcut]
 ---
 # Sending keystrokes and combos
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -45,7 +45,7 @@ __Example:__ The Git app Tower doesn't respond to the AppleScript "close every w
 
 To send multiple shortcuts, just separate them with a space, i.e. `{@a @c @$~v}` to select all, copy, and paste without formatting in the specified app.
 
-You can include system keys (arrows, delete key, function keys, etc.) by using their name, such as `@~up` (Option-Command-Up Arrow) or `@$F12` (Shift-Command-F12). These can also be written as hyphenated strings using the longer formats for modifier keys, e.g. `cmd-opt-up` or even `command-option-up`. This format can still be combined with multiple keystrokes separated by spaces, e.g. `{opt-left cmd-up}` to hit Option-Left Arrow followed by Command-Up Arrow. 
+You can include system keys (arrows, delete key, function keys, etc.) by using their name, such as `@~up` (Option-Command-Up Arrow) or `@$F12` (Shift-Command-F12). These can also be written as hyphenated strings using the longer formats for modifier keys, e.g. `cmd-opt-up` or even `command-option-up`. This format can still be combined with multiple keystrokes separated by spaces, e.g. `{opt-left cmd-up}` to hit Option-Left Arrow followed by Command-Up Arrow.
 
 Keys can also be referenced by using their Unicode symbols like `↑`, `↓` `⌅`, and `␣`.
 

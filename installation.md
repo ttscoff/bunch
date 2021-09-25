@@ -6,7 +6,7 @@ tags: [basics]
 ---
 # Download And Install
 
-Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder. 
+Just {% download download the DMG %} and double click it to mount. Drag the Bunch icon to the Applications folder.
 
 {% img aligncenter /images/bunchinstall-1200.jpg %}
 

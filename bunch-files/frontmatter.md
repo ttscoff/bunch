@@ -6,7 +6,7 @@ tags: [frontmatter,variables]
 ---
 # Controlling Bunch With Frontmatter
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -97,7 +97,7 @@ You can totally use emoji in the frontmatter title and get a sweet looking menu 
 
 ### Customizing Menu Order {#sortorder}
 
-The "menu order" key defines the sort order of Bunches in the menu that Bunch displays. 
+The "menu order" key defines the sort order of Bunches in the menu that Bunch displays.
 
 Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
 
@@ -197,7 +197,7 @@ If using `${variables}` in a Bunch, be sure to include [default values]({{ site.
 
 You can use `from file` and `from script` to load in variables from external sources.
 
-A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. 
+A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths.
 
 > Remember that relative paths in Bunches within subfolders are still relative to the Bunch Folder, so if you want to reference `filename.txt` located in a subfolder, you should use `from file: Subfolder/filename.txt`, even if the Bunch itself is already in `Subfolder`.
 {:.warning}
@@ -214,7 +214,7 @@ You can also incorporate dialogs in a frontmatter script. See [advanced scriptin
 
 #### A Ridiculous Example
 {:.no_toc}
-    
+
 Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that reads additional data in from a script called `frontmatter.rb`:
 
 ```bunch

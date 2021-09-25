@@ -7,9 +7,9 @@ tags: [audio,command]
 ---
 # Audio Commands
 
-Change your system input and output devices, as well as control the volume of either. 
+Change your system input and output devices, as well as control the volume of either.
 
-To set an audio device, you just need to specify input or output, and then provide all or a unique part of the name of an existing device (case insensitive, first match wins). For example, `(audio input scarlett)` would set my system input to my Scarlett Solo. `(audio output io hub)` would change my system audio output to my iO Hub. 
+To set an audio device, you just need to specify input or output, and then provide all or a unique part of the name of an existing device (case insensitive, first match wins). For example, `(audio input scarlett)` would set my system input to my Scarlett Solo. `(audio output io hub)` would change my system audio output to my iO Hub.
 
 > The audio device names Bunch looks for are the same as what's in the volume menu in the menu bar. On Big Sur, open the control center and option-click on the Sounds title. On previous OSs, option-click the volume icon for a full list.
 {:.tip}

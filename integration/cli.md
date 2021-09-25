@@ -22,14 +22,14 @@ Run `bunch -h` for usage instructions.
 {% bunchcli help %}
 
 Example:
-    
+
     # Open or Toggle Coding.bunch
     bunch Coding
 
     # Force open Coding.bunch
     bunch -o Coding
 
-    
+
 The command line tool can also be used to generate Bunch URLs for use in other applications. To output any command as a URL instead of executing it, add `-u`:
 
     bunch -o Coding -u

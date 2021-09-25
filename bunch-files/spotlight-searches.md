@@ -6,7 +6,7 @@ tags: [apps,spotlight]
 ---
 # Using Spotlight Queries
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
