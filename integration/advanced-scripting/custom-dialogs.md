@@ -13,7 +13,7 @@ Bunch's [multiple choice interactivity feature]({{ site.baseurl }}/docs/bunch-fi
 
 Here's an example using `from script` frontmatter to let you pick from your favorite Spotify playlists or perform a Spotify search.
 
-The script is in JavaScript (for Automation) and saved in a `scripts` folder inside my Bunch folder. I can reference it with the relative path `scripts/ChoosePlaylist.applescript`. 
+The script is in JavaScript (for Automation) and saved in a `scripts` folder inside my Bunch folder. I can reference it with the relative path `scripts/ChoosePlaylist.applescript`.
 
 The script would take some modification with your own playlists and titles, but would be easy to change:
 
@@ -22,7 +22,7 @@ The script would take some modification with your own playlists and titles, but 
 
 var app = Application.currentApplication()
 app.includeStandardAdditions = true
-     
+
 var playlists = {
     "Mellow": "spotify:​playlist:37i9dQZF1E35F7NsH3aWbs",
     "Pop": "spotify:​playlist:37i9dQZF1E39mpAvbgovri",
@@ -83,7 +83,7 @@ ___
 -[Search Spotify]
 Spotify
 - ${spotifyurl}
-# Alternatively to the file parameter, 
+# Alternatively to the file parameter,
 # you could use this to start playing immediately:
 # * tell app "Spotify" to play track "${spotifyurl}"
 ```

@@ -27,7 +27,7 @@ Items executed will be treated as part of the Bunch, meaning they will be quit o
 
 The simplest syntax for multiple choice is an "array," which is just a list of items. Whatever the name of the choice is, that's what will be run, so it's mostly useful for selecting apps by name.
 
-An array is defined by `?[...]`. Items in an array are separated by either a comma or a newline, whitespace (indentation, blank lines) is ignored. 
+An array is defined by `?[...]`. Items in an array are separated by either a comma or a newline, whitespace (indentation, blank lines) is ignored.
 
 You can optionally include a title for the dialog after the closing bracket in double quotes on the same line as the right bracket.
 
@@ -90,7 +90,7 @@ Here's a query included in a "Coding" Bunch that asks me which project I'm tackl
 
 If you'd like multiple choice dialogs using checkboxes, you can use the Checkbox Array syntax. This consists of GitHub-style checkboxes followed by a title and the snippet or app to load.
 
-Start the lines with `-[ ]`. If the brackets contain "x" (`-[x]`), the checkbox will be initially checked. Title and value are separated by `=>`. 
+Start the lines with `-[ ]`. If the brackets contain "x" (`-[x]`), the checkbox will be initially checked. Title and value are separated by `=>`.
 
 ```bunch
 -[x] Option 1 => <<#One

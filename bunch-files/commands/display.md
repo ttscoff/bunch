@@ -131,18 +131,18 @@ __Window Size__
 
 __Window Position__
 
-: Set a location on the screen using either coordinates or words. The format is X,Y (no space around comma), e.g. `(display myfile.html 800x800 left,center)`. 
-    
+: Set a location on the screen using either coordinates or words. The format is X,Y (no space around comma), e.g. `(display myfile.html 800x800 left,center)`.
+
     You can mix integers and words, e.g. : `(display myfile.html 500x900 right,800)`
-    
+
     __Available options:__
 
     __integer__: X points from origin. 0,0 is the bottom left corner of your screen, and the measurement is to the lower left corner of the window, so 100,500 puts the left side of the window 100 points from the left of the display, and the bottom of the window 500 points from the bottom of the display.
-    
+
     > Distances are relative to the bottom left corner of the selected display. Unlike setting a frame using AppleScript or other tool, you don't have to calculate the width of the first display and add to it to target the second display. Just set the screen number and base your coordinates off of 0,0.
-    
+
     __left, center, right__: For the X (first) parameter, you can use `left`, `center`, or `right`. These will put the window flush against either side, or centered horizontally. These can be abbreviated as `l`, `c`, and `r`.
-    
+
     __top, center, bottom__: For the Y (second) parameter, you can use `top`, `center`, or `bottom`. These will put the window flush against the top or bottom of the screen, or vertically centered. These can be abbreviated as `t`, `c`, and `b`.
 
 __Background__ and __Foreground__ color
@@ -159,26 +159,26 @@ __Background__ and __Foreground__ color
 
 __Window Opacity__
 
-: Specify an opacity for the window using `alpha:XX%`. This can be abbreviated as `a:75%`. Opacity must be between 0 and 100. 
+: Specify an opacity for the window using `alpha:XX%`. This can be abbreviated as `a:75%`. Opacity must be between 0 and 100.
 
     Example: `(display https://youtube.com 800x600 right,top a:90%)`
 
 __Window Level__
 
-: By default the window behaves like any standard window, clicking it brings it to the front, clicking other windows brings them in front of it. You can make it a floating window (nothing can come in front of it), a desktop window (always behind other windows), or a wallpaper window by adding `level:` followed by `floating`, `desktop`, or `wallpaper` at the end of the command. 
+: By default the window behaves like any standard window, clicking it brings it to the front, clicking other windows brings them in front of it. You can make it a floating window (nothing can come in front of it), a desktop window (always behind other windows), or a wallpaper window by adding `level:` followed by `floating`, `desktop`, or `wallpaper` at the end of the command.
 `level:` can be abbreviated as `l:`, and the options can be abbreviated to `f` or `float`, `d` or `desk`, and `w` or `wall`. To have it behave as a normal window, leave it empty or use `n` or `normal`.
 
     A wallpaper level window is not clickable or scrollable and gets no toolbar with close button. Wallpaper windows are closed when the Bunch closes. If you don't have Toggle Bunches enabled, you have to use Close Items In... to close a wallpaper window opened by a Bunch.
 
     > __Tip:__ As an alternative to the (wallpaper) command, you can simulate a wallpaper change by displaying an image at full width and height and setting it to wallpaper level. While the Bunch is running, it will appear you changed the wallpaper, and it will change back when the Bunch closes.
-    > 
+    >
     >     (display Desktop.png d:1 100%x100% l,t l:w)
     {:.tip #simulatewallpaper}
 
 __Chrome__
 
 : Make a window "chromeless" with `chrome:none` (or `c:n`) and it will display a window with no title bar or close/zoom buttons. The window is still be resized from the edges and is draggable (see below). Chromeless windows can be closed with {% kbd ⌘W %}.
-    
+
     This setting affects window dragging in the various preview types differently.
 
     - HTML Windows still get the bottom bar with navigation buttons. The window can be moved by dragging from this bar.
@@ -210,8 +210,8 @@ __User Agent__
 > ```bunch
 > (display /var/log/system.log d:1 100%x300 left,b #333 #b0d17d a:95% l:d)
 > ```
-> 
+>
 > {% img aligncenter /images/displayvisor-600.jpg 600 375 %}
-> 
+>
 > The log file will be watched for changes and the window will automatically update, "tailing" the file.
 {:.tip}

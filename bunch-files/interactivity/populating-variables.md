@@ -67,7 +67,7 @@ As mentioned above, if I wanted to call this Bunch from the URL handler with a s
     open x-bunch://open/?bunch=Podcast&podcast=Overtired&episode=203
 
 > You can use variable assignment to abstract some of the above examples. Instead of having a dialog immediately call a snippet, you can assign a fragment name to a variable and then use that when calling the snippet. The following sets `which_snippet` to the result of the dialog, then calls a snippet, passing the result as the fragment to search for:
-> 
+>
 > ```bunch
 > which_snippet = ?[Snippet One, Snippet Two] "Which Snippet?"
 >

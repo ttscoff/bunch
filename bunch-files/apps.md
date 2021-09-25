@@ -189,7 +189,7 @@ This works for commands as well:
 This will enable Dark Mode when opening the Bunch, and leave it in Dark Mode when closing.
 
 > Finder is always ignored (won't be quit) when closing a Bunch. If you want to actually quit Finder when closing a Bunch, use a [triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative):
-> 
+>
 > ```bunch
 > Finder
 > - ~/Desktop

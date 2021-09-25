@@ -10,35 +10,14 @@ page_id: changelog
 
 {% docdiff %}
 
-{% available 122 %}
 ---
 
-1.4.5 (β122)
+1.4.5
+
 : {% icon new %} Fancy new icon design by Felippe van Eekhout
 : {% icon new %} Add "Untagged" submenu to tags menu
-: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
-{% endavailable %}
-
-{% available 121 %}
----
-
-1.4.5 (β121)
 : {% icon new %} Refresh all browsers AppleScript command
-: {% icon imp %} Allow (display) and ~delay syntax for heredoc scripts
-{% endavailable %}
-
-{% available 120 %}
----
-
-1.4.5 (β120)
 : {% icon new %} Add "Untagged" submenu to tags menu
-: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
-{% endavailable %}
-
-{% available 119 %}
----
-
-1.4.5 (β119)
 : {% icon new %} [Heredoc support for shell commands]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#heredoc)
 : {% icon new %} [Snippet syntax support for script lines]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#snippet) (`$ <file#fragment`)
 : {% icon new %} [Heredoc support for variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#heredoc)
@@ -46,16 +25,18 @@ page_id: changelog
 : {% icon new %} [Submenu with bunches listed by tag]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#tags)
 : {% icon new %} [AppleScript "open/close/toggle/list bunches tagged"]({{ site.baseurl }}/docs/integration/applescript/#tags)
 : {% icon new %} [URL handler for open/close/toggle commands accepts "tag=X" as optional replacement for "bunch=X"]({{ site.baseurl }}/docs/integration/url-handler/#tags)
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
+: {% icon imp %} Allow (display) and \~delay syntax for heredoc scripts
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
 : {% icon imp %} Variable placeholders no longer require removing spaces from variable names
 : {% icon imp %} Better truncation of long script paths/names in running scripts menu
 : {% icon fix %} Don't register `var_name = ${old_var}` as a shell script assignment
 : {% icon fix %} Remove "tag:" key from folder frontmatter
 : {% icon fix %} Action buttons on script error dialogs not opening Bunch Log
 : {% icon fix %} Remove single and double quotes from ends of frontmatter values
-{% endavailable %}
 
 ---
-   
+
 1.4.4
 : {% icon new %} Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
 : {% icon imp %} Better replacement of variable placeholders that are populated mid-stream

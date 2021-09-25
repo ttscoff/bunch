@@ -21,14 +21,14 @@ Line comments are preceded by `#` or `//`. They can be at the beginning of a lin
 %MailMate // this is an inline comment
 @Xcode # This is also an inline comment
 
-# Not to be confused with snippet fragment identifiers, 
+# Not to be confused with snippet fragment identifiers,
 # which don't have a space before or after
 <Useful.snippets#Fragment ID
 
 # Though you can use comments *after* a fragment ID...
 <Useful.snippets#Fragment ID # as long as it's surrounded by spaces
 
-// Also not to be confused with fragment identifiers in snippets, 
+// Also not to be confused with fragment identifiers in snippets,
 // which function as comments but also require square brackets
 ###[My Fragment]###
 

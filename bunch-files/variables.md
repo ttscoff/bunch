@@ -174,7 +174,7 @@ text_file = "~/Documents/File 2.txt"
 
 ### When Calling a Snippet or Bunch {#filelines}
 
-When you call a Bunch or Snippet from within a Bunch, you can use file lines with `key=value` pairs to set frontmatter and variable values for them. 
+When you call a Bunch or Snippet from within a Bunch, you can use file lines with `key=value` pairs to set frontmatter and variable values for them.
 
 For a Bunch, you would use:
 
@@ -205,7 +205,7 @@ When using Bunch's [AppleScript]({{ site.baseurl }}/docs/integration/applescript
 Values set in this manner will supersede frontmatter values, but will be overridden by [file lines](#filelines).
 
 > With this capability, you can create Bunches that focus efforts around a particular file (or files), but change that file with each opening of the Bunch. Set up a `${placeholder} in the Bunch for the filename, then specify the file in the url when calling the Bunch.
-> 
+>
 > Scenario: you have Hazel watching for new audio files that need processing in a shared Dropbox folder. A new file shows up, and a Hazel script adds an entry to your task manager that includes a Bunch url with the file specified as a parameter. Clicking it not only switches to your audio editing context, but also loads the file in question in your audio editor.
 {:.tip}
 
@@ -243,7 +243,7 @@ Because variables can be set in multiple ways, you need to be aware of which val
 
 Bunch is not (yet) an actual compiler, so things like scope and sequence are different from a scripting language.
 
-Variable placeholders are replaced as soon as their value is known, and variables assigned inside of conditional logic are parsed after placeholders outside of the condition are already updated. 
+Variable placeholders are replaced as soon as their value is known, and variables assigned inside of conditional logic are parsed after placeholders outside of the condition are already updated.
 
 For example, we assign a variable at the top of the Bunch or in frontmatter, then in a conditional block we append more text to its value, and then at the end we use the value in a placeholder. The value at the end will be replaced with the initial value before the conditional block appends the new value, so the changes within the conditional block won't be reflected in the final use of the placeholder.
 

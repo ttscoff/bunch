@@ -6,7 +6,7 @@ tags: [frontmatter,scheduling]
 ---
 # Scheduling Bunches
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -38,7 +38,7 @@ If your Mac is asleep at the scheduled time, it will run when the machine wakes.
 
 ## Open at intervals
 
-The `open every` key runs the Bunch at timed intervals. The value should be shorthand for hours and minutes to create an interval: `1h30m` would run it every hour and a half. You can also just use `1h` or `30m`. 
+The `open every` key runs the Bunch at timed intervals. The value should be shorthand for hours and minutes to create an interval: `1h30m` would run it every hour and a half. You can also just use `1h` or `30m`.
 
 You can also use "d" to specify days. If you want to launch every other day, use "2d". This, however, does not allow you to specify a time. So, for most intents and purposes you'll want to use `open at`.
 
@@ -144,7 +144,7 @@ When launching and closing Bunches on a schedule, Bunch will attempt to show a n
 
 If you sync your Bunches to multiple Macs, you may want to be selective about which ones get scheduled. There are two keys that can help with this.
 
-First, `schedule if:` accepts either a trigger file or a UUID. 
+First, `schedule if:` accepts either a trigger file or a UUID.
 
 A trigger file is a path to any file outside of your Bunch folder. If that file exists, scheduling is enabled, if it doesn't, any scheduling frontmatter is ignored. The file can be empty.
 
