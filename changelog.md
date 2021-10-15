@@ -10,6 +10,22 @@ page_id: changelog
 
 {% docdiff %}
 
+
+{% available 127 %}
+---
+
+1.4.6 (β127)
+: {% icon fix %} Apps launched by bundle identifier couldn't open files
+
+---
+
+1.4.6 (β126)
+: {% icon fix %} Long directory names breaking preference window layout (#148)
+: {% icon fix %} Calling "toggle" via URL handler not respecting single bunch mode (#149)
+: {% icon fix %} Crash when completing script with error on Bunch close (#152)
+{% endavailable %}
+
+
 ---
 
 1.4.5
@@ -345,6 +361,7 @@ page_id: changelog
 : {% icon bug red %} allow Bunch main menu to appear when run in Dock Mode
 : {% icon bug red %} Remove notification and stop timer when countdown clicked
 : {% icon bug red %} F1-F12 not working as {keyboard combos}
+
 : {% icon bug red %} Process variables before importing snippets so that placeholders can be used for snippet fragments (`<snippet#${fragmentvar}`)
 : {% icon bug red %} Keyboard focus for popups buttons and text fields in interactive dialogs
 : {% icon bug red %} Scheduled open/close being invalidated after opening
@@ -439,7 +456,7 @@ page_id: changelog
 : Option to [execute Bunch items in parallel]({{ site.baseurl }}/docs/bunch-files/sequence/) (all at once)
 : "Recent Bunch Folders" in Preferences submenu
 : Better log messages for shell script errors
-: Move initial Bunch Folder location to ~/Documents/Bunches
+: Move initial Bunch Folder location to \~/Documents/Bunches
 : Change wording of menu item from "Quit Apps In..." to "Close Items in..."
 : Changed "No" button in Optional Snippets dialog to "Cancel" so Escape key works
 : Offer relaunch dialog if log detail level is changed
@@ -556,7 +573,7 @@ page_id: changelog
 1.2.9
 : Better at maintaining "open" check marks
 : Reduce delay when storing and changing wallpaper
-: Add option to delay a launch or command with ~X at the end of line
+: Add option to delay a launch or command with \~X at the end of line
 : Big Sur Dock Icon
 
 ---
