@@ -11,7 +11,12 @@ page_id: changelog
 {% docdiff %}
 
 
-{% available 127 %}
+{% available 128 %}
+---
+
+1.4.6 (β128)
+: Fix an error with opening files in apps _not_ called by bundle identifier (doh)
+
 ---
 
 1.4.6 (β127)
