@@ -14,12 +14,12 @@ page_id: changelog
 {% available 127 %}
 ---
 
-1.4.6 (127)
+1.4.6 (β127)
 : {% icon fix %} Apps launched by bundle identifier couldn't open files
 
 ---
 
-1.4.6 (126)
+1.4.6 (β126)
 : {% icon fix %} Long directory names breaking preference window layout (#148)
 : {% icon fix %} Calling "toggle" via URL handler not respecting single bunch mode (#149)
 : {% icon fix %} Crash when completing script with error on Bunch close (#152)
