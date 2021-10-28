@@ -170,6 +170,6 @@ schedule unless: file ~/trigger.txt exists
 
 Schedule conditions are only parsed when your Bunches are scanned. This happens when a file in the Bunch folder changes, but not when a trigger file or other condition changes. If a Bunch is already loaded and scheduled, the change in presence of a trigger file or other condition will not immediately turn off scheduling, but the `schedule if/unless` condition will be checked at the scheduled time and open/close will be cancelled based on the result.
 
-The `schedule if/unless` keys can be inherited from [tag]({{ site.baseurl }}/docs/bunch-files/frontmatter/#tagfrontmatter) and [folder frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter). If the Bunch contains its own `schedule if` or `schedule unless`, it will override any schedule conditiohs set in inherited frontmatter. If a Bunch inherits a schedule condition but doesn't have a schedule to set, the key will be ignored.
+The `schedule if/unless` keys can be inherited from [tag]({{ site.baseurl }}/docs/bunch-files/frontmatter/#tagfrontmatter) and [folder frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter). If the Bunch contains its own `schedule if` or `schedule unless`, it will override any schedule conditions set in inherited frontmatter. If a Bunch inherits a schedule condition but doesn't have a schedule to set, the key will be ignored.
 
 If (for whatever reason) both `schedule if` and `schedule unless` are defined on a Bunch, only `schedule if` is used.
