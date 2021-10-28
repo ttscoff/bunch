@@ -12,6 +12,35 @@ tags: [example]
 * Table of Contents
 {:toc}
 
+## Formatting
+
+### Indentation
+
+Bunch Lines start at the left column unless they're in an indented [logic block]({{ site.baseurl }}/docs/bunch-files/logic/). Indentation within a logic block must be consistent with other lines at the same level of the block.
+
+```bunch
+Messages
+
+if social
+	Slack
+	Discord
+end
+```
+
+### Line Breaks
+
+Bunch Lines should be a single line, but can be split by ending the line with a backslash and continuing immediately on the next line. A backslash followed by a blank line will not be joined.
+
+```bunch
+(display bunch-internal/first-bunch.html \
+ 500x600 level:floating)
+```
+
+### Comments
+
+[Comments]({{ site.baseurl }}/docs/bunch-files/comments/) can be block (`/*...*/`), lines (`# Comment`), or inline at the end of a line (`Preview // inline comment`). Comment markers must be followed by a space.
+
+
 ## Bunch Syntax
 
 |Bunch Line|Action|
