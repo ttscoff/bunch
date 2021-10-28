@@ -10,10 +10,16 @@ page_id: changelog
 
 {% docdiff %}
 
+{% available 132 %}
+---
+1.4.6 (β132)
+: {% icon new %} (quit everything except ...) command to quit all running Dock apps (with an optional exception list)
+{% endavailable %}
+
 {% available 130 %}
 ---
 
-1.4.7 (β130)
+1.4.6 (β130)
 : {% icon new %} "file PATH contains" logic condition to check file contents for text string
 : {% icon new %} "file PATH exists" logic condition
 : {% icon new %} "ignore if/unless" frontmatter can control whether a Bunch displays in the menu. Accepts UUID or any logic condition recognized by Bunch
