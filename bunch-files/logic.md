@@ -98,6 +98,29 @@ All conditions can be negated using "not" or `! condition`. Negatives can only b
 
 Syntax: `if [condition]` where `[condition]` is one of the following.
 
+UUID
+: Test if the current machine UUID matches
+	
+	`uuid is C6766848-065C-51F8-B2EE-3A9DA8A10017` | UUID matches
+	`uuid is not C6766848-065C-51F8-B2EE-3A9DA8A10017` | UUID does not match
+	`C6766848-065C-51F8-B2EE-3A9DA8A10017` | UUID matches
+	`not C6766848-065C-51F8-B2EE-3A9DA8A10017` | UUID does not match
+
+{% available 130 %}
+
+File exists/contains
+: Test if a given file path exists, and optionally if it contains a text string
+
+	`file PATH exists` | File exists at path
+	`file PATH does not exist` | File does not exist at path
+	`file PATH` | File exists
+	`!file PATH` | File does not exist
+	`file PATH contains TEXT` | File at PATH exists and contains the text TEXT
+	`file PATH does not contain TEXT` | File at PATH either doesn't exist, 
+	^^                                | ^^ or doesn't contain text
+
+{% endavailable %}
+
 Bunch Phase
 : Test if a Bunch is in the process of opening or closing (phase). Use "self" or "this" to test current Bunch.
 

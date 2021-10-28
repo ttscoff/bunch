@@ -10,6 +10,18 @@ page_id: changelog
 
 {% docdiff %}
 
+{% available 130 %}
+---
+
+1.4.7 (β130)
+: {% icon new %} "file PATH contains" logic condition to check file contents for text string
+: {% icon new %} "file PATH exists" logic condition
+: {% icon new %} "ignore if/unless" frontmatter can control whether a Bunch displays in the menu. Accepts UUID or any logic condition recognized by Bunch
+: {% icon new %} "menu prefix" frontmatter applies a string before the Bunch, or all affected Bunches if used in @tag/folder.frontmatter
+: {% icon imp %} "schedule if/unless" now accepts any logic condition. Instead of a trigger file like it had, use `file TRIGGER_FILE exists`.
+: {% icon fix %} Apps launched by bundle identifier couldn't open files
+: {% icon fix %} Apps not launched by bundle id couldn't open files
+{% endavailable %}
 
 {% available 128 %}
 ---

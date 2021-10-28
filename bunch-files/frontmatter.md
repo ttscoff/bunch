@@ -95,6 +95,12 @@ The "title" key changes the display title of the Bunch, as seen in the menu. Whe
 
 You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. The menus are sorted alphabetically by display title, so changing the `title:` key will change the sort order of the list. Sort order ignores emoji, so `😊Bunch A` still comes before `♥️Bunch B`.
 
+{% available 130 %}
+You can also use the "title prefix" key to add a prefix to the display title. If no "title" key is set, this will prefix the filename in the menu title.
+
+The "title prefix" key can be set in tag or folder frontmatter and will apply to all files affected. If multiple tag/folder prefixes apply to a single Bunch, the prefixes are concatenated. The order of concatenation can't be controlled, but this allows you to use tags to actually "tag" menu items visually.
+{% endavailable %}
+
 ### Customizing Menu Order {#sortorder}
 
 The "menu order" key defines the sort order of Bunches in the menu that Bunch displays.
@@ -119,6 +125,22 @@ menu order: 10
 menu divider: after
 ---
 ```
+
+{% available 130 %}
+### Hiding From the Menu {#ignore}
+
+You can use the keys "ignore," "ignore if," and "ignore unless" to prevent a Bunch from displaying in the menu.
+
+The "ignore" key is a boolean, either "true" or "false." If it's true, the Bunch will not show up in the menu (nor will it be able to be triggered by shortcut key, it's ignored).
+
+"ignore if" and "ignore unless" take a UUID or a condition. 
+
+- A UUID can be a single UUID or a comma-separated list of UUIDs. If the current machine's UUID matches a UUID in the list, it will either be ignored (ignore if) or displayed (ignore unless).
+- If the value of "ignore if" or "ignore unless" does not match a UUID format, it's parsed as a condition. Any of the [conditional logic]({{ site.baseurl }}/docs/bunch-files/logic/) tests can be used. (Because this comparison is running at the time the Bunch is loaded and not when it's being executed, some conditions may evaluate differently than they would at runtime.)
+
+{% include snippets/uuid.md %}
+
+{% endavailable %}
 
 ### Before/After Scripts {#beforeafterscripts}
 
@@ -264,7 +286,11 @@ When it runs, the name variable will be replaced with a random name, and the cur
 
 See [Advanced Scripting]({{ site.baseurl }}/docs/integration/advanced-scripting) for more crazy ideas.
 
-## Applying Frontmatter to Multiple Bunches (folder.frontmatter) {#folderfrontmatter}
+## Applying Frontmatter to Multiple Bunches {#folderfrontmatter}
+
+You can apply frontmatter to multiple Bunches using folder and tag frontmatter.
+
+### folder.frontmatter
 
 A file called `folder.frontmatter` can be included in the Bunch folder [or any subfolder]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/). This file is primarily designed for use in subfolders to control submenu display, but it can also contain keys that affect all Bunches in the folder (including the base Bunch Folder).
 
@@ -308,3 +334,11 @@ Now if I want to change the browser for any of the Bunches in that folder using 
 
 > `folder.frontmatter` files can exist in the root of your Bunch folder as well. Submenu keys like `ignore` and `title` are ignored, but arbitrary keys assigned in that file will apply to all Bunches in the root folder.
 {:.tip}
+
+### @tag.frontmatter
+
+Another way to apply frontmatter to multiple Bunches is to use tag frontmatter. If a file beginning with `@[tagname].frontmatter` exists, its frontmatter will be applied to all Bunches tagged with `[tagname]`.
+
+{% available 130 %}
+Some keys such as "title prefix" and "ignore if/unless" are concatenated when they appear in multiple frontmatter. This allows you to assign an "icon" to each tag (with ["title prefix"](#displaytitle)), and have menu items labelled with those icons, or to use tags to ignore (["ignore if/unless"](#ignore)) sets of Bunches on different machines.
+{% endavailable %}
