@@ -23,7 +23,7 @@ Also see the [`(log)` command]({{ site.baseurl }}/docs/bunch-files/commands/log/
 
 If you know which line is problematic and it doesn't make sense, post about it [in the forum]({{ site.forum }}). If it seems like a bug in Bunch, please [let me know here]({{ site.bugs }}).
 
-## Debugging Scripts
+## Debugging Scripts {#scripts}
 
 See [Debugging Scripts]({{ site.baseurl }}/docs/integration/advanced-scripting/debugging/) in the Advanced Scripting section for tips on tracking down issues with shell scripts.
 
@@ -124,3 +124,15 @@ If you make a change to a Bunch and __suddenly your menu is empty__, it means th
 On rare occasions something really screwy happens and Bunch just stops reading files in the chosen directory. The solution is to change your Bunch Folder using __Bunch Folder->Add__ button in Preferences, then change it right back (it will be in the dropdown).
 
 If these steps don't fix the issue, or the issue you're having is not mentioned here, [see the support page]({{ site.baseurl }}/support) to get in touch.
+
+## Hiding Bunch With Bartender {#bartender}
+
+If you use [Bartender](https://www.macbartender.com/) to hide the Bunch menu item, you may get weird results when triggering Bunch using the [global hotkey]({{ site.baseurl }}/docs/using-bunch/preferences/#application-settings) (menu appearing offscreen, on secondary displays, etc.). To resolve this, disable the global hotkey in Bunch and add a hotkey for the menu item in Bartender settings (Bartender 4+)
+
+1. Disable Bunch's global shortcut in Preferences
+1. Open Bartender Preferences and select the Hot Keys pane
+2. Click the "Add menu bar item hot key" button at the bottom of the window
+3. Select Bunch from the list of menu items
+4. Press your desired shortcut key and ensure that the action is set to Left Click.
+
+Now when you hit your shortcut key, the Bunch menu item should be made visible momentarily before displaying the menu. Shortcuts for individual Bunches should work as expected once the menu is displayed.

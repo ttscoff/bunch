@@ -10,20 +10,24 @@ page_id: changelog
 
 {% docdiff %}
 
+{% available 139 %}
+
+---
+
+1.4.7 (β139)
+: {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
+{% endavailable %}
+
 {% available 136 %}
 ---
-1.4.6 (136)
-: {% icon new %} (quit everything except ...) command to quit all running Dock apps (with an optional exception list)
-{% endavailable %}
+1.4.6
+: {% icon new %} (quit everything except ...) command to quit all running Dock apps (with an optional exception list) ([documentation]({{ site.baseurl }}/docs/bunch-files/commands/quit-everything/))
 : {% icon new %} "file PATH contains" logic condition to check file contents for text string
 : {% icon new %} "file PATH exists" logic condition
+: {% icon new %} "title prefix" frontmatter applies a string before the Bunch, or all affected Bunches if used in @tag/folder.frontmatter
 : {% icon new %} "ignore if/unless" frontmatter can control whether a Bunch displays in the menu. Accepts UUID or any logic condition recognized by Bunch
-: {% icon new %} "menu prefix" frontmatter applies a string before the Bunch, or all affected Bunches if used in @tag/folder.frontmatter
 : {% icon imp %} "schedule if/unless" now accepts any logic condition. Instead of a trigger file like it had, use `file TRIGGER_FILE exists`.
-: {% icon fix %} Apps launched by bundle identifier couldn't open files
-: {% icon fix %} Apps not launched by bundle id couldn't open files
-: {% icon fix %} Fix an error with opening files in apps _not_ called by bundle identifier (doh)
-: {% icon fix %} Apps launched by bundle identifier couldn't open files
+: {% icon fix %} Fix an error with opening files in apps called by bundle identifier
 : {% icon fix %} Long directory names breaking preference window layout (#148)
 : {% icon fix %} Calling "toggle" via URL handler not respecting single bunch mode (#149)
 : {% icon fix %} Crash when completing script with error on Bunch close (#152)
