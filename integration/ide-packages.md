@@ -60,6 +60,15 @@ The source code is available [on GitHub][vscode].
 
 {% img aligncenter /images/vs-code-dark-theme-screenshot.png %}
 
+## Atom
+This package includes:
+
+- Syntax highlighting for Bunch files
+- Completion snippets for Bunch commands
+
+The source code is available [on GitHub](https://github.com/lizard-heart/language-bunch).
+<img width="777" alt="Screen Shot 2022-03-20 at 12 53 28" src="https://user-images.githubusercontent.com/62226606/159183943-34aef4b1-25c7-4ca0-89db-37741ed13720.png">
+
 ## Contributions Welcome
 
 If you'd like to add support for Bunch files to your favorite editor or IDE, your contribution would be greatly appreciated.
