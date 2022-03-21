@@ -10,15 +10,20 @@ page_id: changelog
 
 {% docdiff %}
 
-{% available 139 %}
+---
+
+1.4.7 (139)
+: {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
+
 
 ---
 
-1.4.7 (β139)
+1.4.7 (139)
 : {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
-{% endavailable %}
+
 
 {% available 136 %}
+
 ---
 1.4.6
 : {% icon new %} (quit everything except ...) command to quit all running Dock apps (with an optional exception list) ([documentation]({{ site.baseurl }}/docs/bunch-files/commands/quit-everything/))

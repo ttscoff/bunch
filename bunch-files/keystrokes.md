@@ -119,41 +119,41 @@ TextEdit
 
 (You can also combine these two lines now, [see the next section](#combined).)
 
-You can use "escape" codes (letters preceded by a double backslash, e.g. `\\\\n`) in a typed string to press some "special" keys:
+You can use "escape" codes (letters preceded by a double backslash, e.g. `\\n`) in a typed string to press some "special" keys:
 
 | Code      | Key             | Mnemonic             |
 | --------: | --------------- | -------------------- |
-| `\\\\\\n` | Return          | newline              |
-| `\\\\\\t` | Tab             | tab                  |
-| `\\\\\\s` | Space (force)   | space                |
-| `\\\\\\b` | Left Arrow      | back                 |
-| `\\\\\\f` | Right Arrow     | forward              |
-| `\\\\\\u` | Up Arrow        | up                   |
-| `\\\\\\d` | Down Arrow      | down                 |
-| `\\\\\\a` | Home            | ask Emacs            |
-| `\\\\\\e` | End             | end                  |
-| `\\\\\\h` | Backspace       | ask UNIX...          |
-| `\\\\\\x` | Escape          | e was already used   |
-| `\\\\\\!X`| Pause for X seconds                   ||
+| `\\n` | Return          | newline              |
+| `\\t` | Tab             | tab                  |
+| `\\s` | Space (force)   | space                |
+| `\\b` | Left Arrow      | back                 |
+| `\\f` | Right Arrow     | forward              |
+| `\\u` | Up Arrow        | up                   |
+| `\\d` | Down Arrow      | down                 |
+| `\\a` | Home            | ask Emacs            |
+| `\\e` | End             | end                  |
+| `\\h` | Backspace       | ask UNIX...          |
+| `\\x` | Escape          | e was already used   |
+| `\\!X`| Pause for X seconds                   ||
 
-Example: `- [\\\\n\\\\n\\\\tThis has two newlines and a tab indent before it\\\\n]`
+Example: `- [\\n\\n\\tThis has two newlines and a tab indent before it\\n]`
 
 > Tip: If you want to send a lot of special characters while typing, it's often better to use the bracket syntax and quote the typed strings, e.g. `{(tab)3 "my text" return @s}`.
 {:.tip}
 
 ### Adding Pauses to Typed Strings {#typedpause}
 
-You can pause typing for any number of seconds using `\\\\!` followed by a number within a typed string (this works in interpolated strings as well):
+You can pause typing for any number of seconds using `\\!` followed by a number within a typed string (this works in interpolated strings as well):
 
 ```bunch
-- [This is a dramatic \\\\!5pause]
+- [This is a dramatic \\!5pause]
 ```
 
 The delay must be a positive integer representing a number of seconds, with no decimals.
 
 ### Using Variables in Typed Strings
 
-If you want to insert the contents of a variable in a typed string, you should use the `/typed` transform to ensure that newlines are converted to `\\\\n` when typing it out.
+If you want to insert the contents of a variable in a typed string, you should use the `/typed` [transform]({{ site.baseurl }}/docs/bunch-files/variables/#transforms) to ensure that newlines are converted to `\\n` when typing it out. 
 
 ```bunch
 TextEdit

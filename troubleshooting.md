@@ -127,7 +127,7 @@ If these steps don't fix the issue, or the issue you're having is not mentioned 
 
 ## Hiding Bunch With Bartender {#bartender}
 
-If you use [Bartender](https://www.macbartender.com/) to hide the Bunch menu item, you may get weird results when triggering Bunch using the [global hotkey]({{ site.baseurl }}/docs/using-bunch/preferences/#application-settings) (menu appearing offscreen, on secondary displays, etc.). To resolve this, disable the global hotkey in Bunch and add a hotkey for the menu item in Bartender settings (Bartender 4+)
+If you use [Bartender](https://www.macbartender.com/) to hide the Bunch menu item, you may get weird results when triggering Bunch using the [global hotkey]({{ site.baseurl }}/docs/using-bunch/preferences/#application-settings) (menu appearing off-screen, on secondary displays, etc.). To resolve this, disable the global hotkey in Bunch and add a hotkey for the menu item in Bartender settings (Bartender 4+)
 
 1. Disable Bunch's global shortcut in Preferences
 1. Open Bartender Preferences and select the Hot Keys pane
