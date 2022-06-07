@@ -10,14 +10,16 @@ page_id: changelog
 
 {% docdiff %}
 
-{% available 140 %}
+{% available 141 %}
 
 ---
 
-1.4.8 (140)
+1.4.8 (141)
 : {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
 : {% icon fix %} When launching or quitting a tag, %\tag was not ignoring the action on close
 : {% icon fix %} Don't inherit tags when nesting Bunches
+: {% icon fix %} Variables defined in a snippet call file line work with conditional logic within the snippet
+
 {% endavailable %}
 
 ---

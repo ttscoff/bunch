@@ -12,7 +12,7 @@ You can integrate Bunch with Hazel using shell scripts and the Bunch URL handler
 
 Let's say you're watching a Dropbox folder for new audio files. When a new file arrives, you want to open it in your audio editor, along with your Audio Editing Bunch that sets up everything else you need. The Bunch would include a line pointing your audio editor to a variable:
 
-```bash
+```bunch
 Fission
 - ${audiofile}
 ```
