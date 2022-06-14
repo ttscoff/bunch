@@ -26,6 +26,9 @@ tell application "Bunch" to list bunches
 tell application "Bunch" to list open bunches
 ```
 
+> You can test if a particular Bunch is open by searching for its name in `list open bunches` (e.g. `if (list open bunches) contains`). You can also get a list of _closed_ bunches by getting the full list (`list bunches`) and removing items in `list open bunches`. It's not the easiest approach, I know, but I haven't had a need for these options yet, so I haven't added methods for them.
+{:.tip}
+
 ## Open, close, and toggle Bunches
 
 
