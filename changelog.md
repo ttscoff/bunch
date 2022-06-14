@@ -10,17 +10,18 @@ page_id: changelog
 
 {% docdiff %}
 
-{% available 142 %}
-
 ---
 
-1.4.8 (142)
+{% available 143 %}
+
+1.4.8 (143)
 : {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
 : {% icon fix %} When launching or quitting a tag, %\tag was not ignoring the action on close
 : {% icon fix %} Don't inherit tags when nesting Bunches
 : {% icon fix %} Variables defined in a snippet call file line work with conditional logic within the snippet
 : {% icon fix %} Allow retries when sending AppleScript commands for things like
 : {% icon fix %} Ensure relaunch of Finder after hiding/showing desktop icons
+: {% icon fix %} Modifier key mismatch in Select Editor tooltip
 
 {% endavailable %}
 
