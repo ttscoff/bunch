@@ -11,6 +11,14 @@ page_id: changelog
 {% docdiff %}
 
 ---
+{% available 147 %}
+
+1.4.9 (147)
+: {% icon imp %} /opt/homebrew/bin is now included in the default path for M1 users using shell scripting
+
+{% endavailable %}
+
+---
 
 {% available 143 %}
 
