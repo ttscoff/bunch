@@ -32,7 +32,7 @@ See the [Snippets]({{ site.baseurl }}/docs/bunch-files/snippets) documentation t
 
 ## Delay Command
 
-You can also insert delays as commands. This only works when the Bunch's [execution sequence]({{ site.baseurl }}/docs/bunch-files/sequence/) is set to sequential (or Parallel execution is [disabled entirely in Preferences](,,{{ site.baseurl }}/docs/using-bunch/preferences/#prefsbunchbehavior)).
+You can also insert delays as commands. This only works when the Bunch's [execution sequence]({{ site.baseurl }}/docs/bunch-files/sequence/) is set to sequential (or Parallel execution is [disabled entirely in Preferences]({{ site.baseurl }}/docs/using-bunch/preferences/#prefsbunchbehavior)).
 
 To pause a Bunch before opening remaining items, use `(pause X)`, where X is a number of seconds to wait (must be a whole, positive integer). You can also use `(delay X)`, which is a synonym for pause.
 

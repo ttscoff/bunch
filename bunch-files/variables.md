@@ -219,7 +219,7 @@ global my_global_variable = true
 
 You can reference a global variable just like any other variable: `${my_global_variable}`. It can be used in [logic conditions]({{ site.baseurl }}/docs/bunch-files/logic/) in any Bunch, e.g. `if my_global_variable is true`.
 
-The last value assigned using the `global` keyword is what will be stored. Modifying a variable's value without the `global` keyword does not affect the global value, on the value local to the current Bunch.
+The last value assigned using the `global` keyword is what will be stored. Modifying a variable's value without the `global` keyword does not affect the global value, only the value local to the current Bunch.
 
 If a variable with a matching name is set within a Bunch, that value will take precedence over the global variable's value. Global variables have the lowest precedence, so even a value set in a Bunch's frontmatter will override it.
 
@@ -330,7 +330,7 @@ When performing `/url` transforms, "\n" is first converted to actual newlines, a
 
 When performing `/shell` transforms, "\n" is left as is, and not double-escaped. Output with `echo -e`, this results in an actual newline being echoed.
 
-> Tip: If you want to use a variable containing newlines in a shell command, you can use `$'${variable_name}'` to have the shell (`/bin/sh`) respect the newlines as part of the argument. So if your variable contains `one\ntwo`, you could use `$ say $'${variable/shell}'` and you would get the expected results (you Mac would say "one two").
+> Tip: If you want to use a variable containing newlines in a shell command, you can use `$'${variable_name}'` to have the shell (`/bin/sh`) respect the newlines as part of the argument. So if your variable contains `one\ntwo`, you could use `$ say $'${variable/shell}'` and you would get the expected results (your Mac would say "one two").
 {:.tip}
 
 When performing `/typed` transforms, "\n" is converted to `\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.

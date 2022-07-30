@@ -98,7 +98,7 @@ You can totally use emoji in the frontmatter title and get a sweet looking menu 
 {% available 130 %}
 You can also use the "title prefix" key to add a prefix to the display title. If no "title" key is set, this will prefix the filename in the menu title.
 
-The "title prefix" key can be set in tag or folder frontmatter and will apply to all files affected. If multiple tag/folder prefixes apply to a single Bunch, the prefixes are concatenated. The order of concatenation can't be controlled, but this allows you to use tags to actually "tag" menu items visually.
+The "title prefix" key can be set in [tag](#tagfrontmatter) or [folder frontmatter](#folderfrontmatter) and will apply to all files affected. If multiple tag/folder prefixes apply to a single Bunch, the prefixes are concatenated. The order of concatenation can't be controlled, but this allows you to use tags to actually "tag" menu items visually.
 {% endavailable %}
 
 ### Customizing Menu Order {#sortorder}

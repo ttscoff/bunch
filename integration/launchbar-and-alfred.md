@@ -1,15 +1,20 @@
 ---
 layout: default
-title: LaunchBar and Alfred
+title: LaunchBar, Alfred, and Raycast
 parent: Integration
 tags: [integration]
 ---
-# LaunchBar and Alfred
+# LaunchBar, Alfred, and Raycast
+{:.no_toc}
 
-Despite Bunch having plenty of its own [keyboard shortcuts]({{ site.baseurl }}/docs/using-bunch/keyboard-control), you may want to integrate with your favorite launcher. There are existing options for doing so with both LaunchBar and Alfred.
+Despite Bunch having plenty of its own [keyboard shortcuts]({{ site.baseurl }}/docs/using-bunch/keyboard-control), you may want to integrate with your favorite launcher. There are existing options for doing so with LaunchBar, Alfred, and Raycast.
 
 > You can also create integrations with [Keyboard Maestro]({{ site.baseurl }}/docs/integration/keyboard-maestro/) or [BetterTouchTool]({{ site.baseurl }}/docs/integration/bettertouchtool/) to fit other workflows.
 {:.tip}
+
+* Table of Contents
+{:toc}
+
 
 ## LaunchBar
 
@@ -34,3 +39,7 @@ See ["Better Bunch for LaunchBar"](https://brettterpstra.com/2019/06/10/better-b
 ## Alfred
 
 Jay Miller has created [an Alfred action for use with Bunch](https://github.com/kjaymiller/Bunch_Alfred).
+
+## Raycast
+
+koinzhang has created a [Raycast extension for Bunch](https://www.raycast.com/koinzhang/bunch).

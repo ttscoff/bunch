@@ -12,6 +12,17 @@ page_id: changelog
 
 ---
 
+{% available 148 %}
+
+1.4.9 (148)
+: {% icon imp %} /opt/homebrew/bin is now included in the default path for M1 users using shell scripting
+: {% icon fix %} Allow closing all Finder windows with XX (and on close with !!Finder)
+
+{% endavailable %}
+
+
+---
+
 {% available 143 %}
 
 1.4.8 (143)

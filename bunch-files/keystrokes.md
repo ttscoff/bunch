@@ -52,12 +52,12 @@ Keys can also be referenced by using their Unicode symbols like `↑`, `↓` `�
     Gradius
     - {↑ ↑ ↓ ↓← → ← → b a ↩}
 
+> Because double quotes are used for [typing strings within curly brackets](#combined), if you need to send a key combo containing a double quote, specify it as `$'` (Shift-single quote).
+{:.warning}
+
 ### Repeating Keys
 
 You can repeat key combos multiple times by surrounding them in parenthesis immediately followed by a number. To hit `⌘}` to switch tabs 5 times, you would use `{(@$])5}`. Multiple key combinations can be listed within the parenthesis, so `{@t (@d @$d)4}` becomes `{@t @d @$d @d @$d @d @$d @d @$d}`. If you want to see a dumb trick, try that one with iTerm.
-
-> Because double quotes are used for [typing strings within curly brackets](#combined), if you need to send a key combo containing a double quote, specify it as `$'` (Shift-single quote).
-{:.warning}
 
 ### System Key Names {#systemkeys}
 
