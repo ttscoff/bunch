@@ -47,9 +47,13 @@ Numbers
 - ~/Documents/job 1.numbers
 ```
 
-You can also specify a file as a URL to have Bunch open it in whatever app is defined as the default handler for it. For example, if you put the following on its own line, Bunch would open TaskPaper\** with the file (note that spaces are replaced with `%20`):
+You can also specify a file as a URL to have Bunch open it in whatever app is defined as the default handler for it. For example, if you put the following on its own line, Bunch would open TaskPaper\* with the file (note that spaces are replaced with `%20`):
 
-    file:///Users/Dropbox/Code/Bunch%20Work/bunch.taskpaper
+```bunch
+file:///Users/Dropbox/Code/Bunch%20Work/bunch.taskpaper
+```
+
+This is the same as specifying "default" as the app (see [below](#defaultapp)).
 
 _\* This assumes TaskPaper is installed._
 

@@ -352,7 +352,7 @@ These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `
 
 This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
 
-```bash
+```bunch
 ---
 title: ✍🏻Documentation
 shortcut: d

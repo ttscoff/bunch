@@ -24,8 +24,10 @@ The recognized browser prefixes are:
 
 - `brave:`
 - `chrome:` (Google Chrome)
+- `canary:` (Google Chrome Canary)
 - `edge:` (Microsoft Edge)
 - `firefox:`
+- `firefoxdev:` (Firefox Developer Edition)
 - `opera:`
 - `safari:`
 - `tor:` (TorBrowser)
@@ -33,8 +35,26 @@ The recognized browser prefixes are:
 
 In most cases, you can also send a URL as a file to a browser and it will open it properly, as in:
 
-    Safari
-    - https://bunchapp.co
+```bunch
+Safari
+- https://bunchapp.co
+```
+
+{% available 150 %}
+### Opening in a Specific Chrome Profile
+
+For the `chrome:` and `canary:` prefixes, you can also include a profile name in square brackets to have a url open in a specific profile. This will open a new window with the profile, and multiple links targeting the same profile will open tabs in that window.
+
+```bunch
+chrome[work]:https://brettterpstra.com
+chrome[work]:https://duckduckgo.com
+chrome[personal]:https://hulu.com
+```
+
+Profile names are case insensitive and allow partial matches ("work" will match the profile "Work Profile"). Bunch will go with the first matching name it finds.
+
+Profiles cannot be used when passing URLs as file lines.
+{% endavailable %}
 
 ## Sending GET/POST Requests
 

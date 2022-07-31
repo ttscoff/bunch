@@ -12,6 +12,18 @@ page_id: changelog
 
 ---
 
+{% available 150 %}
+
+1.4.10 (150)
+: {% icon new %} (shortcut NAME) command for running macOS Shortcuts
+: {% icon new %} Target specific Chrome profiles using `chrome[Profile Name]:http://...`
+: {% icon new %} Added canary and firefoxdev as browser prefixes
+: {% icon new %} AppleScript commands to copy or save a new Bunch with running apps
+
+{% endavailable %}
+
+---
+
 {% available 148 %}
 
 1.4.9 (148)
