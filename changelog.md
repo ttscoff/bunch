@@ -12,6 +12,16 @@ page_id: changelog
 
 ---
 
+{% available 151 %}
+
+1.4.10 (151)
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+
+{% endavailable %}
+
+
+---
+
 {% available 150 %}
 
 1.4.10 (150)
