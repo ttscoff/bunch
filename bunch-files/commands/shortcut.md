@@ -23,3 +23,19 @@ Trigger a macOS Shortcut by name. The name is case insensitive and fuzzy matched
 ```
 
 {% endavailable %}
+
+{% available 151 %}
+
+## Input/Output
+
+You can pass input to a shortcut by including text in double quotes after the shortcut name. This can include variables, but must be wrapped in quotes.
+
+Any output returned by the shortcut can be assigned to a variable. Your shortcut must include a "Stop and ouput" action that returns a value.
+
+### Examples
+
+```bunch
+result = (shortcut SearchLink "!g ${LinkText}")
+```
+
+{% endavailable %}
