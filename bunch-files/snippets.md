@@ -117,7 +117,7 @@ You get the idea. When you amass a lot of snippets in one file because you're ma
 
 ## Adding Interactivity {#optionalsnippets}
 
-See [Interactivity: Optional Snippets]({{ site.baseurl }}/docs/bunch-files/interactivity/#optionalsnippets) for details on adding interactive choices to snippet loading.
+See [Interactivity: Optional Snippets]({{ site.baseurl }}/docs/bunch-files/interactivity/optional-snippets/) for details on adding interactive choices to snippet loading.
 
 ## Run After Delay
 

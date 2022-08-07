@@ -230,14 +230,17 @@ Because variables can be set in multiple ways, you need to be aware of which val
 > Precedence also takes into account assignment order. If a variable is already assigned (e.g. by a URL handler query string), a dialog that sets that variable (`var = ?[]`) will be skipped, as will a direct assignment (`var = val`). This allows you to, for example, skip a dialog if opening via a URL by setting the variable in the URL itself.
 {:.tip}
 
+1. Variables set using __direct assignment__
 1. Variables set in __file lines__
-2. Variables set by in a __URL call__/__AppleScript method__
-3. Variables set by __interactive dialogs__
-4. Variables set in __dynamic frontmatter__
-5. Variables set in __frontmatter__
-6. Variables set using __direct assignment__
-7. Variable __default values__
-8. Global Variables
+1. Variables set by in a __URL call__/__AppleScript method__
+1. Variables set by __interactive dialogs__
+1. Variables set in __dynamic frontmatter__
+1. Variables set in __frontmatter__
+1. Variables set in __tag/folder frontmatter__
+1. **Global** Variables
+1. Variable __default values__
+
+> If variable values are read from multiple frontmatter files, e.g. @tag.frontmatter where more than one file applies, duplicate keys will receive the value found in the last file read (which is typically the last filename alphanumerically).
 
 ## Variable Parsing Order (Modifying Values at Runtime)
 

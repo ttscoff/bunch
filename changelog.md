@@ -12,6 +12,37 @@ page_id: changelog
 
 ---
 
+{% available 152 %}
+
+1.4.10 (152)
+: {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+
+{% endavailable %}
+
+
+---
+
+{% available 151 %}
+
+1.4.10 (151)
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+
+{% endavailable %}
+
+
+---
+
+{% available 151 %}
+
+1.4.10 (151)
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+
+{% endavailable %}
+
+
+---
+
 {% available 150 %}
 
 1.4.10 (150)
