@@ -12,6 +12,26 @@ page_id: changelog
 
 ---
 
+{% available 160 %}
+
+1.4.10 (160)
+: {% icon fix %} Newline character in (shortcut) input
+
+{% endavailable %}
+
+
+---
+
+{% available 158 %}
+
+1.4.10 (158)
+: {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
+
+{% endavailable %}
+
+
+---
+
 {% available 154 %}
 
 1.4.10 (154)
