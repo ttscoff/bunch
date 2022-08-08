@@ -5,7 +5,7 @@ parent: Commands
 grand_parent: Bunch Files
 tags: [shortcuts, command]
 ---
-{% available 150 %}
+{% available 153 %}
 
 # Shortcut Command
 
@@ -22,15 +22,12 @@ Trigger a macOS Shortcut by name. The name is case insensitive and fuzzy matched
 !(sc work mode off) // or (shortcut work mode off)
 ```
 
-{% endavailable %}
-
-{% available 151 %}
 
 ## Input/Output
 
 You can pass input to a shortcut by including text in double quotes after the shortcut name. This can include variables, but must be wrapped in quotes.
 
-Any output returned by the shortcut can be assigned to a variable. Your shortcut must include a "Stop and ouput" action that returns a value.
+Any output returned by the shortcut can be assigned to a variable. Your shortcut must include a "Stop and output" action that returns a value.
 
 ### Examples
 
