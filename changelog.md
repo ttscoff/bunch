@@ -15,57 +15,22 @@ page_id: changelog
 {% available 160 %}
 
 1.4.10 (160)
+: {% icon fix %} Replace global variables before processing frontmatter conditionals
+
+{% endavailable %}
+
+
+---
+
+{% available 160 %}
+
+1.4.10 (160)
 : {% icon fix %} Newline character in (shortcut) input
-
-{% endavailable %}
-
-
----
-
-{% available 158 %}
-
-1.4.10 (158)
 : {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
-
-{% endavailable %}
-
-
----
-
-{% available 154 %}
-
-1.4.10 (154)
 : {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
 : {% icon fix %} Fixed variable assignment using shell script heredoc syntax
-
-{% endavailable %}
-
-
----
-
-{% available 151 %}
-
-1.4.10 (151)
 : {% icon fix %} Fixed variable assignment using shell script heredoc syntax
-
-{% endavailable %}
-
-
----
-
-{% available 151 %}
-
 1.4.10 (151)
-: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
-
-{% endavailable %}
-
-
----
-
-{% available 150 %}
-
-1.4.10 (150)
 : {% icon new %} (shortcut NAME) command for running macOS Shortcuts
 : {% icon new %} Target specific Chrome profiles using `chrome[Profile Name]:http://...`
 : {% icon new %} Added canary and firefoxdev as browser prefixes
