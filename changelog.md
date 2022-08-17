@@ -12,19 +12,11 @@ page_id: changelog
 
 ---
 
-{% available 160 %}
+{% available 163 %}
 
-1.4.10 (160)
+1.4.10 (163)
 : {% icon fix %} Replace global variables before processing frontmatter conditionals
-
-{% endavailable %}
-
-
----
-
-{% available 160 %}
-
-1.4.10 (160)
+: {% icon fix %} Replace global variables before processing frontmatter conditionals
 : {% icon fix %} Newline character in (shortcut) input
 : {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
 : {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
