@@ -12,9 +12,11 @@ page_id: changelog
 
 ---
 
-{% available 165 %}
+{% available 166 %}
 
-1.4.11 (165)
+1.4.11 (166)
+
+: {% icon fix %} (hide desktop) command not functioning
 : {% icon imp %} Programatically opening System Preferences is broken on Ventura. Best I can currently do is open System Settings, but can't focus a pane (e.g. Notifications). Keeping an eye on this.
 : {% icon fix %} Bunch didn't recognize symlinks for Bunch folders
 : {% icon fix %} Switching between Bunch folders would cause all Bunches to show up in a "Bunches" submenu
