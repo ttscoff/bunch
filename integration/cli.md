@@ -8,7 +8,7 @@ tags: [scripting,cli]
 ---
 # The Bunch CLI
 
-The latest version is {% bunchcli version %}.
+The latest version is {% cli bunch version ttscoff/bunchcli %}.
 
 > If using Bunch Beta, use the pre-release version of the CLI: `gem install bunchcli --pre`.
 {:.tip.important}
@@ -19,7 +19,7 @@ Installing the gem provides the executable `bunch`, which should now be in your 
 
 Run `bunch -h` for usage instructions.
 
-{% bunchcli help %}
+{% cli bunch help %}
 
 Example:
 

@@ -12,21 +12,43 @@ page_id: changelog
 
 ---
 
+{% available 166 %}
+
+1.4.11 (166)
+
+: {% icon fix %} (hide desktop) command not functioning
+: {% icon imp %} Programatically opening System Preferences is broken on Ventura. Best I can currently do is open System Settings, but can't focus a pane (e.g. Notifications). Keeping an eye on this.
+: {% icon fix %} Bunch didn't recognize symlinks for Bunch folders
+: {% icon fix %} Switching between Bunch folders would cause all Bunches to show up in a "Bunches" submenu
+
+{% endavailable %}
+
+
+---
+
 {% available 163 %}
 
 1.4.10 (163)
-: {% icon fix %} Replace global variables before processing frontmatter conditionals
-: {% icon fix %} Replace global variables before processing frontmatter conditionals
-: {% icon fix %} Newline character in (shortcut) input
-: {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
-: {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
-: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
-: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
-1.4.10 (151)
-: {% icon new %} (shortcut NAME) command for running macOS Shortcuts
-: {% icon new %} Target specific Chrome profiles using `chrome[Profile Name]:http://...`
-: {% icon new %} Added canary and firefoxdev as browser prefixes
+: {% icon fix %} Bunch didn't recognize symlinks for Bunch folders
+: {% icon fix %} Switching between Bunch folders would cause all Bunches to show up in a "Bunches" submenu
+
+{% endavailable %}
+
+
+---
+
+{% available 163 %}
+
+1.4.10 (163)
 : {% icon new %} AppleScript commands to copy or save a new Bunch with running apps
+: {% icon new %} Added canary and firefoxdev as browser prefixes
+: {% icon new %} Target specific Chrome profiles using `chrome[Profile Name]:http://...`
+: {% icon new %} (shortcut NAME) command for running macOS Shortcuts
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+: {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
+: {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
+: {% icon fix %} Newline character in (shortcut) input
+: {% icon fix %} Replace global variables before processing frontmatter conditionals
 
 {% endavailable %}
 

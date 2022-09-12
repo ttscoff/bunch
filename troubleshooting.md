@@ -111,6 +111,14 @@ You can launch the current version with `FileMaker Pro 18 Advanced`, but Bunch c
 
 In this case Bunch attempts to remove the number from the name when trying to quit the app, so use the numbered version in your Bunch, e.g. `FileMaker Pro 18 Advanced` or `FileMaker Pro 18`.
 
+## Localized file paths
+
+On non-English systems the default system directories (Documents, Photos, etc.) may have localized names displayed. Bunch needs to know the true path of a file in order to locate it, and that may be different from what you see in Finder.
+
+To get the true path to a file, right click on it in Finder to bring up the contextual menu, then hold down the option key to see alternative menu items. Select "Copy ___ as Pathname" (though the menu item will probably look different if your system is non-English, bear with me). You should now have the true path to the selected file in your clipboard. Now just go back to your Bunch and hit {% kbd cmd-v %}.
+
+Another option is to open the Go To palette by pressing {% kbd cmd-shift-g %} in Finder, clear the field, and drag a file into it. The result should be a path you can copy into a Bunch.
+
 ## Empty Menu or A Bunch Not Appearing {#emptymenu}
 
 __Bunch files absolutely require the extension `.bunch`.__ If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If a Bunch isn't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check.
