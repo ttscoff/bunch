@@ -12,6 +12,28 @@ page_id: changelog
 
 ---
 
+{% available 168 %}
+
+1.4.12 (168)
+: {% icon fix %} Bunch remembering to open Bunches that were actually closed before exit
+
+{% endavailable %}
+
+
+---
+
+{% available 167 %}
+
+1.4.12 (167)
+: {% icon fix %} Crash with displaying a script command window when output is empty
+: {% icon fix %} First Bunch open after launch has long delay when Parallel launching is disabled
+: {% icon fix %} Interpret /usr/bin/env shebang even when external script is executable
+
+{% endavailable %}
+
+
+---
+
 {% available 166 %}
 
 1.4.11 (166)
