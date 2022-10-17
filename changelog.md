@@ -12,6 +12,26 @@ page_id: changelog
 
 ---
 
+{% available 169 %}
+
+1.4.12 (169)
+: {% icon fix %} Heredoc shell scripts crashing Bunch
+
+{% endavailable %}
+
+
+---
+
+{% available 168 %}
+
+1.4.12 (168)
+: {% icon fix %} Bunch remembering to open Bunches that were actually closed before exit
+
+{% endavailable %}
+
+
+---
+
 {% available 168 %}
 
 1.4.12 (168)
