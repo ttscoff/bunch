@@ -30,9 +30,11 @@ Like the Indigo automation, you can set up IFTTT applets to respond to Webhooks 
 
 ## HomeKit and Shortcuts
 
-You can invoke any Shortcut in a Bunch by name using:
+You can invoke any Shortcut in a Bunch by name using the [shortcut command]({{ site.baseurl }}/docs/bunch-files/commands/shortcut/):
 
-    $ /usr/bin/shortcuts run "Shortcut Name"
+```bunch
+(shortcut Shortcut Name)
+```
 
 Shortcuts can control HomeKit devices, which means you can use the Shortcuts app to add home automation to a Bunch.
 
