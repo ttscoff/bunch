@@ -66,7 +66,7 @@ The following names are recognized:
 | Input                                 | Result                      |
 | -----------------:                    | :-------------------------- |
 | <kbd>left</kbd>/<kbd>&larr;</kbd>     | Left Arrow (←)              |
-| <kbd>right</kbd>/<kbd>&rarr;</kbd>    | Right Arrow (,→)            |
+| <kbd>right</kbd>/<kbd>&rarr;</kbd>    | Right Arrow (→)            |
 | <kbd>down</kbd>/<kbd>&darr;</kbd>     | Down Arrow (↓)              |
 | <kbd>up</kbd>/<kbd>&uarr;</kbd>       | Up Arrow (↑)                |
 | <kbd>esc</kbd>, <kbd>escape</kbd>     | Escape Key (⎋)              |
@@ -74,7 +74,7 @@ The following names are recognized:
 | <kbd>pgup</kbd>                       | Page Up (⇞)                 |
 | <kbd>home</kbd>                       | Home (↖)                    |
 | <kbd>end</kbd>                        | End (↘)                     |
-| <kbd>f1, f2, ... , f20</kbd>          | Function Keys (fn-1)        |
+| <kbd>f1, f2, ... , f20</kbd>          | Function Keys (Fn-1)        |
 | <kbd>bksp</kbd>, <kbd>backspace</kbd> | Backspace (⌫)               |
 | <kbd>del</kbd>, <kbd>delete</kbd>     | Forward Delete (Del) (Fn-⌫) |
 | <kbd>tab</kbd>                        | Tab (⇥)                     |
@@ -92,7 +92,7 @@ The standard way to use key combos is to send them to a specific application, as
 
     {@$F1}
 
-That sends Command-Shift-F1 as a general keystroke. You can trigger global key combos when closing a Bunch by using the "double negative" syntax:
+That sends {% kbd cmd shift f1 %} as a general keystroke. You can trigger global key combos when closing a Bunch by using the "double negative" syntax:
 
     !!{@$F1}
 

@@ -126,6 +126,6 @@ tags: login, comms
 
 ### Tag Frontmatter {#tagfrontmatter}
 
-You can create frontmatter that applies to all Bunches with a certain tag by creating a file in your Bunch folder called `@[tagname].frontmatter`, where `[tagname]` is the name of the tag to which the frontmatter should apply. Any Bunch with a tag matching `[tagname]` will receive that frontmatter. Frontmatter keys applied in this fashion are low priority, and if values for a given key are supplied using any other means --- including in the individual Bunch's frontmatter --- they will override the tag frontmatter.
+You can create frontmatter that applies to all Bunches with a certain tag by creating a file in your Bunch folder called `@[tagname].frontmatter`, where `[tagname]` is the name of the tag to which the frontmatter should apply. Any Bunch with a tag matching `[tagname]` will receive that frontmatter. Frontmatter keys applied in this manner are low priority, and if values for a given key are supplied using any other means --- including in the individual Bunch's frontmatter --- they will override the tag frontmatter.
 
 {% endavailable %}

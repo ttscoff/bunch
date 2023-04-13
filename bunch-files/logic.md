@@ -186,6 +186,7 @@ Text
 "Truthy"
 : If the string being compared to is "yes", "no", "true", or "false", the comparison is "truthy", meaning it's registered as a boolean (true/false), and if the variable starts with "t", "y", or a number greater than 0, it matches true, and if it starts with "n", "f", or zero, it matches false.
 : I.e. if `var_name` is set to "yes" and the condition is `if var_name is true`, the condition will pass.
+: You can also test if a variable was left empty (e.g. by cancelling a dialog that would set it) using `if not variable`, which will return true if the variable was not set.
 
 
 Weekday
@@ -235,7 +236,9 @@ You can set a variable using a dialog, and then use an if/else block to perform 
 ```bunch
 my_var = ?[Option 1, Option 2, Option 3] "Which option?"
 
-if my_var ends with "1"
+if !my_var // dialog was cancelled
+	(notify Cancelled)
+else if my_var ends with "1"
 	Sublime Text
 	- ~/Code/My Project
 	my_var_2 = $ Test.sh // set a second variable

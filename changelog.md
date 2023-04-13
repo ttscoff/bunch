@@ -12,9 +12,12 @@ page_id: changelog
 
 ---
 
-{% available 169 %}
+{% available 170 %}
 
-1.4.12 (169)
+1.4.12 (172)
+: {% icon fix %} Recognize multi-word shortcut names
+: {% icon fix %} Refreshing bunches lost open state
+: {% icon fix %} Failure to load Bunches on first launch
 : {% icon fix %} Heredoc shell scripts crashing Bunch
 
 {% endavailable %}

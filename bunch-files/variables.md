@@ -308,7 +308,7 @@ You can transform the output of a variable placeholder using a set of pre-define
 | `/url`       | Percent encode the value                             |
 | `/shell`     | Backslash escape spaces and special characters       |
 | `/raw`       | Output "\n" as actual newlines (see note below)      |
-| `/typed`     | Output "\n" as `\\\n` for use in `[typed strings]`   |
+| `/typed`     | Output "\n" as `\\n` for use in `[typed strings]`   |
 
 Transforms can be used in addition to [default values](#defaultvalues): `${VarName/url:Default%20Value}`. Transforms are not applied to default value replacements by default, but can be added if needed: `${VarName/url:Default Value/url}`.
 
