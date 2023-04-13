@@ -14,19 +14,10 @@ page_id: changelog
 
 {% available 170 %}
 
-1.4.12 (170)
+1.4.12 (172)
 : {% icon fix %} Recognize multi-word shortcut names
 : {% icon fix %} Refreshing bunches lost open state
 : {% icon fix %} Failure to load Bunches on first launch
-
-{% endavailable %}
-
-
----
-
-{% available 169 %}
-
-1.4.12 (169)
 : {% icon fix %} Heredoc shell scripts crashing Bunch
 : {% icon fix %} Bunch remembering to open Bunches that were actually closed before exit
 : {% icon fix %} Crash with displaying a script command window when output is empty
