@@ -12,6 +12,16 @@ page_id: changelog
 
 ---
 
+{% available 173 %}
+
+1.4.13 (173)
+: {% icon fix %} Failure to recognize a shell script as a binary and then removing the binary from the command
+
+{% endavailable %}
+
+
+---
+
 {% available 170 %}
 
 1.4.12 (172)
