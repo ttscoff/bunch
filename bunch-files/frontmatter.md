@@ -52,7 +52,7 @@ The `startup` key can be set to `true`, `false`, or `ask`. (or `yes`/`no`/`?`) a
 
 Setting `single bunch mode: ignore` will prevent the Bunch from affecting or being affected by the launch of other Bunches in Single Bunch Mode. This allows you to use Single Bunch Mode to quit one Bunch when opening the next, but have Bunches that can be always-on.
 
-Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a check mark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other apps, and won't prevent other apps from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
+Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a check mark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other Bunches, and it won't prevent other Bunches from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
 
 Setting `ignores state: true` will allow Bunches to re-open or re-close when scheduled. Normally if a schedule is set for a Bunch to open or close and it already is, that schedule is ignored. With this option set you can have the Bunch re-launch or re-close, restoring the launched or quit apps and running scripts on a schedule. This setting functions independently of `toggles/only opens`.
 
@@ -337,7 +337,7 @@ Now if I want to change the browser for any of the Bunches in that folder using 
 
 ### @tag.frontmatter
 
-Another way to apply frontmatter to multiple Bunches is to use tag frontmatter. If a file beginning with `@[tagname].frontmatter` exists, its frontmatter will be applied to all Bunches tagged with `[tagname]`.
+Another way to apply frontmatter to multiple Bunches is to use [tag frontmatter]({{ site.baseurl }}/bunch-files/tags/). If a file beginning with `@tagname.frontmatter` exists, its frontmatter will be applied to all Bunches tagged with `tagname`.
 
 {% available 130 %}
 Some keys such as "title prefix" and "ignore if/unless" are concatenated when they appear in multiple frontmatter. This allows you to assign an "icon" to each tag (with ["title prefix"](#displaytitle)), and have menu items labelled with those icons, or to use tags to ignore (["ignore if/unless"](#ignore)) sets of Bunches on different machines.
