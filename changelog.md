@@ -12,6 +12,17 @@ page_id: changelog
 
 ---
 
+{% available 176 %}
+
+1.4.15 (176)
+: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url launching
+: {% icon fix %} Account for changes in the way Visual Studio Code identifies itself when quitting
+
+{% endavailable %}
+
+
+---
+
 {% available 173 %}
 
 1.4.13 (173)
