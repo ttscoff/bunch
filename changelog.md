@@ -12,9 +12,26 @@ page_id: changelog
 
 ---
 
+{% available 180 %}
+
+1.4.17 (180)
+: {% icon new %} BUNCH_DIR available as a variable for conditions and file paths
+: {% icon imp %} Fix Xcode warnings
+: {% icon fix %} Account for changes in the way Visual Studio Code identifies itself when quitting
+: {% icon fix %} Clicking a bunch with modifier keys, e.g. Cmd-Click to edit, wasn't working
+: {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
+: {% icon fix %} Outdated images in welcome screen
+: {% icon fix %} Sanity check for `open every:` key, disallow day/times
+
+{% endavailable %}
+
+
+---
+
 {% available 179 %}
 
 1.4.17 (179)
+: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url 
 : {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
 
 {% endavailable %}
