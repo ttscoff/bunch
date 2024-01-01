@@ -56,6 +56,16 @@ Profile names are case insensitive and allow partial matches ("work" will match 
 Profiles cannot be used when passing URLs as file lines.
 {% endavailable %}
 
+## Preventing Duplicate Tabs
+
+Bunch doesn't parse open tabs to determine if a URL would open a duplicate tab, but you can add extensions to your browser to accomplish this.
+
+See:
+
+- Chrome/Chromium Browsers: [Clutter Free](https://chromewebstore.google.com/detail/clutter-free-prevent-dupl/iipjdmnoigaobkamfhnojmglcdbnfaaf)
+- Firefox: [Smart Prevent Duplicate Tabs](https://addons.mozilla.org/en-US/firefox/addon/smart-prevent-duplicate-tabs/)
+- Safari: No known solution
+
 ## Sending GET/POST Requests
 
 Some URLs, such as webhook triggers, are meant to be pinged but not opened in your browser. To accomplish this with Bunch, you can use the `curl` command in a shell script item. See [Home Automation]({{ site.baseurl }}/docs/integration/other-automation/) for examples of sending GET requests using `curl`.
