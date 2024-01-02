@@ -217,6 +217,9 @@ Tweetbot
 ## (Facebook runs in a Unite Single Site Browser)
 Facebook
 
+/*
+Lines beginning with a pipe (|) are executed in parallel, even when the default or Bunch-specific execution sequence is "sequential"
+*/
 #[Work]
 |%MailMate
 |Slack
