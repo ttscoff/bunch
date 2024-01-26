@@ -61,7 +61,7 @@ Bunch Lines should be a single line, but can be split by ending the line with a 
 |`@AppName`|_[Focus app]({{ site.baseurl }}/docs/bunch-files/apps/#focus) (run at end of bunch to hide all other apps)_|
 |`AppName_`|_[Hide an app]({{ site.baseurl }}/docs/bunch-files/apps/#hidingapps)_|
 |`AppName^`|_[Force app to activate]({{ site.baseurl }}/docs/bunch-files/apps/#activatingapps)_|
-| `| AppName/Command`|Force launching in parallel even when [execution sequence]({{ site.baseurl }}/bunch-files/sequence/) is sequential |
+| `| AppName/Command`|Force launching in parallel even when [execution sequence]({{ site.baseurl }}/docs/bunch-files/sequence/) is sequential |
 | __Snippets__ ||
 |`< my.snippet`|_[An external file to be included in the bunch]({{ site.baseurl }}/docs/bunch-files/snippets/)_|
 |`- KEY=value`|_A variable to define for use in the snippet as `${KEY}`_|

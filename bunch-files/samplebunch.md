@@ -218,7 +218,8 @@ Tweetbot
 Facebook
 
 /*
-Lines beginning with a pipe (|) are executed in parallel, even when the default or Bunch-specific execution sequence is "sequential"
+Lines beginning with a pipe (|) are executed in parallel, even when 
+the default or Bunch-specific execution sequence is "sequential."
 */
 #[Work]
 |%MailMate
