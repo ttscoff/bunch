@@ -28,7 +28,6 @@ Some variables are populated automatically and can be referenced within a Bunch.
 `${BUNCHPARENT}`
 : If the current Bunch is being opened by another Bunch, this variable will contain the title of the parent Bunch.
 
-
 ## Defining Variables
 
 In order to use a variable within a Bunch, you need to give it a value. Variables get their values in a variety of ways: from frontmatter, from interactive dialogs, or from arguments passed when opening a Snippet or Bunch from within a Bunch or via automation tools. You can also assign variables directly in the Bunch using strings or file imports.

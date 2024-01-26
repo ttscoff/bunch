@@ -22,15 +22,6 @@ page_id: changelog
 : {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
 : {% icon fix %} Outdated images in welcome screen
 : {% icon fix %} Sanity check for `open every:` key, disallow day/times
-
-{% endavailable %}
-
-
----
-
-{% available 179 %}
-
-1.4.17 (179)
 : {% icon new %} Add Arc browser prefix (arc:) for browser-specific url 
 : {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
 
