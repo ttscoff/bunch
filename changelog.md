@@ -12,6 +12,17 @@ page_id: changelog
 
 ---
 
+{% available 182 %}
+
+1.4.18 (182)
+: {% icon new %} Set `quit browsers: true` in frontmatter to always quit browsers opened with `browser:url` syntax on close
+: {% icon fix %} Arc browser URLs failing
+
+{% endavailable %}
+
+
+---
+
 {% available 180 %}
 
 1.4.17 (180)
