@@ -56,6 +56,12 @@ Profile names are case insensitive and allow partial matches ("work" will match 
 Profiles cannot be used when passing URLs as file lines.
 {% endavailable %}
 
+{% available 182 %}
+### Quitting Brosers On Close
+
+If you set `quit browsers: true` in frontmatter, browsers opened with `browser:url` syntax will be quit when the Bunch closes. This can be modified per line with a `%` prefix to ignore on close.
+{% endavailable %}
+
 ## Preventing Duplicate Tabs
 
 Bunch doesn't parse open tabs to determine if a URL would open a duplicate tab, but you can add extensions to your browser to accomplish this.

@@ -294,7 +294,7 @@ You can apply frontmatter to multiple Bunches using folder and tag frontmatter.
 
 A file called `folder.frontmatter` can be included in the Bunch folder [or any subfolder]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/). This file is primarily designed for use in subfolders to control submenu display, but it can also contain keys that affect all Bunches in the folder (including the base Bunch Folder).
 
-A `folder.frontmatter` file is just a text file containing frontmatter keys and values. The keys `title`, `menu divider`, and `ignore` only affect the submenu item, and the key `shortcut` is always ignored. All other keys are applied to every Bunch in the folder.
+A `folder.frontmatter` file is just a text file containing frontmatter keys and values. The keys `title`, `menu divider`, and `ignore` only affect the submenu item, and the keys `shortcut` and `tags` are always ignored. All other keys are applied to every Bunch in the folder.
 
 This means that you can create a subfolder for Bunches you want to launch at a specific time, and then any Bunch you put in that folder will get an [`open at` schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) applied.
 
