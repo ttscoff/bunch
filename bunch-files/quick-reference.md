@@ -51,7 +51,7 @@ tags: [example]
 | `(audio [input|output] volume [0-100])` | audio volume | 
 | `(audio [input|output] [mute|unmute])`| mute/unmute  audio |
 |__AppleScripts__||
-|`* AppleScript command`|_[Execute Applescript]({{ site.baseurl }}/docs/bunch-files/scripts/applescript/)_|
+|`* AppleScript command`|_[Execute AppleScript]({{ site.baseurl }}/docs/bunch-files/scripts/applescript/)_|
 |__Automator Workflows__||
 |`& Automator Workflow`|_Run an [Automator Workflow]({{ site.baseurl }}/docs/bunch-files/scripts/automator-workflows/)_|
 |`- key=value`|_variable to pass to preceding workflow (can be repeated)_|
