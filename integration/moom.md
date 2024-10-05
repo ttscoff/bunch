@@ -7,6 +7,9 @@ tags: [integration]
 # Integrating with Moom
 
 [bt]: https://brettterpstra.com/2020/09/14/using-moom-with-bunch-for-window-management/
+[stephen]: https://www.thoughtasylum.com/2024/10/05/a-quick-tip-for-using-moom-in-bunch/
+
+(Check out this [great post on Moom 4 and Bunch from Stephen Millard][stephen])
 
 You can integrate with the fantastic window manager, [Moom](https://manytricks.com/moom/), for detailed control over how windows are organized after a Bunch launches.
 
