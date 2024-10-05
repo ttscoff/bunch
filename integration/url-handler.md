@@ -26,7 +26,7 @@ Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and 
 > Just create an action that opens a URL and use something like:
 >
 > `x-bunch://toggle/BunchName`
->   
+>
 > to create a hotkey or button that toggles a Bunch. You can create a whole launch control panel on a Stream Deck with these, for example.
 {:.tip}
 
@@ -38,7 +38,7 @@ Bunch has its own URL scheme (`x-bunch:`) that you can call from other apps and 
 All methods can be called in `x-callback-url` format, for compatibility. Simply prefix `x-callback-url` in the path, and optionally provide an `x-source` query parameter. If an `x-source` is provided and no `x-success` value is present, the x-source (URL, app name, or bundle identifier) will be called upon completion. (It's assumed that you want focus returned after executing a Bunch command, as making Bunch a foreground app is relatively pointless.)
 
 ```
-x-bunch://x-callback-url/open?bunch=Comms?x-source=com.googlecode.iterm2
+x-bunch://x-callback-url/open?bunch=Comms&x-source=com.googlecode.iterm2
 ```
 
 ## Methods
@@ -266,12 +266,12 @@ Additional variables
 **Examples**
 
 ```bash
-# Load a snippet file called "useful.snippets", 
-# targeting the "Music" section, and passing a 
+# Load a snippet file called "useful.snippets",
+# targeting the "Music" section, and passing a
 # value to the "playlist" variable, call:
 open 'x-bunch:​//snippet?file=useful.snippets&fragment=Music&playlist=spotify:playlist:3cSpIL4Q0H3uqdBMbT6c9x'
 
-# Path syntax, loading "useful.snippets", targeting 
+# Path syntax, loading "useful.snippets", targeting
 # the "Speak" fragment, and passing two variables
 open 'x-bunch://snippet/useful.snippets/Speak?var1=foo&var2=bar%20baz'
 ```

@@ -47,9 +47,13 @@ Numbers
 - ~/Documents/job 1.numbers
 ```
 
-You can also specify a file as a URL to have Bunch open it in whatever app is defined as the default handler for it. For example, if you put the following on its own line, Bunch would open TaskPaper\** with the file (note that spaces are replaced with `%20`):
+You can also specify a file as a URL to have Bunch open it in whatever app is defined as the default handler for it. For example, if you put the following on its own line, Bunch would open TaskPaper\* with the file (note that spaces are replaced with `%20`):
 
-    file:///Users/Dropbox/Code/Bunch%20Work/bunch.taskpaper
+```bunch
+file:///Users/Dropbox/Code/Bunch%20Work/bunch.taskpaper
+```
+
+This is the same as specifying "default" as the app (see [below](#defaultapp)).
 
 _\* This assumes TaskPaper is installed._
 
@@ -74,7 +78,7 @@ Finder
 -> /Volumes/OtherDrive
 ```
 
-> For reasons I can't explain, doing this via System Events is exceedingly slow. This process will run in the background and it's OK to click other windows while waiting for the Finder tabs to finish opening.
+> For reasons I can't explain, doing this via System Events is excruciatingly slow. This process will run in the background and it's OK to click other windows while waiting for the Finder tabs to finish opening.
 {:.warning}
 
 ## Opening Files in Their Default Application {#defaultapp}
@@ -88,7 +92,7 @@ Default
 - File 3.md
 ```
 
-This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches) instead of files.
+This is especially handy when using [Spotlight searches]({{ site.baseurl }}/docs/bunch-files/spotlight-searches/) instead of files.
 
 ### Inserting a Pause {#filepause}
 
@@ -135,7 +139,7 @@ Visual Studio Code^
 
 ## "Focusing" an App {#focus}
 
-If you start an app line with an `@` symbol, it will attempt to focus that app. This should be run as the last line of the file, after all other lines have run. Make sure the app you want to focus has already been launched (_this line will not launch the app, only focus a running app_).
+If you start an app line with an `@` symbol, it will attempt to focus that app (hiding other apps). This should be run as the last line of the file, after all other lines have run. Make sure the app you want to focus has already been launched (_this line will not launch the app, only focus a running app_).
 
 ```bunch
 OmniFocus
@@ -189,7 +193,7 @@ This works for commands as well:
 This will enable Dark Mode when opening the Bunch, and leave it in Dark Mode when closing.
 
 > Finder is always ignored (won't be quit) when closing a Bunch. If you want to actually quit Finder when closing a Bunch, use a [triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative):
-> 
+>
 > ```bunch
 > Finder
 > - ~/Desktop

@@ -8,9 +8,38 @@ tags: [example]
 ---
 # Quick Reference
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
+
+## Formatting
+
+### Indentation
+
+Bunch Lines start at the left column unless they're in an indented [logic block]({{ site.baseurl }}/docs/bunch-files/logic/). Indentation within a logic block must be consistent with other lines at the same level of the block.
+
+```bunch
+Messages
+
+if social
+	Slack
+	Discord
+end
+```
+
+### Line Breaks
+
+Bunch Lines should be a single line, but can be split by ending the line with a backslash and continuing immediately on the next line. A backslash followed by a blank line will not be joined.
+
+```bunch
+(display bunch-internal/first-bunch.html \
+ 500x600 level:floating)
+```
+
+### Comments
+
+[Comments]({{ site.baseurl }}/docs/bunch-files/comments/) can be block (`/*...*/`), lines (`# Comment`), or inline at the end of a line (`Preview // inline comment`). Comment markers must be followed by a space.
+
 
 ## Bunch Syntax
 
@@ -31,6 +60,8 @@ tags: [example]
 |`!!!AppName`|_Quit app when closing bunch ([triple negative]({{ site.baseurl }}/docs/bunch-files/run-on-close/#triplenegative))_|
 |`@AppName`|_[Focus app]({{ site.baseurl }}/docs/bunch-files/apps/#focus) (run at end of bunch to hide all other apps)_|
 |`AppName_`|_[Hide an app]({{ site.baseurl }}/docs/bunch-files/apps/#hidingapps)_|
+|`AppName^`|_[Force app to activate]({{ site.baseurl }}/docs/bunch-files/apps/#activatingapps)_|
+| `| AppName/Command`|Force launching in parallel even when [execution sequence]({{ site.baseurl }}/docs/bunch-files/sequence/) is sequential |
 | __Snippets__ ||
 |`< my.snippet`|_[An external file to be included in the bunch]({{ site.baseurl }}/docs/bunch-files/snippets/)_|
 |`- KEY=value`|_A variable to define for use in the snippet as `${KEY}`_|
@@ -42,13 +73,13 @@ tags: [example]
 |__Bunch Commands__||
 |`(command)`|_Run a [Bunch command]({{ site.baseurl }}/docs/bunch-files/commands/)_|
 | `(dark mode [on|off])` | dark mode on/off |
-| `(do not disturb [on|off])` | do not disturb on/off | 
-| `([hide|show] dock)` | hide/show dock | 
-| `(dock [left|right|bottom])` | dock left/right/bottom | 
-| `([hide|show] desktop)` | hide/show desktop | 
-| `(wallpaper [path(s)])` | change wallpaper | 
-| `(audio [input|output] device_name)` | audio input/output | 
-| `(audio [input|output] volume [0-100])` | audio volume | 
+| `(do not disturb [on|off])` | do not disturb on/off |
+| `([hide|show] dock)` | hide/show dock |
+| `(dock [left|right|bottom])` | dock left/right/bottom |
+| `([hide|show] desktop)` | hide/show desktop |
+| `(wallpaper [path(s)])` | change wallpaper |
+| `(audio [input|output] device_name)` | audio input/output |
+| `(audio [input|output] volume [0-100])` | audio volume |
 | `(audio [input|output] [mute|unmute])`| mute/unmute  audio |
 |__AppleScripts__||
 |`* AppleScript command`|_[Execute AppleScript]({{ site.baseurl }}/docs/bunch-files/scripts/applescript/)_|

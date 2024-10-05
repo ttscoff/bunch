@@ -28,7 +28,6 @@ Some variables are populated automatically and can be referenced within a Bunch.
 `${BUNCHPARENT}`
 : If the current Bunch is being opened by another Bunch, this variable will contain the title of the parent Bunch.
 
-
 ## Defining Variables
 
 In order to use a variable within a Bunch, you need to give it a value. Variables get their values in a variety of ways: from frontmatter, from interactive dialogs, or from arguments passed when opening a Snippet or Bunch from within a Bunch or via automation tools. You can also assign variables directly in the Bunch using strings or file imports.
@@ -174,7 +173,7 @@ text_file = "~/Documents/File 2.txt"
 
 ### When Calling a Snippet or Bunch {#filelines}
 
-When you call a Bunch or Snippet from within a Bunch, you can use file lines with `key=value` pairs to set frontmatter and variable values for them. 
+When you call a Bunch or Snippet from within a Bunch, you can use file lines with `key=value` pairs to set frontmatter and variable values for them.
 
 For a Bunch, you would use:
 
@@ -205,7 +204,7 @@ When using Bunch's [AppleScript]({{ site.baseurl }}/docs/integration/applescript
 Values set in this manner will supersede frontmatter values, but will be overridden by [file lines](#filelines).
 
 > With this capability, you can create Bunches that focus efforts around a particular file (or files), but change that file with each opening of the Bunch. Set up a `${placeholder} in the Bunch for the filename, then specify the file in the url when calling the Bunch.
-> 
+>
 > Scenario: you have Hazel watching for new audio files that need processing in a shared Dropbox folder. A new file shows up, and a Hazel script adds an entry to your task manager that includes a Bunch url with the file specified as a parameter. Clicking it not only switches to your audio editing context, but also loads the file in question in your audio editor.
 {:.tip}
 
@@ -219,7 +218,7 @@ global my_global_variable = true
 
 You can reference a global variable just like any other variable: `${my_global_variable}`. It can be used in [logic conditions]({{ site.baseurl }}/docs/bunch-files/logic/) in any Bunch, e.g. `if my_global_variable is true`.
 
-The last value assigned using the `global` keyword is what will be stored. Modifying a variable's value without the `global` keyword does not affect the global value, on the value local to the current Bunch.
+The last value assigned using the `global` keyword is what will be stored. Modifying a variable's value without the `global` keyword does not affect the global value, only the value local to the current Bunch.
 
 If a variable with a matching name is set within a Bunch, that value will take precedence over the global variable's value. Global variables have the lowest precedence, so even a value set in a Bunch's frontmatter will override it.
 
@@ -230,20 +229,23 @@ Because variables can be set in multiple ways, you need to be aware of which val
 > Precedence also takes into account assignment order. If a variable is already assigned (e.g. by a URL handler query string), a dialog that sets that variable (`var = ?[]`) will be skipped, as will a direct assignment (`var = val`). This allows you to, for example, skip a dialog if opening via a URL by setting the variable in the URL itself.
 {:.tip}
 
+1. Variables set using __direct assignment__
 1. Variables set in __file lines__
-2. Variables set by in a __URL call__/__AppleScript method__
-3. Variables set by __interactive dialogs__
-4. Variables set in __dynamic frontmatter__
-5. Variables set in __frontmatter__
-6. Variables set using __direct assignment__
-7. Variable __default values__
-8. Global Variables
+1. Variables set by in a __URL call__/__AppleScript method__
+1. Variables set by __interactive dialogs__
+1. Variables set in __dynamic frontmatter__
+1. Variables set in __frontmatter__
+1. Variables set in __tag/folder frontmatter__
+1. **Global** Variables
+1. Variable __default values__
+
+> If variable values are read from multiple frontmatter files, e.g. @tag.frontmatter where more than one file applies, duplicate keys will receive the value found in the last file read (which is typically the last filename alphanumerically).
 
 ## Variable Parsing Order (Modifying Values at Runtime)
 
 Bunch is not (yet) an actual compiler, so things like scope and sequence are different from a scripting language.
 
-Variable placeholders are replaced as soon as their value is known, and variables assigned inside of conditional logic are parsed after placeholders outside of the condition are already updated. 
+Variable placeholders are replaced as soon as their value is known, and variables assigned inside of conditional logic are parsed after placeholders outside of the condition are already updated.
 
 For example, we assign a variable at the top of the Bunch or in frontmatter, then in a conditional block we append more text to its value, and then at the end we use the value in a placeholder. The value at the end will be replaced with the initial value before the conditional block appends the new value, so the changes within the conditional block won't be reflected in the final use of the placeholder.
 
@@ -305,7 +307,7 @@ You can transform the output of a variable placeholder using a set of pre-define
 | `/url`       | Percent encode the value                             |
 | `/shell`     | Backslash escape spaces and special characters       |
 | `/raw`       | Output "\n" as actual newlines (see note below)      |
-| `/typed`     | Output "\n" as `\\\n` for use in `[typed strings]`   |
+| `/typed`     | Output "\n" as `\\n` for use in `[typed strings]`   |
 
 Transforms can be used in addition to [default values](#defaultvalues): `${VarName/url:Default%20Value}`. Transforms are not applied to default value replacements by default, but can be added if needed: `${VarName/url:Default Value/url}`.
 
@@ -330,7 +332,7 @@ When performing `/url` transforms, "\n" is first converted to actual newlines, a
 
 When performing `/shell` transforms, "\n" is left as is, and not double-escaped. Output with `echo -e`, this results in an actual newline being echoed.
 
-> Tip: If you want to use a variable containing newlines in a shell command, you can use `$'${variable_name}'` to have the shell (`/bin/sh`) respect the newlines as part of the argument. So if your variable contains `one\ntwo`, you could use `$ say $'${variable/shell}'` and you would get the expected results (you Mac would say "one two").
+> Tip: If you want to use a variable containing newlines in a shell command, you can use `$'${variable_name}'` to have the shell (`/bin/sh`) respect the newlines as part of the argument. So if your variable contains `one\ntwo`, you could use `$ say $'${variable/shell}'` and you would get the expected results (your Mac would say "one two").
 {:.tip}
 
 When performing `/typed` transforms, "\n" is converted to `\\n`, so that a Bunch keystroke command (e.g. `- [${VarName/typed}]`) will send a carriage return in its place.

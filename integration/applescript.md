@@ -26,6 +26,9 @@ tell application "Bunch" to list bunches
 tell application "Bunch" to list open bunches
 ```
 
+> You can test if a particular Bunch is open by searching for its name in `list open bunches` (e.g. `if (list open bunches) contains`). You can also get a list of _closed_ bunches by getting the full list (`list bunches`) and removing items in `list open bunches`. It's not the easiest approach, I know, but I haven't had a need for these options yet, so I haven't added methods for them.
+{:.tip}
+
 ## Open, close, and toggle Bunches
 
 
@@ -107,7 +110,7 @@ You can retrieve several of Bunch's preferences using AppleScript, which avoids 
 
 ```applescript
 tell application "Bunch"
-   get preference "Bunch Folder" 
+   get preference "Bunch Folder"
 end tell
 ```
 
@@ -146,5 +149,38 @@ end
 ```
 
 The bunch name is case insensitive and the best match will be targeted.
+
+{% endavailable %}
+
+{% available 150 %}
+## New Bunch with Open Apps {#runningapps}
+
+The "New Bunch with Open Apps" command is available to AppleScript as `[copy/save] new bunch with running apps`. This takes an optional `named` parameter to define the title and filename of the new Bunch. If this is left off, the Bunch receives no title frontmatter and the file is named "New Bunch.bunch". If a file with the given name exists, a number will be appended to it and incremented until the filename is unique.
+
+You can also add an `ignoring` parameter, which accepts a list of application names to exclude from the Bunch. These names must match the app names exactly, including capitalization.
+
+To save a new Bunch with all running apps as "Working.bunch":
+
+```applescript
+tell application "Bunch"
+    save bunch with running apps named "Working"
+end tell
+```
+
+To copy all apps to the clipboard, ready to paste into a new Bunch:
+
+```applescript
+tell application "Bunch"
+    copy bunch with running apps
+end
+```
+
+To save a new Bunch named "Working," excluding iTerm and Firefox:
+
+```applescript
+tell application "Bunch"
+    save bunch with running apps named "Working" ignoring {"iTerm2", "Firefox"}
+end
+```
 
 {% endavailable %}

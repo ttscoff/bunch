@@ -55,7 +55,7 @@ Bunch lines behave just like app lines, so using `!Name.bunch` will quit that Bu
 
 If a Bunch quits another Bunch when it launches (`!Name.bunch`), the Bunch that was closed will be re-opened when the containing Bunch closes.
 
-If a Bunch is closed that contains apps launched by the parent Bunch, those apps won't be quit when closing the Bunch. Same goes in the other direction: if opening a Bunch would launch apps that the containing Bunch would quit, those apps are ignored and left running. 
+If a Bunch is closed that contains apps launched by the parent Bunch, those apps won't be quit when closing the Bunch. Same goes in the other direction: if opening a Bunch would launch apps that the containing Bunch would quit, those apps are ignored and left running.
 
 ## Nesting
 
@@ -74,7 +74,7 @@ It does have the benefit of directly using things like [optional snippets]({{ si
 _Example:_
 
 ```bunch
-# Launch the Work fragment of Comms.bunch 
+# Launch the Work fragment of Comms.bunch
 # after a 30-second delay
 <Comms.bunch#Work ~30
 

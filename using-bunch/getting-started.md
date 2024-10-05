@@ -20,12 +20,12 @@ The Bunch folder contains Bunch files, also called "Bunches." A Bunch file is ju
 > __If using TextEdit__, make sure it's in Plain Text mode for the current file by opening the __Format__ menu and selecting __Make Plain Text__ if that option is showing. If it says __Make Rich Text__, you're already in plain text mode.
 {:.warning}
 
-Each Bunch is a separate file, and the name of the Bunch will be taken from the filename, without the `.bunch` extension. (You can specify a separate "display name" for the menu item in [Frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/), but we'll get to that later.) 
+Each Bunch is a separate file, and the name of the Bunch will be taken from the filename, without the `.bunch` extension. (You can specify a separate "display name" for the menu item in [Frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/), but we'll get to that later.)
 
 You can edit `Example.bunch` in your Bunch Folder to see what happens, or just use it as a reference for creating a new file. Bunch files just have to be plain text with the extension `.bunch`. Once you've added your own configuration(s), delete `Example.bunch` (or rename it with an extension other than `.bunch`).
 
 > Bunch files absolutely require the extension `.bunch`. If you have macOS set to hide extensions, it may be assigning another extension in addition to `.bunch` (e.g. `.bunch.txt`). If your Bunches aren't showing up in the menu, open Finder Preferences and check "Show all filename extensions" to double check.
-> 
+>
 > {% img aligncenter /images/showextensions.jpg 412 158 %}
 {:.tip}
 

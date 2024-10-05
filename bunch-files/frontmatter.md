@@ -6,7 +6,7 @@ tags: [frontmatter,variables]
 ---
 # Controlling Bunch With Frontmatter
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -52,7 +52,7 @@ The `startup` key can be set to `true`, `false`, or `ask`. (or `yes`/`no`/`?`) a
 
 Setting `single bunch mode: ignore` will prevent the Bunch from affecting or being affected by the launch of other Bunches in Single Bunch Mode. This allows you to use Single Bunch Mode to quit one Bunch when opening the next, but have Bunches that can be always-on.
 
-Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a check mark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other apps, and won't prevent other apps from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
+Setting `toggles: false` will only allow the Bunch to open, but will never register it as Open, meaning it can't be closed. It won't get a check mark in the menu, it won't be remembered as an open Bunch if "Preserve Open Bunches" is on, and other Bunches can't close it. Apps it has open won't be registered by other Bunches, and it won't prevent other Bunches from quitting them. (If you like it better semantically, you can also use `only opens: true`.)
 
 Setting `ignores state: true` will allow Bunches to re-open or re-close when scheduled. Normally if a schedule is set for a Bunch to open or close and it already is, that schedule is ignored. With this option set you can have the Bunch re-launch or re-close, restoring the launched or quit apps and running scripts on a schedule. This setting functions independently of `toggles/only opens`.
 
@@ -95,9 +95,15 @@ The "title" key changes the display title of the Bunch, as seen in the menu. Whe
 
 You can totally use emoji in the frontmatter title and get a sweet looking menu 😁. The menus are sorted alphabetically by display title, so changing the `title:` key will change the sort order of the list. Sort order ignores emoji, so `😊Bunch A` still comes before `♥️Bunch B`.
 
+{% available 130 %}
+You can also use the "title prefix" key to add a prefix to the display title. If no "title" key is set, this will prefix the filename in the menu title.
+
+The "title prefix" key can be set in [tag](#tagfrontmatter) or [folder frontmatter](#folderfrontmatter) and will apply to all files affected. If multiple tag/folder prefixes apply to a single Bunch, the prefixes are concatenated. The order of concatenation can't be controlled, but this allows you to use tags to actually "tag" menu items visually.
+{% endavailable %}
+
 ### Customizing Menu Order {#sortorder}
 
-The "menu order" key defines the sort order of Bunches in the menu that Bunch displays. 
+The "menu order" key defines the sort order of Bunches in the menu that Bunch displays.
 
 Any Bunch with a "menu order" number between 1 and 99 will be sorted by number at the beginning of the menu. If multiple Bunches have the same number, they will be sorted alphanumerically (by display title) within that position.
 
@@ -119,6 +125,22 @@ menu order: 10
 menu divider: after
 ---
 ```
+
+{% available 130 %}
+### Hiding From the Menu {#ignore}
+
+You can use the keys "ignore," "ignore if," and "ignore unless" to prevent a Bunch from displaying in the menu.
+
+The "ignore" key is a boolean, either "true" or "false." If it's true, the Bunch will not show up in the menu (nor will it be able to be triggered by shortcut key, it's ignored).
+
+"ignore if" and "ignore unless" take a UUID or a condition. 
+
+- A UUID can be a single UUID or a comma-separated list of UUIDs. If the current machine's UUID matches a UUID in the list, it will either be ignored (ignore if) or displayed (ignore unless).
+- If the value of "ignore if" or "ignore unless" does not match a UUID format, it's parsed as a condition. Any of the [conditional logic]({{ site.baseurl }}/docs/bunch-files/logic/) tests can be used. (Because this comparison is running at the time the Bunch is loaded and not when it's being executed, some conditions may evaluate differently than they would at runtime.)
+
+{% include snippets/uuid.md %}
+
+{% endavailable %}
 
 ### Before/After Scripts {#beforeafterscripts}
 
@@ -197,7 +219,7 @@ If using `${variables}` in a Bunch, be sure to include [default values]({{ site.
 
 You can use `from file` and `from script` to load in variables from external sources.
 
-A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths. 
+A frontmatter line such as `from file: filename.txt` would read in additional values from `filename.txt`. Paths are assumed to be relative to the configured Bunch folder unless they're absolute paths.
 
 > Remember that relative paths in Bunches within subfolders are still relative to the Bunch Folder, so if you want to reference `filename.txt` located in a subfolder, you should use `from file: Subfolder/filename.txt`, even if the Bunch itself is already in `Subfolder`.
 {:.warning}
@@ -214,7 +236,7 @@ You can also incorporate dialogs in a frontmatter script. See [advanced scriptin
 
 #### A Ridiculous Example
 {:.no_toc}
-    
+
 Just to demonstrate the capability of dynamic frontmatter, you could have a line in your frontmatter that reads additional data in from a script called `frontmatter.rb`:
 
 ```bunch
@@ -264,11 +286,15 @@ When it runs, the name variable will be replaced with a random name, and the cur
 
 See [Advanced Scripting]({{ site.baseurl }}/docs/integration/advanced-scripting) for more crazy ideas.
 
-## Applying Frontmatter to Multiple Bunches (folder.frontmatter) {#folderfrontmatter}
+## Applying Frontmatter to Multiple Bunches {#folderfrontmatter}
+
+You can apply frontmatter to multiple Bunches using folder and tag frontmatter.
+
+### folder.frontmatter
 
 A file called `folder.frontmatter` can be included in the Bunch folder [or any subfolder]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/). This file is primarily designed for use in subfolders to control submenu display, but it can also contain keys that affect all Bunches in the folder (including the base Bunch Folder).
 
-A `folder.frontmatter` file is just a text file containing frontmatter keys and values. The keys `title`, `menu divider`, and `ignore` only affect the submenu item, and the key `shortcut` is always ignored. All other keys are applied to every Bunch in the folder.
+A `folder.frontmatter` file is just a text file containing frontmatter keys and values. The keys `title`, `menu divider`, and `ignore` only affect the submenu item, and the keys `shortcut` and `tags` are always ignored. All other keys are applied to every Bunch in the folder.
 
 This means that you can create a subfolder for Bunches you want to launch at a specific time, and then any Bunch you put in that folder will get an [`open at` schedule]({{ site.baseurl }}/docs/bunch-files/scheduling-bunches/) applied.
 
@@ -308,3 +334,11 @@ Now if I want to change the browser for any of the Bunches in that folder using 
 
 > `folder.frontmatter` files can exist in the root of your Bunch folder as well. Submenu keys like `ignore` and `title` are ignored, but arbitrary keys assigned in that file will apply to all Bunches in the root folder.
 {:.tip}
+
+### @tag.frontmatter
+
+Another way to apply frontmatter to multiple Bunches is to use [tag frontmatter]({{ site.baseurl }}/bunch-files/tags/). If a file beginning with `@tagname.frontmatter` exists, its frontmatter will be applied to all Bunches tagged with `tagname`.
+
+{% available 130 %}
+Some keys such as "title prefix" and "ignore if/unless" are concatenated when they appear in multiple frontmatter. This allows you to assign an "icon" to each tag (with ["title prefix"](#displaytitle)), and have menu items labelled with those icons, or to use tags to ignore (["ignore if/unless"](#ignore)) sets of Bunches on different machines.
+{% endavailable %}

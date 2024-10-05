@@ -6,7 +6,7 @@ tags: [frontmatter,scheduling]
 ---
 # Scheduling Bunches
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -38,7 +38,7 @@ If your Mac is asleep at the scheduled time, it will run when the machine wakes.
 
 ## Open at intervals
 
-The `open every` key runs the Bunch at timed intervals. The value should be shorthand for hours and minutes to create an interval: `1h30m` would run it every hour and a half. You can also just use `1h` or `30m`. 
+The `open every` key runs the Bunch at timed intervals. The value should be shorthand for hours and minutes to create an interval: `1h30m` would run it every hour and a half. You can also just use `1h` or `30m`.
 
 You can also use "d" to specify days. If you want to launch every other day, use "2d". This, however, does not allow you to specify a time. So, for most intents and purposes you'll want to use `open at`.
 
@@ -144,10 +144,32 @@ When launching and closing Bunches on a schedule, Bunch will attempt to show a n
 
 If you sync your Bunches to multiple Macs, you may want to be selective about which ones get scheduled. There are two keys that can help with this.
 
-First, `schedule if:` accepts either a trigger file or a UUID. 
+First, `schedule if:` accepts either a UUID or a [logic condition]({{ site.baseurl }}/docs/bunch-files/logic/). Because these conditions run before the Bunch actually executes, some logic comparisons may not work as usual. The safest ones are UUID and `file [PATH] exists` to use a file as a trigger file.
 
-A trigger file is a path to any file outside of your Bunch folder. If that file exists, scheduling is enabled, if it doesn't, any scheduling frontmatter is ignored. The file can be empty.
+> {% include snippets/uuid.md %}{:.tip}
 
-A UUID is a unique identifier for each Mac. You can get the UUID for the current machine by opening Preferences and pressing "Copy UUID." The value of `startup if:` can be a single UUID, or multiple UUIDs separated by commas.
+```bunch
+---
+title: Only on my iMac
+open at: 7:30am
+schedule if: C6766848-065C-51F8-B2EE-3A9DA8A10017
+---
+```
 
-Second, `schedule unless:` takes the same parameters as `schedule if:` but has the reverse effect. If a trigger file exists or a UUID matches, scheduling is ignored. If neither is true, scheduling is enabled.
+Second, `schedule unless:` takes the same parameters as `schedule if:` but has the reverse effect. If a condition returns true, scheduling is ignored. If it returns false, scheduling is enabled.
+
+A Bunch this is removed from the menu by an "ignore if" or "ignore unless" frontmatter key will also not be scheduled.
+
+```bunch
+---
+title: But not when...
+open at: 7pm
+schedule unless: file ~/trigger.txt exists
+---
+```
+
+Schedule conditions are only parsed when your Bunches are scanned. This happens when a file in the Bunch folder changes, but not when a trigger file or other condition changes. If a Bunch is already loaded and scheduled, the change in presence of a trigger file or other condition will not immediately turn off scheduling, but the `schedule if/unless` condition will be checked at the scheduled time and open/close will be cancelled based on the result.
+
+The `schedule if/unless` keys can be inherited from [tag]({{ site.baseurl }}/docs/bunch-files/frontmatter/#tagfrontmatter) and [folder frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter/#folderfrontmatter). If the Bunch contains its own `schedule if` or `schedule unless`, it will override any schedule conditions set in inherited frontmatter. If a Bunch inherits a schedule condition but doesn't have a schedule to set, the key will be ignored.
+
+If (for whatever reason) both `schedule if` and `schedule unless` are defined on a Bunch, only `schedule if` is used.

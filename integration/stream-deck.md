@@ -12,7 +12,7 @@ You can add buttons to your Elgato Stream Deck for opening, closing, and togglin
 
 The easiest method is just to use an "Open Website" action for a button, then call Bunch's [URL handler]({{ site.baseurl }}/docs/integration/url-handler) as the URL. This can be as simple as `x-bunch://toggle/Bunch%20Name`.
 
-You can also integrate further using [Keyboard Maestro](https://www.keyboardmaestro.com/). Create Keyboard Maestro macros to execute one or more Bunch URLs or AppleScripts, and then assign them to buttons on the Stream Deck. There are two plugins available to make this easy. 
+You can also integrate further using [Keyboard Maestro](https://www.keyboardmaestro.com/). Create Keyboard Maestro macros to execute one or more Bunch URLs or AppleScripts, and then assign them to buttons on the Stream Deck. There are two plugins available to make this easy.
 
 First, the [KM Link](https://github.com/Corcules/KMlink) plugin for Stream Deck allows you to select from existing macros and assign them to the button. It's probably the easiest to use.
 

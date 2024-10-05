@@ -15,7 +15,7 @@ Put a `*` at the beginning of a line to have the line interpreted as raw AppleSc
 
 ```bunch
 * say "Welcome to the communications context"
-* do shell script "/bin/bash my_cli_tool.sh" 
+* do shell script "/bin/bash my_cli_tool.sh"
 * display notification "Bunch Opened"
 ```
 

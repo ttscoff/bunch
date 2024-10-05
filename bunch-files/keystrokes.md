@@ -6,7 +6,7 @@ tags: [keystrokes, apps, keyboard, combo, shortcut]
 ---
 # Sending keystrokes and combos
 {:.no_toc}
-    
+
 * Table of Contents
 {:toc}
 
@@ -45,19 +45,19 @@ __Example:__ The Git app Tower doesn't respond to the AppleScript "close every w
 
 To send multiple shortcuts, just separate them with a space, i.e. `{@a @c @$~v}` to select all, copy, and paste without formatting in the specified app.
 
-You can include system keys (arrows, delete key, function keys, etc.) by using their name, such as `@~up` (Option-Command-Up Arrow) or `@$F12` (Shift-Command-F12). These can also be written as hyphenated strings using the longer formats for modifier keys, e.g. `cmd-opt-up` or even `command-option-up`. This format can still be combined with multiple keystrokes separated by spaces, e.g. `{opt-left cmd-up}` to hit Option-Left Arrow followed by Command-Up Arrow. 
+You can include system keys (arrows, delete key, function keys, etc.) by using their name, such as `@~up` (Option-Command-Up Arrow) or `@$F12` (Shift-Command-F12). These can also be written as hyphenated strings using the longer formats for modifier keys, e.g. `cmd-opt-up` or even `command-option-up`. This format can still be combined with multiple keystrokes separated by spaces, e.g. `{opt-left cmd-up}` to hit Option-Left Arrow followed by Command-Up Arrow.
 
 Keys can also be referenced by using their Unicode symbols like `↑`, `↓` `⌅`, and `␣`.
 
     Gradius
     - {↑ ↑ ↓ ↓← → ← → b a ↩}
 
+> Because double quotes are used for [typing strings within curly brackets](#combined), if you need to send a key combo containing a double quote, specify it as `$'` (Shift-single quote).
+{:.warning}
+
 ### Repeating Keys
 
 You can repeat key combos multiple times by surrounding them in parenthesis immediately followed by a number. To hit `⌘}` to switch tabs 5 times, you would use `{(@$])5}`. Multiple key combinations can be listed within the parenthesis, so `{@t (@d @$d)4}` becomes `{@t @d @$d @d @$d @d @$d @d @$d}`. If you want to see a dumb trick, try that one with iTerm.
-
-> Because double quotes are used for [typing strings within curly brackets](#combined), if you need to send a key combo containing a double quote, specify it as `$'` (Shift-single quote).
-{:.warning}
 
 ### System Key Names {#systemkeys}
 
@@ -66,7 +66,7 @@ The following names are recognized:
 | Input                                 | Result                      |
 | -----------------:                    | :-------------------------- |
 | <kbd>left</kbd>/<kbd>&larr;</kbd>     | Left Arrow (←)              |
-| <kbd>right</kbd>/<kbd>&rarr;</kbd>    | Right Arrow (,→)            |
+| <kbd>right</kbd>/<kbd>&rarr;</kbd>    | Right Arrow (→)            |
 | <kbd>down</kbd>/<kbd>&darr;</kbd>     | Down Arrow (↓)              |
 | <kbd>up</kbd>/<kbd>&uarr;</kbd>       | Up Arrow (↑)                |
 | <kbd>esc</kbd>, <kbd>escape</kbd>     | Escape Key (⎋)              |
@@ -74,7 +74,7 @@ The following names are recognized:
 | <kbd>pgup</kbd>                       | Page Up (⇞)                 |
 | <kbd>home</kbd>                       | Home (↖)                    |
 | <kbd>end</kbd>                        | End (↘)                     |
-| <kbd>f1, f2, ... , f20</kbd>          | Function Keys (fn-1)        |
+| <kbd>f1, f2, ... , f20</kbd>          | Function Keys (Fn-1)        |
 | <kbd>bksp</kbd>, <kbd>backspace</kbd> | Backspace (⌫)               |
 | <kbd>del</kbd>, <kbd>delete</kbd>     | Forward Delete (Del) (Fn-⌫) |
 | <kbd>tab</kbd>                        | Tab (⇥)                     |
@@ -92,7 +92,7 @@ The standard way to use key combos is to send them to a specific application, as
 
     {@$F1}
 
-That sends Command-Shift-F1 as a general keystroke. You can trigger global key combos when closing a Bunch by using the "double negative" syntax:
+That sends {% kbd cmd shift f1 %} as a general keystroke. You can trigger global key combos when closing a Bunch by using the "double negative" syntax:
 
     !!{@$F1}
 
@@ -119,41 +119,41 @@ TextEdit
 
 (You can also combine these two lines now, [see the next section](#combined).)
 
-You can use "escape" codes (letters preceded by a double backslash, e.g. `\\\\n`) in a typed string to press some "special" keys:
+You can use "escape" codes (letters preceded by a double backslash, e.g. `\\n`) in a typed string to press some "special" keys:
 
 | Code      | Key             | Mnemonic             |
 | --------: | --------------- | -------------------- |
-| `\\\\\\n` | Return          | newline              |
-| `\\\\\\t` | Tab             | tab                  |
-| `\\\\\\s` | Space (force)   | space                |
-| `\\\\\\b` | Left Arrow      | back                 |
-| `\\\\\\f` | Right Arrow     | forward              |
-| `\\\\\\u` | Up Arrow        | up                   |
-| `\\\\\\d` | Down Arrow      | down                 |
-| `\\\\\\a` | Home            | ask Emacs            |
-| `\\\\\\e` | End             | end                  |
-| `\\\\\\h` | Backspace       | ask UNIX...          |
-| `\\\\\\x` | Escape          | e was already used   |
-| `\\\\\\!X`| Pause for X seconds                   ||
+| `\\n` | Return          | newline              |
+| `\\t` | Tab             | tab                  |
+| `\\s` | Space (force)   | space                |
+| `\\b` | Left Arrow      | back                 |
+| `\\f` | Right Arrow     | forward              |
+| `\\u` | Up Arrow        | up                   |
+| `\\d` | Down Arrow      | down                 |
+| `\\a` | Home            | ask Emacs            |
+| `\\e` | End             | end                  |
+| `\\h` | Backspace       | ask UNIX...          |
+| `\\x` | Escape          | e was already used   |
+| `\\!X`| Pause for X seconds                   ||
 
-Example: `- [\\\\n\\\\n\\\\tThis has two newlines and a tab indent before it\\\\n]`
+Example: `- [\\n\\n\\tThis has two newlines and a tab indent before it\\n]`
 
 > Tip: If you want to send a lot of special characters while typing, it's often better to use the bracket syntax and quote the typed strings, e.g. `{(tab)3 "my text" return @s}`.
 {:.tip}
 
 ### Adding Pauses to Typed Strings {#typedpause}
 
-You can pause typing for any number of seconds using `\\\\!` followed by a number within a typed string (this works in interpolated strings as well):
+You can pause typing for any number of seconds using `\\!` followed by a number within a typed string (this works in interpolated strings as well):
 
 ```bunch
-- [This is a dramatic \\\\!5pause]
+- [This is a dramatic \\!5pause]
 ```
 
 The delay must be a positive integer representing a number of seconds, with no decimals.
 
 ### Using Variables in Typed Strings
 
-If you want to insert the contents of a variable in a typed string, you should use the `/typed` transform to ensure that newlines are converted to `\\\\n` when typing it out.
+If you want to insert the contents of a variable in a typed string, you should use the `/typed` [transform]({{ site.baseurl }}/docs/bunch-files/variables/#transforms) to ensure that newlines are converted to `\\n` when typing it out. 
 
 ```bunch
 TextEdit

@@ -61,7 +61,7 @@ If you want to make the password available to multiple scripts with one call, or
 
     (Repeat the above as many times as needed to get multiple passwords, storing them as unique variables.)
 
-2. Save that as "password.sh" in your Bunch folder and make it executable with `chmod a+x password.sh`. 
+2. Save that as "password.sh" in your Bunch folder and make it executable with `chmod a+x password.sh`.
 3. In the Bunch, we'll set the script to load the result as frontmatter using `from script`:
 
     ```bunch
@@ -100,7 +100,7 @@ $ echo "${password}" | sudo -S [my command]
 
 ### Better Password Masking
 
-Following the above procedure does have the downside of showing your password in the command title when it's listed under Running Scripts (and in the Task Monitor). An alternative is to wrap the command in a second shell script. 
+Following the above procedure does have the downside of showing your password in the command title when it's listed under Running Scripts (and in the Task Monitor). An alternative is to wrap the command in a second shell script.
 
 As mentioned at the top, if there's only one script being run, it's probably easiest to just include the `security` call in the script itself. But if you want to use frontmatter, all frontmatter keys/values are passed to the environment of every script the Bunch runs. You can access the `password` variable using `$password` (in Bash, Zsh, etc.) or whatever method the script's shell uses to access environment variables.
 

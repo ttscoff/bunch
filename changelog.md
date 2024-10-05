@@ -10,18 +10,206 @@ page_id: changelog
 
 {% docdiff %}
 
-
-{% available 120 %}
 ---
 
-1.4.5 (β120)
-: {% icon new %} Add "Untagged" submenu to tags menu
-: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
+{% available 182 %}
+
+1.4.18 (182)
+: {% icon new %} Set `quit browsers: true` in frontmatter to always quit browsers opened with `browser:url` syntax on close
+: {% icon fix %} Arc browser URLs failing
+
+{% endavailable %}
+
+
+---
+
+{% available 180 %}
+
+1.4.17 (180)
+: {% icon new %} BUNCH_DIR available as a variable for conditions and file paths
+: {% icon imp %} Fix Xcode warnings
+: {% icon fix %} Account for changes in the way Visual Studio Code identifies itself when quitting
+: {% icon fix %} Clicking a bunch with modifier keys, e.g. Cmd-Click to edit, wasn't working
+: {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
+: {% icon fix %} Outdated images in welcome screen
+: {% icon fix %} Sanity check for `open every:` key, disallow day/times
+: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url 
+: {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
+
+{% endavailable %}
+
+
+---
+
+{% available 177 %}
+
+1.4.16 (177)
+: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url launching
+: {% icon fix %} Account for changes in the way Visual Studio Code identifies itself when quitting
+: {% icon fix %} Clicking a bunch with modifier keys, e.g. Cmd-Click to edit, wasn't working
+
+{% endavailable %}
+
+
+---
+
+{% available 173 %}
+
+1.4.13 (173)
+: {% icon fix %} Failure to recognize a shell script as a binary and then removing the binary from the command
+
+{% endavailable %}
+
+
+---
+
+{% available 170 %}
+
+1.4.12 (172)
+: {% icon fix %} Recognize multi-word shortcut names
+: {% icon fix %} Refreshing bunches lost open state
+: {% icon fix %} Failure to load Bunches on first launch
+: {% icon fix %} Heredoc shell scripts crashing Bunch
+
+{% endavailable %}
+
+
+---
+
+{% available 168 %}
+
+1.4.12 (168)
+: {% icon fix %} Bunch remembering to open Bunches that were actually closed before exit
+
+{% endavailable %}
+
+
+---
+
+{% available 168 %}
+
+1.4.12 (168)
+: {% icon fix %} Bunch remembering to open Bunches that were actually closed before exit
+
+{% endavailable %}
+
+
+---
+
+{% available 167 %}
+
+1.4.12 (167)
+: {% icon fix %} Crash with displaying a script command window when output is empty
+: {% icon fix %} First Bunch open after launch has long delay when Parallel launching is disabled
+: {% icon fix %} Interpret /usr/bin/env shebang even when external script is executable
+
+{% endavailable %}
+
+
+---
+
+{% available 166 %}
+
+1.4.11 (166)
+
+: {% icon fix %} (hide desktop) command not functioning
+: {% icon imp %} Programatically opening System Preferences is broken on Ventura. Best I can currently do is open System Settings, but can't focus a pane (e.g. Notifications). Keeping an eye on this.
+: {% icon fix %} Bunch didn't recognize symlinks for Bunch folders
+: {% icon fix %} Switching between Bunch folders would cause all Bunches to show up in a "Bunches" submenu
+
+{% endavailable %}
+
+
+---
+
+{% available 163 %}
+
+1.4.10 (163)
+: {% icon fix %} Bunch didn't recognize symlinks for Bunch folders
+: {% icon fix %} Switching between Bunch folders would cause all Bunches to show up in a "Bunches" submenu
+
+{% endavailable %}
+
+
+---
+
+{% available 163 %}
+
+1.4.10 (163)
+: {% icon new %} AppleScript commands to copy or save a new Bunch with running apps
+: {% icon new %} Added canary and firefoxdev as browser prefixes
+: {% icon new %} Target specific Chrome profiles using `chrome[Profile Name]:http://...`
+: {% icon new %} (shortcut NAME) command for running macOS Shortcuts
+: {% icon fix %} Fixed variable assignment using shell script heredoc syntax
+: {% icon imp %} The `(shortcut)` command now accepts input and outputs any response for use in variables
+: {% icon fix %} Attempt to fix issue where spaces in Bunch directory path caused menu issues or were unable to be selected in the dropdown
+: {% icon fix %} Newline character in (shortcut) input
+: {% icon fix %} Replace global variables before processing frontmatter conditionals
+
 {% endavailable %}
 
 ---
 
-1.4.5 (β119)
+{% available 148 %}
+
+1.4.9 (148)
+: {% icon imp %} /opt/homebrew/bin is now included in the default path for M1 users using shell scripting
+: {% icon fix %} Allow closing all Finder windows with XX (and on close with !!Finder)
+
+{% endavailable %}
+
+
+---
+
+{% available 143 %}
+
+1.4.8 (143)
+: {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
+: {% icon fix %} When launching or quitting a tag, %\tag was not ignoring the action on close
+: {% icon fix %} Don't inherit tags when nesting Bunches
+: {% icon fix %} Variables defined in a snippet call file line work with conditional logic within the snippet
+: {% icon fix %} Allow retries when sending AppleScript commands for things like
+: {% icon fix %} Ensure relaunch of Finder after hiding/showing desktop icons
+: {% icon fix %} Modifier key mismatch in Select Editor tooltip
+
+{% endavailable %}
+
+---
+
+1.4.7 (139)
+: {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
+
+
+---
+
+1.4.7 (139)
+: {% icon fix %} Variable keys passed from URL handler were running into case sensitivity issues
+
+
+{% available 136 %}
+
+---
+1.4.6
+: {% icon new %} (quit everything except ...) command to quit all running Dock apps (with an optional exception list) ([documentation]({{ site.baseurl }}/docs/bunch-files/commands/quit-everything/))
+: {% icon new %} "file PATH contains" logic condition to check file contents for text string
+: {% icon new %} "file PATH exists" logic condition
+: {% icon new %} "title prefix" frontmatter applies a string before the Bunch, or all affected Bunches if used in @tag/folder.frontmatter
+: {% icon new %} "ignore if/unless" frontmatter can control whether a Bunch displays in the menu. Accepts UUID or any logic condition recognized by Bunch
+: {% icon imp %} "schedule if/unless" now accepts any logic condition. Instead of a trigger file like it had, use `file TRIGGER_FILE exists`.
+: {% icon fix %} Fix an error with opening files in apps called by bundle identifier
+: {% icon fix %} Long directory names breaking preference window layout (#148)
+: {% icon fix %} Calling "toggle" via URL handler not respecting single bunch mode (#149)
+: {% icon fix %} Crash when completing script with error on Bunch close (#152)
+{% endavailable %}
+
+---
+
+1.4.5
+
+: {% icon new %} Fancy new icon design by Felippe van Eekhout
+: {% icon new %} Add "Untagged" submenu to tags menu
+: {% icon new %} Refresh all browsers AppleScript command
+: {% icon new %} Add "Untagged" submenu to tags menu
 : {% icon new %} [Heredoc support for shell commands]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#heredoc)
 : {% icon new %} [Snippet syntax support for script lines]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#snippet) (`$ <file#fragment`)
 : {% icon new %} [Heredoc support for variable assignments]({{ site.baseurl }}/docs/bunch-files/variables/#heredoc)
@@ -29,6 +217,9 @@ page_id: changelog
 : {% icon new %} [Submenu with bunches listed by tag]({{ site.baseurl }}/docs/using-bunch/organizing-bunches/#tags)
 : {% icon new %} [AppleScript "open/close/toggle/list bunches tagged"]({{ site.baseurl }}/docs/integration/applescript/#tags)
 : {% icon new %} [URL handler for open/close/toggle commands accepts "tag=X" as optional replacement for "bunch=X"]({{ site.baseurl }}/docs/integration/url-handler/#tags)
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
+: {% icon imp %} Allow (display) and \~delay syntax for heredoc scripts
+: {% icon imp %} Move tag menus into section of main menu instead of Tags submenu
 : {% icon imp %} Variable placeholders no longer require removing spaces from variable names
 : {% icon imp %} Better truncation of long script paths/names in running scripts menu
 : {% icon fix %} Don't register `var_name = ${old_var}` as a shell script assignment
@@ -37,7 +228,7 @@ page_id: changelog
 : {% icon fix %} Remove single and double quotes from ends of frontmatter values
 
 ---
-   
+
 1.4.4
 : {% icon new %} Create menus from YAML, JSON, text, or executable script files ([Documentation]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/))
 : {% icon imp %} Better replacement of variable placeholders that are populated mid-stream
@@ -346,6 +537,7 @@ page_id: changelog
 : {% icon bug red %} allow Bunch main menu to appear when run in Dock Mode
 : {% icon bug red %} Remove notification and stop timer when countdown clicked
 : {% icon bug red %} F1-F12 not working as {keyboard combos}
+
 : {% icon bug red %} Process variables before importing snippets so that placeholders can be used for snippet fragments (`<snippet#${fragmentvar}`)
 : {% icon bug red %} Keyboard focus for popups buttons and text fields in interactive dialogs
 : {% icon bug red %} Scheduled open/close being invalidated after opening
@@ -440,7 +632,7 @@ page_id: changelog
 : Option to [execute Bunch items in parallel]({{ site.baseurl }}/docs/bunch-files/sequence/) (all at once)
 : "Recent Bunch Folders" in Preferences submenu
 : Better log messages for shell script errors
-: Move initial Bunch Folder location to ~/Documents/Bunches
+: Move initial Bunch Folder location to \~/Documents/Bunches
 : Change wording of menu item from "Quit Apps In..." to "Close Items in..."
 : Changed "No" button in Optional Snippets dialog to "Cancel" so Escape key works
 : Offer relaunch dialog if log detail level is changed
@@ -557,7 +749,7 @@ page_id: changelog
 1.2.9
 : Better at maintaining "open" check marks
 : Reduce delay when storing and changing wallpaper
-: Add option to delay a launch or command with ~X at the end of line
+: Add option to delay a launch or command with \~X at the end of line
 : Big Sur Dock Icon
 
 ---

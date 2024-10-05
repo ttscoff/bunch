@@ -16,7 +16,7 @@ You can launch Bunches automatically whenever the app starts. This can be useful
 
 There are two ways to launch a Bunch on startup. The first way is with a dedicated "startup script."
 
-To launch Bunches on startup, create a file in your Bunch directory with the extension ".startup". Any filename will work, and all files ending in ".startup" will be processed. 
+To launch Bunches on startup, create a file in your Bunch directory with the extension ".startup". Any filename will work, and all files ending in ".startup" will be processed.
 
 The file should contain a list of Bunches to launch, one Bunch per line. The ".bunch" extension is not required. Note that these startup files can _only_ contain names of Bunches to launch, not regular Bunch lines of any kind.
 
@@ -24,7 +24,7 @@ If you have Single Bunch mode enabled, only the last item processed will be laun
 
 ## With Frontmatter {#frontmatter}
 
-You can also add a `startup: true` key to [the frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter) of any Bunch to have it launch when the app loads. All Bunches with `startup: true` will be opened after any `.startup` files have been processed.
+You can also add a `startup: true` key to [the frontmatter]({{ site.baseurl }}/docs/bunch-files/frontmatter) of any Bunch to have it open when Bunch launches. All Bunches with `startup: true` will be opened after any `.startup` files have been processed.
 
 ```bunch
 ---
@@ -41,7 +41,7 @@ If `startup:` is set to `ask`, a prompt will be displayed on launch. Cancelling 
 
 ### Selectively for Synced Macs
 
-If you sync your Bunches to multiple Macs, you may want to specify which Mac(s) run the Bunch as a startup script. To do this, open Preferences and press the "Copy UUID" button. Paste the result as the value of the `startup:` key and the startup will only be triggered on the Mac that matches this value. Multiple UUIDs can be combined with commas. 
+If you sync your Bunches to multiple Macs, you may want to specify which Mac(s) run the Bunch as a startup script. To do this, open Preferences and press the "Copy UUID" button. Paste the result as the value of the `startup:` key and the startup will only be triggered on the Mac that matches this value. Multiple UUIDs can be combined with commas.
 
 You can also use `startup unless:` instead of `startup:`. This has the inverse effects for excluding specific Macs by UUID.
 

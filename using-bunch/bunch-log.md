@@ -42,11 +42,11 @@ Here's a sample log:
 ⚪2021-01-23 14:​32:​16: [Code] Setting display title to "🖥Coding"
 ⚪2021-01-23 14:​32:​16: [Comms] Open >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ⚪2021-01-23 14:​32:​16: [Comms] Adding 12s delay to (* tell application "Moom" to arrange windows according to snapshot "Comms")
-⚪2021-01-23 14:​32:​16: [Comms] Opening app Tweetbot 
-⚪2021-01-23 14:​32:​16: [Comms] Opening app MailMate 
-⚪2021-01-23 14:​32:​16: [Comms] Opening app Slack 
-⚪2021-01-23 14:​32:​16: [Comms] Opening app Messages 
-⚪2021-01-23 14:​32:​16: [Comms] Opening app Discord 
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Tweetbot
+⚪2021-01-23 14:​32:​16: [Comms] Opening app MailMate
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Slack
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Messages
+⚪2021-01-23 14:​32:​16: [Comms] Opening app Discord
 ⚪2021-01-23 14:​32:​28: [Comms] Running AppleScript (tell application "Moom" to arrange windows according to snapshot "Comms")
 ```
 

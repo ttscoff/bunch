@@ -94,7 +94,7 @@ Reference the fragment with the snippet and fragment name, like this:
 
 If you load a snippet containing fragments without using a fragment name, i.e. just `<MySnippet.snippet`, it will run all of the fragments in the snippet.
 
-If you feel like being creative, Bunch allows the use of several symbols to create the fragment headers, and you can have a variable number of them on either side of the brackets (you do need one symbol on the left). 
+If you feel like being creative, Bunch allows the use of several symbols to create the fragment headers, and you can have a variable number of them on either side of the brackets (you do need one symbol on the left).
 
 Begin a fragment header using one of `#`, `-`, `=`, or `>`. The line must start with one or more of these symbols, followed by the fragment name enclosed in square brackets. In the case of a hyphen, two or more are required at the beginning of the line to avoid confusion with file lines. The other symbols only require a single character. Whitespace is allowed in the fragment header after the first (or second in the case of `--`) character. Fragment names can also include spaces.
 
@@ -117,7 +117,7 @@ You get the idea. When you amass a lot of snippets in one file because you're ma
 
 ## Adding Interactivity {#optionalsnippets}
 
-See [Interactivity: Optional Snippets]({{ site.baseurl }}/docs/bunch-files/interactivity/#optionalsnippets) for details on adding interactive choices to snippet loading.
+See [Interactivity: Optional Snippets]({{ site.baseurl }}/docs/bunch-files/interactivity/optional-snippets/) for details on adding interactive choices to snippet loading.
 
 ## Run After Delay
 
@@ -141,7 +141,7 @@ Like most script types in Bunch, you can precede a snippet line with an exclamat
 
 These can also have a delay:
 
-```bunch    
+```bunch
 # Run 5 seconds after closing the snippet
 !<General.snippets#Close Commands ~5
 ```
@@ -162,7 +162,7 @@ This is especially handy for running window management scripts ([a la Moom]({{ s
 
 Waiting Snippets rely on the apps to report that they've launched to the operating system. Just because an app has reported that it's launched doesn't necessarily mean it's _finished_ launching. Adding an additional delay is wise if some of the apps you're waiting on take a long time to display their windows.
 
-You can have multiple Waiting Snippets in a Bunch, but they all wait for all apps and execute at once, not just waiting on the apps that come before them in the list. 
+You can have multiple Waiting Snippets in a Bunch, but they all wait for all apps and execute at once, not just waiting on the apps that come before them in the list.
 
 > You can, however, use waiting snippets to chain multiple Bunches together in a sequence, having the next one launch after the first one finishes loading. Just include e.g. `Next Name.bunch` as a line in the Waiting Snippet.
 {:.tip}

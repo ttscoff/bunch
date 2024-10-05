@@ -27,6 +27,7 @@ Commands are run by using lines surrounded by parenthesis in Bunch files. These 
 (sleep [display])
 (awake [interval])
 (log [MESSAGE])
+(shortcut [SHORTCUT NAME])
 ```
 
 ## Reversing Commands

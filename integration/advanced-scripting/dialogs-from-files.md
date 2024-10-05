@@ -7,7 +7,11 @@ tags: [interactive,dialog,scripts]
 ---
 # Dialogs From Files
 
-You can build dialogs dynamically by reading the contents of an external file into a variable, then using the variable as the options for a dialog.
+As of v1.4.4, Bunch can directly read external files to generate options for interactive dialogs. Options can be returned as JSON, YAML, or just a plain text list. See [Interactivity/External Files]({{ site.baseurl }}/docs/bunch-files/interactivity/external-files/) for more details.
+
+## The Roundabout Way
+
+You can also build dialogs dynamically by reading the contents of an external file into a variable, then using the variable as the options for a dialog.
 
 Let's assume you have a script that reads JSON data from an API and outputs a text file in a format Bunch can use for an interactive dialog. You would want to run the script before processing the Bunch in order to populate the text file before calling the dialog. Do this using `run before:` frontmatter.
 

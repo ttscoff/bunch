@@ -29,14 +29,14 @@ Launched/Quit
 <section class="comments" markdown="1">
 
 Comments
-: [Comments]({{ site.baseurl }}/docs/bunch-files/comments/) are lines in a Bunch that are ignored, used for adding descriptive notes to yourself or others you might share the Bunch with. Comments can be lines or blocks on their own, or added at the end of any Bunch Item line.
+: [Comments]({{ site.baseurl }}/docs/bunch-files/comments/) are lines in a Bunch that are ignored, used for adding descriptive notes to yourself or others with whom you might share the Bunch. Comments can be lines or blocks on their own, or added at the end of any Bunch Item line.
 
 </section>
 
 <section class="items" markdown=1>
 
 Bunch Items
-: Bunch Items are lines in a Bunch file, whether launching an app, running a script, or executing a command. This is a generic term for referencing all of the types below.
+: Bunch Items are lines in a Bunch file which perform actions, whether launching an app, running a script, or executing a command. This is a generic term for referencing all of the types below.
 
 <div class="sub-items" markdown=1>
 

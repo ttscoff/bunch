@@ -14,7 +14,7 @@ tags: [interactivity,frontmatter,snippets,variables,example,apps,basics]
 
 These are mostly Bunches that I (Brett, the developer) use. Several of them incorporate [Embedded Snippets]({{ site.baseurl }}/docs/bunch-files/snippets/#embeddedsnippets) in these examples so I don't have to also include my snippet files just to let you see what's going on. Anything in an Embedded Snippet can be moved to an external file as desired.
 
-These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening. 
+These examples make use of [comments]({{ site.baseurl }}/docs/bunch-files/comments/) to explain what's happening.
 
 ## Example.bunch
 
@@ -24,13 +24,13 @@ This example demonstrates the basic syntax for a Bunch file.
 # Comments start with `#` or `//` and a space
 # blank lines are ignored
 
-/* 
-Comments can also use a block syntax 
-for multi-line comments 
+/*
+Comments can also use a block syntax
+for multi-line comments
 */
 
-/* 
-Use @@ to hide all visible apps. Usually used at the top of the 
+/*
+Use @@ to hide all visible apps. Usually used at the top of the
 file before launching the rest of the bunch */
 @@
 
@@ -51,7 +51,7 @@ Finder
 - ~/Documents
 -> ~/Pictures // Opens Pictures in a tab of the Documents window
 
-/* 
+/*
 Commands are surrounded by parenthesis. Only commands Bunch
 recognizes will be executed
 ([hide|show] dock) -> Turn Dock autohiding on or off
@@ -104,7 +104,7 @@ shortcut: S
 (dnd on)       // turn on Do Not Disturb
 
 // Launch Screenflow
-// Assume we'll need it open for editing after we're done 
+// Assume we'll need it open for editing after we're done
 // recording, so ignore it when closing (%).
 %ScreenFlow
 
@@ -127,7 +127,7 @@ Marked 2
 (wallpaper ~/Pictures/Desktops/bunchdesktop.jpg)
 ```
 
-## Podcasting
+## Podcasting {#podcast}
 
 Here's my `Podcast Record.bunch`.
 
@@ -208,7 +208,7 @@ I have this Bunch load on launch. It makes it easy to quit all of these apps at 
 title: 📞Comms
 startup: true
 ---
-/* 
+/*
 Fragment identifiers allow me to load this Bunch as a snippet and execute
 just parts of it as needed. They are ignored when loading as a Bunch.
 */
@@ -217,6 +217,10 @@ Tweetbot
 ## (Facebook runs in a Unite Single Site Browser)
 Facebook
 
+/*
+Lines beginning with a pipe (|) are executed in parallel, even when 
+the default or Bunch-specific execution sequence is "sequential."
+*/
 #[Work]
 |%MailMate
 |Slack
@@ -225,8 +229,8 @@ Facebook
 #[Podcast]
 Discord
 
-/* 
-Use an embedded Waiting Snippet to position windows after everything has 
+/*
+Use an embedded Waiting Snippet to position windows after everything has
 launched (with additional 2s delay)
 */
     <<#Position Comms ~2
@@ -246,7 +250,7 @@ I have folder sets set up in [Forklift]({{ site.baseurl }}/docs/integration/fork
 title: 🖥Code
 sequence: parallel
 ---
-/* Launch all of the necessary apps and tell Bunch to ignore 
+/* Launch all of the necessary apps and tell Bunch to ignore
    them when closing. */
 %iTerm
 %Sublime Text
@@ -254,7 +258,7 @@ sequence: parallel
 %Tower
 %Forklift
 
-/* Ask me which project I want to work on. If I cancel, no 
+/* Ask me which project I want to work on. If I cancel, no
    project files will be loaded. */
 ?{
     Marked => <<#Marked
@@ -350,9 +354,9 @@ Spotify
 
 These docs run on [Jekyll](https://jekyllrb.com/). When working on them, I run `jekyll serve` to create a local server that updates automatically as the Markdown files change. I edit the docs in [nvUltra](https://nvultra.com/) and Sublime Text.
 
-This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitoring-scripts) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
+This Bunch opens the server in a [task monitor]({{ site.baseurl }}/docs/bunch-files/scripts/shell-scripts/#monitor) (using colors from the beautiful [Nord](https://www.nordtheme.com/) palette), loads up my editors, and [opens a web view]({{ site.baseurl }}/docs/bunch-files/commands/display/#html-files-and-websites) of the rendered documents which updates as changes happen (using Jekyll's LiveReload). The web view opens after a long delay, giving Jekyll enough time to render and launch the server first.
 
-```bash
+```bunch
 ---
 title: ✍🏻Documentation
 shortcut: d
@@ -366,7 +370,7 @@ nvUltra Beta
 // Launch the Jekyll server with a task monitor (see script below)
 $ ~/Sites/dev/bunch/servejekyll.sh (display d:1 50%x100% right,top #2e3440 #86c0d1 a:95%)
 
-// Display a web view window of the documentation site 
+// Display a web view window of the documentation site
 // after 20-second delay
 // 1200pt wide, full height, primary display, normal window level
 (display http://127.0.0.1:4000/ 1200x100% right,center) ~20
@@ -391,8 +395,8 @@ The following Bunch combines a multiple choice dialog with a frontmatter key (`p
 title: CodeKit
 ---
 ?{
-  nvUltra Website => <<#nvultraweb
-  nvUltra Onboard => <<#nvultrasplash
+  nvUltra Website  => <<#nvultraweb
+  nvUltra Onboard  => <<#nvultrasplash
   Marked 2 Website => <<#marked
 }
 
@@ -426,6 +430,7 @@ menu order: 120
 single bunch mode: ignore
 toggles: false
 ---
+
 $ hostname | sed 's/.local$//'|tr "[a-z]" "[A-Z]" | xargs -I '{}' convert -size 500x500 xc:transparent -fill '#a2bf8a' -font AvantGarde-Demi -pointsize 64 -draw "text 0,150 '{}'" -trim ~/thismachine.png
 
 (display ~/thismachine.png d:0 150x63 0,0 #clear a:50% c:n l:w)

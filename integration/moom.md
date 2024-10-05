@@ -19,7 +19,7 @@ First, launch the Bunch and time how long it takes all of the apps to fully load
 
 Once you have the named snapshot, you can add a line to your Bunch calling it with AppleScript:
 
-```
+```bunch
 %nvUltra
 Audio Hijack
 Skype

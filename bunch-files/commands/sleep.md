@@ -7,7 +7,7 @@ tags: [sleep, awake, command]
 ---
 # Sleep Commands
 
-`(sleep)` will immediately sleep your Mac. 
+`(sleep)` will immediately sleep your Mac.
 
 `(sleep display)` will sleep the display.
 
