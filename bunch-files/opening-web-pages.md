@@ -57,7 +57,7 @@ Profiles cannot be used when passing URLs as file lines.
 {% endavailable %}
 
 {% available 182 %}
-### Quitting Brosers On Close
+### Quitting Browsers On Close
 
 If you set `quit browsers: true` in frontmatter, browsers opened with `browser:url` syntax will be quit when the Bunch closes. This can be modified per line with a `%` prefix to ignore on close.
 {% endavailable %}
