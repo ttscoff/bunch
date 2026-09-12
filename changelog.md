@@ -12,14 +12,19 @@ page_id: changelog
 
 ---
 
-{% available 182 %}
+{% available 181 %}
+
+1.4.17 (181)
+: {% icon new %} Set `quit browsers: true` in frontmatter to always quit browsers opened with `browser:url` syntax on close
+: {% icon imp %} Updated code for macOS 15
+: {% icon fix %} Arc browser URLs failing
+: {% icon fix %} "Get Dimensions of Active Window" now uses Accessibility (requires permission)
+
+{% endavailable %}
 
 1.4.18 (182)
 : {% icon new %} Set `quit browsers: true` in frontmatter to always quit browsers opened with `browser:url` syntax on close
 : {% icon fix %} Arc browser URLs failing
-
-{% endavailable %}
-
 
 ---
 
@@ -33,7 +38,7 @@ page_id: changelog
 : {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
 : {% icon fix %} Outdated images in welcome screen
 : {% icon fix %} Sanity check for `open every:` key, disallow day/times
-: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url 
+: {% icon new %} Add Arc browser prefix (arc:) for browser-specific url
 : {% icon fix %} Expand tilde in paths passed to url handler `snippet` and AppleScript "run snippet"
 
 {% endavailable %}
